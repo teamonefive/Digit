@@ -1,0 +1,17 @@
+http://rekabmot.com/plog/generating-1d-procedural-terrain-in-unity/  --- USED THIS TO MAKE TEST
+
+https://forum.unity.com/threads/tutorial-procedural-meshes-and-voxel-terrain-c.198651/ --- COULD BE HELPFUL
+
+http://studentgamedev.blogspot.com/2013/08/unity-voxel-tutorial-part-1-generating.html --- FIRST 3 STEPS WILL BE GOOD
+
+https://docs.unity3d.com/ScriptReference/Resources.Load.html --- LOADING IN ASSETS AS OBJECTS
+
+https://docs.unity3d.com/ScriptReference/GameObject.AddComponent.html --- SOME GAME OBJECT SYNTAX
+
+https://answers.unity.com/questions/707413/shown-background-size-doesnt-match-scene-size.html --- CAMERA MATHS
+
+https://www.reddit.com/r/Unity2D/comments/2xvbkk/where_to_start_with_procedural_generation_for_a/ --- HAS SOME EXTRA LINKS
+
+https://learn.unity.com/project/procedural-cave-generation-tutorial --- THIS SEEMS GOOD TOO
+
+https://blogs.unity3d.com/2018/05/29/procedural-patterns-you-can-use-with-tilemaps-part-i/ --- THE OG WE TRIED
