@@ -58,7 +58,7 @@ public class TerrainGenerator : MonoBehaviour
         // For each point, in the heightmap, create a vertex for
         // the top and the bottom of the terrain.
         for (int i = 0; i < heightmap.Length; i += 1) {
-            vertices.Add(new Vector2(i / resolution, heightmap[i]));
+            vertices.Add(new Vector2(i / resolution, heightmap[i])); // creates Vector2(x offset, y offset)
             vertices.Add(new Vector2(i / resolution, 0));
         }
 
@@ -83,6 +83,84 @@ public class TerrainGenerator : MonoBehaviour
 
         Debug.Log("Generated " + uv.Count + " grass UV co-ords");
         return uv.ToArray();//.ToBuiltin(Vector2) as Vector2[];
+    }
+
+    // Looks like Vector2(x offset, y offset) for the second parameter is slightly different here
+    Vector2[] CreateGrassVertices(float[] heightmap, float resolution)
+    {
+        Debug.Log("Creating grass vertices");
+        resolution = Mathf.Max(1, resolution);
+
+        List<Vector2> vertices = new List<Vector2>();
+
+        for (int i = 0; i < heightmap.Length; i += 1)
+        {
+            vertices.Add(new Vector2(i / resolution, heightmap[i]));
+            vertices.Add(new Vector2(i / resolution, heightmap[i] - 1));
+        }
+
+        Debug.Log("Created " + vertices.Count + " grass vertices");
+        return vertices.ToArray();
+    }
+
+    Vector2[] GenerateGrassUV(float[] heightmap)
+    {
+        Debug.Log("Generating grass UV co-ords");
+
+        List<Vector2> uv = new List<Vector2>();
+
+        //float factor = 1.0f / heightmap.Length;
+
+        for (int i = 0; i < heightmap.Length; i++)
+        {
+            uv.Add(new Vector2(i % 2, 1));
+            uv.Add(new Vector2(i % 2, 0));
+        }
+
+        Debug.Log("Generated " + uv.Count + " grass UV co-ords");
+        return uv.ToArray();
+    }
+
+    Vector2[] CreateTestVertices(float[] heightmap, float resolution)
+    {
+        Debug.Log("Creating grass vertices");
+        resolution = Mathf.Max(1, resolution);
+
+        List<Vector2> vertices = new List<Vector2>();
+        System.Random rand = new System.Random();
+        int randomNum1 = rand.Next(100, 120);
+
+        for (int i = 0; i < heightmap.Length; i += 1)
+        {
+            if (i % 5 == 4)
+            {
+                randomNum1 = rand.Next(100, 120);
+            }
+            vertices.Add(new Vector2(i / resolution, randomNum1)); // Appears to be upper limit
+            vertices.Add(new Vector2(i / resolution, randomNum1 - 10)); // Appears to be lower limit
+        }
+
+        Debug.Log("Created " + vertices.Count + " test vertices");
+        return vertices.ToArray();
+    }
+
+    Vector2[] GenerateTestUV(float[] heightmap)
+    {
+        Debug.Log("Generating grass UV co-ords");
+
+        List<Vector2> uv = new List<Vector2>();
+
+        float factor = 1.0f / heightmap.Length;
+
+        for (int i = 0; i < heightmap.Length; i++)
+        {
+            uv.Add(new Vector2((factor * i) * 20, heightmap[i] / 20)); // Yeah not sure but something with the image
+            uv.Add(new Vector2((factor * i) * 20, 0)); // changes the image somehow
+
+        }
+
+        Debug.Log("Generated " + uv.Count + " test UV co-ords");
+        return uv.ToArray();
     }
 
     int[] Triangulate(int count)
@@ -117,7 +195,24 @@ public class TerrainGenerator : MonoBehaviour
         int[] terrainTriangles = Triangulate(terrainVertices.Length);
 
         // Create the mesh!
+        // If we have a lot of textures we can create a list of them to pass instead of a string for the name
         GenerateMesh(terrainVertices, terrainTriangles, terrainUV, "ground", 0);
+
+        // Repeat the process for grass
+        Vector2[] grassVertices = CreateGrassVertices(heightmap, resolution);
+        Vector2[] grassUV = GenerateGrassUV(heightmap);
+        int[] grassTriangles = Triangulate(terrainVertices.Length);
+
+        GenerateMesh(grassVertices, grassTriangles, grassUV, "grass", -2);
+
+        // Jeff is gonna try to add something else... test time
+        Vector2[] testVerticies = CreateTestVertices(heightmap, resolution);
+        Vector2[] testUV = GenerateTestUV(heightmap);
+        int[] testTriangles = Triangulate(terrainVertices.Length);
+
+        GenerateMesh(testVerticies, testTriangles, testUV, "test", -2);
+
+
 
         Debug.Log("Terrain Gen complete");
     }
@@ -150,7 +245,19 @@ public class TerrainGenerator : MonoBehaviour
         filter.mesh = mesh;
 
         // Add a texture  
-        go.GetComponent<Renderer>().material.mainTexture = Resources.Load<Texture2D>("texture") as Texture;
+        // Instead of doing this we can create a list of tiles and access them in a for loop, but for now here we go
+        if (texture == "ground")
+        {
+            go.GetComponent<Renderer>().material.mainTexture = Resources.Load<Texture2D>("ground") as Texture;
+        }
+        else if (texture == "grass")
+        {
+            go.GetComponent<Renderer>().material.mainTexture = Resources.Load<Texture2D>("grass") as Texture;
+        }
+        else if (texture == "test")
+        {
+            go.GetComponent<Renderer>().material.mainTexture = Resources.Load<Texture2D>("test") as Texture;
+        }
 
         // Reparent as a child of this game object
         go.transform.parent = transform;
