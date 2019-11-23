@@ -9,13 +9,13 @@ public class TileBasedMover : MonoBehaviour
     public MapGen world;
 
     public float moveSpeed = 1f;
-    public float climbingDifficulty = 1.5f;
+    public float climbingDifficulty = 2f;
     public float fallSpeedMultiplier = 1f;
     private bool canMove = true, moving = false, m_FacingRight = true;
     public bool isFalling = false;
     public float setMoveCooldown = 1f;
     private float moveCooldown = 0f;
-    private float tileDifficulty = 1f;
+    private float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f;
     public bool isDestroyed = false;
 
     private Vector2 touchOrigin = -Vector2.one;
@@ -120,7 +120,7 @@ public class TileBasedMover : MonoBehaviour
                         if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) != null && world.getTile(targetPos + new Vector3(1f, 0f, 0f)) != null)
                         {
                             //There is both a block to the left and to the right of the target position, use the direction that the dwarf is facing to climb
-                            tileDifficulty = climbingDifficulty;
+                            climbingDifficultyMultiplier = climbingDifficulty;
                         }
                         else if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) != null)
                         {
@@ -129,7 +129,7 @@ public class TileBasedMover : MonoBehaviour
                             {
                                 Flip();
                             }
-                            tileDifficulty = climbingDifficulty;
+                            climbingDifficultyMultiplier = climbingDifficulty;
                         }
                         else if (world.getTile(targetPos + new Vector3(1f, 0f, 0f)) != null)
                         {
@@ -138,7 +138,7 @@ public class TileBasedMover : MonoBehaviour
                             {
                                 Flip();
                             }
-                            tileDifficulty = climbingDifficulty;
+                            climbingDifficultyMultiplier = climbingDifficulty;
                         }
                         else
                         {
@@ -157,7 +157,7 @@ public class TileBasedMover : MonoBehaviour
                                     {
                                         targetPos += new Vector3(-1f, 0f, 0f);
                                     }
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(-1f, 0f, 0f)) != null)
                                 {
@@ -167,7 +167,7 @@ public class TileBasedMover : MonoBehaviour
                                         Flip();
                                     }
                                     targetPos += new Vector3(-1f, 0f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(1f, 0f, 0f)) != null)
                                 {
@@ -177,7 +177,7 @@ public class TileBasedMover : MonoBehaviour
                                         Flip();
                                     }
                                     targetPos += new Vector3(1f, 0f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                                 {
@@ -204,18 +204,18 @@ public class TileBasedMover : MonoBehaviour
                                 {
                                     //There is a block below the current position, climb down and to the left
                                     targetPos += new Vector3(0f, -1f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the target position, climb along the ceiling
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the current position, climb around it
                                     targetPos += new Vector3(0f, 1f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else
                                 {
@@ -237,18 +237,18 @@ public class TileBasedMover : MonoBehaviour
                                 {
                                     //There is a block below the current position, climb down and to the right
                                     targetPos += new Vector3(0f, -1f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the target position, climb along the ceiling
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the current position, climb around it
                                     targetPos += new Vector3(0f, 1f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
                                 }
                                 else
                                 {
@@ -293,14 +293,14 @@ public class TileBasedMover : MonoBehaviour
                                 if (m_FacingRight)
                                 {
                                     targetPos += new Vector3(1f, 0f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
 
                                     validDig = false;
                                 }
                                 else
                                 {
                                     targetPos += new Vector3(-1f, 0f, 0f);
-                                    tileDifficulty = climbingDifficulty;
+                                    climbingDifficultyMultiplier = climbingDifficulty;
 
                                     validDig = false;
                                 }
@@ -325,7 +325,7 @@ public class TileBasedMover : MonoBehaviour
                                     targetPos += new Vector3(0f, -1f, 0f);
                                 }
                                 
-                                tileDifficulty = climbingDifficulty;
+                                climbingDifficultyMultiplier = climbingDifficulty;
 
                                 validDig = false;
                             }
@@ -341,19 +341,23 @@ public class TileBasedMover : MonoBehaviour
                                     targetPos += new Vector3(0f, -1f, 0f);
                                 }
 
-                                tileDifficulty = climbingDifficulty;
+                                climbingDifficultyMultiplier = climbingDifficulty;
 
                                 validDig = false;
                             }
                             
                         }
                     }
+                    else if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) == null || vertical != 0)
+                    {
+                        climbingDifficultyMultiplier = climbingDifficulty;
+                    }
 
                     if (validDig)
                     {
                         if (world.getTile(targetPos) != null)
                         {
-                            tileDifficulty = world.getTile(targetPos).GetComponent<TileDifficulty>().difficulty;
+                            tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<TileDifficulty>().difficulty;
                         }
                         //Diggin Occurs
                         Destroy(moveTile);
@@ -403,7 +407,8 @@ public class TileBasedMover : MonoBehaviour
         {
             if (transform.position == targetPos)
             {
-                tileDifficulty = 1f;
+                tileDifficultyMultiplier = 1f;
+                climbingDifficultyMultiplier = 1f;
 
                 if (!isFalling)
                 {
@@ -430,7 +435,7 @@ public class TileBasedMover : MonoBehaviour
 
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * moveSpeed * fallSpeedMultiplier / tileDifficulty);
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * moveSpeed * fallSpeedMultiplier / tileDifficultyMultiplier / climbingDifficultyMultiplier);
         }
         else
         {
