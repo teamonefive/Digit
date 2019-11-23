@@ -27,7 +27,7 @@ public class TileBasedMover : MonoBehaviour
         {
             float horizontal, vertical;
 
-            #if UNITY_STANDALONE || UNITY_WEBPLAYER
+           #if UNITY_STANDALONE || UNITY_WEBPLAYER
 
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
@@ -54,10 +54,10 @@ public class TileBasedMover : MonoBehaviour
                     Vector2 touchEnd = myTouch.position;
 
                     //Calculate the difference between the beginning and end of the touch on the x axis.
-                    float x = touchEnd.x - touchOrigin.x;
+                    float x = touchOrigin.x - Screen.width / 2;
 
                     //Calculate the difference between the beginning and end of the touch on the y axis.
-                    float y = touchEnd.y - touchOrigin.y;
+                    float y = touchOrigin.y - Screen.height / 2;
 
                     //Set touchOrigin.x to -1 so that our else if statement will evaluate false and not repeat immediately.
                     touchOrigin.x = -1;
