@@ -16,6 +16,7 @@ public class TileBasedMover : MonoBehaviour
     public float setMoveCooldown = 1f;
     private float moveCooldown = 0f;
     private float tileDifficulty = 1f;
+    public bool isDestroyed = false;
 
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -94,6 +95,7 @@ public class TileBasedMover : MonoBehaviour
                 targetPos += new Vector3(horizontal, vertical, 0f);
 
                 GameObject moveTile = world.getTile(targetPos);
+                
 
                 if (moveTile == null)
                 {
@@ -355,8 +357,10 @@ public class TileBasedMover : MonoBehaviour
                         }
                         //Diggin Occurs
                         Destroy(moveTile);
+                        isDestroyed = true;
                     }
                     
+
                 }
 
                 animator.SetFloat("speed", moveSpeed);
