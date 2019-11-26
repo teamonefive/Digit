@@ -9,6 +9,12 @@ public class Experience : MonoBehaviour
     public TileBasedMover tile;
     public Slider levelUpBar;
     public Text currLevel;
+    public Text strengthMod;
+    public Text agilityMod;
+    public GameObject ui;
+    public Button menuButton;
+
+    private bool isOpen;
 
     //current level
     public int vLevel = 1;
@@ -20,6 +26,10 @@ public class Experience : MonoBehaviour
     public int vExpLeft = 10;
     //modifier that increases needed exp each level
     public float vExpMod = 1.15f;
+    //current strength modifier
+    public int vStrength = 0;
+    //current agility modifer
+    public int vAgility = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +37,11 @@ public class Experience : MonoBehaviour
         levelUpBar.value = vCurrExp;
         levelUpBar.maxValue = vExpLeft;
         currLevel.text = "Level : 1";
+        strengthMod.text = "Strength Modifier : 0";
+        agilityMod.text = "Agility Modifier : 0";
+        Button butn = menuButton.GetComponent<Button>();
+        butn.onClick.AddListener(TaskOnClick);
+
     }
 
     // Update is called once per frame
@@ -58,6 +73,25 @@ public class Experience : MonoBehaviour
         float t = Mathf.Pow(vExpMod, vLevel);
         vExpLeft = (int)Mathf.Floor(vExpBase * t);
         levelUpBar.maxValue = vExpLeft;
+        strengthUp();
+        agilityUp();
     }
-
+    void strengthUp()
+    {
+        vStrength++;
+        strengthMod.text = "Strength Modifer : " + vStrength.ToString();
+        tile.tileDifficultyMultiplier *= 0.5f;
+    }
+    void agilityUp()
+    {
+        vAgility++;
+        agilityMod.text = "Agility Modifier : " + vAgility.ToString();
+        tile.climbingDifficulty *= 0.5f;
+        //tile.moveSpeed *= 1.5f;
+    }
+    void TaskOnClick() 
+    {
+        isOpen = !isOpen;
+        ui.SetActive(isOpen);
+    }
 }

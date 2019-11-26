@@ -15,7 +15,7 @@ public class TileBasedMover : MonoBehaviour
     public bool isFalling = false;
     public float setMoveCooldown = 1f;
     private float moveCooldown = 0f;
-    private float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f;
+    public float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f;
     public bool isDestroyed = false;
 
     private Vector2 touchOrigin = -Vector2.one;
@@ -357,7 +357,7 @@ public class TileBasedMover : MonoBehaviour
                     {
                         if (world.getTile(targetPos) != null)
                         {
-                            tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<TileDifficulty>().difficulty;
+                            //tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<TileDifficulty>().difficulty;
                         }
                         //Diggin Occurs
                         Destroy(moveTile);
@@ -407,7 +407,7 @@ public class TileBasedMover : MonoBehaviour
         {
             if (transform.position == targetPos)
             {
-                tileDifficultyMultiplier = 1f;
+               // tileDifficultyMultiplier = 1f;
                 climbingDifficultyMultiplier = 1f;
 
                 if (!isFalling)
