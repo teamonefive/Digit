@@ -14,7 +14,7 @@ public class Experience : MonoBehaviour
     public GameObject ui;
     public Button menuButton;
 
-    private bool isOpen;
+    private bool isOpen = true;
 
     //current level
     public int vLevel = 1;
@@ -80,13 +80,13 @@ public class Experience : MonoBehaviour
     {
         vStrength++;
         strengthMod.text = "Strength Modifer : " + vStrength.ToString();
-        tile.tileDifficultyMultiplier *= 0.5f;
+        tile.strengthMultiplier *= 0.95f;
     }
     void agilityUp()
     {
         vAgility++;
         agilityMod.text = "Agility Modifier : " + vAgility.ToString();
-        tile.climbingDifficulty *= 0.5f;
+        tile.climbingDifficulty *= 0.95f;
         //tile.moveSpeed *= 1.5f;
     }
     void TaskOnClick() 

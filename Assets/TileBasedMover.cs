@@ -15,7 +15,7 @@ public class TileBasedMover : MonoBehaviour
     public bool isFalling = false;
     public float setMoveCooldown = 1f;
     private float moveCooldown = 0f;
-    public float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f;
+    public float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f, strengthMultiplier = 1f;
     public bool isDestroyed = false;
 
     private Vector2 touchOrigin = -Vector2.one;
@@ -110,7 +110,7 @@ public class TileBasedMover : MonoBehaviour
                             //dwarf is falling down one block
                             isFalling = true;
                             fallSpeedMultiplier = 3f;
-                            animator.SetBool("isJumping", true);
+                            animator.SetBool("isFalling", true);
                         }
                     }
                     else
@@ -264,7 +264,7 @@ public class TileBasedMover : MonoBehaviour
                                 //dwarf is falling
                                 isFalling = true;
                                 fallSpeedMultiplier = 3f;
-                                animator.SetBool("isJumping", true);
+                                animator.SetBool("isFalling", true);
                             }
                             else
                             {
@@ -310,7 +310,7 @@ public class TileBasedMover : MonoBehaviour
                                 //digging is possible, but player will fall after digging
                                 isFalling = true;
                                 fallSpeedMultiplier = 1f;
-                                animator.SetBool("isJumping", true);
+                                animator.SetBool("isFalling", true);
 
                             }
                             else if (horizontal < 0)
@@ -357,7 +357,11 @@ public class TileBasedMover : MonoBehaviour
                     {
                         if (world.getTile(targetPos) != null)
                         {
-                            //tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<TileDifficulty>().difficulty;
+                            tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<TileDifficulty>().difficulty * strengthMultiplier;
+                            if (tileDifficultyMultiplier < 1f)
+                            {
+                                tileDifficultyMultiplier = 1f;
+                            }
                         }
                         //Diggin Occurs
                         Destroy(moveTile);
@@ -407,13 +411,14 @@ public class TileBasedMover : MonoBehaviour
         {
             if (transform.position == targetPos)
             {
-               // tileDifficultyMultiplier = 1f;
+                tileDifficultyMultiplier = 1f;
                 climbingDifficultyMultiplier = 1f;
 
                 if (!isFalling)
                 {
                     animator.SetFloat("speed", 0f);
                     animator.SetBool("isJumping", false);
+                    animator.SetBool("isFalling", false);
 
                     moving = false;
                     canMove = true;

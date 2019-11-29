@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: dwarf_jumping
+  m_Name: dwarf_jump_up
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -31,9 +31,6 @@ AnimationClip:
     - time: 0.75
       value: {fileID: 1562471339879714248, guid: c5325389d3762cc4586366b8012437e9,
         type: 3}
-    - time: 1
-      value: {fileID: -2204707730006461468, guid: c5325389d3762cc4586366b8012437e9,
-        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -57,13 +54,12 @@ AnimationClip:
     - {fileID: -3591412822261627359, guid: c5325389d3762cc4586366b8012437e9, type: 3}
     - {fileID: -6310290810148467550, guid: c5325389d3762cc4586366b8012437e9, type: 3}
     - {fileID: 1562471339879714248, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-    - {fileID: -2204707730006461468, guid: c5325389d3762cc4586366b8012437e9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.25
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
