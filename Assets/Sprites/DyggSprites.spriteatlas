@@ -47,7 +47,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 1404c7b0e7500d64da94f7aad2816635, type: 3}
     - {fileID: 102900000, guid: a68fe450c342fc048a3c207c149305b0, type: 3}
     - {fileID: 2800000, guid: a7108ee6360e8eb4abb650089ebcde6f, type: 3}
-    totalSpriteSurfaceArea: 535016
+    totalSpriteSurfaceArea: 536040
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
@@ -294,6 +294,7 @@ SpriteAtlas:
   - {fileID: 876795591125516320, guid: ad81bead15360f34baf18d1aa41e1026, type: 3}
   - {fileID: -2839812311322640375, guid: ad81bead15360f34baf18d1aa41e1026, type: 3}
   - {fileID: 21300000, guid: 775df1ce29ae42343a6292fe3278f708, type: 3}
+  - {fileID: 21300000, guid: 2cb65fde5bb458f41be83f8dba061cf4, type: 3}
   - {fileID: 21300000, guid: eeea7a8ffb27b714688adcae578c1bc3, type: 3}
   m_PackedSpriteNamesToIndex:
   - sand
@@ -536,6 +537,7 @@ SpriteAtlas:
   - lampy_1
   - lampy_0
   - clay
+  - dwarf_fall_1
   - dirt
   m_Tag: DyggSprites
   m_IsVariant: 0
