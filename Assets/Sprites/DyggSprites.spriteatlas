@@ -47,7 +47,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 1404c7b0e7500d64da94f7aad2816635, type: 3}
     - {fileID: 102900000, guid: a68fe450c342fc048a3c207c149305b0, type: 3}
     - {fileID: 2800000, guid: a7108ee6360e8eb4abb650089ebcde6f, type: 3}
-    totalSpriteSurfaceArea: 536040
+    totalSpriteSurfaceArea: 543208
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
@@ -136,6 +136,8 @@ SpriteAtlas:
   - {fileID: -1785534133943904117, guid: b1af0c91f4357094cbf9c7109859d2e6, type: 3}
   - {fileID: -119441117285289646, guid: b1af0c91f4357094cbf9c7109859d2e6, type: 3}
   - {fileID: -2320762132971095113, guid: b1af0c91f4357094cbf9c7109859d2e6, type: 3}
+  - {fileID: 21300000, guid: 235eafb1d0bb4914895155534d8baa33, type: 3}
+  - {fileID: 21300000, guid: f6e79c92de43c11498105d379f6ef52f, type: 3}
   - {fileID: 8621815960616643281, guid: 3b66e1a27c9634fe9a4746c47eeda7cc, type: 3}
   - {fileID: -7131273655155896711, guid: 3b66e1a27c9634fe9a4746c47eeda7cc, type: 3}
   - {fileID: -6831599063569703212, guid: 3b66e1a27c9634fe9a4746c47eeda7cc, type: 3}
@@ -266,7 +268,10 @@ SpriteAtlas:
   - {fileID: 7694969686249583470, guid: 3b66e1a27c9634fe9a4746c47eeda7cc, type: 3}
   - {fileID: 21300000, guid: a4c0b9c4b0a0d4649820f5d6b8b2dd40, type: 3}
   - {fileID: 21300000, guid: 974abdc59afad3541b900ccf83ded41f, type: 3}
+  - {fileID: 21300000, guid: 822f5da6923de504d9dd5005ca88c455, type: 3}
   - {fileID: 21300000, guid: a7108ee6360e8eb4abb650089ebcde6f, type: 3}
+  - {fileID: 21300000, guid: e6c197e78ab37304da94ceaa7daeb33f, type: 3}
+  - {fileID: 21300000, guid: 701661284930f3a4ebc479c788ebbca6, type: 3}
   - {fileID: 21300000, guid: 017bef5904ca7f9499c9a8a107400778, type: 3}
   - {fileID: 430927330078481251, guid: c5325389d3762cc4586366b8012437e9, type: 3}
   - {fileID: -1511923217119065638, guid: c5325389d3762cc4586366b8012437e9, type: 3}
@@ -287,6 +292,8 @@ SpriteAtlas:
   - {fileID: -1240422962202182540, guid: c5325389d3762cc4586366b8012437e9, type: 3}
   - {fileID: 5137485339482900152, guid: c5325389d3762cc4586366b8012437e9, type: 3}
   - {fileID: 21300000, guid: 8e160a2a620644cd6afef9119dad1093, type: 3}
+  - {fileID: 21300000, guid: fb01e6fa1b70f3b4eaebb7a390941d9c, type: 3}
+  - {fileID: 21300000, guid: e2a0d1cc778110b45a59cc273821d9a1, type: 3}
   - {fileID: 6413867661117553163, guid: 509521ece016a2343bc77d50abfffa7c, type: 3}
   - {fileID: -4936940927964707445, guid: 509521ece016a2343bc77d50abfffa7c, type: 3}
   - {fileID: 6671062928473102778, guid: 509521ece016a2343bc77d50abfffa7c, type: 3}
@@ -379,6 +386,8 @@ SpriteAtlas:
   - Dwarf_Sprite_Sheet1.2v_22
   - Dwarf_Sprite_Sheet1.2v_21
   - Dwarf_Sprite_Sheet1.2v_20
+  - dwarf_ceiling_idle_3
+  - dwarf_ceiling_idle_2
   - tileset_39
   - tileset_38
   - tileset_48
@@ -509,7 +518,10 @@ SpriteAtlas:
   - tileset_grass1
   - stone
   - rock
+  - dwarf_jump_ceiling_2
   - background_refreence
+  - dwarf_jump_ceiling_3
+  - dwarf_jump_ceiling_1
   - grass
   - dwarf-idle-run-jump_13
   - dwarf-idle-run-jump_0
@@ -530,6 +542,8 @@ SpriteAtlas:
   - dwarf-idle-run-jump_8
   - dwarf-idle-run-jump_9
   - back
+  - dwarf_jump_ceiling_4
+  - dwarf_ceiling_idle_1
   - lampy2_1
   - lampy2_0
   - lampy2_2

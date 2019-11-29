@@ -152,8 +152,8 @@ RectTransform:
   m_Father: {fileID: 327280001}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.517, y: 0}
-  m_AnchorMax: {x: 0.517, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -367,7 +367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &462865909
 RectTransform:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462865908}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -388,7 +388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.5, y: 26.15}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &462865910
@@ -714,7 +714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -26.15, z: -8}
+  m_LocalPosition: {x: -0.5, y: -26, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1096,6 +1096,7 @@ MonoBehaviour:
   setMoveCooldown: 1
   tileDifficultyMultiplier: 1
   climbingDifficultyMultiplier: 1
+  strengthMultiplier: 1
   isDestroyed: 0
   targetPos: {x: 0, y: 0, z: 0}
 --- !u!114 &807594917
@@ -1157,7 +1158,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.517, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1327,9 +1328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c064e2e0a2601d41bfc88b3dec2add7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuButton: {fileID: 875328425}
-  ui: {fileID: 462865908}
-  isOpen: 0
 --- !u!1 &879920733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,7 +1778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847078822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -26.15, z: -8}
+  m_LocalPosition: {x: -0.5, y: -26, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1984511650}
@@ -2237,7 +2235,7 @@ PrefabInstance:
     - target: {fileID: 4291826555260082918, guid: 3f59a2040cf38494e880921b76f28f5b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -26.15
+      value: -26
       objectReference: {fileID: 0}
     - target: {fileID: 4291826555260082918, guid: 3f59a2040cf38494e880921b76f28f5b,
         type: 3}
