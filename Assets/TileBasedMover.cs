@@ -104,6 +104,7 @@ public class TileBasedMover : MonoBehaviour
                     if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) != null)
                     {
                         //There is a block below the target position, movement is good
+                        animator.SetBool("isGrounded", true);
 
                         if (vertical < 0 && world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) == null && world.getTile(targetPos + new Vector3(1f, 0f, 0f)) == null)
                         {
@@ -116,6 +117,7 @@ public class TileBasedMover : MonoBehaviour
                     else
                     {
                         //There is no block below the target position, check if climbing is possible
+                        animator.SetBool("isGrounded", false);
 
                         if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) != null && world.getTile(targetPos + new Vector3(1f, 0f, 0f)) != null)
                         {
@@ -363,6 +365,16 @@ public class TileBasedMover : MonoBehaviour
                                 tileDifficultyMultiplier = 1f;
                             }
                         }
+
+                        if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) != null)
+                        {
+                            animator.SetBool("isGrounded", true);
+                        }
+                        else
+                        {
+                            animator.SetBool("isGrounded", false);
+                        }
+
                         //Diggin Occurs
                         Destroy(moveTile);
                         isDestroyed = true;
