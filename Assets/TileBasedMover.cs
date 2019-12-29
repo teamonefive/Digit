@@ -20,6 +20,7 @@ public class TileBasedMover : MonoBehaviour
 
     private Vector2 touchOrigin = -Vector2.one;
 
+    public Vector3 oldPos;
     public Vector3 targetPos;
 
     void Move()
@@ -153,10 +154,14 @@ public class TileBasedMover : MonoBehaviour
                                     //There is both a block to the left and to the right of the current position, use facing direction to climb up and over
                                     if (m_FacingRight)
                                     {
+                                        oldPos = targetPos;
+                                        world.renderUp(oldPos);
                                         targetPos += new Vector3(1f, 0f, 0f);
                                     }
                                     else
                                     {
+                                        oldPos = targetPos;
+                                        world.renderUp(oldPos);
                                         targetPos += new Vector3(-1f, 0f, 0f);
                                     }
                                     climbingDifficultyMultiplier = climbingDifficulty;
@@ -168,6 +173,8 @@ public class TileBasedMover : MonoBehaviour
                                     {
                                         Flip();
                                     }
+                                    oldPos = targetPos;
+                                    world.renderUp(oldPos);
                                     targetPos += new Vector3(-1f, 0f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
                                 }
@@ -178,6 +185,8 @@ public class TileBasedMover : MonoBehaviour
                                     {
                                         Flip();
                                     }
+                                    oldPos = targetPos;
+                                    world.renderUp(oldPos);
                                     targetPos += new Vector3(1f, 0f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
                                 }
@@ -205,6 +214,8 @@ public class TileBasedMover : MonoBehaviour
                                 if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
                                 {
                                     //There is a block below the current position, climb down and to the left
+                                    oldPos = targetPos;
+                                    world.renderLeft(oldPos);
                                     targetPos += new Vector3(0f, -1f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
                                 }
@@ -216,6 +227,8 @@ public class TileBasedMover : MonoBehaviour
                                 else if (world.getTile(transform.position + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the current position, climb around it
+                                    oldPos = targetPos;
+                                    world.renderLeft(oldPos);
                                     targetPos += new Vector3(0f, 1f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
                                 }
@@ -238,6 +251,8 @@ public class TileBasedMover : MonoBehaviour
                                 if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
                                 {
                                     //There is a block below the current position, climb down and to the right
+                                    oldPos = targetPos;
+                                    world.renderRight(oldPos);
                                     targetPos += new Vector3(0f, -1f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
                                 }
@@ -249,6 +264,8 @@ public class TileBasedMover : MonoBehaviour
                                 else if (world.getTile(transform.position + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the current position, climb around it
+                                    oldPos = targetPos;
+                                    world.renderRight(oldPos);
                                     targetPos += new Vector3(0f, 1f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
                                 }
@@ -294,6 +311,8 @@ public class TileBasedMover : MonoBehaviour
                                 //climb around block depending on direction facing
                                 if (m_FacingRight)
                                 {
+                                    oldPos = targetPos;
+                                    world.renderUp(oldPos);
                                     targetPos += new Vector3(1f, 0f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
 
@@ -301,6 +320,8 @@ public class TileBasedMover : MonoBehaviour
                                 }
                                 else
                                 {
+                                    oldPos = targetPos;
+                                    world.renderUp(oldPos);
                                     targetPos += new Vector3(-1f, 0f, 0f);
                                     climbingDifficultyMultiplier = climbingDifficulty;
 
@@ -320,10 +341,14 @@ public class TileBasedMover : MonoBehaviour
                                 //digging is not possible, but player can climb over/under
                                 if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) == null)
                                 {
+                                    oldPos = targetPos;
+                                    world.renderLeft(oldPos);
                                     targetPos += new Vector3(0f, 1f, 0f);
                                 }
                                 else
                                 {
+                                    oldPos = targetPos;
+                                    world.renderLeft(oldPos);
                                     targetPos += new Vector3(0f, -1f, 0f);
                                 }
                                 
@@ -336,10 +361,14 @@ public class TileBasedMover : MonoBehaviour
                                 //digging is not possible, but player can climb over/under
                                 if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) == null)
                                 {
+                                    oldPos = targetPos;
+                                    world.renderRight(oldPos);
                                     targetPos += new Vector3(0f, 1f, 0f);
                                 }
                                 else
                                 {
+                                    oldPos = targetPos;
+                                    world.renderRight(oldPos);
                                     targetPos += new Vector3(0f, -1f, 0f);
                                 }
 
@@ -376,6 +405,8 @@ public class TileBasedMover : MonoBehaviour
                         }
 
                         //Diggin Occurs
+                        world.tileMap.Remove(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48));
+                        world.tileMap.Add(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48), 0);
                         Destroy(moveTile);
                         isDestroyed = true;
                     }
@@ -416,6 +447,7 @@ public class TileBasedMover : MonoBehaviour
 
         if (canMove)
         {
+            oldPos = transform.position;
             targetPos = transform.position;
             Move();
         }
@@ -453,6 +485,26 @@ public class TileBasedMover : MonoBehaviour
             }
 
             transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * moveSpeed * fallSpeedMultiplier / tileDifficultyMultiplier / climbingDifficultyMultiplier);
+            if (transform.position.x >= oldPos.x + 1)
+            {
+                world.renderRight(transform.position);
+                oldPos = transform.position;
+            }
+            if (transform.position.x <= oldPos.x - 1)
+            {
+                world.renderLeft(transform.position);
+                oldPos = transform.position;
+            }
+            if (transform.position.y >= oldPos.y + 1)
+            {
+                world.renderUp(transform.position);
+                oldPos = transform.position;
+            }
+            if (transform.position.y <= oldPos.y - 1)
+            {
+                world.renderDown(transform.position);
+                oldPos = transform.position;
+            }
         }
         else
         {

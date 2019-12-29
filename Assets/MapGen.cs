@@ -4,21 +4,351 @@ using UnityEngine;
 
 public class MapGen : MonoBehaviour
 {
-    public GameObject[] skyIsland;
+
+    public GameObject[] allTiles;
     public GameObject[] top;
     public GameObject[] earth;
     public GameObject[] subEarth;
     public GameObject[] bottom;
     public GameObject[,] tileGrid;
+
+    private Dictionary<int, int> mountainHeights;
+
+    //Uses integers to mark what each tile should be
+    //0 = NULL
+    //1 = Grass
+    //2 = Dirt
+    //3 = Clay
+    //4 = Rock
+    public Dictionary<Vector2, int> tileMap;
+
+    //Holds the GameObjects for tiles that are being rendered
+    private Dictionary<Vector2, GameObject> activeTiles;
+
+    public GameObject dwarf;
+
+    public int renderDistance;
+
+    public int minWidth;
+    public int minHeight;
     public int width;
     public int height;
     private int seed;
+    public float biomeSize;
     public float scale;
     public bool guaranteeFlatSection;
 
     public GameObject getTile(Vector3 pos)
     {
-        return tileGrid[(int)(pos.x + 70.5), (int)(pos.y * -1) + 48];
+        Vector2 tilePos = new Vector2((int)(pos.x + 70.5), (int)(pos.y * -1 + 48));
+        return activeTiles[tilePos];
+
+        //return tileGrid[(int)(pos.x + 70.5), (int)(pos.y * -1) + 48];
+    }
+
+    public void generateTile(Vector2 createPos, Vector2 mapPos)
+    {
+        if ((int)createPos.x > width)
+        {
+            width = (int)createPos.x;
+        }
+        if ((int)createPos.x < minWidth)
+        {
+            minWidth = (int)createPos.x;
+        }
+        if ((int)createPos.y * -1 > height)
+        {
+            height = (int)createPos.y * -1;
+        }
+        if ((int)createPos.y * -1 < minHeight)
+        {
+            minHeight = (int)createPos.y * -1;
+        }
+
+        float x = createPos.x / biomeSize * scale;
+        float y = createPos.y / biomeSize * scale;
+        float perlin = Mathf.PerlinNoise(x + seed, y + seed);
+
+        if (!mountainHeights.ContainsKey((int)createPos.x))
+        {
+            if (mountainHeights.ContainsKey((int)createPos.x + 1))
+            {
+                mountainHeights.Add((int)createPos.x, ((int)Mathf.Ceil(100 * perlin) + mountainHeights[(int)createPos.x + 1]) / 2);
+                Debug.Log(createPos.x + ", " + mountainHeights[(int)createPos.x]);
+            }
+            else if (mountainHeights.ContainsKey((int)createPos.x - 1))
+            {
+                mountainHeights.Add((int)createPos.x, ((int)Mathf.Ceil(100 * perlin) + mountainHeights[(int)createPos.x - 1]) / 2);
+                Debug.Log(createPos.x + ", " + mountainHeights[(int)createPos.x]);
+            }
+        }
+
+        int i = (int)createPos.x;
+        int j = (int)createPos.y;
+
+        if (createPos.y < 100)
+        {
+            if (j == mountainHeights[i])
+            {
+                //Grass
+                tileMap.Add(new Vector2(i, j), 1);
+            }
+            else if (j > mountainHeights[i])
+            {
+                if (perlin < 0.33f)
+                {
+                    //Clay
+                    tileMap.Add(new Vector2(i, j), 3);
+                }
+                else if (perlin < 0.66f)
+                {
+                    //Dirt
+                    tileMap.Add(new Vector2(i, j), 2);
+                }
+                else
+                {
+                    //Dirt
+                    tileMap.Add(new Vector2(i, j), 2);
+                }
+            }
+            else
+            {
+                //Ensure that every empty tile is initialized to the NULL value
+                tileMap.Add(new Vector2(i, j), 0);
+            }
+        }
+        else if (createPos.y >= 100 && createPos.y < 150)
+        {
+            if (perlin < 0.33f)
+            {
+                //Clay
+                tileMap.Add(new Vector2(i, j), 3);
+            }
+            else if (perlin < 0.66f)
+            {
+                //Dirt
+                tileMap.Add(new Vector2(i, j), 2);
+            }
+            else
+            {
+                //Dirt
+                tileMap.Add(new Vector2(i, j), 2);
+            }
+        }
+        else if (createPos.y >= 150 && createPos.y < 200)
+        {
+            if (perlin < 0.33f)
+            {
+                //Dirt
+                tileMap.Add(new Vector2(i, j), 2);
+            }
+            else if (perlin < 0.66f)
+            {
+                //Clay
+                tileMap.Add(new Vector2(i, j), 3);
+            }
+            else
+            {
+                //Rock
+                tileMap.Add(new Vector2(i, j), 4);
+            }
+        }
+        else
+        {
+            if (perlin < 0.33f)
+            {
+                //NULL
+                tileMap.Add(new Vector2(i, j), 0);
+            }
+            else if (perlin < 0.66f)
+            {
+                //Clay
+                tileMap.Add(new Vector2(i, j), 3);
+            }
+            else
+            {
+                //Rock
+                tileMap.Add(new Vector2(i, j), 4);
+            }
+        }
+    }
+
+    public void renderLeft(Vector2 pos)
+    {
+        int xPos = (int)(pos.x + 70.5);
+        int yPos = (int)(pos.y * -1) + 48;
+
+        //The Dwarf has already moved one space to the right, so calculations are adjusted accordingly
+        int newXPos = xPos - renderDistance;
+        int oldXPos = xPos + renderDistance + 1;
+
+        for (int j = yPos - renderDistance; j <= yPos + renderDistance; j++)
+        {
+            //Delete rendered tiles outside of render distance
+            Vector2 deletePos = new Vector2(oldXPos, j);
+            GameObject deleteTile = activeTiles[deletePos];
+
+            activeTiles.Remove(deletePos);
+            Destroy(deleteTile);
+
+            //Instantiate new tiles within render distance
+            Vector2 createPos = new Vector2(newXPos, j);
+            Vector2 mapPos = new Vector2(transform.position.x + newXPos, transform.position.y - j);
+
+
+            if (!tileMap.ContainsKey(createPos))
+            {
+                generateTile(createPos, mapPos);
+            }
+
+            GameObject tile;
+
+            if (tileMap[createPos] == 0)
+            {
+                tile = null;
+            }
+            else
+            {
+                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
+            }
+
+            activeTiles.Add(createPos, tile);
+
+
+        }
+    }
+
+    public void renderRight(Vector2 pos)
+    {
+        int xPos = (int)(pos.x + 70.5);
+        int yPos = (int)(pos.y * -1) + 48;
+
+        //The Dwarf has already moved one space to the right, so calculations are adjusted accordingly
+        int newXPos = xPos + renderDistance;
+        int oldXPos = xPos - renderDistance - 1;
+
+        for (int j = yPos - renderDistance; j <= yPos + renderDistance; j++)
+        {
+            //Delete rendered tiles outside of render distance
+            Vector2 deletePos = new Vector2(oldXPos, j);
+            GameObject deleteTile = activeTiles[deletePos];
+
+            activeTiles.Remove(deletePos);
+            Destroy(deleteTile);
+
+            //Instantiate new tiles within render distance
+            Vector2 createPos = new Vector2(newXPos, j);
+            Vector2 mapPos = new Vector2(transform.position.x + newXPos, transform.position.y - j);
+
+
+            if (!tileMap.ContainsKey(createPos))
+            {
+                generateTile(createPos, mapPos);
+            }
+
+            GameObject tile;
+
+            if (tileMap[createPos] == 0)
+            {
+                tile = null;
+            }
+            else
+            {
+                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
+            }
+
+            activeTiles.Add(createPos, tile);
+
+
+        }
+    }
+
+    public void renderUp(Vector2 pos)
+    {
+        int xPos = (int)(pos.x + 70.5);
+        int yPos = (int)(pos.y * -1) + 48;
+
+        //The Dwarf has already moved one space to the right, so calculations are adjusted accordingly
+        int newYPos = yPos - renderDistance;
+        int oldYPos = yPos + renderDistance + 1;
+
+        for (int i = xPos - renderDistance; i <= xPos + renderDistance; i++)
+        {
+            //Delete rendered tiles outside of render distance
+            Vector2 deletePos = new Vector2(i, oldYPos);
+            GameObject deleteTile = activeTiles[deletePos];
+
+            activeTiles.Remove(deletePos);
+            Destroy(deleteTile);
+
+            //Instantiate new tiles within render distance
+            Vector2 createPos = new Vector2(i, newYPos);
+            Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - newYPos);
+
+
+            if (!tileMap.ContainsKey(createPos))
+            {
+                generateTile(createPos, mapPos);
+            }
+
+            GameObject tile;
+
+            if (tileMap[createPos] == 0)
+            {
+                tile = null;
+            }
+            else
+            {
+                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
+            }
+
+            activeTiles.Add(createPos, tile);
+
+
+        }
+    }
+
+    public void renderDown(Vector2 pos)
+    {
+        int xPos = (int)(pos.x + 70.5);
+        int yPos = (int)(pos.y * -1) + 48;
+
+        //The Dwarf has already moved one space to the right, so calculations are adjusted accordingly
+        int newYPos = yPos + renderDistance;
+        int oldYPos = yPos - renderDistance - 1;
+
+        for (int i = xPos - renderDistance; i <= xPos + renderDistance; i++)
+        {
+            //Delete rendered tiles outside of render distance
+            Vector2 deletePos = new Vector2(i, oldYPos);
+            GameObject deleteTile = activeTiles[deletePos];
+
+            activeTiles.Remove(deletePos);
+            Destroy(deleteTile);
+
+            //Instantiate new tiles within render distance
+            Vector2 createPos = new Vector2(i, newYPos);
+            Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - newYPos);
+
+
+            if (!tileMap.ContainsKey(createPos))
+            {
+                generateTile(createPos, mapPos);
+            }
+
+            GameObject tile;
+
+            if (tileMap[createPos] == 0)
+            {
+                tile = null;
+            }
+            else
+            {
+                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
+            }
+
+            activeTiles.Add(createPos, tile);
+        }
     }
 
     private void Start()
@@ -27,63 +357,67 @@ public class MapGen : MonoBehaviour
 
         tileGrid = new GameObject[width, height];
 
+        mountainHeights = new Dictionary<int, int>();
+        tileMap = new Dictionary<Vector2, int>();
+        activeTiles = new Dictionary<Vector2, GameObject>();
+
         //Generate Perlin Biomes
         for (int i = 0; i < width; i++)
         {
             //determine the mountain height at a given level
-            int mountainHeight = -1;
-            if (i >= width / 2 - 15 && i <= width / 2 + 15 && guaranteeFlatSection)
+            if (i >= width / 2 - 16 && i <= width / 2 + 15 && guaranteeFlatSection)
             {
-                mountainHeight = 75;
+                mountainHeights.Add(i, 50);
             }
 
             for (int j = 0; j < height; j++)
             {
-                float x = i / (float)width * scale;
-                float y = j / (float)height * scale;
+                float x = i / biomeSize * scale;
+                float y = j / biomeSize * scale;
                 float perlin = Mathf.PerlinNoise(x + seed, y + seed);
                 Vector2 pos = new Vector2(transform.position.x + i, transform.position.y - j);
 
                 if (j < 100)
                 {
-                    if (mountainHeight == -1)
+                    if (!mountainHeights.ContainsKey(i))
                     {
                         //find height of previous mountain
-                        int previousMountain = 99;
+                        int previousMountain = 50;
                         if (i > 0)
                         {
-                            for (previousMountain = 0; previousMountain < 100; previousMountain++)
-                            {
-                                if (tileGrid[i - 1, previousMountain] == top[0])
-                                {
-                                    break;
-                                }
-                            }
+                            previousMountain = mountainHeights[i - 1];
                         }
 
-                        mountainHeight = ((int)Mathf.Ceil(100 * perlin) + previousMountain) / 2;
-                        Debug.Log("Perlin value: " + perlin);
-                        Debug.Log("mountain value: " + mountainHeight);
+                        mountainHeights.Add(i, ((int)Mathf.Ceil(100 * perlin) + previousMountain) / 2);
                     }
 
-                    if (j == mountainHeight)
+                    if (j == mountainHeights[i])
                     {
-                        tileGrid[i, j] = Instantiate(top[0], pos, Quaternion.identity);
+                        //Grass
+                        tileMap.Add(new Vector2(i, j), 1);
                     }
-                    else if (j > mountainHeight)
+                    else if (j > mountainHeights[i])
                     {
                         if (perlin < 0.33f)
                         {
-                            tileGrid[i, j] = Instantiate(top[1], pos, Quaternion.identity);
+                            //Clay
+                            tileMap.Add(new Vector2(i, j), 3);
                         }
                         else if (perlin < 0.66f)
                         {
-                            tileGrid[i, j] = Instantiate(top[2], pos, Quaternion.identity);
+                            //Dirt
+                            tileMap.Add(new Vector2(i, j), 2);
                         }
                         else
                         {
-                            tileGrid[i, j] = Instantiate(top[2], pos, Quaternion.identity);
+                            //Dirt
+                            tileMap.Add(new Vector2(i, j), 2);
                         }
+                    }
+                    else
+                    {
+                        //Ensure that every empty tile is initialized to the NULL value
+                        tileMap.Add(new Vector2(i, j), 0);
                     }
                 }
                 else if (j >= 100 && j < 150)
@@ -91,15 +425,18 @@ public class MapGen : MonoBehaviour
                     //int rand = Random.Range(0, earth.Length);
                     if (perlin < 0.33f)
                     {
-                        tileGrid[i, j] = Instantiate(earth[0], pos, Quaternion.identity);
+                        //Clay
+                        tileMap.Add(new Vector2(i, j), 3);
                     }
                     else if (perlin < 0.66f)
                     {
-                        tileGrid[i, j] = Instantiate(earth[1], pos, Quaternion.identity);
+                        //Dirt
+                        tileMap.Add(new Vector2(i, j), 2);
                     }
                     else
                     {
-                        tileGrid[i, j] = Instantiate(earth[1], pos, Quaternion.identity);
+                        //Dirt
+                        tileMap.Add(new Vector2(i, j), 2);
                     }
                 }
                 else if (j >= 150 && j < 200)
@@ -107,15 +444,18 @@ public class MapGen : MonoBehaviour
                     //int rand = Random.Range(0, earth.Length);
                     if (perlin < 0.33f)
                     {
-                        tileGrid[i, j] = Instantiate(subEarth[0], pos, Quaternion.identity);
+                        //Dirt
+                        tileMap.Add(new Vector2(i, j), 2);
                     }
                     else if (perlin < 0.66f)
                     {
-                        tileGrid[i, j] = Instantiate(subEarth[1], pos, Quaternion.identity);
+                        //Clay
+                        tileMap.Add(new Vector2(i, j), 3);
                     }
                     else
                     {
-                        tileGrid[i, j] = Instantiate(subEarth[2], pos, Quaternion.identity);
+                        //Rock
+                        tileMap.Add(new Vector2(i, j), 4);
                     }
                 }
                 else
@@ -124,31 +464,58 @@ public class MapGen : MonoBehaviour
 
                     if (perlin < 0.33f)
                     {
-                        tileGrid[i, j] = null;
-                        //Instantiate(bottom[0], pos, Quaternion.identity);
+                        //NULL
+                        tileMap.Add(new Vector2(i, j), 0);
                     }
                     else if (perlin < 0.66f)
                     {
-                        tileGrid[i, j] = Instantiate(bottom[0], pos, Quaternion.identity);
+                        //Clay
+                        tileMap.Add(new Vector2(i, j), 3);
                     }
                     else
                     {
-                        tileGrid[i, j] = Instantiate(bottom[1], pos, Quaternion.identity);
+                        //Rock
+                        tileMap.Add(new Vector2(i, j), 4);
                     }
-                }
-
-                if (tileGrid[i, j] != null)
-                {
-                    Debug.Log("(i, j): (" + i + ", " + j + ") " + " Pos: " + tileGrid[i, j].transform.position);
                 }
 
 
             }
         }
+
+        //Render Initial Tiles
+        int xPos = (int)(dwarf.transform.position.x + 70.5);
+        int yPos = (int)(dwarf.transform.position.y * -1) + 48;
+
+        Debug.Log(xPos + ", " + yPos);
+
+        for (int i = xPos - renderDistance; i <= xPos + renderDistance; i++)
+        {
+            for (int j = yPos - renderDistance; j <= yPos + renderDistance; j++)
+            {
+                Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - j);
+                Vector2 tilePos = new Vector2(i, j);
+
+                GameObject tile;
+
+                if (tileMap[tilePos] == 0)
+                {
+                    tile = null;
+                }
+                else
+                {
+                    tile = Instantiate(allTiles[tileMap[tilePos]], mapPos, Quaternion.identity);
+                }
+                
+                activeTiles.Add(tilePos, tile);
+            }
+        }
+
+
     }
 
     public void Update()
     {
-        
+
     }
 }
