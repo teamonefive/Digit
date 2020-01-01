@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
 
-
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : MonoBehaviour, IPointerClick Handler
 {
     [SerializeField] Image image;
+
+    public event Action<Item> OnRightClickEVent;
 
     private Item _item;
     public Item Item {
@@ -21,6 +24,19 @@ public class ItemSlot : MonoBehaviour
             }
         }
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(eventData != null && eventData.button == PointerEventData.InputButton.Right)
+        {
+             if(Item != null && OnRightClickEVent != null)
+            {
+                OnRightClickEVent(Item);
+            }
+            
+        }
+    }
+
     protected virtual void OnValidate()
     {
         if (image == null)
