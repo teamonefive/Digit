@@ -1,66 +1,70 @@
-﻿using System; 
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] List<Item> items;
-    [SerializeField] Transform itemsParent;
-    [SerializeField] ItemSlot[] itemSlots;
+    public int MAXINVENTORYSIZE = 20;
+    public int m_size;
+    public List<Item> m_playerItems = new List<Item>();
+    ItemDatabase m_itemDatabase;
+    ItemOverview m_itemOverview;
 
-    public event Action<Item> OnItemRightClickedEvent;
+    [SerializeField]
+    private UIInventory m_UIInventory;
 
-    private void Awake()
-    {
-        for(int i = 0; i<itemSlots.Length; i++)
-        {
-            itemSlots[i].OnRightClickEVent += OnItemRightClickedEvent;
+    private void Awake() {
+        m_itemDatabase = FindObjectOfType<ItemDatabase>();
+        m_itemOverview = FindObjectOfType<ItemOverview>();
+    }
+
+    private void Start() {
+        AddItem(1);
+        AddItem(2);
+        AddItem(3);
+    }
+
+
+
+    public void AddItem(int id) {
+        foreach ( Item i in m_playerItems ) {
+            if ( i.m_id == id ) {
+                i.m_quantity++;
+                return;
+            }
+        }
+        if (m_size < MAXINVENTORYSIZE ) {
+            Item tmp = m_itemDatabase.GetItem(id);
+            m_UIInventory.AddItemToUI(tmp);
+            m_playerItems.Add(tmp);
+            m_size++;
+        }
+
+    }
+
+    public void RemoveItem(int id) {
+        foreach(Item i in m_playerItems ) {
+            if ( i.m_id == id ) {
+                if(i.m_quantity > 1 ) {
+                    i.m_quantity--;
+                    return;
+                }
+                else if(i.m_quantity == 1 ) {
+                    m_playerItems.Remove(i);
+                    i.m_quantity--;
+                    m_UIInventory.RemoveItemFromUI(i);
+                    return;
+                }
+                else {
+                    Debug.LogError("item being removed has a negative quantity");
+                    return;
+                }
+
+            }
         }
     }
 
-    private void OnValidate()
-    {
-        if (itemsParent != null)
-            itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
-        RefreshUI();
+    public Item CheckForItem(int id) {
+        return m_playerItems.Find(item => item.m_id == id);
     }
-
-    private void RefreshUI()
-    {
-        int i = 0;
-        for(; i<items.Count && i < itemSlots.Length; i++)
-        {
-            itemSlots[i].Item = items[i];
-        }
-        for(; i<itemSlots.Length; i++)
-        {
-            itemSlots[i].Item = null;
-        }
-    }
-
-    public bool AddItem(Item item)
-    {
-        if (IsFull())
-            return false;
-
-        items.Add(item);
-        RefreshUI();
-        return true;
-    }
-
-    public bool RemoveItem(Item item)
-    {
-        if (items.Remove(item))
-        {
-            RefreshUI();
-            return true;
-        }
-        return false;
-    }
-
-    public bool IsFull()
-    {
-        return items.Count >= itemSlots.Length;
-    }
-
 }
