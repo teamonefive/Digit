@@ -9,30 +9,27 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public event Action<Item1> OnRightClickEvent;
 
-    private Item1 _item1;
+    private Item1 _item;
     public Item1 Item1
     {
-        get { return _item1; }
-        set
-        {
-            _item1 = value;
-
-            if(_item1 == null)
+        get { return _item; }
+        set {
+            _item = value;
+            if(_item ==null)
             {
                 image.enabled = false;
             }
             else
             {
-                image.sprite = _item1.Icon;
+                image.sprite = _item.Icon;
                 image.enabled = true;
             }
-
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
+        if(eventData != null && eventData.button == PointerEventData.InputButton.Right)
         {
             if (Item1 != null && OnRightClickEvent != null)
                 OnRightClickEvent(Item1);
@@ -45,4 +42,3 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             image = GetComponent<Image>();
     }
 }
- 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class InventoryManager : MonoBehaviour
 
     private void EquipFromInventory(Item1 item)
     {
-        if (item is EquippableItem)
+        if(item is EquippableItem)
         {
             Equip((EquippableItem)item);
         }
@@ -29,12 +30,12 @@ public class InventoryManager : MonoBehaviour
 
     public void Equip(EquippableItem item)
     {
-        if (inventory.RemoveItem(item))
+        if(inventory.RemoveItem(item))
         {
             EquippableItem previousItem;
-            if (equipmentPanel.AddItem(item, out previousItem))
+            if(equipmentPanel.AddItem(item, out previousItem))
             {
-                if (previousItem != null)
+                if(previousItem != null)
                 {
                     inventory.AddItem(previousItem);
                 }
@@ -48,7 +49,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Unequip(EquippableItem item)
     {
-        if (!inventory.IsFull() && equipmentPanel.RemoveItem(item))
+        if(!inventory.IsFull() && equipmentPanel.RemoveItem(item))
         {
             inventory.AddItem(item);
         }

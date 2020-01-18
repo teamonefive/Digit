@@ -1,11 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 public class EquipmentPanel : MonoBehaviour
 {
     [SerializeField] Transform equipmentSlotsParent;
     [SerializeField] EquipmentSlot[] equipmentSlots;
-
 
     public event Action<Item1> OnItemRightClickedEvent;
 
@@ -17,6 +16,7 @@ public class EquipmentPanel : MonoBehaviour
         }
     }
 
+
     private void OnValidate()
     {
         equipmentSlots = equipmentSlotsParent.GetComponentsInChildren<EquipmentSlot>();
@@ -24,9 +24,9 @@ public class EquipmentPanel : MonoBehaviour
 
     public bool AddItem(EquippableItem item, out EquippableItem previousItem)
     {
-        for (int i = 0; i < equipmentSlots.Length; i++)
+        for(int i = 0; i<equipmentSlots.Length; i++)
         {
-            if (equipmentSlots[i].EquipmentType == item.EquipmentType)
+            if(equipmentSlots[i].EquipmentType == item.EquipmentType)
             {
                 previousItem = (EquippableItem)equipmentSlots[i].Item1;
                 equipmentSlots[i].Item1 = item;

@@ -12,7 +12,7 @@ public class Inventory1 : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < itemSlots.Length; i++)
+        for(int i = 0; i<itemSlots.Length; i++)
         {
             itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
         }
@@ -22,7 +22,6 @@ public class Inventory1 : MonoBehaviour
     {
         if (itemsParent != null)
             itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
-
         RefreshUI();
     }
 
@@ -33,6 +32,7 @@ public class Inventory1 : MonoBehaviour
         {
             itemSlots[i].Item1 = items[i];
         }
+
         for (; i < itemSlots.Length; i++)
         {
             itemSlots[i].Item1 = null;
@@ -51,7 +51,7 @@ public class Inventory1 : MonoBehaviour
 
     public bool RemoveItem(Item1 item)
     {
-        if (items.Remove(item))
+        if(items.Remove(item))
         {
             RefreshUI();
             return true;
