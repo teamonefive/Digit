@@ -308,8 +308,8 @@ public class TileBasedMover : MonoBehaviour
                         {
                             if (vertical > 0)
                             {
-                                //climb around block depending on direction facing
-                                if (m_FacingRight)
+                                //climb around block depending on direction facing if empty space permits climbing around
+                                if (m_FacingRight && world.getTile(oldPos + new Vector3(1f, 0f, 0f)) == null)
                                 {
                                     oldPos = targetPos;
                                     world.renderUp(oldPos);
@@ -318,7 +318,7 @@ public class TileBasedMover : MonoBehaviour
 
                                     validDig = false;
                                 }
-                                else
+                                else if (!m_FacingRight && world.getTile(oldPos + new Vector3(-1f, 0f, 0f)) == null)
                                 {
                                     oldPos = targetPos;
                                     world.renderUp(oldPos);
@@ -326,6 +326,14 @@ public class TileBasedMover : MonoBehaviour
                                     climbingDifficultyMultiplier = climbingDifficulty;
 
                                     validDig = false;
+                                }
+                                else
+                                {
+                                    //movement not possible
+                                    moving = false;
+                                    canMove = true;
+
+                                    return;
                                 }
                             }
                             else if (vertical < 0)
@@ -339,7 +347,7 @@ public class TileBasedMover : MonoBehaviour
                             else if (horizontal < 0)
                             {
                                 //digging is not possible, but player can climb over/under
-                                if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) == null)
+                                if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) == null && world.getTile(oldPos + new Vector3(0f, 1f, 0f)) == null)
                                 {
                                     oldPos = targetPos;
                                     world.renderLeft(oldPos);
@@ -359,7 +367,7 @@ public class TileBasedMover : MonoBehaviour
                             else if (horizontal > 0)
                             {
                                 //digging is not possible, but player can climb over/under
-                                if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) == null)
+                                if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) == null && world.getTile(oldPos + new Vector3(0f, 1f, 0f)) == null)
                                 {
                                     oldPos = targetPos;
                                     world.renderRight(oldPos);
@@ -412,6 +420,11 @@ public class TileBasedMover : MonoBehaviour
                     }
                     
 
+                }
+
+                if (climbingDifficultyMultiplier < 1f)
+                {
+                    climbingDifficultyMultiplier = 1f;
                 }
 
                 animator.SetFloat("speed", moveSpeed);
