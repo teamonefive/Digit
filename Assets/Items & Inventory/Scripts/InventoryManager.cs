@@ -2,12 +2,13 @@
 
 public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] Inventory1  inventory;
+    [SerializeField] Inventory1 inventory;
     [SerializeField] EquipmentPanel equipmentPanel;
 
     private void Awake()
     {
         inventory.OnItemRightClickedEvent += EquipFromInventory;
+        equipmentPanel.OnItemRightClickedEvent += UnequipFromEquipPanel;
     }
 
     private void EquipFromInventory(Item1 item)
@@ -18,14 +19,22 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    private void UnequipFromEquipPanel(Item1 item)
+    {
+        if(item is EquippableItem)
+        {
+            Unequip((EquippableItem)item);
+        }
+    }
+
     public void Equip(EquippableItem item)
     {
-        if(inventory.RemoveItem(item))
+        if (inventory.RemoveItem(item))
         {
             EquippableItem previousItem;
-            if(equipmentPanel.AddItem(item, out previousItem))
+            if (equipmentPanel.AddItem(item, out previousItem))
             {
-                if(previousItem != null)
+                if (previousItem != null)
                 {
                     inventory.AddItem(previousItem);
                 }
@@ -45,4 +54,3 @@ public class InventoryManager : MonoBehaviour
         }
     }
 }
- 

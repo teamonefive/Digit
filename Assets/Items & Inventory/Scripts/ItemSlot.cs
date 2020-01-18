@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour,IPointerClickHandler
+public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] Image image;
 
@@ -32,7 +32,7 @@ public class ItemSlot : MonoBehaviour,IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData != null && eventData.button == PointerEventData.InputButton.Right)
+        if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
         {
             if (Item1 != null && OnRightClickEvent != null)
                 OnRightClickEvent(Item1);
