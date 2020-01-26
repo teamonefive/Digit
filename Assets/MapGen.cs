@@ -10,17 +10,11 @@ public class MapGen : MonoBehaviour
     public GameObject[] earth;
     public GameObject[] subEarth;
     public GameObject[] bottom;
-    public GameObject[,] tileGrid;
 
     private Dictionary<int, int> mountainHeights;
 
-    //Uses integers to mark what each tile should be
-    //0 = NULL
-    //1 = Grass
-    //2 = Dirt
-    //3 = Clay
-    //4 = Rock
-    public Dictionary<Vector2, int> tileMap;
+    //Holds the list of all tiles that have been destroyed by the player
+    public Dictionary<Vector2, bool> destroyedTiles;
 
     //Holds the GameObjects for tiles that are being rendered
     private Dictionary<Vector2, GameObject> activeTiles;
@@ -43,11 +37,24 @@ public class MapGen : MonoBehaviour
         Vector2 tilePos = new Vector2((int)(pos.x + 70.5), (int)(pos.y * -1 + 48));
         return activeTiles[tilePos];
 
+        //old mapgen used 2d tile grid array
         //return tileGrid[(int)(pos.x + 70.5), (int)(pos.y * -1) + 48];
     }
 
-    public void generateTile(Vector2 createPos, Vector2 mapPos)
+    //Tile Generation uses integer codes to determine which tile to generate
+    //0 = NULL
+    //1 = Grass
+    //2 = Dirt
+    //3 = Clay
+    //4 = Rock
+    //returns the generated tile
+    public GameObject generateTile(Vector2 createPos, Vector2 mapPos)
     {
+        if (destroyedTiles.ContainsKey(createPos))
+        {
+            return null;
+        }
+
         if ((int)createPos.x > width)
         {
             width = (int)createPos.x;
@@ -91,30 +98,30 @@ public class MapGen : MonoBehaviour
             if (j == mountainHeights[i])
             {
                 //Grass
-                tileMap.Add(new Vector2(i, j), 1);
+                return Instantiate(allTiles[1], mapPos, Quaternion.identity);
             }
             else if (j > mountainHeights[i])
             {
                 if (perlin < 0.33f)
                 {
                     //Clay
-                    tileMap.Add(new Vector2(i, j), 3);
+                    return Instantiate(allTiles[3], mapPos, Quaternion.identity);
                 }
                 else if (perlin < 0.66f)
                 {
                     //Dirt
-                    tileMap.Add(new Vector2(i, j), 2);
+                    return Instantiate(allTiles[2], mapPos, Quaternion.identity);
                 }
                 else
                 {
                     //Dirt
-                    tileMap.Add(new Vector2(i, j), 2);
+                    return Instantiate(allTiles[2], mapPos, Quaternion.identity);
                 }
             }
             else
             {
                 //Ensure that every empty tile is initialized to the NULL value
-                tileMap.Add(new Vector2(i, j), 0);
+                return null;
             }
         }
         else if (createPos.y >= 100 && createPos.y < 150)
@@ -122,17 +129,17 @@ public class MapGen : MonoBehaviour
             if (perlin < 0.33f)
             {
                 //Clay
-                tileMap.Add(new Vector2(i, j), 3);
+                return Instantiate(allTiles[3], mapPos, Quaternion.identity);
             }
             else if (perlin < 0.66f)
             {
                 //Dirt
-                tileMap.Add(new Vector2(i, j), 2);
+                return Instantiate(allTiles[2], mapPos, Quaternion.identity);
             }
             else
             {
                 //Dirt
-                tileMap.Add(new Vector2(i, j), 2);
+                return Instantiate(allTiles[2], mapPos, Quaternion.identity);
             }
         }
         else if (createPos.y >= 150 && createPos.y < 200)
@@ -140,17 +147,17 @@ public class MapGen : MonoBehaviour
             if (perlin < 0.33f)
             {
                 //Dirt
-                tileMap.Add(new Vector2(i, j), 2);
+                return Instantiate(allTiles[2], mapPos, Quaternion.identity);
             }
             else if (perlin < 0.66f)
             {
                 //Clay
-                tileMap.Add(new Vector2(i, j), 3);
+                return Instantiate(allTiles[3], mapPos, Quaternion.identity);
             }
             else
             {
                 //Rock
-                tileMap.Add(new Vector2(i, j), 4);
+                return Instantiate(allTiles[4], mapPos, Quaternion.identity);
             }
         }
         else
@@ -158,17 +165,17 @@ public class MapGen : MonoBehaviour
             if (perlin < 0.33f)
             {
                 //NULL
-                tileMap.Add(new Vector2(i, j), 0);
+                return null;
             }
             else if (perlin < 0.66f)
             {
                 //Clay
-                tileMap.Add(new Vector2(i, j), 3);
+                return Instantiate(allTiles[3], mapPos, Quaternion.identity);
             }
             else
             {
                 //Rock
-                tileMap.Add(new Vector2(i, j), 4);
+                return Instantiate(allTiles[4], mapPos, Quaternion.identity);
             }
         }
     }
@@ -195,22 +202,7 @@ public class MapGen : MonoBehaviour
             Vector2 createPos = new Vector2(newXPos, j);
             Vector2 mapPos = new Vector2(transform.position.x + newXPos, transform.position.y - j);
 
-
-            if (!tileMap.ContainsKey(createPos))
-            {
-                generateTile(createPos, mapPos);
-            }
-
-            GameObject tile;
-
-            if (tileMap[createPos] == 0)
-            {
-                tile = null;
-            }
-            else
-            {
-                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
-            }
+            GameObject tile = generateTile(createPos, mapPos);
 
             activeTiles.Add(createPos, tile);
 
@@ -240,22 +232,7 @@ public class MapGen : MonoBehaviour
             Vector2 createPos = new Vector2(newXPos, j);
             Vector2 mapPos = new Vector2(transform.position.x + newXPos, transform.position.y - j);
 
-
-            if (!tileMap.ContainsKey(createPos))
-            {
-                generateTile(createPos, mapPos);
-            }
-
-            GameObject tile;
-
-            if (tileMap[createPos] == 0)
-            {
-                tile = null;
-            }
-            else
-            {
-                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
-            }
+            GameObject tile = generateTile(createPos, mapPos);
 
             activeTiles.Add(createPos, tile);
 
@@ -285,22 +262,7 @@ public class MapGen : MonoBehaviour
             Vector2 createPos = new Vector2(i, newYPos);
             Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - newYPos);
 
-
-            if (!tileMap.ContainsKey(createPos))
-            {
-                generateTile(createPos, mapPos);
-            }
-
-            GameObject tile;
-
-            if (tileMap[createPos] == 0)
-            {
-                tile = null;
-            }
-            else
-            {
-                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
-            }
+            GameObject tile = generateTile(createPos, mapPos);
 
             activeTiles.Add(createPos, tile);
 
@@ -331,21 +293,7 @@ public class MapGen : MonoBehaviour
             Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - newYPos);
 
 
-            if (!tileMap.ContainsKey(createPos))
-            {
-                generateTile(createPos, mapPos);
-            }
-
-            GameObject tile;
-
-            if (tileMap[createPos] == 0)
-            {
-                tile = null;
-            }
-            else
-            {
-                tile = Instantiate(allTiles[tileMap[createPos]], mapPos, Quaternion.identity);
-            }
+            GameObject tile = generateTile(createPos, mapPos);
 
             activeTiles.Add(createPos, tile);
         }
@@ -355,131 +303,17 @@ public class MapGen : MonoBehaviour
     {
         seed = Random.Range(-2000000, 2000000);
 
-        tileGrid = new GameObject[width, height];
-
         mountainHeights = new Dictionary<int, int>();
-        tileMap = new Dictionary<Vector2, int>();
+        destroyedTiles = new Dictionary<Vector2, bool>();
         activeTiles = new Dictionary<Vector2, GameObject>();
 
-        //Generate Perlin Biomes
+        //Generate initial mountain heights
         for (int i = 0; i < width; i++)
         {
             //determine the mountain height at a given level
             if (i >= width / 2 - 16 && i <= width / 2 + 15 && guaranteeFlatSection)
             {
                 mountainHeights.Add(i, 50);
-            }
-
-            for (int j = 0; j < height; j++)
-            {
-                float x = i / biomeSize * scale;
-                float y = j / biomeSize * scale;
-                float perlin = Mathf.PerlinNoise(x + seed, y + seed);
-                Vector2 pos = new Vector2(transform.position.x + i, transform.position.y - j);
-
-                if (j < 100)
-                {
-                    if (!mountainHeights.ContainsKey(i))
-                    {
-                        //find height of previous mountain
-                        int previousMountain = 50;
-                        if (i > 0)
-                        {
-                            previousMountain = mountainHeights[i - 1];
-                        }
-
-                        mountainHeights.Add(i, ((int)Mathf.Ceil(100 * perlin) + previousMountain) / 2);
-                    }
-
-                    if (j == mountainHeights[i])
-                    {
-                        //Grass
-                        tileMap.Add(new Vector2(i, j), 1);
-                    }
-                    else if (j > mountainHeights[i])
-                    {
-                        if (perlin < 0.33f)
-                        {
-                            //Clay
-                            tileMap.Add(new Vector2(i, j), 3);
-                        }
-                        else if (perlin < 0.66f)
-                        {
-                            //Dirt
-                            tileMap.Add(new Vector2(i, j), 2);
-                        }
-                        else
-                        {
-                            //Dirt
-                            tileMap.Add(new Vector2(i, j), 2);
-                        }
-                    }
-                    else
-                    {
-                        //Ensure that every empty tile is initialized to the NULL value
-                        tileMap.Add(new Vector2(i, j), 0);
-                    }
-                }
-                else if (j >= 100 && j < 150)
-                {
-                    //int rand = Random.Range(0, earth.Length);
-                    if (perlin < 0.33f)
-                    {
-                        //Clay
-                        tileMap.Add(new Vector2(i, j), 3);
-                    }
-                    else if (perlin < 0.66f)
-                    {
-                        //Dirt
-                        tileMap.Add(new Vector2(i, j), 2);
-                    }
-                    else
-                    {
-                        //Dirt
-                        tileMap.Add(new Vector2(i, j), 2);
-                    }
-                }
-                else if (j >= 150 && j < 200)
-                {
-                    //int rand = Random.Range(0, earth.Length);
-                    if (perlin < 0.33f)
-                    {
-                        //Dirt
-                        tileMap.Add(new Vector2(i, j), 2);
-                    }
-                    else if (perlin < 0.66f)
-                    {
-                        //Clay
-                        tileMap.Add(new Vector2(i, j), 3);
-                    }
-                    else
-                    {
-                        //Rock
-                        tileMap.Add(new Vector2(i, j), 4);
-                    }
-                }
-                else
-                {
-                    //int rand = Random.Range(0, earth.Length);
-
-                    if (perlin < 0.33f)
-                    {
-                        //NULL
-                        tileMap.Add(new Vector2(i, j), 0);
-                    }
-                    else if (perlin < 0.66f)
-                    {
-                        //Clay
-                        tileMap.Add(new Vector2(i, j), 3);
-                    }
-                    else
-                    {
-                        //Rock
-                        tileMap.Add(new Vector2(i, j), 4);
-                    }
-                }
-
-
             }
         }
 
@@ -496,21 +330,11 @@ public class MapGen : MonoBehaviour
                 Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - j);
                 Vector2 tilePos = new Vector2(i, j);
 
-                GameObject tile;
-
-                if (tileMap[tilePos] == 0)
-                {
-                    tile = null;
-                }
-                else
-                {
-                    tile = Instantiate(allTiles[tileMap[tilePos]], mapPos, Quaternion.identity);
-                }
+                GameObject tile = generateTile(tilePos, mapPos);
                 
                 activeTiles.Add(tilePos, tile);
             }
         }
-
 
     }
 

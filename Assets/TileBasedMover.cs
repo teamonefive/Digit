@@ -413,8 +413,7 @@ public class TileBasedMover : MonoBehaviour
                         }
 
                         //Diggin Occurs
-                        world.tileMap.Remove(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48));
-                        world.tileMap.Add(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48), 0);
+                        world.destroyedTiles.Add(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48), false);
                         Destroy(moveTile);
                         isDestroyed = true;
                     }
