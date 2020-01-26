@@ -1441,6 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotPanel: {fileID: 2021225661}
+  inventory: {fileID: 1774874508}
 --- !u!1 &1811199065
 GameObject:
   m_ObjectHideFlags: 0

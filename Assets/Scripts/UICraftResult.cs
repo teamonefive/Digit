@@ -5,8 +5,9 @@ using UnityEngine.EventSystems;
 public class UICraftResult : MonoBehaviour, IPointerDownHandler
 {
     public SlotPanel slotPanel;
-
+    public Inventory inventory;
     public void OnPointerDown(PointerEventData eventData) {
         slotPanel.EmptyAllSlots();
+        inventory.m_playerItems.Add(GetComponent<UIItem>().m_item);
     }
 }
