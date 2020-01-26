@@ -13,6 +13,7 @@ public class Experience : MonoBehaviour
     public Text agilityMod;
     public GameObject ui;
     public Button menuButton;
+    public Fatigue fat;
 
     private bool isOpen = true;
 
@@ -47,7 +48,7 @@ public class Experience : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tile.isDestroyed == true) // bool is set in TileBasedMover after a block is destroyed, line 360
+        if (tile.isDestroyed == true) // bool is set in TileBasedMover after a block is destroyed, line 410
         {
             GainExp(1);
             print("XP Gained"); // prints to the console for debugging

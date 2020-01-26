@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88f1f545854f24cf6b4067743541a9e6, type: 3}
-  m_Name: GemBlue
+  m_Name: Gemblue
   m_EditorClassIdentifier: 
   ItemName: GemBlue
   Icon: {fileID: 21300000, guid: 8a7385113c87b4eafa6bd9e339e00067, type: 3}
