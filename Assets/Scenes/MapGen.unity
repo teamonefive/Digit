@@ -359,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415771767}
   - component: {fileID: 415771768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: background_refreence (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879920735}
   - component: {fileID: 879920734}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: mine-entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1458,12 +1458,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 36000f3d7bc44f94ab66aa7af3d6d697, type: 3}
+  m_Sprite: {fileID: 4881277569746316164, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2.9375, y: 1.8125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1476,8 +1477,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879920733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.5, y: -0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -51.629, y: -0.592, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1494,7 +1495,7 @@ GameObject:
   - component: {fileID: 980003929}
   - component: {fileID: 980003930}
   - component: {fileID: 980003931}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: background_refreence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1758,7 +1759,7 @@ GameObject:
   - component: {fileID: 1559683197}
   - component: {fileID: 1559683198}
   - component: {fileID: 1559683199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: background_underground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1937,7 +1938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1745834114}
   - component: {fileID: 1745834115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: background_refreence (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2194,7 +2195,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 32.652313
+  field of view: 59.863853
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2337,7 +2338,7 @@ GameObject:
   - component: {fileID: 1976380994}
   - component: {fileID: 1976380995}
   - component: {fileID: 1976380996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: background_sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}

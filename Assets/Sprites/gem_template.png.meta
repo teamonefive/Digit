@@ -1,250 +1,223 @@
 fileFormatVersion: 2
-guid: b1af0c91f4357094cbf9c7109859d2e6
+guid: 0ab224201f53f4a4e8775ca2c29d2e84
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2110011435049513774
-    second: Dwarf_Sprite_Sheet1.2v_0
+      213: 4813147223639167787
+    second: gem_template_0
   - first:
-      213: 1526129046225279548
-    second: Dwarf_Sprite_Sheet1.2v_1
+      213: -6571049858533305676
+    second: gem_template_1
   - first:
-      213: 2955941480438632697
-    second: Dwarf_Sprite_Sheet1.2v_2
+      213: 1412404022513705106
+    second: gem_template_2
   - first:
-      213: -7040223276715767433
-    second: Dwarf_Sprite_Sheet1.2v_3
+      213: 4881277569746316164
+    second: gem_template_3
   - first:
-      213: -1634142118702678783
-    second: Dwarf_Sprite_Sheet1.2v_4
+      213: 735249361642999010
+    second: gem_template_5
   - first:
-      213: 4893064296789734550
-    second: Dwarf_Sprite_Sheet1.2v_5
+      213: 6676486297650068813
+    second: gem_template_6
   - first:
-      213: 8433975748607106663
-    second: Dwarf_Sprite_Sheet1.2v_6
+      213: -2272688179649596662
+    second: gem_template_7
   - first:
-      213: 5166012583122183194
-    second: Dwarf_Sprite_Sheet1.2v_7
+      213: 8079058513270361009
+    second: gem_template_8
   - first:
-      213: -1387790436589737803
-    second: Dwarf_Sprite_Sheet1.2v_8
+      213: -3182899173693132640
+    second: gem_template_9
   - first:
-      213: 1097664046803428082
-    second: Dwarf_Sprite_Sheet1.2v_9
+      213: 1097207847572206128
+    second: gem_template_10
   - first:
-      213: 2336925609039393957
-    second: Dwarf_Sprite_Sheet1.2v_10
+      213: -4402275346047721295
+    second: gem_template_11
   - first:
-      213: 395130787304620478
-    second: Dwarf_Sprite_Sheet1.2v_11
+      213: -5938633437628615809
+    second: gem_template_12
   - first:
-      213: 2360325404779568250
-    second: Dwarf_Sprite_Sheet1.2v_12
+      213: 4244189097107274620
+    second: gem_template_13
   - first:
-      213: 8631894763534515125
-    second: Dwarf_Sprite_Sheet1.2v_13
+      213: 6921607204072280670
+    second: gem_template_14
   - first:
-      213: 7440573058557236026
-    second: Dwarf_Sprite_Sheet1.2v_14
+      213: 8018638537229643140
+    second: gem_template_15
   - first:
-      213: -3185370405409200837
-    second: Dwarf_Sprite_Sheet1.2v_15
+      213: 4376250020348131846
+    second: gem_template_16
   - first:
-      213: -4307010081818152825
-    second: Dwarf_Sprite_Sheet1.2v_16
+      213: -6314466006001597465
+    second: gem_template_17
   - first:
-      213: -1381358656646037354
-    second: Dwarf_Sprite_Sheet1.2v_17
+      213: -5850738797909372515
+    second: gem_template_18
   - first:
-      213: 690018788484578162
-    second: Dwarf_Sprite_Sheet1.2v_18
+      213: 1394451073918600325
+    second: gem_template_19
   - first:
-      213: 562768447187244673
-    second: Dwarf_Sprite_Sheet1.2v_19
+      213: -7450322043032092787
+    second: gem_template_20
   - first:
-      213: -2320762132971095113
-    second: Dwarf_Sprite_Sheet1.2v_20
+      213: 6432476027051565782
+    second: gem_template_21
   - first:
-      213: -119441117285289646
-    second: Dwarf_Sprite_Sheet1.2v_21
+      213: -5197364117412324821
+    second: gem_template_22
   - first:
-      213: -1785534133943904117
-    second: Dwarf_Sprite_Sheet1.2v_22
+      213: -5023893032785737249
+    second: gem_template_23
   - first:
-      213: 8020636473955615908
-    second: Dwarf_Sprite_Sheet1.2v_23
+      213: 109264743805216470
+    second: gem_template_24
   - first:
-      213: -4254673035737706703
-    second: Dwarf_Sprite_Sheet1.2v_24
+      213: -4145040418607753924
+    second: gem_template_25
   - first:
-      213: -8541842456711669149
-    second: Dwarf_Sprite_Sheet1.2v_25
+      213: -3403655023665937851
+    second: gem_template_26
   - first:
-      213: -5348225302088368333
-    second: Dwarf_Sprite_Sheet1.2v_26
+      213: 8494596220683793543
+    second: gem_template_27
   - first:
-      213: -4601486499000046011
-    second: Dwarf_Sprite_Sheet1.2v_27
+      213: -644486399483213593
+    second: gem_template_28
   - first:
-      213: -1968736643255088471
-    second: Dwarf_Sprite_Sheet1.2v_28
+      213: -6903693133368276812
+    second: gem_template_29
   - first:
-      213: -3629278108304143955
-    second: Dwarf_Sprite_Sheet1.2v_29
+      213: 8847350917968527949
+    second: gem_template_30
   - first:
-      213: 8484682212041065749
-    second: Dwarf_Sprite_Sheet1.2v_30
+      213: 2670478383607072687
+    second: gem_template_31
   - first:
-      213: -2386083514554990019
-    second: Dwarf_Sprite_Sheet1.2v_31
+      213: 4449290289842021878
+    second: gem_template_32
   - first:
-      213: -6979038770872358328
-    second: Dwarf_Sprite_Sheet1.2v_32
+      213: -6690305278678943163
+    second: gem_template_33
   - first:
-      213: 5327425370839320904
-    second: Dwarf_Sprite_Sheet1.2v_33
+      213: -3236778740689987466
+    second: gem_template_34
   - first:
-      213: 142361523673744384
-    second: Dwarf_Sprite_Sheet1.2v_34
+      213: -6974730352247230030
+    second: gem_template_35
   - first:
-      213: 5717340579028019581
-    second: Dwarf_Sprite_Sheet1.2v_35
+      213: -8894130428003497332
+    second: gem_template_36
   - first:
-      213: -7976771654643837778
-    second: Dwarf_Sprite_Sheet1.2v_36
+      213: -5504451968939670436
+    second: gem_template_37
   - first:
-      213: 2131170716955963169
-    second: Dwarf_Sprite_Sheet1.2v_37
+      213: 5642096396191809294
+    second: gem_template_38
   - first:
-      213: -3479810413534088980
-    second: Dwarf_Sprite_Sheet1.2v_38
+      213: 1563650029850358134
+    second: gem_template_39
   - first:
-      213: -2978070656076056219
-    second: Dwarf_Sprite_Sheet1.2v_39
+      213: 6526388355942126270
+    second: gem_template_40
   - first:
-      213: 8205017824790762306
-    second: Dwarf_Sprite_Sheet1.2v_40
+      213: -699753568170191823
+    second: gem_template_41
   - first:
-      213: 684231834319387776
-    second: Dwarf_Sprite_Sheet1.2v_41
+      213: 391546229580076272
+    second: gem_template_42
   - first:
-      213: 7123655139012673558
-    second: Dwarf_Sprite_Sheet1.2v_42
+      213: -8230464621918305956
+    second: gem_template_43
   - first:
-      213: -3526051167029219335
-    second: Dwarf_Sprite_Sheet1.2v_43
+      213: 6388587377646450665
+    second: gem_template_44
   - first:
-      213: -2418577532948901273
-    second: Dwarf_Sprite_Sheet1.2v_44
+      213: -5648474097998348326
+    second: gem_template_45
   - first:
-      213: 4866249526264341381
-    second: Dwarf_Sprite_Sheet1.2v_45
+      213: 773289079803043653
+    second: gem_template_46
   - first:
-      213: 7296446379884031325
-    second: Dwarf_Sprite_Sheet1.2v_46
+      213: -2331608733766748839
+    second: gem_template_47
   - first:
-      213: -4930893413976830160
-    second: Dwarf_Sprite_Sheet1.2v_47
+      213: -6071572033166985121
+    second: gem_template_48
   - first:
-      213: -7081404071384037950
-    second: Dwarf_Sprite_Sheet1.2v_48
+      213: 8045637886330674554
+    second: gem_template_49
   - first:
-      213: -9003805367618557409
-    second: Dwarf_Sprite_Sheet1.2v_49
+      213: -1783315931748626236
+    second: gem_template_50
   - first:
-      213: 5727082924169749205
-    second: Dwarf_Sprite_Sheet1.2v_50
+      213: 5935165558239414969
+    second: gem_template_51
   - first:
-      213: 3155456609846052457
-    second: Dwarf_Sprite_Sheet1.2v_51
+      213: 2487976081268717544
+    second: gem_template_52
   - first:
-      213: -2547990469793494533
-    second: Dwarf_Sprite_Sheet1.2v_52
+      213: 572034769620502596
+    second: gem_template_53
   - first:
-      213: 2606894924155631201
-    second: Dwarf_Sprite_Sheet1.2v_53
+      213: -2903168921639326271
+    second: gem_template_54
   - first:
-      213: 7856566063996947555
-    second: Dwarf_Sprite_Sheet1.2v_54
+      213: -6403156134309143179
+    second: gem_template_56
   - first:
-      213: 3434350781005219274
-    second: Dwarf_Sprite_Sheet1.2v_55
+      213: 8812793298202489917
+    second: gem_template_57
   - first:
-      213: 2191023818412604257
-    second: Dwarf_Sprite_Sheet1.2v_56
+      213: -3786921414167856529
+    second: gem_template_58
   - first:
-      213: -4910881946565969114
-    second: Dwarf_Sprite_Sheet1.2v_57
+      213: 2225859722707117282
+    second: gem_template_59
   - first:
-      213: -2938632601055247704
-    second: Dwarf_Sprite_Sheet1.2v_58
+      213: 4001875121317039663
+    second: gem_template_60
   - first:
-      213: -7440118391623219894
-    second: Dwarf_Sprite_Sheet1.2v_59
+      213: -7557866420431113267
+    second: gem_template_61
   - first:
-      213: -4338999085937343955
-    second: Dwarf_Sprite_Sheet1.2v_60
+      213: -5713559622517530162
+    second: gem_template_62
   - first:
-      213: 140173015837874806
-    second: Dwarf_Sprite_Sheet1.2v_61
+      213: 9120200377861890139
+    second: gem_template_63
   - first:
-      213: -1750622584067641330
-    second: Dwarf_Sprite_Sheet1.2v_62
+      213: 1558215202334727545
+    second: gem_template_64
   - first:
-      213: -8153859664205860323
-    second: Dwarf_Sprite_Sheet1.2v_63
+      213: 6798212970391386297
+    second: gem_template_65
   - first:
-      213: -9067224339995839702
-    second: Dwarf_Sprite_Sheet1.2v_64
+      213: 6411291354045273670
+    second: gem_template_66
   - first:
-      213: -606445230376883991
-    second: Dwarf_Sprite_Sheet1.2v_65
+      213: 3703616533649195628
+    second: gem_template_67
   - first:
-      213: -5748720632079303240
-    second: Dwarf_Sprite_Sheet1.2v_66
+      213: -1164177464212442626
+    second: gem_template_68
   - first:
-      213: 8980049019711637444
-    second: Dwarf_Sprite_Sheet1.2v_67
+      213: -9032883089771149977
+    second: gem_template_69
   - first:
-      213: -680580362149308100
-    second: Dwarf_Sprite_Sheet1.2v_68
+      213: -1247653067448726558
+    second: gem_template_70
   - first:
-      213: 6017819578515607230
-    second: Dwarf_Sprite_Sheet1.2v_69
+      213: 2167607238407027606
+    second: gem_template_71
   - first:
-      213: -7705845355022309851
-    second: Dwarf_Sprite_Sheet1.2v_70
+      213: 5887676997759852485
+    second: gem_template_72
   - first:
-      213: 134404092034612048
-    second: Dwarf_Sprite_Sheet1.2v_71
-  - first:
-      213: -3151814948619643042
-    second: Dwarf_Sprite_Sheet1.2v_72
-  - first:
-      213: -7118574653985178610
-    second: Dwarf_Sprite_Sheet1.2v_73
-  - first:
-      213: 7069206337058396893
-    second: Dwarf_Sprite_Sheet1.2v_74
-  - first:
-      213: 4209666698601637581
-    second: Dwarf_Sprite_Sheet1.2v_75
-  - first:
-      213: 5013654551357688664
-    second: Dwarf_Sprite_Sheet1.2v_76
-  - first:
-      213: 3741084521788603821
-    second: Dwarf_Sprite_Sheet1.2v_77
-  - first:
-      213: 7183727624938080388
-    second: Dwarf_Sprite_Sheet1.2v_78
-  - first:
-      213: -1305613764682549825
-    second: Dwarf_Sprite_Sheet1.2v_79
-  - first:
-      213: 7165796189396141449
-    second: Dwarf_Sprite_Sheet1.2v_80
+      213: 9212756092569782011
+    second: gem_template_73
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -285,7 +258,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -389,13 +362,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_0
+      name: gem_template_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 477
-        width: 32
-        height: 32
+        x: 14
+        y: 361
+        width: 87
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,545 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e53934ef7843cc0428bdaf56e8a9022e
-      internalID: 2110011435049513774
+      spriteID: 5b4cb5fb20e2fd442b22e15a13c3db92
+      internalID: 4813147223639167787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_1
+      name: gem_template_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 477
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11433b79028685243bcee61b9ea7aa55
-      internalID: 1526129046225279548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_2
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 477
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e2ca2d0180815e4e93a12efd136515b
-      internalID: 2955941480438632697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_3
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 477
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad3d713bf24411e4c8466946aa9cb4a5
-      internalID: -7040223276715767433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_4
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 477
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97b41564e10829442be8d735e9b44636
-      internalID: -1634142118702678783
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bc99d579819a08428a1d0d35aa10093
-      internalID: 4893064296789734550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_6
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7426bfb807e59cd41a7902e40ea69aa7
-      internalID: 8433975748607106663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_7
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bef83a4fb81995e4692da8c1db02200f
-      internalID: 5166012583122183194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_8
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 912fa2e05d6c5f543adf638844437c09
-      internalID: -1387790436589737803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_9
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6efff883b93e6084391e6274aee88438
-      internalID: 1097664046803428082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_10
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 015851647e882974f888807f86d9ac3f
-      internalID: 2336925609039393957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_11
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77341fedaeb6ed04ebbeaa5aef2c39da
-      internalID: 395130787304620478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_12
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 445
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d388e407fb50e74f85a6dd364026afe
-      internalID: 2360325404779568250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 413
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90ffdff73abf47e45bfbdc631a4aa13a
-      internalID: 8631894763534515125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_14
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 413
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54221d4f8c972c94bbe1d3a2d001fd3d
-      internalID: 7440573058557236026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_15
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 413
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 042d1a341e5a0e7449c8da3e57d06eb7
-      internalID: -3185370405409200837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_16
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 413
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa9b00b1350f4234eba0212ecc29c0ca
-      internalID: -4307010081818152825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_17
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 413
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e581c30dc2d0fd49a6b1fa5f1906010
-      internalID: -1381358656646037354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_18
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 413
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f3442196d9d34545bcbfe386b952542
-      internalID: 690018788484578162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_19
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 413
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7bf31fea5e9ebe049bdcd2026babb153
-      internalID: 562768447187244673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 381
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c325e4144c080a14f8b863debed3c159
-      internalID: -2320762132971095113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_21
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 381
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecf5099aba773614baaef9354165efc1
-      internalID: -119441117285289646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_22
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 381
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 451677ed9b627f8499fabb6c7bbef453
-      internalID: -1785534133943904117
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_23
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 381
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7593d7315b80eac4b8844f58c496bc2d
-      internalID: 8020636473955615908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_24
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 381
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 775139570937c5b42bccd09fac70fcf3
-      internalID: -4254673035737706703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_25
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 381
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b70ce46b87d10eb47901455e890004df
-      internalID: -8541842456711669149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_26
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 105
         y: 349
-        width: 32
-        height: 32
+        width: 113
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -949,18 +397,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c03e290eae60974a9fd815cdb21caf0
-      internalID: -5348225302088368333
+      spriteID: a062119f457c95d4ebe03671e3a2b1f7
+      internalID: -6571049858533305676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_27
+      name: gem_template_2
       rect:
         serializedVersion: 2
-        x: 39
+        x: 203
         y: 349
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82c2762660c7c344bc6758021d73fca
+      internalID: 1412404022513705106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 349
+        width: 94
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245b168beb970c242963a59411b2e147
+      internalID: 4881277569746316164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 316
         width: 32
         height: 32
       alignment: 0
@@ -970,18 +460,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24938a9ca71f143409e8a64ca6f16b65
-      internalID: -4601486499000046011
+      spriteID: 7709fe9c0ff17ae4da9db9274b6dd2a2
+      internalID: 735249361642999010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_28
+      name: gem_template_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 317
+        x: 93
+        y: 316
         width: 32
         height: 32
       alignment: 0
@@ -991,18 +481,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04de7a2267cb77e4f84bdba99c192778
-      internalID: -1968736643255088471
+      spriteID: da3048465ec9051488927f96a3dd00fb
+      internalID: 6676486297650068813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_29
+      name: gem_template_7
       rect:
         serializedVersion: 2
-        x: 39
-        y: 317
+        x: 126
+        y: 316
         width: 32
         height: 32
       alignment: 0
@@ -1012,18 +502,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1d4b9f20ed29a2459e31d6dc59c54b9
-      internalID: -3629278108304143955
+      spriteID: 0d7ced152cab54444a7245cfb8fbc8fc
+      internalID: -2272688179649596662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_30
+      name: gem_template_8
       rect:
         serializedVersion: 2
-        x: 78
-        y: 317
+        x: 159
+        y: 316
         width: 32
         height: 32
       alignment: 0
@@ -1033,18 +523,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa75b91eb5ded0146ac0620835d70ff3
-      internalID: 8484682212041065749
+      spriteID: 8e0a9544ba2d9e54dba3f9dd38ca6b06
+      internalID: 8079058513270361009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_31
+      name: gem_template_9
       rect:
         serializedVersion: 2
-        x: 117
-        y: 317
+        x: 192
+        y: 316
         width: 32
         height: 32
       alignment: 0
@@ -1054,18 +544,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d348d567c633fb44881e1e448c786cff
-      internalID: -2386083514554990019
+      spriteID: 9178b80309bc3b94fbd16bf7ddf6b696
+      internalID: -3182899173693132640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_32
+      name: gem_template_10
       rect:
         serializedVersion: 2
-        x: 156
-        y: 317
+        x: 225
+        y: 316
         width: 32
         height: 32
       alignment: 0
@@ -1075,18 +565,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e82280020f301cb4db6e86ac2261f35d
-      internalID: -6979038770872358328
+      spriteID: 636e0073ac54a964aa6ca962166f7def
+      internalID: 1097207847572206128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_33
+      name: gem_template_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 285
+        x: 258
+        y: 316
         width: 32
         height: 32
       alignment: 0
@@ -1096,18 +586,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 203c4c5be780b2a45a41f454d0c4bb09
-      internalID: 5327425370839320904
+      spriteID: 5d757a2efb09d474490367204dccfc17
+      internalID: -4402275346047721295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_34
+      name: gem_template_12
       rect:
         serializedVersion: 2
-        x: 39
-        y: 285
+        x: 60
+        y: 283
         width: 32
         height: 32
       alignment: 0
@@ -1117,18 +607,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f62bd607c76de54db8fc4c8920949d0
-      internalID: 142361523673744384
+      spriteID: f05750e3036b27b47aa926baacc7c3a0
+      internalID: -5938633437628615809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_35
+      name: gem_template_13
       rect:
         serializedVersion: 2
-        x: 78
-        y: 285
+        x: 93
+        y: 283
         width: 32
         height: 32
       alignment: 0
@@ -1138,18 +628,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 006aae810113ce54f963791880f62ea2
-      internalID: 5717340579028019581
+      spriteID: 3a15a57be92741543904a1a6a949905c
+      internalID: 4244189097107274620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_36
+      name: gem_template_14
       rect:
         serializedVersion: 2
-        x: 117
-        y: 285
+        x: 126
+        y: 283
         width: 32
         height: 32
       alignment: 0
@@ -1159,18 +649,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da59acbd92d2ecf42a5225f5f9a524f0
-      internalID: -7976771654643837778
+      spriteID: 5fea1147ffd44534fb5cc92f2d32cafd
+      internalID: 6921607204072280670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_37
+      name: gem_template_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 253
+        x: 159
+        y: 283
         width: 32
         height: 32
       alignment: 0
@@ -1180,18 +670,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 772befe56d5982c4ba1de7de650fbc79
-      internalID: 2131170716955963169
+      spriteID: 1dcd90c23d422bb45ab09b7d5dabd6e9
+      internalID: 8018638537229643140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_38
+      name: gem_template_16
       rect:
         serializedVersion: 2
-        x: 39
-        y: 253
+        x: 192
+        y: 283
         width: 32
         height: 32
       alignment: 0
@@ -1201,18 +691,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 351af2321af29bc4cb78cdaa185e0381
-      internalID: -3479810413534088980
+      spriteID: e1968e184c7eb7d429503315aeac2c16
+      internalID: 4376250020348131846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_39
+      name: gem_template_17
       rect:
         serializedVersion: 2
-        x: 78
-        y: 253
+        x: 37
+        y: 263
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13031dfdebd2374a81b59cc7c9f4315
+      internalID: -6314466006001597465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_18
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 265
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057c22e58efc5d348a4b4192a18ebd30
+      internalID: -5850738797909372515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_19
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 250
         width: 32
         height: 32
       alignment: 0
@@ -1222,18 +754,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 449ece5213a07fe4ab104c13a06c6d22
-      internalID: -2978070656076056219
+      spriteID: 9a422241cb5fa2845b979c786c3fe41b
+      internalID: 1394451073918600325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_40
+      name: gem_template_20
       rect:
         serializedVersion: 2
-        x: 117
-        y: 253
+        x: 93
+        y: 250
         width: 32
         height: 32
       alignment: 0
@@ -1243,18 +775,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b9dc440302e19447bceff098529ec2a
-      internalID: 8205017824790762306
+      spriteID: a1377e1659591dd41b101cabe6ca5295
+      internalID: -7450322043032092787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_41
+      name: gem_template_21
       rect:
         serializedVersion: 2
-        x: 156
-        y: 253
+        x: 126
+        y: 250
         width: 32
         height: 32
       alignment: 0
@@ -1264,18 +796,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec47497db9631af47a3cbc63a8e163f9
-      internalID: 684231834319387776
+      spriteID: 839bb539737c0ce4f8284907e9b0256f
+      internalID: 6432476027051565782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_42
+      name: gem_template_22
       rect:
         serializedVersion: 2
-        x: 195
-        y: 253
+        x: 159
+        y: 250
         width: 32
         height: 32
       alignment: 0
@@ -1285,18 +817,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ade332a0cb9cbd47a910d051e8ed3e9
-      internalID: 7123655139012673558
+      spriteID: 9e504c3dcf83c384eba959d0d5cae93d
+      internalID: -5197364117412324821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_43
+      name: gem_template_23
       rect:
         serializedVersion: 2
-        x: 234
-        y: 253
+        x: 192
+        y: 250
         width: 32
         height: 32
       alignment: 0
@@ -1306,18 +838,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2253711542560c4f95222ee1f686693
-      internalID: -3526051167029219335
+      spriteID: ec7162d1f738f3d4db22b28a1c6c4f4e
+      internalID: -5023893032785737249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_44
+      name: gem_template_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 221
+        x: 37
+        y: 229
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d00870d04ddc1440a0b85eb22377c14
+      internalID: 109264743805216470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_25
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 231
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9456bb5850e131348a57eddbe430cb59
+      internalID: -4145040418607753924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_26
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 217
         width: 32
         height: 32
       alignment: 0
@@ -1327,18 +901,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d2c9b53726f36a4cb9aaba62b3f2abf
-      internalID: -2418577532948901273
+      spriteID: e68a01368e026c4448ef067d6a0b5751
+      internalID: -3403655023665937851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_45
+      name: gem_template_27
       rect:
         serializedVersion: 2
-        x: 39
-        y: 221
+        x: 93
+        y: 217
         width: 32
         height: 32
       alignment: 0
@@ -1348,18 +922,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d11f316eea5d43e40a6060d9e9e75a91
-      internalID: 4866249526264341381
+      spriteID: a5617bec5aae92a41a4e6341c8231456
+      internalID: 8494596220683793543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_46
+      name: gem_template_28
       rect:
         serializedVersion: 2
-        x: 78
-        y: 221
+        x: 126
+        y: 217
         width: 32
         height: 32
       alignment: 0
@@ -1369,18 +943,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceb85feae9dba994abfa3ba520d9e852
-      internalID: 7296446379884031325
+      spriteID: ba56aa17071c98a4db2270171f1214d4
+      internalID: -644486399483213593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_47
+      name: gem_template_29
       rect:
         serializedVersion: 2
-        x: 117
-        y: 221
+        x: 159
+        y: 217
         width: 32
         height: 32
       alignment: 0
@@ -1390,18 +964,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 278dca8d3dc1b1a498d2bd5d40d2e102
-      internalID: -4930893413976830160
+      spriteID: aa4bec99c29dd3447b4c9fc9d0330c0f
+      internalID: -6903693133368276812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_48
+      name: gem_template_30
       rect:
         serializedVersion: 2
-        x: 156
-        y: 221
+        x: 192
+        y: 217
         width: 32
         height: 32
       alignment: 0
@@ -1411,18 +985,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bcb538ef727c3040a33d6998118ebe2
-      internalID: -7081404071384037950
+      spriteID: 35340f0b084c22e4ab44b943f0d0fb8c
+      internalID: 8847350917968527949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_49
+      name: gem_template_31
       rect:
         serializedVersion: 2
-        x: 0
-        y: 189
+        x: 37
+        y: 200
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ee41170944a2c4dbfd4234f149611e
+      internalID: 2670478383607072687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_32
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 202
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ece349d1b9d74459aa14ff1ce8ca4c
+      internalID: 4449290289842021878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_33
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 184
         width: 32
         height: 32
       alignment: 0
@@ -1432,18 +1048,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ca8f08a9143b974cbed7cbfe42a89d9
-      internalID: -9003805367618557409
+      spriteID: 77c33acf475805e4ea9528625c0cac51
+      internalID: -6690305278678943163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_50
+      name: gem_template_34
       rect:
         serializedVersion: 2
-        x: 39
-        y: 189
+        x: 93
+        y: 184
         width: 32
         height: 32
       alignment: 0
@@ -1453,18 +1069,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0b4dccc918ec5e44b04e888f2f379b1
-      internalID: 5727082924169749205
+      spriteID: c40416d2a7548db4ebd5f11f5290da8c
+      internalID: -3236778740689987466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_51
+      name: gem_template_35
       rect:
         serializedVersion: 2
-        x: 78
-        y: 189
+        x: 126
+        y: 184
         width: 32
         height: 32
       alignment: 0
@@ -1474,18 +1090,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ccd544391584624bb5f43406045a91f
-      internalID: 3155456609846052457
+      spriteID: 96a0c5cfc9c267f44b43d3b7e6c4e5e2
+      internalID: -6974730352247230030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_52
+      name: gem_template_36
       rect:
         serializedVersion: 2
-        x: 117
-        y: 189
+        x: 159
+        y: 184
         width: 32
         height: 32
       alignment: 0
@@ -1495,18 +1111,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca57bf8dcec590443b5a9f3a82e99f2f
-      internalID: -2547990469793494533
+      spriteID: f7ddbee01fc57ea4c95622ad4eb739f9
+      internalID: -8894130428003497332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_53
+      name: gem_template_37
       rect:
         serializedVersion: 2
-        x: 156
-        y: 189
+        x: 192
+        y: 184
         width: 32
         height: 32
       alignment: 0
@@ -1516,18 +1132,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82c963a5dc78a5541aacf3acf5bdb89e
-      internalID: 2606894924155631201
+      spriteID: 9fa9f3ad7bbf38145a7d520b42f4a961
+      internalID: -5504451968939670436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_54
+      name: gem_template_38
       rect:
         serializedVersion: 2
-        x: 195
-        y: 189
+        x: 36
+        y: 167
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52766166aefd5f549bc8997cd5b67378
+      internalID: 5642096396191809294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_39
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 169
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71c9451b795554478904d2ae4a94ef6
+      internalID: 1563650029850358134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_40
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 151
         width: 32
         height: 32
       alignment: 0
@@ -1537,18 +1195,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca33c5ffa71638f48bce24ae00948152
-      internalID: 7856566063996947555
+      spriteID: 4f1ebe14c36b8ca46a32459738216293
+      internalID: 6526388355942126270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_55
+      name: gem_template_41
       rect:
         serializedVersion: 2
-        x: 234
-        y: 189
+        x: 93
+        y: 151
         width: 32
         height: 32
       alignment: 0
@@ -1558,18 +1216,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78eac105a6f1f144098ced0ad063756b
-      internalID: 3434350781005219274
+      spriteID: b2d21dcfaaf3c874f97faa6382fc06e2
+      internalID: -699753568170191823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_56
+      name: gem_template_42
       rect:
         serializedVersion: 2
-        x: 273
-        y: 189
+        x: 126
+        y: 151
         width: 32
         height: 32
       alignment: 0
@@ -1579,18 +1237,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: facb2c9897bd37f4383820e6983e67b5
-      internalID: 2191023818412604257
+      spriteID: b2651a7c01ddcd84bb926f9dce5f400d
+      internalID: 391546229580076272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_57
+      name: gem_template_43
       rect:
         serializedVersion: 2
-        x: 0
-        y: 157
+        x: 159
+        y: 151
         width: 32
         height: 32
       alignment: 0
@@ -1600,18 +1258,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfb2078b53d2d6644bffd7e287c51f09
-      internalID: -4910881946565969114
+      spriteID: d14ceb2e3e260f84391b6884e572de58
+      internalID: -8230464621918305956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_58
+      name: gem_template_44
       rect:
         serializedVersion: 2
-        x: 39
-        y: 157
+        x: 192
+        y: 151
         width: 32
         height: 32
       alignment: 0
@@ -1621,18 +1279,81 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3453b3478865e63459538715d8b3acc6
-      internalID: -2938632601055247704
+      spriteID: f0222b50fd1e82b409b768a8c0f3ba68
+      internalID: 6388587377646450665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_59
+      name: gem_template_45
       rect:
         serializedVersion: 2
-        x: 78
-        y: 157
+        x: 31
+        y: 123
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ac12e93279336469babf9823f5adfd
+      internalID: -5648474097998348326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_46
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 130
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662881b257ad339478eb4c7f1164e7a9
+      internalID: 773289079803043653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_47
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 130
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0ba55922a9adf4cbfaa387cd8efa04
+      internalID: -2331608733766748839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_48
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 118
         width: 32
         height: 32
       alignment: 0
@@ -1642,18 +1363,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b191904e8587624cab452b6ea709689
-      internalID: -7440118391623219894
+      spriteID: 35b123ee08b216847b3840ece56b068b
+      internalID: -6071572033166985121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_60
+      name: gem_template_49
       rect:
         serializedVersion: 2
-        x: 117
-        y: 157
+        x: 93
+        y: 118
         width: 32
         height: 32
       alignment: 0
@@ -1663,18 +1384,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be63aed585a797c41a7aa72bdea3929f
-      internalID: -4338999085937343955
+      spriteID: 9fc7da969a5d2ae4fad81aae09b7e3c4
+      internalID: 8045637886330674554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_61
+      name: gem_template_50
       rect:
         serializedVersion: 2
-        x: 156
-        y: 157
+        x: 126
+        y: 118
         width: 32
         height: 32
       alignment: 0
@@ -1684,18 +1405,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66fd3e28f6e75234a8d83f40f29c267c
-      internalID: 140173015837874806
+      spriteID: c27e41b50834b544183af46384396442
+      internalID: -1783315931748626236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_62
+      name: gem_template_51
       rect:
         serializedVersion: 2
-        x: 195
-        y: 157
+        x: 159
+        y: 118
         width: 32
         height: 32
       alignment: 0
@@ -1705,18 +1426,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 870a605424bb16046a5cd86744c2857f
-      internalID: -1750622584067641330
+      spriteID: 3bc525045fe2bd34ba8a2c92bb007ad6
+      internalID: 5935165558239414969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_63
+      name: gem_template_52
       rect:
         serializedVersion: 2
-        x: 234
-        y: 157
+        x: 192
+        y: 118
         width: 32
         height: 32
       alignment: 0
@@ -1726,20 +1447,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75e83a5c8a180fb488ec59abf8d55aa7
-      internalID: -8153859664205860323
+      spriteID: 320a058af503a4c479a10fec0124b85f
+      internalID: 2487976081268717544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_64
+      name: gem_template_53
       rect:
         serializedVersion: 2
-        x: 0
+        x: 49
         y: 125
-        width: 32
-        height: 32
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1747,20 +1468,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1f28f86d230b740bde1ccea27c68bf
-      internalID: -9067224339995839702
+      spriteID: 7be966a98e9161648a06fe92601d24bf
+      internalID: 572034769620502596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_65
+      name: gem_template_54
       rect:
         serializedVersion: 2
-        x: 39
+        x: 54
         y: 125
-        width: 32
-        height: 32
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1768,20 +1489,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91d231dee832a25479a1b7795ae7a599
-      internalID: -606445230376883991
+      spriteID: c9af1b33d8405a7418245224aeac159b
+      internalID: -2903168921639326271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_66
+      name: gem_template_56
       rect:
         serializedVersion: 2
-        x: 78
-        y: 125
-        width: 32
-        height: 32
+        x: 62
+        y: 104
+        width: 10
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1789,20 +1510,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa0a2bf5e7f419e42b8786fd79378ea3
-      internalID: -5748720632079303240
+      spriteID: d5a22273c5f9e5843b5fff376319bcba
+      internalID: -6403156134309143179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_67
+      name: gem_template_57
       rect:
         serializedVersion: 2
-        x: 117
-        y: 125
-        width: 32
-        height: 32
+        x: 73
+        y: 106
+        width: 8
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1810,20 +1531,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82d7da4b6b8810c49be738ecd22e98f4
-      internalID: 8980049019711637444
+      spriteID: c13b6dccdb7e8b543bcaf10089a7c851
+      internalID: 8812793298202489917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_68
+      name: gem_template_58
       rect:
         serializedVersion: 2
-        x: 156
-        y: 125
-        width: 32
-        height: 32
+        x: 82
+        y: 106
+        width: 10
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1831,20 +1552,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e554101700d4ec48b1042b51cbcbce9
-      internalID: -680580362149308100
+      spriteID: 085ef85e15737a94888e55388a23f226
+      internalID: -3786921414167856529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_69
+      name: gem_template_59
       rect:
         serializedVersion: 2
-        x: 195
-        y: 125
-        width: 32
-        height: 32
+        x: 98
+        y: 108
+        width: 8
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1852,20 +1573,188 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14528861720ae124fa2dbef0637a01c2
-      internalID: 6017819578515607230
+      spriteID: 3921e2b62bcec3b43b1fe5a1b89dc80a
+      internalID: 2225859722707117282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_70
+      name: gem_template_60
       rect:
         serializedVersion: 2
-        x: 0
+        x: 127
+        y: 105
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce16925179a1cbf4c98a96d09f52000f
+      internalID: 4001875121317039663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_61
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 105
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7177544131d9d3449a0e5da4a03238e5
+      internalID: -7557866420431113267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_62
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 106
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b1f58d852b3a94ea0fc35a8375ba8e
+      internalID: -5713559622517530162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_63
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 103
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42c8eff7b9db7c439f804cec4e38b36
+      internalID: 9120200377861890139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_64
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 95
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfab07b4ea89578488bff0e40ace3235
+      internalID: 1558215202334727545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_65
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 101
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0da69b006514ed4cba62c204dcd37ce
+      internalID: 6798212970391386297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_66
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 96
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae0062b9fa85ad4c9e9d53d7563621d
+      internalID: 6411291354045273670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_67
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 26
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbe9d64fdfbb084fb79e5de26f2de97
+      internalID: 3703616533649195628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_68
+      rect:
+        serializedVersion: 2
+        x: 128
         y: 93
-        width: 32
-        height: 32
+        width: 11
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1873,20 +1762,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a16a65799ce6efd40b4eac1e18004d6e
-      internalID: -7705845355022309851
+      spriteID: f9c3458636705694790fda3b68c42ee9
+      internalID: -1164177464212442626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_71
+      name: gem_template_69
       rect:
         serializedVersion: 2
-        x: 39
+        x: 144
+        y: 94
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5e94be0474f5a4ca053f2c085d9483
+      internalID: -9032883089771149977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_70
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 95
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146b4f2021e77b747bda2553d3751aaa
+      internalID: -1247653067448726558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_template_71
+      rect:
+        serializedVersion: 2
+        x: 163
         y: 93
-        width: 32
-        height: 32
+        width: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1894,20 +1825,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6807c47534c6aa479686b2e73bedd64
-      internalID: 134404092034612048
+      spriteID: 3942d5803daf04f418badfd2dcc6be1e
+      internalID: 2167607238407027606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_72
+      name: gem_template_72
       rect:
         serializedVersion: 2
-        x: 0
-        y: 61
-        width: 32
-        height: 32
+        x: 175
+        y: 93
+        width: 14
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1915,20 +1846,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbdfaee828b2cac469b097345a9690cf
-      internalID: -3151814948619643042
+      spriteID: 6c64834d62b372a4bb406c5d40bf3cf6
+      internalID: 5887676997759852485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_73
+      name: gem_template_73
       rect:
         serializedVersion: 2
-        x: 39
-        y: 61
-        width: 32
-        height: 32
+        x: 193
+        y: 93
+        width: 26
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1936,155 +1867,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5d284ad78bc90e4c9c896a97950e2a1
-      internalID: -7118574653985178610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_74
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 61
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7de71cbd0dd28234fa60674bc5aef384
-      internalID: 7069206337058396893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_75
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 61
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a692247a9a839074296094bab62821d0
-      internalID: 4209666698601637581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_76
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 61
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d4ebed3528fff347b6adae72c81c7e4
-      internalID: 5013654551357688664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_77
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 29
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06584d2ac77f5944d951555bf89a5d52
-      internalID: 3741084521788603821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_78
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 29
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53edd04812bd1a24bba5632b900510e0
-      internalID: 7183727624938080388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_79
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 29
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a21e4a7e2f7bd0544b3decedc09eecd1
-      internalID: -1305613764682549825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Sprite_Sheet1.2v_80
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 29
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b432993143fcdd344b308d5766c85ca1
-      internalID: 7165796189396141449
+      spriteID: be4ad8a1fc00ff841873ea000c4aa973
+      internalID: 9212756092569782011
       vertices: []
       indices: 
       edges: []
