@@ -17,6 +17,7 @@ public class TileBasedMover : MonoBehaviour
     private float moveCooldown = 0f;
     public float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f, strengthMultiplier = 1f;
     public bool isDestroyed = false;
+    public bool isDestroyedBlock = false;
 
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -416,6 +417,7 @@ public class TileBasedMover : MonoBehaviour
                         world.destroyedTiles.Add(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48), false);
                         Destroy(moveTile);
                         isDestroyed = true;
+                        isDestroyedBlock = true;
                     }
                     
 
