@@ -13,6 +13,7 @@ public class Experience : MonoBehaviour
     public Text agilityMod;
     public GameObject ui;
     public Button menuButton;
+    
 
     private bool isOpen = true;
 
@@ -41,7 +42,6 @@ public class Experience : MonoBehaviour
         agilityMod.text = "Agility Modifier : 0";
         Button butn = menuButton.GetComponent<Button>();
         butn.onClick.AddListener(TaskOnClick);
-
     }
 
     // Update is called once per frame
@@ -93,5 +93,6 @@ public class Experience : MonoBehaviour
     {
         isOpen = !isOpen;
         ui.SetActive(isOpen);
+        print(isOpen);
     }
 }
