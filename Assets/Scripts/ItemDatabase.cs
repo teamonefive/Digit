@@ -29,11 +29,27 @@ public class ItemDatabase : MonoBehaviour {
                 { "SPEED", 2 },
                 { "VALUE", 1000 }
             }),
-            new Item(2,"Diamond Ore",Item.ItemType.COMPONENT, Item.Rarity.EPIC, "a chunk of raw diamond",
+            new Item(2,"Iron Ore",Item.ItemType.COMPONENT, Item.Rarity.COMMON, "a chunk of raw iron",
+            new Dictionary<string, int>{
+                { "VALUE", 10 }
+            }),
+            new Item(3,"Topaz",Item.ItemType.COMPONENT, Item.Rarity.COMMON, "a chunk of topaz",
+            new Dictionary<string, int>{
+                { "VALUE", 30 }
+            }),
+            new Item(4,"Sapphire",Item.ItemType.COMPONENT, Item.Rarity.RARE, "a chunk of sapphire",
+            new Dictionary<string, int>{
+                { "VALUE", 50 }
+            }),
+            new Item(5,"Ruby",Item.ItemType.COMPONENT, Item.Rarity.RARE, "a chunk of ruby",
+            new Dictionary<string, int>{
+                { "VALUE", 100 }
+            }),
+            new Item(6,"Diamond",Item.ItemType.COMPONENT, Item.Rarity.RARE, "a chunk of diamond",
             new Dictionary<string, int>{
                 { "VALUE", 400 }
             }),
-            new Item(3,"Silver Pickaxe",Item.ItemType.COMPONENT, Item.Rarity.RARE, "a pickaxe made of steel",
+            new Item(10,"Silver Pickaxe",Item.ItemType.COMPONENT, Item.Rarity.RARE, "a pickaxe made of steel",
             new Dictionary<string, int>{
                 { "BLOCKDAMAGE", 50 },
                 { "SPEED", 2 },

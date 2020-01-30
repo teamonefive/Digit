@@ -7,6 +7,7 @@ public class TileBasedMover : MonoBehaviour
     public Animator animator;
     public FollowDwarf lampy;
     public MapGen world;
+    //Inventory playerInventory;
 
     public float moveSpeed = 1f;
     public float climbingDifficulty = 2f;
@@ -23,6 +24,11 @@ public class TileBasedMover : MonoBehaviour
 
     public Vector3 oldPos;
     public Vector3 targetPos;
+
+    private void Awake()
+    {
+        //playerInventory = this.GetComponent<Inventory>();
+    }
 
     void Move()
     {
@@ -397,7 +403,7 @@ public class TileBasedMover : MonoBehaviour
                     {
                         if (world.getTile(targetPos) != null)
                         {
-                            tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<TileDifficulty>().difficulty * strengthMultiplier;
+                            tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<Tile>().difficulty * strengthMultiplier;
                             if (tileDifficultyMultiplier < 1f)
                             {
                                 tileDifficultyMultiplier = 1f;
@@ -415,9 +421,37 @@ public class TileBasedMover : MonoBehaviour
 
                         //Diggin Occurs
                         world.destroyedTiles.Add(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48), false);
+
+                        //Add treasure to player inventory
+                        /* Don't Uncomment until an inventory script exists in the MapGen Scene
+                        switch (moveTile.GetComponent<Tile>().treasure)
+                        {
+                            case Tile.Treasure.Iron:
+                                playerInventory.AddItem(2);
+                                break;
+                            case Tile.Treasure.Topaz:
+                                playerInventory.AddItem(3);
+                                break;
+                            case Tile.Treasure.Sapphire:
+                                playerInventory.AddItem(4);
+                                break;
+                            case Tile.Treasure.Ruby:
+                                playerInventory.AddItem(5);
+                                break;
+                            case Tile.Treasure.Diamond:
+                                playerInventory.AddItem(6);
+                                break;
+                            default:
+                                break;
+
+                        }
+                        */
+
                         Destroy(moveTile);
                         isDestroyed = true;
                         isDestroyedBlock = true;
+
+                        
                     }
                     
 

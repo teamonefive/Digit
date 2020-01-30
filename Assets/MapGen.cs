@@ -45,8 +45,10 @@ public class MapGen : MonoBehaviour
     //0 = NULL
     //1 = Grass
     //2 = Dirt
-    //3 = Clay
-    //4 = Rock
+    //3 = Sand
+    //4 = Clay
+    //5 = Rock
+    //6 = Stone
     //returns the generated tile
     public GameObject generateTile(Vector2 createPos, Vector2 mapPos)
     {
@@ -93,6 +95,9 @@ public class MapGen : MonoBehaviour
         int i = (int)createPos.x;
         int j = (int)createPos.y;
 
+        int thousandPerlin = (int)(perlin * 1000);
+        int d50 = thousandPerlin % 50;
+
         if (createPos.y < 100)
         {
             if (j == mountainHeights[i])
@@ -105,17 +110,53 @@ public class MapGen : MonoBehaviour
                 if (perlin < 0.33f)
                 {
                     //Clay
-                    return Instantiate(allTiles[3], mapPos, Quaternion.identity);
+                    GameObject tile = Instantiate(allTiles[4], mapPos, Quaternion.identity);
+                    switch (d50)
+                    {
+                        case 0:
+                            tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                            break;
+                        case 1:
+                            tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                            break;
+                        default:
+                            break;
+                    }
+                    return tile;
                 }
                 else if (perlin < 0.66f)
                 {
                     //Dirt
-                    return Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                    GameObject tile = Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                    switch (d50)
+                    {
+                        case 0:
+                            tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                            break;
+                        case 1:
+                            tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                            break;
+                        default:
+                            break;
+                    }
+                    return tile;
                 }
                 else
                 {
                     //Dirt
-                    return Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                    GameObject tile = Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                    switch (d50)
+                    {
+                        case 0:
+                            tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                            break;
+                        case 1:
+                            tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                            break;
+                        default:
+                            break;
+                    }
+                    return tile;
                 }
             }
             else
@@ -129,17 +170,62 @@ public class MapGen : MonoBehaviour
             if (perlin < 0.33f)
             {
                 //Clay
-                return Instantiate(allTiles[3], mapPos, Quaternion.identity);
+                GameObject tile = Instantiate(allTiles[4], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
             else if (perlin < 0.66f)
             {
                 //Dirt
-                return Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                GameObject tile = Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
             else
             {
-                //Dirt
-                return Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                //Sand
+                GameObject tile = Instantiate(allTiles[3], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
         }
         else if (createPos.y >= 150 && createPos.y < 200)
@@ -147,17 +233,71 @@ public class MapGen : MonoBehaviour
             if (perlin < 0.33f)
             {
                 //Dirt
-                return Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                GameObject tile = Instantiate(allTiles[2], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
             else if (perlin < 0.66f)
             {
                 //Clay
-                return Instantiate(allTiles[3], mapPos, Quaternion.identity);
+                GameObject tile = Instantiate(allTiles[4], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
             else
             {
                 //Rock
-                return Instantiate(allTiles[4], mapPos, Quaternion.identity);
+                GameObject tile = Instantiate(allTiles[5], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
         }
         else
@@ -170,12 +310,80 @@ public class MapGen : MonoBehaviour
             else if (perlin < 0.66f)
             {
                 //Clay
-                return Instantiate(allTiles[3], mapPos, Quaternion.identity);
+                GameObject tile = Instantiate(allTiles[4], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
+                        break;
+                    case 4:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Diamond);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
+            }
+            else if (perlin < 0.83f)
+            {
+                //Rock
+                GameObject tile = Instantiate(allTiles[5], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
+                        break;
+                    case 4:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Diamond);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
             else
             {
-                //Rock
-                return Instantiate(allTiles[4], mapPos, Quaternion.identity);
+                //Stone
+                GameObject tile = Instantiate(allTiles[6], mapPos, Quaternion.identity);
+                switch (d50)
+                {
+                    case 0:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Topaz);
+                        break;
+                    case 1:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Iron);
+                        break;
+                    case 2:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
+                        break;
+                    case 4:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Diamond);
+                        break;
+                    default:
+                        break;
+                }
+                return tile;
             }
         }
     }
