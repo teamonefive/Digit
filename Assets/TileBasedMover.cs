@@ -7,16 +7,11 @@ public class TileBasedMover : MonoBehaviour
     public Animator animator;
     public FollowDwarf lampy;
     public MapGen world;
+    public Stats stat;
     //Inventory playerInventory;
 
-    public float moveSpeed = 1f;
-    public float climbingDifficulty = 2f;
-    public float fallSpeedMultiplier = 1f;
     private bool canMove = true, moving = false, m_FacingRight = true;
     public bool isFalling = false;
-    public float setMoveCooldown = 1f;
-    private float moveCooldown = 0f;
-    public float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f, strengthMultiplier = 1f;
     public bool isDestroyed = false;
     public bool isDestroyedBlock = false;
 
@@ -32,7 +27,7 @@ public class TileBasedMover : MonoBehaviour
 
     void Move()
     {
-        if (moveCooldown <= 0f)
+        if (stat.moveCooldown <= 0f)
         {
             float horizontal, vertical;
 
@@ -118,7 +113,7 @@ public class TileBasedMover : MonoBehaviour
                         {
                             //dwarf is falling down one block
                             isFalling = true;
-                            fallSpeedMultiplier = 3f;
+                            stat.fallSpeedMultiplier = 3f;
                             animator.SetBool("isFalling", true);
                         }
                     }
@@ -130,7 +125,7 @@ public class TileBasedMover : MonoBehaviour
                         if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) != null && world.getTile(targetPos + new Vector3(1f, 0f, 0f)) != null)
                         {
                             //There is both a block to the left and to the right of the target position, use the direction that the dwarf is facing to climb
-                            climbingDifficultyMultiplier = climbingDifficulty;
+                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                         }
                         else if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) != null)
                         {
@@ -139,7 +134,7 @@ public class TileBasedMover : MonoBehaviour
                             {
                                 Flip();
                             }
-                            climbingDifficultyMultiplier = climbingDifficulty;
+                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                         }
                         else if (world.getTile(targetPos + new Vector3(1f, 0f, 0f)) != null)
                         {
@@ -148,7 +143,7 @@ public class TileBasedMover : MonoBehaviour
                             {
                                 Flip();
                             }
-                            climbingDifficultyMultiplier = climbingDifficulty;
+                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                         }
                         else
                         {
@@ -171,7 +166,7 @@ public class TileBasedMover : MonoBehaviour
                                         world.renderUp(oldPos);
                                         targetPos += new Vector3(-1f, 0f, 0f);
                                     }
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(-1f, 0f, 0f)) != null)
                                 {
@@ -183,7 +178,7 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderUp(oldPos);
                                     targetPos += new Vector3(-1f, 0f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(1f, 0f, 0f)) != null)
                                 {
@@ -195,7 +190,7 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderUp(oldPos);
                                     targetPos += new Vector3(1f, 0f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                                 {
@@ -224,12 +219,12 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderLeft(oldPos);
                                     targetPos += new Vector3(0f, -1f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the target position, climb along the ceiling
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(0f, 1f, 0f)) != null)
                                 {
@@ -237,7 +232,7 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderLeft(oldPos);
                                     targetPos += new Vector3(0f, 1f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else
                                 {
@@ -261,12 +256,12 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderRight(oldPos);
                                     targetPos += new Vector3(0f, -1f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                                 {
                                     //There is a block above the target position, climb along the ceiling
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else if (world.getTile(transform.position + new Vector3(0f, 1f, 0f)) != null)
                                 {
@@ -274,7 +269,7 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderRight(oldPos);
                                     targetPos += new Vector3(0f, 1f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
                                 else
                                 {
@@ -289,7 +284,7 @@ public class TileBasedMover : MonoBehaviour
                             {
                                 //dwarf is falling
                                 isFalling = true;
-                                fallSpeedMultiplier = 3f;
+                                stat.fallSpeedMultiplier = 3f;
                                 animator.SetBool("isFalling", true);
                             }
                             else
@@ -321,7 +316,7 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderUp(oldPos);
                                     targetPos += new Vector3(1f, 0f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
 
                                     validDig = false;
                                 }
@@ -330,7 +325,7 @@ public class TileBasedMover : MonoBehaviour
                                     oldPos = targetPos;
                                     world.renderUp(oldPos);
                                     targetPos += new Vector3(-1f, 0f, 0f);
-                                    climbingDifficultyMultiplier = climbingDifficulty;
+                                    stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
 
                                     validDig = false;
                                 }
@@ -347,7 +342,7 @@ public class TileBasedMover : MonoBehaviour
                             {
                                 //digging is possible, but player will fall after digging
                                 isFalling = true;
-                                fallSpeedMultiplier = 1f;
+                                stat.fallSpeedMultiplier = 1f;
                                 animator.SetBool("isFalling", true);
 
                             }
@@ -367,7 +362,7 @@ public class TileBasedMover : MonoBehaviour
                                     targetPos += new Vector3(0f, -1f, 0f);
                                 }
                                 
-                                climbingDifficultyMultiplier = climbingDifficulty;
+                                stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
 
                                 validDig = false;
                             }
@@ -387,7 +382,7 @@ public class TileBasedMover : MonoBehaviour
                                     targetPos += new Vector3(0f, -1f, 0f);
                                 }
 
-                                climbingDifficultyMultiplier = climbingDifficulty;
+                                stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
 
                                 validDig = false;
                             }
@@ -396,17 +391,17 @@ public class TileBasedMover : MonoBehaviour
                     }
                     else if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) == null || vertical != 0)
                     {
-                        climbingDifficultyMultiplier = climbingDifficulty;
+                        stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                     }
 
                     if (validDig)
                     {
                         if (world.getTile(targetPos) != null)
                         {
-                            tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<Tile>().difficulty * strengthMultiplier;
-                            if (tileDifficultyMultiplier < 1f)
+                            stat.tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<Tile>().difficulty * stat.strengthMultiplier;
+                            if (stat.tileDifficultyMultiplier < 1f)
                             {
-                                tileDifficultyMultiplier = 1f;
+                                stat.tileDifficultyMultiplier = 1f;
                             }
                         }
 
@@ -457,14 +452,14 @@ public class TileBasedMover : MonoBehaviour
 
                 }
 
-                if (climbingDifficultyMultiplier < 1f)
+                if (stat.climbingDifficultyMultiplier < 1f)
                 {
-                    climbingDifficultyMultiplier = 1f;
+                    stat.climbingDifficultyMultiplier = 1f;
                 }
 
-                animator.SetFloat("speed", moveSpeed);
+                animator.SetFloat("speed", stat.moveSpeed);
 
-                moveCooldown = setMoveCooldown;
+                stat.moveCooldown = stat.setMoveCooldown;
                 
             }
             
@@ -491,7 +486,7 @@ public class TileBasedMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveCooldown--;
+        stat.moveCooldown--;
 
         if (canMove)
         {
@@ -503,8 +498,8 @@ public class TileBasedMover : MonoBehaviour
         {
             if (transform.position == targetPos)
             {
-                tileDifficultyMultiplier = 1f;
-                climbingDifficultyMultiplier = 1f;
+                stat.tileDifficultyMultiplier = 1f;
+                stat.climbingDifficultyMultiplier = 1f;
 
                 if (!isFalling)
                 {
@@ -520,19 +515,19 @@ public class TileBasedMover : MonoBehaviour
                     if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) != null)
                     {
                         isFalling = false;
-                        fallSpeedMultiplier = 1f;
+                        stat.fallSpeedMultiplier = 1f;
                     }
                     else
                     {
                         targetPos += new Vector3(0f, -1f, 0f);
-                        fallSpeedMultiplier += 2f;
+                        stat.fallSpeedMultiplier += 2f;
                     }
                 }
                 
 
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * moveSpeed * fallSpeedMultiplier / tileDifficultyMultiplier / climbingDifficultyMultiplier);
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * stat.moveSpeed * stat.fallSpeedMultiplier / stat.tileDifficultyMultiplier / stat.climbingDifficultyMultiplier);
             if (transform.position.x >= oldPos.x + 1)
             {
                 world.renderRight(transform.position);

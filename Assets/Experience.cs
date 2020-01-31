@@ -11,35 +11,27 @@ public class Experience : MonoBehaviour
     public Text currLevel;
     public Text strengthMod;
     public Text agilityMod;
+    public Text enduranceMod;
+    public Text perceptionMod;
+    public Text luckMod;
     public GameObject ui;
     public Button menuButton;
+    public Stats stat;
     
 
     private bool isOpen = true;
 
-    //current level
-    public int vLevel = 1;
-    //current exp amount
-    public int vCurrExp = 0;
-    //exp amount needed for lvl 1
-    public int vExpBase = 10;
-    //exp amount left to next levelup
-    public int vExpLeft = 10;
-    //modifier that increases needed exp each level
-    public float vExpMod = 1.15f;
-    //current strength modifier
-    public int vStrength = 0;
-    //current agility modifer
-    public int vAgility = 0;
-
     // Start is called before the first frame update
     void Start()
     {
-        levelUpBar.value = vCurrExp;
-        levelUpBar.maxValue = vExpLeft;
+        levelUpBar.value = stat.vCurrExp;
+        levelUpBar.maxValue = stat.vExpLeft;
         currLevel.text = "Level : 1";
         strengthMod.text = "Strength Modifier : 0";
         agilityMod.text = "Agility Modifier : 0";
+        enduranceMod.text = "Endurance Modifier : 0";
+        perceptionMod.text = "Perception Modifier : 0";
+        luckMod.text = "Luck Modifier : 0";
         Button butn = menuButton.GetComponent<Button>();
         butn.onClick.AddListener(TaskOnClick);
     }
@@ -51,43 +43,61 @@ public class Experience : MonoBehaviour
         {
             GainExp(1);
             print("XP Gained"); // prints to the console for debugging
-            levelUpBar.value = vCurrExp;
+            levelUpBar.value = stat.vCurrExp;
         }
         tile.isDestroyed = false; // reset the bool here NOT in TileBasedMover
     }
 
     public void GainExp(int e)
     {
-        vCurrExp += e;
-        if (vCurrExp >= vExpLeft)
+        stat.vCurrExp += e;
+        if (stat.vCurrExp >= stat.vExpLeft)
         {
             LvlUp();
         }
     }
     void LvlUp()
     {
-        vCurrExp -= vExpLeft;
-        levelUpBar.value = vCurrExp;
-        vLevel++;
-        currLevel.text = "Level : " + vLevel.ToString();
-        float t = Mathf.Pow(vExpMod, vLevel);
-        vExpLeft = (int)Mathf.Floor(vExpBase * t);
-        levelUpBar.maxValue = vExpLeft;
+        stat.vCurrExp -= stat.vExpLeft;
+        levelUpBar.value = stat.vCurrExp;
+        stat.vLevel++;
+        currLevel.text = "Level : " + stat.vLevel.ToString();
+        float t = Mathf.Pow(stat.vExpMod, stat.vLevel);
+        stat.vExpLeft = (int)Mathf.Floor(stat.vExpBase * t);
+        levelUpBar.maxValue = stat.vExpLeft;
         strengthUp();
         agilityUp();
+        enduranceUp();
+        perceptionUp();
+        luckUp();
     }
     void strengthUp()
     {
-        vStrength++;
-        strengthMod.text = "Strength Modifer : " + vStrength.ToString();
-        tile.strengthMultiplier *= 0.95f;
+        stat.vStrength++;
+        strengthMod.text = "Strength Modifer : " + stat.vStrength.ToString();
+        stat.strengthMultiplier *= 0.95f;
     }
     void agilityUp()
     {
-        vAgility++;
-        agilityMod.text = "Agility Modifier : " + vAgility.ToString();
-        tile.climbingDifficulty *= 0.95f;
+        stat.vAgility++;
+        agilityMod.text = "Agility Modifier : " + stat.vAgility.ToString();
+        stat.climbingDifficulty *= 0.95f;
         //tile.moveSpeed *= 1.5f;
+    }
+    void enduranceUp()
+    {
+        stat.vEndurance++;
+        enduranceMod.text = "Endurance Modifier : " + stat.vEndurance.ToString();
+    }
+    void perceptionUp()
+    {
+        stat.vPerception++;
+        perceptionMod.text = "Perception Modifier : " + stat.vPerception.ToString();
+    }
+    void luckUp()
+    {
+        stat.vLuck++;
+        luckMod.text = "Luck Modifier : " + stat.vLuck.ToString();
     }
     void TaskOnClick() 
     {

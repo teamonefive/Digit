@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Fatigue : MonoBehaviour
 {
-    public float vFatigue = 100f;
+
     //public string scene;
+    public Stats stat;
     public Animator transitionAnim;
     public TileBasedMover tile;
 
@@ -35,10 +36,10 @@ public class Fatigue : MonoBehaviour
 
         if(tile.isDestroyedBlock == true)
         {
-            vFatigue -= 10f;
+            stat.vFatigue -= 10f;
         }
         tile.isDestroyedBlock = false;
-        if (vFatigue < 1f)
+        if (stat.vFatigue < 1f)
         {
             GetComponent<TileBasedMover>().enabled = false;
             // transitionAnim.SetBool("End", false);
@@ -46,7 +47,7 @@ public class Fatigue : MonoBehaviour
             //new WaitForSeconds(1f);
             
 
-            vFatigue = 100f;
+            stat.vFatigue = 100f * (stat.vEndurance*1.15f + 1f);
 
             Invoke("flipTheBool", 1.3f);
             StartCoroutine(wait());

@@ -5,11 +5,11 @@ using UnityEngine;
 public class FollowDwarf : MonoBehaviour
 {
     public TileBasedMover dwarfMover;
+    public Stats stat;
 
     private Vector2 pos;
     public float xOffset = 0f;
     public float yOffset = 0f;
-    public float speedMultiplier = 1f;
 
     void Start() 
     {
@@ -21,7 +21,7 @@ public class FollowDwarf : MonoBehaviour
 
         if (pos.x != transform.position.x)
         {
-            speedMultiplier = 2f;
+            stat.speedMultiplier = 2f;
         }
         else
         {
@@ -31,26 +31,26 @@ public class FollowDwarf : MonoBehaviour
 
             if (transform.position.y - pos.y > 3)
             {
-                speedMultiplier = 3f;
+                stat.speedMultiplier = 3f;
                 noneOfTheAbove = false;
             }
             if (transform.position.y - pos.y > 6)
             {
-                speedMultiplier = 5f;
+                stat.speedMultiplier = 5f;
             }
             if (transform.position.y - pos.y > 10)
             {
-                speedMultiplier = 100f;
+                stat.speedMultiplier = 100f;
             }
             
             if (noneOfTheAbove)
             {
-                speedMultiplier = 1.2f;
+                stat.speedMultiplier = 1.2f;
             }
             
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, pos, Time.deltaTime * dwarfMover.moveSpeed * speedMultiplier);
+        transform.position = Vector2.MoveTowards(transform.position, pos, Time.deltaTime * stat.moveSpeed * stat.speedMultiplier);
         
     }
 }

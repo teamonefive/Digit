@@ -21,6 +21,8 @@ public class MapGen : MonoBehaviour
 
     public GameObject dwarf;
 
+    public Stats stat;
+
     public int renderDistance;
 
     public int minWidth;
@@ -96,7 +98,7 @@ public class MapGen : MonoBehaviour
         int j = (int)createPos.y;
 
         int thousandPerlin = (int)(perlin * 1000);
-        int d50 = thousandPerlin % 50;
+        int d50 = thousandPerlin % (int)(50f - (stat.vLuck/10));
 
         if (createPos.y < 100)
         {

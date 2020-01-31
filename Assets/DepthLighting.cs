@@ -8,6 +8,7 @@ public class DepthLighting : MonoBehaviour
     // Start is called before the first frame update
     public GameObject dwarf;
     private Light2D lightScript;
+    public Stats stat;
 
     void Start()
     {
@@ -22,13 +23,13 @@ public class DepthLighting : MonoBehaviour
         {
             lightScript.intensity = 0.5f;
         }
-        else if (yPos <= -151)
+        else if (yPos <= (-151 - 2*stat.vPerception))
         {
             lightScript.intensity = 0.0f;
         }
         else
         {
-            lightScript.intensity = (151 + yPos) / 151 * 0.5f;
+            lightScript.intensity = (((151+(2*stat.vPerception)) + yPos) / (151+(2*stat.vPerception)) * 0.5f);
         }
     }
 }
