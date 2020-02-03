@@ -1,37 +1,33 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
+
 
 public class SampleButton : MonoBehaviour
 {
-
-    public Button buttonComponent;
+    public Button button;
     public Text nameLabel;
+    public Text priceLabel;
     public Image iconImage;
-    public Text priceText;
-
 
     private Itemtemp item;
     private ShopScrollList scrollList;
 
-    // Use this for initialization
+    // Start is called before the first frame update
     void Start()
     {
-        buttonComponent.onClick.AddListener(HandleClick);
+        
     }
 
     public void Setup(Itemtemp currentItem, ShopScrollList currentScrollList)
     {
         item = currentItem;
         nameLabel.text = item.itemName;
+        priceLabel.text = item.price.ToString();
         iconImage.sprite = item.icon;
-        priceText.text = item.price.ToString();
+
         scrollList = currentScrollList;
-
     }
 
-    public void HandleClick()
-    {
-        scrollList.TryTransferItemToOtherShop(item);
-    }
+
 }
