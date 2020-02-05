@@ -1,7 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class SampleButton : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class SampleButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      button.onClick.AddListener(HandleClick);
     }
 
     public void Setup(Itemtemp currentItem, ShopScrollList currentScrollList)
@@ -29,5 +28,9 @@ public class SampleButton : MonoBehaviour
         scrollList = currentScrollList;
     }
 
+    public void HandleClick()
+    {
+      scrollList.TryTransferItemToOtherShop(item);
+    }
 
 }
