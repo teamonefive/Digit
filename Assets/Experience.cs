@@ -21,6 +21,20 @@ public class Experience : MonoBehaviour
 
     private bool isOpen = true;
 
+    private static Experience instance;
+
+    public static Experience MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Experience>();
+            }
+
+            return instance;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -109,5 +123,12 @@ public class Experience : MonoBehaviour
         isOpen = !isOpen;
         ui.SetActive(isOpen);
         print(isOpen);
+    }
+    public void UpdateStackSize(IClickable clickable)
+    {
+        if(clickable.MyCount == 0)
+        {
+            clickable.MyIcon.color = new Color(0, 0, 0, 0);
+        }
     }
 }

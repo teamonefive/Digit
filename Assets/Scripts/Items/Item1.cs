@@ -28,7 +28,7 @@ public abstract class Item1 : ScriptableObject
         }
     }
 
-    protected SlotScript Slot
+    public SlotScript MySlot
     {
         get
         {
@@ -38,6 +38,14 @@ public abstract class Item1 : ScriptableObject
         set
         {
             slot = value;
+        }
+    }
+
+    public void Remove()
+    {
+        if(MySlot!=null)
+        {
+            MySlot.RemoveItem(this);
         }
     }
 }
