@@ -46,6 +46,11 @@ public class Experience : MonoBehaviour
             levelUpBar.value = stat.vCurrExp;
         }
         tile.isDestroyed = false; // reset the bool here NOT in TileBasedMover
+
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            InventoryScript.MyInstance.OpenClose();
+        }
     }
 
     public void GainExp(int e)

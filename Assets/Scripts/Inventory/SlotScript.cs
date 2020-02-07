@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlotScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Stack<Item1> items = new Stack<Item1>();
+
+    [SerializeField]
+    private Image icon;
+
+    public bool IsEmpty
     {
-        
+        get
+        {
+            return items.Count == 0;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool AddItem(Item1 item)
     {
-        
+        items.Push(item);
+        icon.sprite = item.MyIcon;
+        icon.color = Color.white;
+        return true;
     }
 }

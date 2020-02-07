@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class BagButton : MonoBehaviour
+public class BagButton : MonoBehaviour, IPointerClickHandler
 {
     private Bag bag;
 
@@ -29,6 +28,14 @@ public class BagButton : MonoBehaviour
                 GetComponent<Image>().sprite = empty;
             }
             bag = value;
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (bag != null)
+        {
+            bag.MyBagScript.OpenClose();
         }
     }
 }

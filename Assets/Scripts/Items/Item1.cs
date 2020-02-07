@@ -12,7 +12,7 @@ public abstract class Item1 : ScriptableObject
 
     private SlotScript slot;
 
-    public Sprite Icon
+    public Sprite MyIcon
     {
         get
         {
