@@ -19,6 +19,14 @@ public class BagScript : MonoBehaviour
         }
     }
 
+    public List<SlotScript> MySlots
+    {
+        get
+        {
+            return slots;
+        }
+    }
+
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();

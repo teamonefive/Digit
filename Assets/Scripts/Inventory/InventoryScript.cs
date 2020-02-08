@@ -54,6 +54,11 @@ public class InventoryScript : MonoBehaviour
             bag.Initialize(16);
             AddItem(bag);
         }
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            RubyOre ore = (RubyOre)Instantiate(items[1]);
+            AddItem(ore);
+        }
     }
 
     public void AddBag(Bag bag)
@@ -71,13 +76,40 @@ public class InventoryScript : MonoBehaviour
 
     public void AddItem(Item1 item)
     {
-        foreach( Bag bag in bags)
+       if(item.MyStackSize >0)
+        {
+            if(PlaceInStack(item))
+            {
+                return;
+            }
+        }
+        PlaceInEmpty(item);
+    }
+
+    private void PlaceInEmpty(Item1 item)
+    {
+        foreach(Bag bag in bags)
         {
             if(bag.MyBagScript.AddItem(item))
             {
                 return;
             }
         }
+    }
+
+    private bool PlaceInStack(Item1 item)
+    {
+        foreach (Bag bag in bags)
+        {
+            foreach(SlotScript slots in bag.MyBagScript.MySlots)
+            {
+                if(slots.StackItem(item))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public void OpenClose()

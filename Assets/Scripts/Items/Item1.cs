@@ -20,7 +20,7 @@ public abstract class Item1 : ScriptableObject
         }
     }
 
-    public int StackSize
+    public int MyStackSize
     {
         get
         {

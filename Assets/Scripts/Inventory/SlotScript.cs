@@ -6,10 +6,13 @@ using UnityEngine.EventSystems;
 
 public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
 {
-    private Stack<Item1> items = new Stack<Item1>();
+    private ObservableStack<Item1> items = new ObservableStack<Item1>();
 
     [SerializeField]
     private Image icon;
+
+    [SerializeField]
+    private Text stackSize;
 
     public bool IsEmpty
     {
@@ -53,6 +56,23 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         }
     }
 
+    public Text MyStackText
+    {
+        get
+        {
+            return stackSize;
+        }
+    }
+
+    private void Awake()
+    {
+        items.OnPop += new UpdateStackEvent(UpdateSlot);
+        items.OnPush += new UpdateStackEvent(UpdateSlot);
+        items.OnClear += new UpdateStackEvent(UpdateSlot);
+    }
+
+
+
     public bool AddItem(Item1 item)
     {
         items.Push(item);
@@ -67,12 +87,15 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         if(!IsEmpty)
         {
             items.Pop();
-            Experience.MyInstance.UpdateStackSize(this);
         } 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //if(eventData.button == PointerEventData.InputButton.Left)
+        //{
+        //    handsc
+        //}
         if(eventData.button == PointerEventData.InputButton.Right)
         {
             UseItem();
@@ -85,5 +108,21 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         {
             (MyItem as IUseable).Use();
         }
+    }
+
+    public bool StackItem(Item1 item)
+    {
+        if(!IsEmpty && item.name == MyItem.name && items.Count <MyItem.MyStackSize)
+        {
+            items.Push(item);
+            item.MySlot = this;
+            return true;
+        }
+        return false;
+    }
+
+    public void UpdateSlot()
+    {
+        Experience.MyInstance.UpdateStackSize(this);
     }
 }

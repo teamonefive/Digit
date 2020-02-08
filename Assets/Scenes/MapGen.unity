@@ -4022,7 +4022,7 @@ PrefabInstance:
     - target: {fileID: 8801824404333354447, guid: 43deb1ecd89d6490d9c37de9ca690d40,
         type: 3}
       propertyPath: items.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8801824404333354447, guid: 43deb1ecd89d6490d9c37de9ca690d40,
         type: 3}
@@ -4055,6 +4055,12 @@ PrefabInstance:
       propertyPath: bagButtons.Array.data[3]
       value: 
       objectReference: {fileID: 1151025985}
+    - target: {fileID: 8801824404333354447, guid: 43deb1ecd89d6490d9c37de9ca690d40,
+        type: 3}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d2dfddc64bf264232ba665fdea21cfe6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43deb1ecd89d6490d9c37de9ca690d40, type: 3}
 --- !u!1001 &4291826556067606855
