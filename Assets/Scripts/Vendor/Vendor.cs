@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vendor : MonoBehaviour, IInteractable
+public class Vendor : MonoBehaviour
 {
-  public void Interact()
-  {
-    Debug.Log("interact");
-  }
+    public GameObject LootWindow;
 
-  public void StopInteract()
-  {
-    Debug.Log("Stop interact");
-  }
+    public void OpenLootWindow()
+    {
+        if(LootWindow != null)
+        {
+            bool isActive = LootWindow.activeSelf;
+
+            LootWindow.SetActive(!isActive);
+        }
+    }
 }

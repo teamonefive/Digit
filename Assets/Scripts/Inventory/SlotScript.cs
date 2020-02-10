@@ -14,6 +14,8 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
     [SerializeField]
     private Text stackSize;
 
+    public BagScript MyBag { get; set; }
+
     public bool IsEmpty
     {
         get
@@ -73,6 +75,14 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         get
         {
             return stackSize;
+        }
+    }
+
+    public ObservableStack<Item1> MyItems
+    {
+        get
+        {
+            return items;
         }
     }
 
@@ -138,6 +148,19 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
             {
                 HandScript.MyInstance.TakeMoveable(MyItem as IMoveable);
                 InventoryScript.MyInstance.Fromslot = this;
+            }
+            else if(InventoryScript.MyInstance.Fromslot == null && IsEmpty && (HandScript.MyInstance.MyMoveable is Bag))
+            {
+                Bag bag = (Bag)HandScript.MyInstance.MyMoveable;
+
+                if(bag.MyBagScript != MyBag && InventoryScript.MyInstance.MyEmptySlotCount - bag.Slots > 0)
+                {
+                    AddItem(bag);
+                    bag.MyBagButton.RemoveBag();
+                    HandScript.MyInstance.Drop();
+                }
+
+                
             }
             else if(InventoryScript.MyInstance.Fromslot!=null) // have something to move
             {

@@ -27,9 +27,45 @@ public class BagScript : MonoBehaviour
         }
     }
 
+    public int MyEmptySlotCount
+    {
+        get
+        {
+            int count = 0;
+
+            foreach(SlotScript slot in MySlots)
+            {
+                if(slot.IsEmpty)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
+
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    public List<Item1> GetItems()
+    {
+        List<Item1> items = new List<Item1>();
+        foreach (SlotScript slot in slots)
+        {
+            if(!slot.IsEmpty)
+            {
+                if(!slot.IsEmpty)
+                {
+                    foreach(Item1 item in slot.MyItems)
+                    {
+                        items.Add(item);
+                    }
+                }
+            }
+        }
+        return items;
     }
 
     public void Addslots(int slotCount)
@@ -37,6 +73,7 @@ public class BagScript : MonoBehaviour
         for(int i =0; i<slotCount; i++)
         {
             SlotScript slot = Instantiate(slotPrefab, transform).GetComponent<SlotScript>();
+            slot.MyBag = this;
             slots.Add(slot);
         }
     }
