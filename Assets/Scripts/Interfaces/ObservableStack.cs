@@ -5,11 +5,20 @@ using System.Text;
 
 public delegate void UpdateStackEvent();
 
-class ObservableStack<T> : Stack<T>
+public class ObservableStack<T> : Stack<T>
 {
     public event UpdateStackEvent OnPush;
     public event UpdateStackEvent OnPop;
     public event UpdateStackEvent OnClear;
+
+    public ObservableStack(Stack<T> items) :base(items)
+    {
+
+    }
+    public ObservableStack()
+    {
+
+    }
 
     public new void Push(T item)
     {

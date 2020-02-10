@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item1 : ScriptableObject
+public abstract class Item1 : ScriptableObject, IMoveable
 {
     [SerializeField]
     private Sprite icon;

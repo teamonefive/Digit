@@ -135,9 +135,10 @@ public class Experience : MonoBehaviour
         else
         {
             clickable.MyStackText.color = new Color(0, 0, 0, 0);
+            clickable.MyIcon.color = Color.white;
         }
 
-        if(clickable.MyCount == 0)
+        if (clickable.MyCount == 0)
         {
             clickable.MyIcon.color = new Color(0, 0, 0, 0);
             clickable.MyStackText.color = new Color(0, 0, 0, 0);

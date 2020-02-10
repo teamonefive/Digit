@@ -19,6 +19,8 @@ public class InventoryScript : MonoBehaviour
         }
     }
 
+    private SlotScript fromSlot;
+
     private List<Bag> bags = new List<Bag>();
 
     [SerializeField]
@@ -32,6 +34,24 @@ public class InventoryScript : MonoBehaviour
     {
         get { return bags.Count < 4; }
     }
+
+    public SlotScript Fromslot
+    {
+        get
+        {
+            return fromSlot;
+        }
+
+        set
+        {
+            fromSlot = value;
+            if(value != null)
+            {
+                fromSlot.MyIcon.color = Color.grey;
+            }
+        }
+    }
+
 
     private void Awake()
     {
