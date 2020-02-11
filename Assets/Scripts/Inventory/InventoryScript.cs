@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void ItemCountChanged(Item1 item);
 public class InventoryScript : MonoBehaviour
 {
     private static InventoryScript instance;
@@ -20,7 +21,7 @@ public class InventoryScript : MonoBehaviour
     }
 
     private SlotScript fromSlot;
-
+    public event ItemCountChanged itemCountChangedEvent;
     private List<Bag> bags = new List<Bag>();
 
     [SerializeField]
@@ -115,27 +116,31 @@ public class InventoryScript : MonoBehaviour
         Destroy(bag.MyBagScript.gameObject);
     }
 
-    public void AddItem(Item1 item)
+    public bool AddItem(Item1 item)
     {
-       if(item.MyStackSize >0)
+        if (item.MyStackSize > 0)
         {
-            if(PlaceInStack(item))
+            if (PlaceInStack(item))
             {
-                return;
+                return true;
             }
         }
-        PlaceInEmpty(item);
+
+        return PlaceInEmpty(item);
     }
 
-    private void PlaceInEmpty(Item1 item)
+    private bool PlaceInEmpty(Item1 item)
     {
-        foreach(Bag bag in bags)
+        foreach (Bag bag in bags)//Checks all bags
         {
-            if(bag.MyBagScript.AddItem(item))
+            if (bag.MyBagScript.AddItem(item)) //Tries to add the item
             {
-                return;
+                OnItemCountChanged(item);
+                return true; //It was possible to add the item
             }
         }
+
+        return false;
     }
 
     private bool PlaceInStack(Item1 item)
@@ -163,6 +168,13 @@ public class InventoryScript : MonoBehaviour
             {
                 bag.MyBagScript.OpenClose();
             }
+        }
+    }
+    public void OnItemCountChanged(Item1 item)
+    {
+        if (itemCountChangedEvent != null)
+        {
+            itemCountChangedEvent.Invoke(item);
         }
     }
 }

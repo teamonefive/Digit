@@ -17,6 +17,7 @@ public class Experience : MonoBehaviour
     public GameObject ui;
     public Button menuButton;
     public Stats stat;
+    public int MyGold { get; set; }
     
 
     private bool isOpen = true;
@@ -38,6 +39,7 @@ public class Experience : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MyGold = 100;
         levelUpBar.value = stat.vCurrExp;
         levelUpBar.maxValue = stat.vExpLeft;
         currLevel.text = "Level : 1";
