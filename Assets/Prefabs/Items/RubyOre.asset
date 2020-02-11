@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: fa48dbd2ce0d29644a813b9fcf7f2d51, type: 3}
   stackSize: 5
+  title: RubyOre
+  quality: 0

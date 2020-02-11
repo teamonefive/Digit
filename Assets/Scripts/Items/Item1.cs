@@ -10,6 +10,12 @@ public abstract class Item1 : ScriptableObject, IMoveable
     [SerializeField]
     private int stackSize;
 
+    [SerializeField]
+    private string title;
+
+    [SerializeField]
+    private Quality quality;
+
     private SlotScript slot;
 
     public Sprite MyIcon
@@ -38,6 +44,22 @@ public abstract class Item1 : ScriptableObject, IMoveable
         set
         {
             slot = value;
+        }
+    }
+
+    public Quality MyQuality
+    {
+        get
+        {
+            return quality;
+        }
+    }
+
+    public string MyTitle
+    {
+        get
+        {
+            return title;
         }
     }
 
