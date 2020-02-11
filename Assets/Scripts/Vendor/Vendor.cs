@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Vendor : MonoBehaviour
 {
-    public GameObject LootWindow;
+    [SerializeField]
+    private VendorItem[] items;
 
-    public void OpenLootWindow()
+    [SerializeField]
+    public VendorWindow vendorWindow;
+
+    public void OpenClose()
     {
-        if(LootWindow != null)
-        {
-            bool isActive = LootWindow.activeSelf;
-
-            LootWindow.SetActive(!isActive);
-        }
+        vendorWindow.CreatePages(items);
+        vendorWindow.Openvwindow();
     }
 }
