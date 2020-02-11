@@ -16,6 +16,9 @@ public abstract class Item1 : ScriptableObject, IMoveable
     [SerializeField]
     private Quality quality;
 
+    [SerializeField]
+    private int price;
+
     private SlotScript slot;
 
     public Sprite MyIcon
@@ -62,6 +65,8 @@ public abstract class Item1 : ScriptableObject, IMoveable
             return title;
         }
     }
+
+    public int MyPrice { get => price; }
 
     public void Remove()
     {
