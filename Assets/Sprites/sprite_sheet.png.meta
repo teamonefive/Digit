@@ -821,6 +821,12 @@ TextureImporter:
   - first:
       213: -8133826909565242441
     second: tile_stone_lb
+  - first:
+      213: -1297047801903605439
+    second: tile_lava
+  - first:
+      213: 1209267049664523724
+    second: tile_water
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -6693,6 +6699,48 @@ TextureImporter:
       bones: []
       spriteID: 611e2e74ef548bb4083d47c11b972099
       internalID: -8133826909565242441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_lava
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 283
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cef9ac3f04c0144486289b7641f6735
+      internalID: -1297047801903605439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_water
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 283
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b538f506a850ca344a18c440832618ee
+      internalID: 1209267049664523724
       vertices: []
       indices: 
       edges: []
