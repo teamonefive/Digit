@@ -20,8 +20,7 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void AddItem(VendorItem vendorItem)
     {
-        //icon.sprite = vendorItem.MyItem.MyIcon;
-        //title.text = string.Format("<color={0}>{1}</color>", QualityColor.MyColors[vendorItem.MyItem.MyQuality], vendorItem.=.MyTitle);
+        //icon.sprite = vendorItem.Item1.MyIcon;
         gameObject.SetActive(true);
     }
 
