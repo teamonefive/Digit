@@ -184,6 +184,9 @@ public class MapGen : MonoBehaviour
                     case 2:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
                         break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
                     default:
                         break;
                 }
@@ -204,6 +207,9 @@ public class MapGen : MonoBehaviour
                     case 2:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
                         break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
                     default:
                         break;
                 }
@@ -223,6 +229,9 @@ public class MapGen : MonoBehaviour
                         break;
                     case 2:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Sapphire);
+                        break;
+                    case 3:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
                         break;
                     default:
                         break;
@@ -250,6 +259,12 @@ public class MapGen : MonoBehaviour
                     case 3:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
                         break;
+                    case 4:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
+                    case 5:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Gold);
+                        break;
                     default:
                         break;
                 }
@@ -273,6 +288,12 @@ public class MapGen : MonoBehaviour
                     case 3:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
                         break;
+                    case 4:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
+                    case 5:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Gold);
+                        break;
                     default:
                         break;
                 }
@@ -295,6 +316,12 @@ public class MapGen : MonoBehaviour
                         break;
                     case 3:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Ruby);
+                        break;
+                    case 4:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
+                    case 5:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Gold);
                         break;
                     default:
                         break;
@@ -330,6 +357,15 @@ public class MapGen : MonoBehaviour
                     case 4:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Diamond);
                         break;
+                    case 5:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
+                    case 6:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Gold);
+                        break;
+                    case 7:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Mithril);
+                        break;
                     default:
                         break;
                 }
@@ -356,6 +392,15 @@ public class MapGen : MonoBehaviour
                     case 4:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Diamond);
                         break;
+                    case 5:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
+                    case 6:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Gold);
+                        break;
+                    case 7:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Mithril);
+                        break;
                     default:
                         break;
                 }
@@ -381,6 +426,15 @@ public class MapGen : MonoBehaviour
                         break;
                     case 4:
                         tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Diamond);
+                        break;
+                    case 5:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Silver);
+                        break;
+                    case 6:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Gold);
+                        break;
+                    case 7:
+                        tile.GetComponent<Tile>().setTreasure(Tile.Treasure.Mithril);
                         break;
                     default:
                         break;

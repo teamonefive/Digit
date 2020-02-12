@@ -428,6 +428,18 @@ public class TileBasedMover : MonoBehaviour
                                 OreIron iron = (OreIron)Instantiate(items[0]);
                                 InventoryScript.MyInstance.AddItem(iron);
                                 break;
+                            case Tile.Treasure.Silver:
+                                OreSilver silver = (OreSilver)Instantiate(items[1]);
+                                InventoryScript.MyInstance.AddItem(silver);
+                                break;
+                            case Tile.Treasure.Gold:
+                                OreGold gold = (OreGold)Instantiate(items[2]);
+                                InventoryScript.MyInstance.AddItem(gold);
+                                break;
+                            case Tile.Treasure.Mithril:
+                                OreMithril mithril = (OreMithril)Instantiate(items[3]);
+                                InventoryScript.MyInstance.AddItem(mithril);
+                                break;
                             case Tile.Treasure.Topaz:
                                 GemTopaz topaz = (GemTopaz)Instantiate(items[4]);
                                 InventoryScript.MyInstance.AddItem(topaz);
