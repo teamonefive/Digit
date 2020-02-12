@@ -15,5 +15,5 @@ MonoBehaviour:
   icon: {fileID: -14461104310814277, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 0
   title: Silver Pickaxe
-  quality: 0
-  price: 35
+  quality: 1
+  price: 50

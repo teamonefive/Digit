@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4802233425663313599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8639853044458951924}
+  - component: {fileID: 295732406107016957}
+  - component: {fileID: 946607032859380309}
+  - component: {fileID: 4304015242207043310}
+  m_Layer: 0
+  m_Name: Water 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8639853044458951924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802233425663313599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &295732406107016957
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802233425663313599}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -1297047801903605439, guid: b8fbf916268459b45ae9d0ced758e49a,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &946607032859380309
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802233425663313599}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &4304015242207043310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802233425663313599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608632a9a7f4e6747ad2064ed921a1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 2.25
+  treasure: 0
+  type: 5
+  Grass: {fileID: 735249361642999010, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
+  Dirt: {fileID: -5938633437628615809, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
+  Dirt_Iron: {fileID: -6071572033166985121, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Dirt_Topaz: {fileID: -6690305278678943163, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Dirt_Sapphire: {fileID: 1394451073918600325, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Dirt_Ruby: {fileID: -3403655023665937851, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Dirt_Diamond: {fileID: 6526388355942126270, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Sand: {fileID: 4376250020348131846, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
+  Sand_Iron: {fileID: 2487976081268717544, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Sand_Topaz: {fileID: -5504451968939670436, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Sand_Sapphire: {fileID: -5023893032785737249, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Sand_Ruby: {fileID: 8847350917968527949, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Sand_Diamond: {fileID: 6388587377646450665, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Clay: {fileID: 4244189097107274620, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
+  Clay_Iron: {fileID: 8045637886330674554, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Clay_Topaz: {fileID: -3236778740689987466, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Clay_Sapphire: {fileID: -7450322043032092787, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Clay_Ruby: {fileID: 8494596220683793543, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Clay_Diamond: {fileID: -699753568170191823, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Rock: {fileID: 6921607204072280670, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
+  Rock_Iron: {fileID: -1783315931748626236, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Rock_Topaz: {fileID: -6974730352247230030, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Rock_Sapphire: {fileID: 6432476027051565782, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Rock_Ruby: {fileID: -644486399483213593, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Rock_Diamond: {fileID: 391546229580076272, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Stone: {fileID: 8018638537229643140, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
+  Stone_Iron: {fileID: 5935165558239414969, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Stone_Topaz: {fileID: -8894130428003497332, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Stone_Sapphire: {fileID: -5197364117412324821, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Stone_Ruby: {fileID: -6903693133368276812, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}
+  Stone_Diamond: {fileID: -8230464621918305956, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+    type: 3}

@@ -20,6 +20,9 @@ public class TileBasedMover : MonoBehaviour
     public Vector3 oldPos;
     public Vector3 targetPos;
 
+    [SerializeField]
+    private Item1[] items;
+
     private void Awake()
     {
         //playerInventory = this.GetComponent<Inventory>();
@@ -418,29 +421,33 @@ public class TileBasedMover : MonoBehaviour
                         world.destroyedTiles.Add(new Vector2((int)(targetPos.x + 70.5), (int)targetPos.y * -1 + 48), false);
 
                         //Add treasure to player inventory
-                        /* Don't Uncomment until an inventory script exists in the MapGen Scene
                         switch (moveTile.GetComponent<Tile>().treasure)
                         {
+                            
                             case Tile.Treasure.Iron:
-                                playerInventory.AddItem(2);
+                                OreIron iron = (OreIron)Instantiate(items[0]);
+                                InventoryScript.MyInstance.AddItem(iron);
                                 break;
                             case Tile.Treasure.Topaz:
-                                playerInventory.AddItem(3);
+                                GemTopaz topaz = (GemTopaz)Instantiate(items[4]);
+                                InventoryScript.MyInstance.AddItem(topaz);
                                 break;
                             case Tile.Treasure.Sapphire:
-                                playerInventory.AddItem(4);
+                                GemSapphire sapphire = (GemSapphire)Instantiate(items[5]);
+                                InventoryScript.MyInstance.AddItem(sapphire);
                                 break;
                             case Tile.Treasure.Ruby:
-                                playerInventory.AddItem(5);
+                                GemRuby ruby = (GemRuby)Instantiate(items[6]);
+                                InventoryScript.MyInstance.AddItem(ruby);
                                 break;
                             case Tile.Treasure.Diamond:
-                                playerInventory.AddItem(6);
+                                GemDiamond diamond = (GemDiamond)Instantiate(items[7]);
+                                InventoryScript.MyInstance.AddItem(diamond);
                                 break;
                             default:
                                 break;
 
                         }
-                        */
 
                         Destroy(moveTile);
                         isDestroyed = true;

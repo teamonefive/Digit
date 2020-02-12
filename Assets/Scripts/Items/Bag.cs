@@ -8,7 +8,7 @@ public class Bag : Item1,IUseable
 {
 
 
-    private int slots;
+    private int slots = 16;
 
     [SerializeField]
     protected GameObject bagPrefab;

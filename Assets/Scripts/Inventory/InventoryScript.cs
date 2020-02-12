@@ -91,8 +91,8 @@ public class InventoryScript : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.L))
         {
-            RubyOre ore = (RubyOre)Instantiate(items[1]);
-            AddItem(ore);
+            GemDiamond gem = (GemDiamond)Instantiate(items[1]);
+            AddItem(gem);
         }
     }
 

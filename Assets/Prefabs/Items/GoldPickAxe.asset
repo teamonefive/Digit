@@ -15,5 +15,5 @@ MonoBehaviour:
   icon: {fileID: -1391482363332799619, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 0
   title: Gold Pickaxe
-  quality: 0
-  price: 45
+  quality: 2
+  price: 100

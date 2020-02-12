@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90710eada33464f09819a0e4a4868665, type: 3}
-  m_Name: DiamondPickAxe
+  m_Script: {fileID: 11500000, guid: cf11ffbb4b933164dafe5b9a87ff0316, type: 3}
+  m_Name: GemSapphire
   m_EditorClassIdentifier: 
-  icon: {fileID: -4089120978205591323, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
-  stackSize: 0
-  title: Mithril Pickaxe
-  quality: 3
-  price: 300
+  icon: {fileID: -5755393567837916143, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  stackSize: 16
+  title: Sapphire Gem
+  quality: 1
+  price: 15

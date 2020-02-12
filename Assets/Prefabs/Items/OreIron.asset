@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840a90542c1804fcda8ac10cba0239f8, type: 3}
-  m_Name: RubyOre
+  m_Script: {fileID: 11500000, guid: edfd0915de13f974d9b57592b1edf471, type: 3}
+  m_Name: OreIron
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: fa48dbd2ce0d29644a813b9fcf7f2d51, type: 3}
-  stackSize: 5
-  title: RubyOre
+  icon: {fileID: 885822610082623624, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  stackSize: 16
+  title: Iron Ore
   quality: 0
   price: 5

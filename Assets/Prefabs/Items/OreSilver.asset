@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607304cc448024a549db516943503413, type: 3}
-  m_Name: GoldOre
+  m_Script: {fileID: 11500000, guid: 727743f03b9e0a445bc5f576ee150956, type: 3}
+  m_Name: OreSilver
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 50b3badd2914ea642bd04c8581897739, type: 3}
-  stackSize: 5
-  title: GoldOre
-  quality: 0
-  price: 10
+  icon: {fileID: 3516958054415588698, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  stackSize: 16
+  title: Silver Ore
+  quality: 1
+  price: 15
