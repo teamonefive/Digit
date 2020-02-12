@@ -8,12 +8,14 @@ public class TileBasedMover : MonoBehaviour
     public FollowDwarf lampy;
     public MapGen world;
     public Stats stat;
+    private Fatigue fatigue;
     //Inventory playerInventory;
 
     private bool canMove = true, moving = false, m_FacingRight = true;
     public bool isFalling = false;
     public bool isDestroyed = false;
     public bool isDestroyedBlock = false;
+
 
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -26,6 +28,23 @@ public class TileBasedMover : MonoBehaviour
     private void Awake()
     {
         //playerInventory = this.GetComponent<Inventory>();
+        fatigue = this.GetComponent<Fatigue>();
+    }
+
+    bool isGround(Vector2 pos)
+    {
+        if (world.getTile(pos) == null)
+        {
+            return false;
+        }
+        else if (world.getTile(pos).GetComponent<Tile>().type == Tile.TileType.Water || world.getTile(pos).GetComponent<Tile>().type == Tile.TileType.Lava)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     void Move()
@@ -107,7 +126,7 @@ public class TileBasedMover : MonoBehaviour
                 {
                     //Dwarf is moving into empty space
 
-                    if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) != null)
+                    if (isGround(targetPos + new Vector3(0f, -1f, 0f)))
                     {
                         //There is a block below the target position, movement is good
                         animator.SetBool("isGrounded", true);
@@ -154,7 +173,7 @@ public class TileBasedMover : MonoBehaviour
                             
                             if (vertical > 0)
                             {
-                                if (world.getTile(transform.position + new Vector3(-1f, 0f, 0f)) != null && world.getTile(transform.position + new Vector3(1f, 0f, 0f)) != null)
+                                if (isGround(transform.position + new Vector3(-1f, 0f, 0f)) && isGround(transform.position + new Vector3(1f, 0f, 0f)))
                                 {
                                     //There is both a block to the left and to the right of the current position, use facing direction to climb up and over
                                     if (m_FacingRight)
@@ -171,7 +190,7 @@ public class TileBasedMover : MonoBehaviour
                                     }
                                     stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
-                                else if (world.getTile(transform.position + new Vector3(-1f, 0f, 0f)) != null)
+                                else if (isGround(transform.position + new Vector3(-1f, 0f, 0f)))
                                 {
                                     //There is a block to the left of the current position, climb up and over to the left
                                     if (m_FacingRight)
@@ -183,7 +202,7 @@ public class TileBasedMover : MonoBehaviour
                                     targetPos += new Vector3(-1f, 0f, 0f);
                                     stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                                 }
-                                else if (world.getTile(transform.position + new Vector3(1f, 0f, 0f)) != null)
+                                else if (isGround(transform.position + new Vector3(1f, 0f, 0f)))
                                 {
                                     //There is a block to the right of the current position, climb up and over to the right
                                     if (!m_FacingRight)
@@ -307,7 +326,12 @@ public class TileBasedMover : MonoBehaviour
                     //Digging attempted
                     bool validDig = true;
 
-                    if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) == null && world.getTile(targetPos + new Vector3(1f, 0f, 0f)) == null)
+                    if (moveTile.GetComponent<Tile>().type == Tile.TileType.Water)
+                    {
+                        //Digging is not possible but swimming is
+                        validDig = false;
+                    }
+                    else if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) == null && world.getTile(targetPos + new Vector3(1f, 0f, 0f)) == null)
                     {
                         if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) == null)
                         {
@@ -462,10 +486,16 @@ public class TileBasedMover : MonoBehaviour
                         }
 
                         Destroy(moveTile);
+                        world.activeTiles[world.tilePos(targetPos)] = null;
                         isDestroyed = true;
                         isDestroyedBlock = true;
 
-                        
+                        //expand liquids if need be
+                        world.expandLiquid(world.tilePos(new Vector2(targetPos.x - 1f, targetPos.y)));
+                        world.expandLiquid(world.tilePos(new Vector2(targetPos.x + 1f, targetPos.y)));
+                        world.expandLiquid(world.tilePos(new Vector2(targetPos.x, targetPos.y + 1f)));
+
+
                     }
                     
 
@@ -526,12 +556,51 @@ public class TileBasedMover : MonoBehaviour
                     animator.SetBool("isJumping", false);
                     animator.SetBool("isFalling", false);
 
+                    //update fatigue
+                    if (isDestroyedBlock)
+                    {
+                        fatigue.updateFatigue(10f);
+                        isDestroyedBlock = false;
+                    }
+                    else
+                    {
+                        fatigue.updateFatigue(2.5f);
+                    }
+
+                    //check for death
+                    GameObject currentTile = world.getTile(transform.position);
+                    if (currentTile != null)
+                    {
+                        if (currentTile.GetComponent<Tile>().type == Tile.TileType.Lava)
+                        {
+                            stat.vFatigue = 0f;
+                        }
+                        if ((currentTile.GetComponent<Tile>().type == Tile.TileType.Lava || currentTile.GetComponent<Tile>().type == Tile.TileType.Water) && stat.vFatigue < 1f)
+                        {
+                            world.UnrenderAllTiles();
+                            Vector3 dwarfPos = new Vector3(-53.5f, -1f, 0f);
+                            Vector3 lampPos = new Vector3(-53.1f, -0.55f, 0f);
+                            fatigue.checkFatigue();
+                            
+                            world.generateStartingTiles();
+                            lampy.snapToOrigin();
+
+                            moving = false;
+                            canMove = true;
+                            return;
+                        }
+                    }
+
+                    fatigue.checkFatigue();
+
                     moving = false;
                     canMove = true;
+
+                    
                 }
                 else
                 {
-                    if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) != null)
+                    if (isGround(targetPos + new Vector3(0f, -1f, 0f)) || world.getTile(targetPos) != null)
                     {
                         isFalling = false;
                         stat.fallSpeedMultiplier = 1f;
@@ -573,4 +642,9 @@ public class TileBasedMover : MonoBehaviour
             
         }
     }
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(6);
+    }
 }
+

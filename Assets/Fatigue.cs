@@ -30,29 +30,25 @@ public class Fatigue : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    public void Update()
+    public void updateFatigue(float fatigueDecrement)
     {
+        stat.vFatigue -= fatigueDecrement;
+        
+    }
 
-        if(tile.isDestroyedBlock == true)
-        {
-            stat.vFatigue -= 10f;
-        }
-        tile.isDestroyedBlock = false;
+    public void checkFatigue()
+    {
         if (stat.vFatigue < 1f)
         {
             GetComponent<TileBasedMover>().enabled = false;
             // transitionAnim.SetBool("End", false);
             transitionAnim.SetBool("TransitionFatigue", true);
             //new WaitForSeconds(1f);
-            
 
-            stat.vFatigue = 100f * (stat.vEndurance*1.15f + 1f);
+            stat.vFatigue = 100f * (stat.vEndurance * 1.15f + 1f);
 
             Invoke("flipTheBool", 1.3f);
             StartCoroutine(wait());
-            
-
         }
     }
     IEnumerator wait()

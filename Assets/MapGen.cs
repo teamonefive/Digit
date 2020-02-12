@@ -17,7 +17,9 @@ public class MapGen : MonoBehaviour
     public Dictionary<Vector2, bool> destroyedTiles;
 
     //Holds the GameObjects for tiles that are being rendered
-    private Dictionary<Vector2, GameObject> activeTiles;
+    public Dictionary<Vector2, GameObject> activeTiles;
+
+    private Dictionary<Vector2, bool> isWaterNotLava;
 
     public GameObject dwarf;
 
@@ -43,6 +45,133 @@ public class MapGen : MonoBehaviour
         //return tileGrid[(int)(pos.x + 70.5), (int)(pos.y * -1) + 48];
     }
 
+    public Vector2 tilePos(Vector3 mapPos)
+    {
+        Vector2 pos = new Vector2((int)(mapPos.x + 70.5), (int)(mapPos.y * -1 + 48));
+        return pos;
+    }
+
+    //Need to convert from mapPos to tilePos to call this function
+    public void expandLiquid(Vector2 pos)
+    {
+        if (!isWaterNotLava.ContainsKey(pos))
+        {
+            return;
+        }
+        else if (isWaterNotLava[pos])
+        {
+            //water
+            Vector2 left = pos + new Vector2(-1f, 0f);
+            Vector2 right = pos + new Vector2(1f, 0f);
+            Vector2 down = pos + new Vector2(0f, 1f);
+
+            if (activeTiles.ContainsKey(left))
+            {
+                if (activeTiles[left] == null)
+                {
+                    isWaterNotLava[left] = true;
+                    activeTiles[left] = generateTile(left, new Vector2(transform.position.x + left.x, transform.position.y - left.y));
+                    expandLiquid(left);
+                }
+            }
+            else
+            {
+                activeTiles.Add(left, generateTile(left, new Vector2(transform.position.x + left.x, transform.position.y - left.y)));
+                expandLiquid(pos);
+                Destroy(activeTiles[left]);
+                activeTiles.Remove(left);
+            }
+            if (activeTiles.ContainsKey(right))
+            {
+                if (activeTiles[right] == null)
+                {
+                    isWaterNotLava[right] = true;
+                    activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
+                    expandLiquid(right);
+                }
+            }
+            else
+            {
+                activeTiles.Add(right, generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y)));
+                expandLiquid(pos);
+                Destroy(activeTiles[right]);
+                activeTiles.Remove(right);
+            }
+            if (activeTiles.ContainsKey(down))
+            {
+                if (activeTiles[down] == null)
+                {
+                    isWaterNotLava[down] = true;
+                    activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
+                    expandLiquid(down);
+                }
+            }
+            else
+            {
+                activeTiles.Add(down, generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y)));
+                expandLiquid(pos);
+                Destroy(activeTiles[down]);
+                activeTiles.Remove(down);
+            }
+        }
+        else
+        {
+            //lava
+            Vector2 left = pos + new Vector2(-1f, 0f);
+            Vector2 right = pos + new Vector2(1f, 0f);
+            Vector2 down = pos + new Vector2(0f, 1f);
+
+            if (activeTiles.ContainsKey(left))
+            {
+                if (activeTiles[left] == null)
+                {
+                    isWaterNotLava[left] = false;
+                    activeTiles[left] = generateTile(left, new Vector2(transform.position.x + left.x, transform.position.y - left.y));
+                    expandLiquid(left);
+                }
+            }
+            else
+            {
+                activeTiles.Add(left, generateTile(left, new Vector2(transform.position.x + left.x, transform.position.y - left.y)));
+                expandLiquid(pos);
+                Destroy(activeTiles[left]);
+                activeTiles.Remove(left);
+            }
+            if (activeTiles.ContainsKey(right))
+            {
+                if (activeTiles[right] == null)
+                {
+                    isWaterNotLava[right] = false;
+                    activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
+                    expandLiquid(right);
+                }
+            }
+            else
+            {
+                activeTiles.Add(right, generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y)));
+                expandLiquid(pos);
+                Destroy(activeTiles[right]);
+                activeTiles.Remove(right);
+            }
+            if (activeTiles.ContainsKey(down))
+            {
+                if (activeTiles[down] == null)
+                {
+                    isWaterNotLava[down] = false;
+                    activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
+                    expandLiquid(down);
+                }
+            }
+            else
+            {
+                activeTiles.Add(down, generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y)));
+                expandLiquid(pos);
+                Destroy(activeTiles[down]);
+                activeTiles.Remove(down);
+            }
+        }
+    }
+
     //Tile Generation uses integer codes to determine which tile to generate
     //0 = NULL
     //1 = Grass
@@ -54,6 +183,19 @@ public class MapGen : MonoBehaviour
     //returns the generated tile
     public GameObject generateTile(Vector2 createPos, Vector2 mapPos)
     {
+        if (isWaterNotLava.ContainsKey(createPos))
+        {
+            if (isWaterNotLava[createPos])
+            {
+                //Water
+                return Instantiate(allTiles[7], mapPos, Quaternion.identity);
+            }
+            else
+            {
+                //Lava
+                return Instantiate(allTiles[8], mapPos, Quaternion.identity);
+            }
+        }
         if (destroyedTiles.ContainsKey(createPos))
         {
             return null;
@@ -126,7 +268,7 @@ public class MapGen : MonoBehaviour
                     }
                     return tile;
                 }
-                else if (perlin < 0.66f)
+                else if (perlin < 0.85f)
                 {
                     //Dirt
                     GameObject tile = Instantiate(allTiles[2], mapPos, Quaternion.identity);
@@ -169,7 +311,13 @@ public class MapGen : MonoBehaviour
         }
         else if (createPos.y >= 100 && createPos.y < 150)
         {
-            if (perlin < 0.33f)
+            if (perlin < 0.1f)
+            {
+                //Water
+                isWaterNotLava[createPos] = true;
+                return Instantiate(allTiles[7], mapPos, Quaternion.identity);
+            }
+            else if (perlin < 0.35f)
             {
                 //Clay
                 GameObject tile = Instantiate(allTiles[4], mapPos, Quaternion.identity);
@@ -192,7 +340,7 @@ public class MapGen : MonoBehaviour
                 }
                 return tile;
             }
-            else if (perlin < 0.66f)
+            else if (perlin < 0.67f)
             {
                 //Dirt
                 GameObject tile = Instantiate(allTiles[2], mapPos, Quaternion.identity);
@@ -241,7 +389,13 @@ public class MapGen : MonoBehaviour
         }
         else if (createPos.y >= 150 && createPos.y < 200)
         {
-            if (perlin < 0.33f)
+            if (perlin < 0.1f)
+            {
+                //Water
+                isWaterNotLava[createPos] = true;
+                return Instantiate(allTiles[7], mapPos, Quaternion.identity);
+            }
+            else if (perlin < 0.35f)
             {
                 //Dirt
                 GameObject tile = Instantiate(allTiles[2], mapPos, Quaternion.identity);
@@ -270,7 +424,7 @@ public class MapGen : MonoBehaviour
                 }
                 return tile;
             }
-            else if (perlin < 0.66f)
+            else if (perlin < 0.67f)
             {
                 //Clay
                 GameObject tile = Instantiate(allTiles[4], mapPos, Quaternion.identity);
@@ -331,12 +485,12 @@ public class MapGen : MonoBehaviour
         }
         else
         {
-            if (perlin < 0.33f)
+            if (perlin < 0.3f)
             {
                 //NULL
                 return null;
             }
-            else if (perlin < 0.66f)
+            else if (perlin < 0.55f)
             {
                 //Clay
                 GameObject tile = Instantiate(allTiles[4], mapPos, Quaternion.identity);
@@ -371,7 +525,7 @@ public class MapGen : MonoBehaviour
                 }
                 return tile;
             }
-            else if (perlin < 0.83f)
+            else if (perlin < 0.75f)
             {
                 //Rock
                 GameObject tile = Instantiate(allTiles[5], mapPos, Quaternion.identity);
@@ -406,7 +560,7 @@ public class MapGen : MonoBehaviour
                 }
                 return tile;
             }
-            else
+            else if (perlin < 0.85f)
             {
                 //Stone
                 GameObject tile = Instantiate(allTiles[6], mapPos, Quaternion.identity);
@@ -440,6 +594,12 @@ public class MapGen : MonoBehaviour
                         break;
                 }
                 return tile;
+            }
+            else
+            {
+                //Lava
+                isWaterNotLava[createPos] = false;
+                return Instantiate(allTiles[8], mapPos, Quaternion.identity);
             }
         }
     }
@@ -563,25 +723,25 @@ public class MapGen : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void UnrenderAllTiles()
     {
-        seed = Random.Range(-2000000, 2000000);
+        int xPos = (int)(dwarf.transform.position.x + 70.5);
+        int yPos = (int)(dwarf.transform.position.y * -1) + 48;
 
-        mountainHeights = new Dictionary<int, int>();
-        destroyedTiles = new Dictionary<Vector2, bool>();
-        activeTiles = new Dictionary<Vector2, GameObject>();
-
-        //Generate initial mountain heights
-        for (int i = 0; i < width; i++)
+        for (int i = xPos - renderDistance; i <= xPos + renderDistance; i++)
         {
-            //determine the mountain height at a given level
-            if (i >= width / 2 - 16 && i <= width / 2 + 15 && guaranteeFlatSection)
+            for (int j = yPos - renderDistance; j <= yPos + renderDistance; j++)
             {
-                mountainHeights.Add(i, 50);
+                Vector2 tilePos = new Vector2(i, j);
+                Destroy(activeTiles[tilePos]);
+                activeTiles.Remove(tilePos);
             }
         }
+    }
 
-        //Render Initial Tiles
+    public void generateStartingTiles()
+    {
+        dwarf.transform.position = new Vector3(-53.5f, -1f, 0f);
         int xPos = (int)(dwarf.transform.position.x + 70.5);
         int yPos = (int)(dwarf.transform.position.y * -1) + 48;
 
@@ -595,10 +755,33 @@ public class MapGen : MonoBehaviour
                 Vector2 tilePos = new Vector2(i, j);
 
                 GameObject tile = generateTile(tilePos, mapPos);
-                
+
                 activeTiles.Add(tilePos, tile);
             }
         }
+    }
+
+    private void Start()
+    {
+        seed = Random.Range(-2000000, 2000000);
+
+        mountainHeights = new Dictionary<int, int>();
+        destroyedTiles = new Dictionary<Vector2, bool>();
+        activeTiles = new Dictionary<Vector2, GameObject>();
+        isWaterNotLava = new Dictionary<Vector2, bool>();
+
+        //Generate initial mountain heights
+        for (int i = 0; i < width; i++)
+        {
+            //determine the mountain height at a given level
+            if (i >= width / 2 - 16 && i <= width / 2 + 15 && guaranteeFlatSection)
+            {
+                mountainHeights.Add(i, 50);
+            }
+        }
+
+        //Render Initial Tiles
+        generateStartingTiles();
 
     }
 

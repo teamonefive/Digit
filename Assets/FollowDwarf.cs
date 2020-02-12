@@ -15,6 +15,11 @@ public class FollowDwarf : MonoBehaviour
     {
 
     }
+
+    public void snapToOrigin()
+    {
+        transform.position = new Vector3(-53.1f, -0.55f, 0f);
+    }
     void Update()
     {
         pos = dwarfMover.targetPos + new Vector3(xOffset, yOffset, 0f);
@@ -40,7 +45,7 @@ public class FollowDwarf : MonoBehaviour
             }
             if (transform.position.y - pos.y > 10)
             {
-                stat.speedMultiplier = 100f;
+                stat.speedMultiplier = 1000f;
             }
             
             if (noneOfTheAbove)
