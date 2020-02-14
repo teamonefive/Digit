@@ -47,11 +47,11 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 1404c7b0e7500d64da94f7aad2816635, type: 3}
     - {fileID: 102900000, guid: a68fe450c342fc048a3c207c149305b0, type: 3}
     - {fileID: 2800000, guid: a7108ee6360e8eb4abb650089ebcde6f, type: 3}
-    totalSpriteSurfaceArea: 458216
+    totalSpriteSurfaceArea: 453096
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
-      Hash: a24c9252968d653b248f268b7e7e9d26
+      Hash: b57c6632ebac2298c80d2ea059c31922
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 235eafb1d0bb4914895155534d8baa33, type: 3}
@@ -117,12 +117,7 @@ SpriteAtlas:
   - {fileID: -2702378682788204596, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
   - {fileID: 1566818582695345458, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
   - {fileID: 21300000, guid: e2a0d1cc778110b45a59cc273821d9a1, type: 3}
-  - {fileID: 6413867661117553163, guid: 509521ece016a2343bc77d50abfffa7c, type: 3}
-  - {fileID: -4936940927964707445, guid: 509521ece016a2343bc77d50abfffa7c, type: 3}
-  - {fileID: 6671062928473102778, guid: 509521ece016a2343bc77d50abfffa7c, type: 3}
-  - {fileID: 3167161203882850167, guid: ad81bead15360f34baf18d1aa41e1026, type: 3}
-  - {fileID: 876795591125516320, guid: ad81bead15360f34baf18d1aa41e1026, type: 3}
-  - {fileID: -2839812311322640375, guid: ad81bead15360f34baf18d1aa41e1026, type: 3}
+  - {fileID: 21300000, guid: 918ea06d9840d60418ed3ff5697557f4, type: 3}
   - {fileID: 21300000, guid: 2cb65fde5bb458f41be83f8dba061cf4, type: 3}
   m_PackedSpriteNamesToIndex:
   - dwarf_ceiling_idle_3
@@ -188,12 +183,7 @@ SpriteAtlas:
   - dwarf-aseprite_19
   - dwarf-aseprite_18
   - dwarf_ceiling_idle_1
-  - lampy2_1
-  - lampy2_0
-  - lampy2_2
-  - lampy_2
-  - lampy_1
-  - lampy_0
+  - lampy3
   - dwarf_fall_1
   m_Tag: DyggSprites
   m_IsVariant: 0
