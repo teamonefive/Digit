@@ -15,24 +15,12 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 0
+      filterMode: 1
       generateMipMaps: 0
-      readable: 1
+      readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings:
-    - serializedVersion: 3
-      m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 2048
-      m_ResizeAlgorithm: 0
-      m_TextureFormat: -1
-      m_TextureCompression: 0
-      m_CompressionQuality: 50
-      m_CrunchedCompression: 0
-      m_AllowsAlphaSplitting: 0
-      m_Overridden: 0
-      m_AndroidETC2FallbackOverride: 0
-      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    platformSettings: []
     packingSettings:
       serializedVersion: 2
       padding: 4
@@ -41,149 +29,14 @@ SpriteAtlas:
       enableRotation: 1
       enableTightPacking: 1
     variantMultiplier: 1
-    packables:
-    - {fileID: 102900000, guid: 0a6197d68dd31494c81086ea86aac9a0, type: 3}
-    - {fileID: 2800000, guid: 8e160a2a620644cd6afef9119dad1093, type: 3}
-    - {fileID: 102900000, guid: 1404c7b0e7500d64da94f7aad2816635, type: 3}
-    - {fileID: 102900000, guid: a68fe450c342fc048a3c207c149305b0, type: 3}
-    - {fileID: 2800000, guid: a7108ee6360e8eb4abb650089ebcde6f, type: 3}
-    totalSpriteSurfaceArea: 453096
+    packables: []
+    totalSpriteSurfaceArea: 0
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
-      Hash: b57c6632ebac2298c80d2ea059c31922
+      Hash: 00000000000000000000000000000000
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites:
-  - {fileID: 21300000, guid: 235eafb1d0bb4914895155534d8baa33, type: 3}
-  - {fileID: 21300000, guid: f6e79c92de43c11498105d379f6ef52f, type: 3}
-  - {fileID: 21300000, guid: 822f5da6923de504d9dd5005ca88c455, type: 3}
-  - {fileID: 21300000, guid: a7108ee6360e8eb4abb650089ebcde6f, type: 3}
-  - {fileID: 21300000, guid: e6c197e78ab37304da94ceaa7daeb33f, type: 3}
-  - {fileID: 21300000, guid: 701661284930f3a4ebc479c788ebbca6, type: 3}
-  - {fileID: 430927330078481251, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -1511923217119065638, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -3350219925091953350, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -7298150194998086746, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -2040595078301473617, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -3020717498745937406, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: 4162065098052148138, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -5289819024634132762, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -2204707730006461468, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: 9122059738855951601, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: 1562471339879714248, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -6129303405822598050, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -6310290810148467550, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -9157097078583004315, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -3591412822261627359, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -5605470933682318795, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: -1240422962202182540, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: 5137485339482900152, guid: c5325389d3762cc4586366b8012437e9, type: 3}
-  - {fileID: 21300000, guid: 8e160a2a620644cd6afef9119dad1093, type: 3}
-  - {fileID: 21300000, guid: fb01e6fa1b70f3b4eaebb7a390941d9c, type: 3}
-  - {fileID: -4916903573782769290, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -8393424621390447300, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -3237931990503024186, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -1670740737325208529, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -6553190212311688353, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -6742869036943125472, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 1085001508628712263, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -6036155305970230097, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -1143161955511189106, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -3804070568568297054, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -6156384253631231549, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 1026243940468622665, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 8733035453969165669, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 8331662666619362492, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 3703371809854938549, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 409017604884566726, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -8068794118831398269, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 7481576300198269442, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 3709956057650008402, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 4777007803265206801, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 2827675507571397504, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 8731174987409164866, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -4758602532114368305, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -3623984205987502123, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -5019144309381342072, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -4063796013459741057, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -3120037705428364329, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 903595214931154041, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -8940975389636405219, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -7258195271140458734, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 7429174389537696157, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -8142855591397967727, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 7174168393447703103, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -6062275637651736686, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: -2702378682788204596, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 1566818582695345458, guid: 9c997c5c31918e3488561e4a04be05b2, type: 3}
-  - {fileID: 21300000, guid: e2a0d1cc778110b45a59cc273821d9a1, type: 3}
-  - {fileID: 21300000, guid: 918ea06d9840d60418ed3ff5697557f4, type: 3}
-  - {fileID: 21300000, guid: 2cb65fde5bb458f41be83f8dba061cf4, type: 3}
-  m_PackedSpriteNamesToIndex:
-  - dwarf_ceiling_idle_3
-  - dwarf_ceiling_idle_2
-  - dwarf_jump_ceiling_2
-  - background_refreence
-  - dwarf_jump_ceiling_3
-  - dwarf_jump_ceiling_1
-  - dwarf-idle-run-jump_13
-  - dwarf-idle-run-jump_0
-  - dwarf-idle-run-jump_12
-  - dwarf-idle-run-jump_1
-  - dwarf-idle-run-jump_11
-  - dwarf-idle-run-jump_2
-  - dwarf-idle-run-jump_10
-  - dwarf-idle-run-jump_3
-  - dwarf-idle-run-jump_17
-  - dwarf-idle-run-jump_4
-  - dwarf-idle-run-jump_16
-  - dwarf-idle-run-jump_5
-  - dwarf-idle-run-jump_15
-  - dwarf-idle-run-jump_6
-  - dwarf-idle-run-jump_14
-  - dwarf-idle-run-jump_7
-  - dwarf-idle-run-jump_8
-  - dwarf-idle-run-jump_9
-  - back
-  - dwarf_jump_ceiling_4
-  - dwarf-aseprite_28
-  - dwarf-aseprite_29
-  - dwarf-aseprite_20
-  - dwarf-aseprite_21
-  - dwarf-aseprite_22
-  - dwarf-aseprite_23
-  - dwarf-aseprite_33
-  - dwarf-aseprite_24
-  - dwarf-aseprite_32
-  - dwarf-aseprite_8
-  - dwarf-aseprite_25
-  - dwarf-aseprite_31
-  - dwarf-aseprite_9
-  - dwarf-aseprite_26
-  - dwarf-aseprite_30
-  - dwarf-aseprite_27
-  - dwarf-aseprite_35
-  - dwarf-aseprite_34
-  - dwarf-aseprite_2
-  - dwarf-aseprite_3
-  - dwarf-aseprite_0
-  - dwarf-aseprite_1
-  - dwarf-aseprite_6
-  - dwarf-aseprite_7
-  - dwarf-aseprite_4
-  - dwarf-aseprite_5
-  - dwarf-aseprite_11
-  - dwarf-aseprite_10
-  - dwarf-aseprite_13
-  - dwarf-aseprite_12
-  - dwarf-aseprite_15
-  - dwarf-aseprite_14
-  - dwarf-aseprite_17
-  - dwarf-aseprite_16
-  - dwarf-aseprite_19
-  - dwarf-aseprite_18
-  - dwarf_ceiling_idle_1
-  - lampy3
-  - dwarf_fall_1
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
   m_Tag: DyggSprites
   m_IsVariant: 0
