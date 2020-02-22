@@ -132,22 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftingButton (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: _item
-      value: 
-      objectReference: {fileID: 11400000, guid: 107a67e5ac5f340729948996dba5eb73,
-        type: 2}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: craftingRecipe
-      value: 
-      objectReference: {fileID: 1940295932}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: iconImage
-      value: 
-      objectReference: {fileID: 984744729}
     - target: {fileID: 7902774302180276911, guid: c41e06260f2d8c849b3795c9c2f3f980,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,6 +282,22 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.82102174
       objectReference: {fileID: 0}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 107a67e5ac5f340729948996dba5eb73,
+        type: 2}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: craftingRecipe
+      value: 
+      objectReference: {fileID: 1940295932}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: iconImage
+      value: 
+      objectReference: {fileID: 984744729}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41e06260f2d8c849b3795c9c2f3f980, type: 3}
 --- !u!1 &47871240
@@ -3246,22 +3246,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftingButton
       objectReference: {fileID: 0}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: _item
-      value: 
-      objectReference: {fileID: 11400000, guid: f481cb8cd988d43f8a1096a071f86d49,
-        type: 2}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: craftingRecipe
-      value: 
-      objectReference: {fileID: 2084860374}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: iconImage
-      value: 
-      objectReference: {fileID: 1802990363}
     - target: {fileID: 7902774302180276911, guid: c41e06260f2d8c849b3795c9c2f3f980,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3412,6 +3396,22 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.82102174
       objectReference: {fileID: 0}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: f481cb8cd988d43f8a1096a071f86d49,
+        type: 2}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: craftingRecipe
+      value: 
+      objectReference: {fileID: 2084860374}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: iconImage
+      value: 
+      objectReference: {fileID: 1802990363}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41e06260f2d8c849b3795c9c2f3f980, type: 3}
 --- !u!1 &655203989
@@ -3503,22 +3503,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftingButton (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: _item
-      value: 
-      objectReference: {fileID: 11400000, guid: 2359043392432428b93e3b8d2e770ad1,
-        type: 2}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: craftingRecipe
-      value: 
-      objectReference: {fileID: 472431560}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: iconImage
-      value: 
-      objectReference: {fileID: 1414577889}
     - target: {fileID: 7902774302180276911, guid: c41e06260f2d8c849b3795c9c2f3f980,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3669,6 +3653,22 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.82102174
       objectReference: {fileID: 0}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 2359043392432428b93e3b8d2e770ad1,
+        type: 2}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: craftingRecipe
+      value: 
+      objectReference: {fileID: 472431560}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: iconImage
+      value: 
+      objectReference: {fileID: 1414577889}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41e06260f2d8c849b3795c9c2f3f980, type: 3}
 --- !u!1 &678007733
@@ -5869,22 +5869,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftingButton (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: _item
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f9647bf7429c4e15b36532a8f8d3896,
-        type: 2}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: craftingRecipe
-      value: 
-      objectReference: {fileID: 965903801}
-    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
-        type: 3}
-      propertyPath: iconImage
-      value: 
-      objectReference: {fileID: 869686736}
     - target: {fileID: 7902774302180276911, guid: c41e06260f2d8c849b3795c9c2f3f980,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6035,6 +6019,22 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.82102174
       objectReference: {fileID: 0}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f9647bf7429c4e15b36532a8f8d3896,
+        type: 2}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: craftingRecipe
+      value: 
+      objectReference: {fileID: 965903801}
+    - target: {fileID: 231230848160459448, guid: c41e06260f2d8c849b3795c9c2f3f980,
+        type: 3}
+      propertyPath: iconImage
+      value: 
+      objectReference: {fileID: 869686736}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41e06260f2d8c849b3795c9c2f3f980, type: 3}
 --- !u!1 &1091547167
@@ -7998,6 +7998,8 @@ RectTransform:
   - {fileID: 542301941}
   - {fileID: 1513042532}
   - {fileID: 1581094837}
+  - {fileID: 1902699212}
+  - {fileID: 1880082326}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9197,6 +9199,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731536052}
   m_CullTransparentMesh: 0
+--- !u!1 &1733354262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1733354263}
+  - component: {fileID: 1733354265}
+  - component: {fileID: 1733354264}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1733354263
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733354262}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1902699212}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1733354264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733354262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Open Panel
+--- !u!222 &1733354265
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733354262}
+  m_CullTransparentMesh: 0
 --- !u!1 &1745834113
 GameObject:
   m_ObjectHideFlags: 0
@@ -10273,6 +10352,222 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874843649}
   m_CullTransparentMesh: 0
+--- !u!1 &1880082325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880082326}
+  - component: {fileID: 1880082328}
+  - component: {fileID: 1880082327}
+  m_Layer: 0
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1880082326
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880082325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1489155069}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -200, y: -200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1880082327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880082325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1880082328
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880082325}
+  m_CullTransparentMesh: 0
+--- !u!1 &1902699211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902699212}
+  - component: {fileID: 1902699215}
+  - component: {fileID: 1902699214}
+  - component: {fileID: 1902699213}
+  - component: {fileID: 1902699216}
+  m_Layer: 0
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1902699212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902699211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1733354263}
+  m_Father: {fileID: 1489155069}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 373, y: 288}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.4999999, y: 0.49999982}
+--- !u!114 &1902699213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902699211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1902699214}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1902699216}
+        m_MethodName: OpenPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1902699214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902699211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1902699215
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902699211}
+  m_CullTransparentMesh: 0
+--- !u!114 &1902699216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902699211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c3146e778d3423d92fd9ba8d6ced79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 1880082325}
 --- !u!1 &1906187579
 GameObject:
   m_ObjectHideFlags: 0
