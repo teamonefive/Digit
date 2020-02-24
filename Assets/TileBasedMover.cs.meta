@@ -3,7 +3,12 @@ guid: ee681bf8e72d8214cb4dc539b7fa5557
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - animator: {instanceID: 0}
+  - lampy: {instanceID: 0}
+  - world: {instanceID: 0}
+  - stat: {instanceID: 0}
+  - debris: {fileID: 484294664459502887, guid: e2f6ee4ad74fd66479f8f5cce35c672a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

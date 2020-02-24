@@ -9,6 +9,7 @@ public class TileBasedMover : MonoBehaviour
     public MapGen world;
     public Stats stat;
     private Fatigue fatigue;
+    public GameObject debris;
     //Inventory playerInventory;
 
     private bool canMove = true, moving = false, m_FacingRight = true;
@@ -486,6 +487,7 @@ public class TileBasedMover : MonoBehaviour
                         }
 
                         Destroy(moveTile);
+                        Instantiate(debris, targetPos, Quaternion.identity);
                         world.activeTiles[world.tilePos(targetPos)] = null;
                         isDestroyed = true;
                         isDestroyedBlock = true;

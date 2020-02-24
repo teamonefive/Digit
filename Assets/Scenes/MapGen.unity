@@ -4216,6 +4216,7 @@ MonoBehaviour:
   lampy: {fileID: 380610448}
   world: {fileID: 597759224}
   stat: {fileID: 893040695}
+  debris: {fileID: 484294664459502887, guid: e2f6ee4ad74fd66479f8f5cce35c672a, type: 3}
   isFalling: 0
   isDestroyed: 0
   isDestroyedBlock: 0
