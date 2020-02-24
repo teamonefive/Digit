@@ -8,13 +8,12 @@ public class FadeOut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DestroyObjectDelayed();
     }
 
     // Update is called once per frame
     void Update()
     {
-        DestroyObjectDelayed();
     }
 
     void DestroyObjectDelayed()
