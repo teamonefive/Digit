@@ -5,9 +5,9 @@ using UnityEngine;
 public class PanelOpener : MonoBehaviour
 {
     public GameObject Panel;
-    public GameObject Panel1;
-    public GameObject Panel2;
-    public GameObject Panel3;
+    public GameObject Panel_Inventory;
+    public GameObject Panel_Bagbar;
+    //public GameObject Panel3;
 
     public void OpenPanel()
     {
@@ -20,28 +20,28 @@ public class PanelOpener : MonoBehaviour
 
     public void OpenPanel1()
     {
-        if (Panel1 != null)
+        if (Panel_Inventory != null)
         {
-            bool isActive = Panel1.activeSelf;
-            Panel1.SetActive(!isActive);
+            bool isActive = Panel_Inventory.activeSelf;
+            Panel_Inventory.SetActive(!isActive);
         }
     }
 
     public void OpenPanel2()
     {
-        if (Panel2 != null)
+        if (Panel_Bagbar != null)
         {
-            bool isActive = Panel2.activeSelf;
-            Panel2.SetActive(!isActive);
+            bool isActive = Panel_Bagbar.activeSelf;
+            Panel_Bagbar.SetActive(!isActive);
         }
     }
 
-    public void OpenPanel3()
-    {
-        if (Panel3 != null)
-        {
-            bool isActive = Panel3.activeSelf;
-            Panel3.SetActive(!isActive);
-        }
-    }
+    //public void OpenPanel3()
+    //{
+    //    if (Panel3 != null)
+    //    {
+    //        bool isActive = Panel3.activeSelf;
+    //        Panel3.SetActive(!isActive);
+    //    }
+    //}
 }
