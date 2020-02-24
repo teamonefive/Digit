@@ -7,7 +7,7 @@ public class PanelOpener : MonoBehaviour
     public GameObject Panel;
     public GameObject Panel_Inventory;
     public GameObject Panel_Bagbar;
-    //public GameObject Panel3;
+    public GameObject GoldDisplayText;
 
     public void OpenPanel()
     {
@@ -36,12 +36,12 @@ public class PanelOpener : MonoBehaviour
         }
     }
 
-    //public void OpenPanel3()
-    //{
-    //    if (Panel3 != null)
-    //    {
-    //        bool isActive = Panel3.activeSelf;
-    //        Panel3.SetActive(!isActive);
-    //    }
-    //}
+    public void OpenGoldDisplayText()
+    {
+        if (GoldDisplayText != null)
+        {
+            bool isActive = GoldDisplayText.activeSelf;
+            GoldDisplayText.SetActive(!isActive);
+        }
+    }
 }

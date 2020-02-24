@@ -78,7 +78,7 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private void BuyItem()
     {
         Experience.MyInstance.MyGold -= vendorItem.MyItem.MyPrice;
-
+        Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
         if (!vendorItem.Unlimited)
         {
             vendorItem.MyQuantity--;
