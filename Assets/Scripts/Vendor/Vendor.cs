@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Vendor : MonoBehaviour
 {
+
     [SerializeField]
     private VendorItem[] items;
 
@@ -15,4 +16,5 @@ public class Vendor : MonoBehaviour
         vendorWindow.CreatePages(items);
         vendorWindow.Openvwindow();
     }
+
 }
