@@ -4220,6 +4220,8 @@ MonoBehaviour:
   isFalling: 0
   isDestroyed: 0
   isDestroyedBlock: 0
+  isDigging: 0
+  isFatigued: 0
   oldPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
   items:
@@ -7231,6 +7233,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 228.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 255.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -811.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -567.67
+      objectReference: {fileID: 0}
     - target: {fileID: 6022952879438285901, guid: 59530a33647b64fc096cbadd1deeb2ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7380,26 +7402,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0.98039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 228.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 255.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -811.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022952880524750654, guid: 59530a33647b64fc096cbadd1deeb2ca,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -567.67
       objectReference: {fileID: 0}
     - target: {fileID: 6022952880524750653, guid: 59530a33647b64fc096cbadd1deeb2ca,
         type: 3}
