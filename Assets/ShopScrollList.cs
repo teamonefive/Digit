@@ -29,7 +29,7 @@ public class ShopScrollList : MonoBehaviour
 
     public void RefreshDisplay()
     {
-        myGoldDisplay.text = "Gold: " + gold.ToString();
+        myGoldDisplay.text = "fuck: " + gold.ToString();
         RemoveButtons();
         AddButtons();
     }

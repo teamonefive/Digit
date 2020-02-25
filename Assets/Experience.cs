@@ -17,8 +17,9 @@ public class Experience : MonoBehaviour
     public GameObject ui;
     public Button menuButton;
     public Stats stat;
+    public Text myGoldDisplay;
     public int MyGold { get; set; }
-    
+
 
     private bool isOpen = true;
 
@@ -40,6 +41,7 @@ public class Experience : MonoBehaviour
     void Start()
     {
         MyGold = 100;
+        myGoldDisplay.text = "Gold: " + MyGold.ToString();
         levelUpBar.value = stat.vCurrExp;
         levelUpBar.maxValue = stat.vExpLeft;
         currLevel.text = "Level : 1";
