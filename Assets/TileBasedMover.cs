@@ -58,7 +58,7 @@ public class TileBasedMover : MonoBehaviour
     /*
     Returns the Vector2 direction of the touch/click.
     */
-    Vector2 touchLocation()
+    public Vector2 touchLocation()
     {
         Vector2 touchLoc = new Vector2(0f, 0f);
 
