@@ -12,7 +12,7 @@ public class TileBasedMover : MonoBehaviour
     public GameObject debris;
     //Inventory playerInventory;
 
-    private bool canMove = true, moving = false, m_FacingRight = true;
+    public bool canMove = true, moving = false, m_FacingRight = true;
     public bool isFalling = false;
     public bool isDestroyed = false;
     public bool isDestroyedBlock = false;
