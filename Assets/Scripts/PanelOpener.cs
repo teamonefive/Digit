@@ -20,11 +20,21 @@ public class PanelOpener : MonoBehaviour
 
     public void OpenPanel1()
     {
-        if (Panel_Inventory != null)
+        InventoryScript inventory = InventoryScript.MyInstance;
+        if (inventory.transform.position.z == 0)
         {
-            bool isActive = Panel_Inventory.activeSelf;
-            Panel_Inventory.SetActive(!isActive);
+            inventory.transform.position = new Vector3(inventory.transform.position.x, inventory.transform.position.y, 1500f);
         }
+        else
+        {
+            inventory.transform.position = new Vector3(inventory.transform.position.x, inventory.transform.position.y, 0f);
+
+        }
+        //if (Panel_Inventory != null)
+        //{
+        //    bool isActive = Panel_Inventory.activeSelf;
+        //    Panel_Inventory.SetActive(!isActive);
+        //}
     }
 
     public void OpenPanel2()

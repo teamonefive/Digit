@@ -15,7 +15,6 @@ TagManager:
   - 
   - 
   - Background
-  - Clickable
   - 
   - 
   - 
@@ -38,6 +37,7 @@ TagManager:
   - 
   - 
   - 
+  - hide
   m_SortingLayers:
   - name: Background
     uniqueID: 3739407531
