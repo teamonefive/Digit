@@ -66,7 +66,8 @@ public class DialogueManager : MonoBehaviour {
 		animator.SetBool("IsOpen", false);
         if(firstTime == true)
         {
-            Mine.MineEntrance();
+            Dwarf.GetComponent<TileBasedMover>().enabled = true;
+            // Mine.MineEntrance();
             firstTime = false;
         }
         else if(mineTime == true)

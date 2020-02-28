@@ -6,7 +6,7 @@ public class TutorialCollisions : MonoBehaviour
 {
     public GameObject Dwarf;
     public TileBasedMover tile;
-    public bool moveRight = true;
+    public bool moveRight = false;
     //public Collider2D Player;
     // Start is called before the first frame update
     void Start()
@@ -17,15 +17,17 @@ public class TutorialCollisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void MineEntrance()
-    {
-        Dwarf.GetComponent<TileBasedMover>().enabled = true;
-
+        //Dwarf.GetComponent<TileBasedMover>().enabled = false;
+  //      if (Input.GetAxisRaw("Horizontal") > 0f && moveRight == false)
+    //    {
+      //      Dwarf.GetComponent<TileBasedMover>().enabled = true;
+        //    tile.targetPos += new Vector3(1, 0, 0f);
+            
+        //}
     }
     void OnTriggerEnter2D(Collider2D Player)
     {
+       // moveRight = true;
         if (Player.gameObject.tag == "Player")
         {
             //Dwarf.GetComponent<TileBasedMover>().enabled = false;

@@ -6,11 +6,23 @@ public class DialogueTrigger : MonoBehaviour {
 
 	public Dialogue dialogue;
     public Dialogue digDialogue;
+    public Dialogue collectFirstItem;
     public TileBasedMover tile;
     public GameObject Dwarf;
     private bool firstTime = true;
-    void Update()
+    void Awake()
     {
+        //tile.oldPos = new Vector3(0, 0, 0);
+        Dwarf.GetComponent<TileBasedMover>().enabled = false;
+    }
+    void Update()
+    {   
+        if (Input.GetAxisRaw("Horizontal") < 0f && firstTime == true)
+        {
+            Dwarf.GetComponent<TileBasedMover>().enabled = true;
+            //tile.targetPos += new Vector3(-1, 0, 0f);
+        }
+        
         if (tile.moving == true && firstTime == true)
         {
             TriggerStartDialogue();
@@ -25,6 +37,11 @@ public class DialogueTrigger : MonoBehaviour {
     public void TriggerStartDigDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(digDialogue);
+    }
+
+    public void TriggerStartItemDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(collectFirstItem);
     }
 
 }
