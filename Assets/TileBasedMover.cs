@@ -32,6 +32,8 @@ public class TileBasedMover : MonoBehaviour
     {
         //playerInventory = this.GetComponent<Inventory>();
         fatigue = this.GetComponent<Fatigue>();
+        oldPos = new Vector3(-53.5f, -1f, 0f);
+        targetPos = oldPos;
     }
 
     bool isGround(Vector2 pos)
@@ -518,11 +520,9 @@ public class TileBasedMover : MonoBehaviour
                 isDestroyedBlock = true;
 
                 //expand liquids if need be
+                world.expandLiquid(world.tilePos(new Vector2(targetPos.x, targetPos.y + 1f)));
                 world.expandLiquid(world.tilePos(new Vector2(targetPos.x - 1f, targetPos.y)));
                 world.expandLiquid(world.tilePos(new Vector2(targetPos.x + 1f, targetPos.y)));
-                world.expandLiquid(world.tilePos(new Vector2(targetPos.x, targetPos.y + 1f)));
-
-
             }
             
 

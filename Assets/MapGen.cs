@@ -20,6 +20,7 @@ public class MapGen : MonoBehaviour
     public Dictionary<Vector2, GameObject> activeTiles;
 
     private Dictionary<Vector2, bool> isWaterNotLava;
+    private Dictionary<Vector2, bool> generatedStone;
 
     public GameObject dwarf;
 
@@ -73,6 +74,17 @@ public class MapGen : MonoBehaviour
                     activeTiles[left] = generateTile(left, new Vector2(transform.position.x + left.x, transform.position.y - left.y));
                     expandLiquid(left);
                 }
+                else if (isWaterNotLava.ContainsKey(left))
+                {
+                    if (!isWaterNotLava[left])
+                    {
+                        //there is lava to the left of the expanding water
+                        isWaterNotLava.Remove(left);
+                        generatedStone[left] = true;
+                        Destroy(activeTiles[left]);
+                        activeTiles[left] = generateTile(left, new Vector2(transform.position.x + left.x, transform.position.y - left.y));
+                    }
+                }
             }
             else
             {
@@ -89,6 +101,17 @@ public class MapGen : MonoBehaviour
                     activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
                     expandLiquid(right);
                 }
+                else if (isWaterNotLava.ContainsKey(right))
+                {
+                    if (!isWaterNotLava[right])
+                    {
+                        //there is lava to the right of the expanding water
+                        isWaterNotLava.Remove(right);
+                        generatedStone[right] = true;
+                        Destroy(activeTiles[right]);
+                        activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
+                    }
+                }
             }
             else
             {
@@ -104,6 +127,17 @@ public class MapGen : MonoBehaviour
                     isWaterNotLava[down] = true;
                     activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
                     expandLiquid(down);
+                }
+                else if (isWaterNotLava.ContainsKey(down))
+                {
+                    if (!isWaterNotLava[down])
+                    {
+                        //there is lava to the down of the expanding water
+                        isWaterNotLava.Remove(down);
+                        generatedStone[down] = true;
+                        Destroy(activeTiles[down]);
+                        activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
+                    }
                 }
             }
             else
@@ -129,6 +163,19 @@ public class MapGen : MonoBehaviour
                     activeTiles[left] = generateTile(left, new Vector2(transform.position.x + left.x, transform.position.y - left.y));
                     expandLiquid(left);
                 }
+                else if (isWaterNotLava.ContainsKey(left))
+                {
+                    if (isWaterNotLava[left])
+                    {
+                        //there is water to the left of the expanding lava
+                        isWaterNotLava.Remove(pos);
+                        generatedStone[pos] = true;
+                        Destroy(activeTiles[pos]);
+                        activeTiles[pos] = generateTile(pos, new Vector2(transform.position.x + pos.x, transform.position.y - pos.y));
+
+                        return;
+                    }
+                }
             }
             else
             {
@@ -141,9 +188,42 @@ public class MapGen : MonoBehaviour
             {
                 if (activeTiles[right] == null)
                 {
-                    isWaterNotLava[right] = false;
-                    activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
-                    expandLiquid(right);
+                    if (isWaterNotLava.ContainsKey(right + new Vector2(1f, 0f)))
+                    {
+                        if (isWaterNotLava[right + new Vector2(1f, 0f)])
+                        {
+                            //There is water to the right of the space which the lava wants to expand into. Let water go first.
+                            isWaterNotLava[right] = true;
+                            activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
+                            expandLiquid(right);
+                        }
+                        else
+                        {
+                            isWaterNotLava[right] = false;
+                            activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
+                            expandLiquid(right);
+                        }
+                    }
+                    else
+                    {
+                        isWaterNotLava[right] = false;
+                        activeTiles[right] = generateTile(right, new Vector2(transform.position.x + right.x, transform.position.y - right.y));
+                        expandLiquid(right);
+                    }
+
+                }
+                else if (isWaterNotLava.ContainsKey(right))
+                {
+                    if (isWaterNotLava[right])
+                    {
+                        //there is water to the right of the expanding lava
+                        isWaterNotLava.Remove(pos);
+                        generatedStone[pos] = true;
+                        Destroy(activeTiles[pos]);
+                        activeTiles[pos] = generateTile(pos, new Vector2(transform.position.x + pos.x, transform.position.y - pos.y));
+
+                        return;
+                    }
                 }
             }
             else
@@ -157,9 +237,73 @@ public class MapGen : MonoBehaviour
             {
                 if (activeTiles[down] == null)
                 {
+                    if (isWaterNotLava.ContainsKey(down + new Vector2(1f, 0f)))
+                    {
+                        if (isWaterNotLava[down + new Vector2(1f, 0f)])
+                        {
+                            //There is water to the right of the space which the lava wants to expand into. Let water go first.
+                            isWaterNotLava[down] = true;
+                            activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
+                            expandLiquid(down);
+
+                            isWaterNotLava.Remove(pos);
+                            generatedStone[pos] = true;
+                            Destroy(activeTiles[pos]);
+                            activeTiles[pos] = generateTile(pos, new Vector2(transform.position.x + pos.x, transform.position.y - pos.y));
+
+                            return;
+                        }
+                    }
+                    if (isWaterNotLava.ContainsKey(down + new Vector2(-1f, 0f)))
+                    {
+                        if (isWaterNotLava[down + new Vector2(-1f, 0f)])
+                        {
+                            //There is water to the right of the space which the lava wants to expand into. Let water go first.
+                            isWaterNotLava[down] = true;
+                            activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
+                            expandLiquid(down);
+
+                            isWaterNotLava.Remove(pos);
+                            generatedStone[pos] = true;
+                            Destroy(activeTiles[pos]);
+                            activeTiles[pos] = generateTile(pos, new Vector2(transform.position.x + pos.x, transform.position.y - pos.y));
+
+                            return;
+                        }
+                    }
+                    if (isWaterNotLava.ContainsKey(down + new Vector2(0f, 1f)))
+                    {
+                        if (isWaterNotLava[down + new Vector2(0f, 1f)])
+                        {
+                            //There is water below the space which the lava wants to expand into. Let water go first.
+                            isWaterNotLava[down] = true;
+                            activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
+                            expandLiquid(down);
+
+                            isWaterNotLava.Remove(pos);
+                            generatedStone[pos] = true;
+                            Destroy(activeTiles[pos]);
+                            activeTiles[pos] = generateTile(pos, new Vector2(transform.position.x + pos.x, transform.position.y - pos.y));
+
+                            return;
+                        }
+                    }
+
                     isWaterNotLava[down] = false;
                     activeTiles[down] = generateTile(down, new Vector2(transform.position.x + down.x, transform.position.y - down.y));
                     expandLiquid(down);
+                    
+                }
+                else if (isWaterNotLava.ContainsKey(down))
+                {
+                    if (isWaterNotLava[down])
+                    {
+                        //there is water below the expanding lava
+                        isWaterNotLava.Remove(pos);
+                        generatedStone[pos] = true;
+                        Destroy(activeTiles[pos]);
+                        activeTiles[pos] = generateTile(pos, new Vector2(transform.position.x + pos.x, transform.position.y - pos.y));
+                    }
                 }
             }
             else
@@ -195,6 +339,11 @@ public class MapGen : MonoBehaviour
                 //Lava
                 return Instantiate(allTiles[8], mapPos, Quaternion.identity);
             }
+        }
+        if (generatedStone.ContainsKey(createPos))
+        {
+            //Stone
+            return Instantiate(allTiles[6], mapPos, Quaternion.identity);
         }
         if (destroyedTiles.ContainsKey(createPos))
         {
@@ -769,6 +918,7 @@ public class MapGen : MonoBehaviour
         destroyedTiles = new Dictionary<Vector2, bool>();
         activeTiles = new Dictionary<Vector2, GameObject>();
         isWaterNotLava = new Dictionary<Vector2, bool>();
+        generatedStone = new Dictionary<Vector2, bool>();
 
         //Generate initial mountain heights
         for (int i = 0; i < width; i++)

@@ -17,7 +17,7 @@ public class DialogueTrigger : MonoBehaviour {
     }
     void Update()
     {   
-        if (Input.GetAxisRaw("Horizontal") < 0f && firstTime == true)
+        if (Input.GetAxisRaw("Horizontal") != 0f && firstTime == true)
         {
             Dwarf.GetComponent<TileBasedMover>().enabled = true;
             //tile.targetPos += new Vector3(-1, 0, 0f);
