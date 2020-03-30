@@ -40,15 +40,53 @@ public class Stats : MonoBehaviour
     // FROM FATIGUE
     public float vFatigue = 100f;
 
+    // LEADERBOARD STATS
+    public int totalIron = 0;
+    public int totalSilver = 0;
+    public int totalGold = 0;
+    public int totalMithril = 0;
+    public int totalTopaz = 0;
+    public int totalSapphire = 0;
+    public int totalRuby = 0;
+    public int totalDiamond = 0;
+
+    public int totalDeaths = 0;
+    public int totalDigs = 0;
+    public int totalMoves = 0;
+    public int totalFatigues = 0;
+
+    public int totalPlaytime = 0;
+
+    public void statDump()
+    {
+        Debug.Log("Total Iron: " + totalIron);
+        Debug.Log("Total Diamond: " + totalDiamond);
+        Debug.Log("Total Moves: " + totalMoves);
+        Debug.Log("Total Digs: " + totalDigs);
+        Debug.Log("Total Deaths: " + totalDeaths);
+        Debug.Log("Total Fatigues: " + totalFatigues);
+        Debug.Log("Total Playtime: " + totalPlaytime);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    private float period = 0f;
+
     // Update is called once per frame
     void Update()
     {
+        if (period > 1f)
+        {
+            totalPlaytime++;
+
+            period = 0f;
+        }
+
+        period += Time.deltaTime;
         
     }
 }
