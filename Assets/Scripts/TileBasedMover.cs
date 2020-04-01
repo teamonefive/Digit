@@ -479,34 +479,42 @@ public class TileBasedMover : MonoBehaviour
                     case Tile.Treasure.Iron:
                         OreIron iron = (OreIron)Instantiate(items[0]);
                         InventoryScript.MyInstance.AddItem(iron);
+                        stat.totalIron++;
                         break;
                     case Tile.Treasure.Silver:
                         OreSilver silver = (OreSilver)Instantiate(items[1]);
                         InventoryScript.MyInstance.AddItem(silver);
+                        stat.totalSilver++;
                         break;
                     case Tile.Treasure.Gold:
                         OreGold gold = (OreGold)Instantiate(items[2]);
                         InventoryScript.MyInstance.AddItem(gold);
+                        stat.totalGold++;
                         break;
                     case Tile.Treasure.Mithril:
                         OreMithril mithril = (OreMithril)Instantiate(items[3]);
                         InventoryScript.MyInstance.AddItem(mithril);
+                        stat.totalMithril++;
                         break;
                     case Tile.Treasure.Topaz:
                         GemTopaz topaz = (GemTopaz)Instantiate(items[4]);
                         InventoryScript.MyInstance.AddItem(topaz);
+                        stat.totalTopaz++;
                         break;
                     case Tile.Treasure.Sapphire:
                         GemSapphire sapphire = (GemSapphire)Instantiate(items[5]);
                         InventoryScript.MyInstance.AddItem(sapphire);
+                        stat.totalSapphire++;
                         break;
                     case Tile.Treasure.Ruby:
                         GemRuby ruby = (GemRuby)Instantiate(items[6]);
                         InventoryScript.MyInstance.AddItem(ruby);
+                        stat.totalRuby++;
                         break;
                     case Tile.Treasure.Diamond:
                         GemDiamond diamond = (GemDiamond)Instantiate(items[7]);
                         InventoryScript.MyInstance.AddItem(diamond);
+                        stat.totalDiamond++;
                         break;
                     default:
                         break;
@@ -518,6 +526,8 @@ public class TileBasedMover : MonoBehaviour
                 world.activeTiles[world.tilePos(targetPos)] = null;
                 isDestroyed = true;
                 isDestroyedBlock = true;
+
+                stat.totalDigs++;
 
                 //expand liquids if need be
                 world.expandLiquid(world.tilePos(new Vector2(targetPos.x, targetPos.y + 1f)));
@@ -567,6 +577,7 @@ public class TileBasedMover : MonoBehaviour
             {
                 stat.tileDifficultyMultiplier = 1f;
                 stat.climbingDifficultyMultiplier = 1f;
+                stat.totalMoves++;
 
                 if (!isFalling)
                 {
@@ -598,6 +609,9 @@ public class TileBasedMover : MonoBehaviour
                             world.UnrenderAllTiles();
                             Vector3 dwarfPos = new Vector3(-53.5f, -1f, 0f);
                             Vector3 lampPos = new Vector3(-53.1f, -0.55f, 0f);
+
+                            stat.totalDeaths++;
+
                             fatigue.checkFatigue();
                             
                             world.generateStartingTiles();
@@ -614,6 +628,7 @@ public class TileBasedMover : MonoBehaviour
                     moving = false;
                     canMove = true;
 
+                    stat.statDump();
                     
                 }
                 else
