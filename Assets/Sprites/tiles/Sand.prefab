@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4376250020348131846, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  m_Sprite: {fileID: 2634232102882855827, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123,10 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty: 1.5
   treasure: 0
-  type: 2
-  Grass: {fileID: 735249361642999010, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
-  Dirt: {fileID: -5938633437628615809, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
-  Dirt_Iron: {fileID: -6071572033166985121, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Grass: {fileID: 2067151712165190408, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  Dirt: {fileID: -3512172973439036568, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  Dirt_Iron: {fileID: -8302417715309695485, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
   Dirt_Silver: {fileID: -2972510715967299824, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
@@ -134,16 +133,16 @@ MonoBehaviour:
     type: 3}
   Dirt_Mithril: {fileID: 5601094092107796818, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Dirt_Topaz: {fileID: -6690305278678943163, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Dirt_Topaz: {fileID: 491913904798366839, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Dirt_Sapphire: {fileID: 1394451073918600325, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Dirt_Sapphire: {fileID: -8809893229118996422, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Dirt_Ruby: {fileID: -3403655023665937851, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Dirt_Ruby: {fileID: 8429304949936611139, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Dirt_Diamond: {fileID: 6526388355942126270, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Dirt_Diamond: {fileID: 6534797216445948507, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Sand: {fileID: 4376250020348131846, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
-  Sand_Iron: {fileID: 2487976081268717544, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Sand: {fileID: 2634232102882855827, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  Sand_Iron: {fileID: 8503110258420201829, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
   Sand_Silver: {fileID: 9163851190283336385, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
@@ -151,16 +150,16 @@ MonoBehaviour:
     type: 3}
   Sand_Mithril: {fileID: 1566205512677670812, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Sand_Topaz: {fileID: -5504451968939670436, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Sand_Topaz: {fileID: -3511087439571332015, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Sand_Sapphire: {fileID: -5023893032785737249, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Sand_Sapphire: {fileID: -2467221499211102793, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Sand_Ruby: {fileID: 8847350917968527949, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Sand_Ruby: {fileID: -7874227076599894328, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Sand_Diamond: {fileID: 6388587377646450665, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Sand_Diamond: {fileID: 5604361676180334650, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Clay: {fileID: 4244189097107274620, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
-  Clay_Iron: {fileID: 8045637886330674554, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Clay: {fileID: -4873479433323138304, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  Clay_Iron: {fileID: 2463368243444063076, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
   Clay_Silver: {fileID: -6553327753104900916, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
@@ -168,16 +167,16 @@ MonoBehaviour:
     type: 3}
   Clay_Mithril: {fileID: -2691023806617597096, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Clay_Topaz: {fileID: -3236778740689987466, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Clay_Topaz: {fileID: 3473229518826515513, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Clay_Sapphire: {fileID: -7450322043032092787, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Clay_Sapphire: {fileID: 8879511226154908581, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Clay_Ruby: {fileID: 8494596220683793543, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Clay_Ruby: {fileID: 4396868544863946106, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Clay_Diamond: {fileID: -699753568170191823, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Clay_Diamond: {fileID: -4588668615944350788, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Rock: {fileID: 6921607204072280670, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
-  Rock_Iron: {fileID: -1783315931748626236, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Rock: {fileID: 6807999961568419257, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  Rock_Iron: {fileID: 7067455453303397171, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
   Rock_Silver: {fileID: -4371091933742975683, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
@@ -185,16 +184,16 @@ MonoBehaviour:
     type: 3}
   Rock_Mithril: {fileID: -7642694762833304989, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Rock_Topaz: {fileID: -6974730352247230030, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Rock_Topaz: {fileID: 2403226832193600217, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Rock_Sapphire: {fileID: 6432476027051565782, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Rock_Sapphire: {fileID: -8935875443717544009, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Rock_Ruby: {fileID: -644486399483213593, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Rock_Ruby: {fileID: 7844283659867663375, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Rock_Diamond: {fileID: 391546229580076272, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Rock_Diamond: {fileID: -6208944495244470894, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Stone: {fileID: 8018638537229643140, guid: 0ab224201f53f4a4e8775ca2c29d2e84, type: 3}
-  Stone_Iron: {fileID: 5935165558239414969, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Stone: {fileID: -5879400798634320872, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  Stone_Iron: {fileID: 9037888959203671668, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
   Stone_Silver: {fileID: -8790108384790427546, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
@@ -202,13 +201,14 @@ MonoBehaviour:
     type: 3}
   Stone_Mithril: {fileID: -1784009569640554027, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Stone_Topaz: {fileID: -8894130428003497332, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Stone_Topaz: {fileID: -7467779675928568530, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Stone_Sapphire: {fileID: -5197364117412324821, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Stone_Sapphire: {fileID: -6586695053850273863, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Stone_Ruby: {fileID: -6903693133368276812, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Stone_Ruby: {fileID: 2127659455460298737, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
-  Stone_Diamond: {fileID: -8230464621918305956, guid: 0ab224201f53f4a4e8775ca2c29d2e84,
+  Stone_Diamond: {fileID: 3721070152104077593, guid: b8fbf916268459b45ae9d0ced758e49a,
     type: 3}
   Water: {fileID: 1209267049664523724, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   Lava: {fileID: -1297047801903605439, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  type: 2

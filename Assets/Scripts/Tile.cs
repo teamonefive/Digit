@@ -8,10 +8,11 @@ public class Tile : MonoBehaviour
     public enum Treasure { None, Iron, Silver, Gold, Mithril, Topaz, Sapphire, Ruby, Diamond }
     public Treasure treasure;
 
+    public Sprite Grass, Dirt, Dirt_Iron, Dirt_Silver, Dirt_Gold, Dirt_Mithril, Dirt_Topaz, Dirt_Sapphire, Dirt_Ruby, Dirt_Diamond, Sand, Sand_Iron, Sand_Silver, Sand_Gold, Sand_Mithril, Sand_Topaz, Sand_Sapphire, Sand_Ruby, Sand_Diamond, Clay, Clay_Iron, Clay_Silver, Clay_Gold, Clay_Mithril, Clay_Topaz, Clay_Sapphire, Clay_Ruby, Clay_Diamond, Rock, Rock_Iron, Rock_Silver, Rock_Gold, Rock_Mithril, Rock_Topaz, Rock_Sapphire, Rock_Ruby, Rock_Diamond, Stone, Stone_Iron, Stone_Silver, Stone_Gold, Stone_Mithril, Stone_Topaz, Stone_Sapphire, Stone_Ruby, Stone_Diamond, Water, Lava;
+
     public enum TileType { Grass, Dirt, Sand, Clay, Rock, Stone, Water, Lava }
     public TileType type;
 
-    public Sprite Grass, Dirt, Dirt_Iron, Dirt_Silver, Dirt_Gold, Dirt_Mithril, Dirt_Topaz, Dirt_Sapphire, Dirt_Ruby, Dirt_Diamond, Sand, Sand_Iron, Sand_Silver, Sand_Gold, Sand_Mithril, Sand_Topaz, Sand_Sapphire, Sand_Ruby, Sand_Diamond, Clay, Clay_Iron, Clay_Silver, Clay_Gold, Clay_Mithril, Clay_Topaz, Clay_Sapphire, Clay_Ruby, Clay_Diamond, Rock, Rock_Iron, Rock_Silver, Rock_Gold, Rock_Mithril, Rock_Topaz, Rock_Sapphire, Rock_Ruby, Rock_Diamond, Stone, Stone_Iron, Stone_Silver, Stone_Gold, Stone_Mithril, Stone_Topaz, Stone_Sapphire, Stone_Ruby, Stone_Diamond, Water, Lava;
 
     public void setTreasure(Treasure t)
     {
