@@ -5,6 +5,23 @@ using UnityEngine.UI;
 
 public class VendorWindow : MonoBehaviour
 {
+    private static VendorWindow instance;
+
+    private CanvasGroup canvasGroup;
+
+    public static VendorWindow MyInstance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<VendorWindow>();
+            }
+
+            return instance;
+        }
+    }
+    
     public GameObject vwindow;
 
     [SerializeField]
