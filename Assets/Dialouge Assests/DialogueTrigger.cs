@@ -7,6 +7,9 @@ public class DialogueTrigger : MonoBehaviour {
 	public Dialogue dialogue;
     public Dialogue digDialogue;
     public Dialogue collectFirstItem;
+    public Dialogue visitTheShop;
+    public Dialogue passedOut;
+    public Dialogue lvlUp;
     public TileBasedMover tile;
     public GameObject Dwarf;
     private bool firstTime = true;
@@ -42,6 +45,23 @@ public class DialogueTrigger : MonoBehaviour {
     public void TriggerStartItemDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(collectFirstItem);
+    }
+
+    public void TriggerShopDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(visitTheShop);
+
+    }
+
+    public void TriggerFatigueDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(passedOut);
+
+    }
+
+    public void TriggerLvlUpDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(lvlUp);
     }
 
 }
