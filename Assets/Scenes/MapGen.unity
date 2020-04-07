@@ -4426,7 +4426,7 @@ GameObject:
   - component: {fileID: 799973660}
   - component: {fileID: 799973659}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: DialogueCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4632,6 +4632,7 @@ MonoBehaviour:
   stat: {fileID: 893040695}
   transitionAnim: {fileID: 445357088}
   tile: {fileID: 807594915}
+  trig3: 1
 --- !u!1 &820262056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5285,7 +5286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dwarf: {fileID: 807594911}
   tile: {fileID: 807594915}
-  moveRight: 1
+  trig: 1
 --- !u!1 &893040694
 GameObject:
   m_ObjectHideFlags: 0
@@ -5337,6 +5338,19 @@ MonoBehaviour:
   strengthMultiplier: 1
   speedMultiplier: 1
   vFatigue: 100
+  totalIron: 0
+  totalSilver: 0
+  totalGold: 0
+  totalMithril: 0
+  totalTopaz: 0
+  totalSapphire: 0
+  totalRuby: 0
+  totalDiamond: 0
+  totalDeaths: 0
+  totalDigs: 0
+  totalMoves: 0
+  totalFatigues: 0
+  totalPlaytime: 0
 --- !u!4 &893040696
 Transform:
   m_ObjectHideFlags: 0
@@ -9556,6 +9570,37 @@ MonoBehaviour:
     - 'Along the way, we can find useful materials laying around.  Let''s find one
       now! '
     - Oh look, there is something over here! Dig it out!
+  visitTheShop:
+    name: Lampy
+    sentences:
+    - OH OH!!!  It's a building!!  I'll have a peek inside...
+    - Hmm... Humans and it looks like they have items! Perfect!  Oh wait...
+    - One does not simply recieve items at random.  We will have to make an exchange.
+    - Human's need materials from the ground that only Dwarves can dig out so I'm
+      sure they'll make a deal!
+    - We can exchange our goods for gold, then our gold for their items!
+    - We'll need items to go further into the world...  Anyway, what are ye buyin'?
+  passedOut:
+    name: Lampy
+    sentences:
+    - 'Welcome Back to the world!  You passed out... Fatigue is a real issue for Dwarves! '
+    - You may be able to dig well but you can't do it forever! Digging takes a lot
+      of energy!
+    - Some materials are tougher to dig through than others... But don't worry!
+    - As you grow, so will your ability to dig longer and faster!
+    - I don't think it's healthy to pass out like you did... you should avoid doing
+      that.
+    - You may lose track of things... even yourself.
+    - 'If you need to rest, get to the surface!  '
+    - 'You won''t have to worry about using energy unless you dig so climb! '
+  lvlUp:
+    name: Lampy
+    sentences:
+    - You seem to be getting more adept to the world.  You are getting more powerful!
+    - With great power comes great... benefits!
+    - You can do things faster, dig longer, be the light in the darkness...
+    - There are rare materials that will require all the luck you can muster to find...
+      so keep growing!
   tile: {fileID: 807594915}
   Dwarf: {fileID: 807594911}
 --- !u!114 &1509482504
@@ -10057,12 +10102,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587224186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec77be23c735024e8f36344abcf96f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0124d6e9b58488d4ba736ca8d7a42181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dwarf: {fileID: 807594911}
-  tile: {fileID: 807594915}
-  moveRight: 1
+  trig2: 1
 --- !u!50 &1587224188
 Rigidbody2D:
   serializedVersion: 4
@@ -13156,6 +13199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996c42bf4d91f0944bb575b9b1e2f20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trig1: 1
 --- !u!1 &2068478841
 GameObject:
   m_ObjectHideFlags: 0

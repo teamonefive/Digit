@@ -25,6 +25,8 @@ public class Experience : MonoBehaviour
 
     private static Experience instance;
 
+    private bool trig4 = true;
+
     public static Experience MyInstance
     {
         get
@@ -93,6 +95,11 @@ public class Experience : MonoBehaviour
         enduranceUp();
         perceptionUp();
         luckUp();
+        if(trig4 == true)
+        {
+            trig4 = false;
+            FindObjectOfType<DialogueTrigger>().TriggerLvlUpDialogue();
+        }
     }
     void strengthUp()
     {

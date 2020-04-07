@@ -10,6 +10,7 @@ public class Fatigue : MonoBehaviour
     public Stats stat;
     public Animator transitionAnim;
     public TileBasedMover tile;
+    public bool trig3 = true;
 
 
     // Start is called before the first frame update
@@ -58,6 +59,11 @@ public class Fatigue : MonoBehaviour
         yield return new WaitForSeconds(5);
         print(Time.time);
         GetComponent<TileBasedMover>().enabled = true;
+        if(trig3 == true)
+        {
+            trig3 = false;
+            FindObjectOfType<DialogueTrigger>().TriggerFatigueDialogue();
+        }
     }
 
 }
