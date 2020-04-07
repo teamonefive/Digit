@@ -4,6 +4,21 @@ using UnityEngine;
 
 public abstract class Item1 : ScriptableObject, IMoveable
 {
+    private static Item1 instance;
+
+    public static Item1 MyInstance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<Item1>();
+            }
+
+            return instance;
+        }
+    }
+
     [SerializeField]
     private Sprite icon;
 
@@ -72,7 +87,7 @@ public abstract class Item1 : ScriptableObject, IMoveable
     {
         if(MySlot!=null)
         {
-            MySlot.RemoveItem(this);
+            MySlot.RemoveItem();
         }
     }
 }
