@@ -124,7 +124,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         return false;
     }
 
-    public void RemoveItem(Item1 item)
+    public void RemoveItem()
     {
         if(!IsEmpty)
         {
@@ -179,10 +179,15 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
 
     public void UseItem()
     {
-        if(MyItem is IUseable)
+        if(!IsEmpty)
         {
-            (MyItem as IUseable).Use();
-        }
+            if(VendorWindow.MyInstance.vwindow.activeSelf)
+            {
+                Experience.MyInstance.MyGold += Item1.MyInstance.MyPrice;
+                Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
+                RemoveItem();
+            }
+        } 
     }
 
     public bool StackItem(Item1 item)
