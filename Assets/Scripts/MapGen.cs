@@ -396,7 +396,14 @@ public class MapGen : MonoBehaviour
             if (j == mountainHeights[i])
             {
                 //Grass
-                return Instantiate(allTiles[1], mapPos, Quaternion.identity);
+                GameObject tile = Instantiate(allTiles[1], mapPos, Quaternion.identity);
+
+                if (mapPos.y == -2 && mapPos.x != -51.5 && mapPos.x >= -70.5 && mapPos.x <= -39.5)
+                {
+                    tile.GetComponent<Tile>().setUnbrekable();
+                }
+
+                return tile;
             }
             else if (j > mountainHeights[i])
             {
