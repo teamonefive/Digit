@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778dd8e343fe74cc2b43c70eb2c4c3c6, type: 3}
   m_Name: IronPickAxe
   m_EditorClassIdentifier: 
+  description: Common pickeaxe made of iron
   icon: {fileID: -4851904019288225560, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 0
   title: Iron Pickaxe

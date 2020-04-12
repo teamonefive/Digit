@@ -24,7 +24,19 @@ public class CraftingInfo : MonoBehaviour
     public void updateItem(Item1 item) {
         myItem = item;
         ItemName.text = myItem.MyTitle;
-        ItemDescription.text = myItem.MyTitle;
+        if(myItem.MyQuality == Quality.Common ) {
+            ItemName.color = Color.white;
+        }
+        else if(myItem.MyQuality == Quality.Uncommon ) {
+            ItemName.color = Color.green;
+        }
+        else if(myItem.MyQuality == Quality.Rare ) {
+            ItemName.color = Color.blue;
+        }
+        else {
+            ItemName.color = new Color(143f,0f,254f,1f);
+        }
+        ItemDescription.text = myItem.MyDescription;
         iconImage.sprite = myItem.MyIcon;
     }
 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53eacf6eae8a4fd0bf41ad32486b618, type: 3}
   m_Name: SilverPickAxe
   m_EditorClassIdentifier: 
+  description: Uncommon pickaxe made of silver
   icon: {fileID: -14461104310814277, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 0
   title: Silver Pickaxe

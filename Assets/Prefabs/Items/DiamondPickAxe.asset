@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90710eada33464f09819a0e4a4868665, type: 3}
   m_Name: DiamondPickAxe
   m_EditorClassIdentifier: 
+  description: Epic pickaxe made of Diamond
   icon: {fileID: -4089120978205591323, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 0
   title: Mithril Pickaxe

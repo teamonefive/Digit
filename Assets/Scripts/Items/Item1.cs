@@ -18,6 +18,8 @@ public abstract class Item1 : ScriptableObject, IMoveable
             return instance;
         }
     }
+    [SerializeField]
+    private string description;
 
     [SerializeField]
     private Sprite icon;
@@ -78,6 +80,12 @@ public abstract class Item1 : ScriptableObject, IMoveable
         get
         {
             return title;
+        }
+    }
+
+    public string MyDescription {
+        get {
+            return description;
         }
     }
 
