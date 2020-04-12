@@ -27,4 +27,12 @@ public class CraftingInfo : MonoBehaviour
         ItemDescription.text = myItem.MyTitle;
         iconImage.sprite = myItem.MyIcon;
     }
+
+    public void craftItem() {
+        InventoryScript.MyInstance.AddItem(myItem);
+    }
+
+    public void closePanel() {
+        _view.SetActive(false);
+    }
 }
