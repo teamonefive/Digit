@@ -31,7 +31,7 @@ public class CraftingInfo : MonoBehaviour
             ItemName.color = Color.green;
         }
         else if(myItem.MyQuality == Quality.Rare ) {
-            ItemName.color = Color.blue;
+            ItemName.color = Color.cyan;
         }
         else {
             ItemName.color = new Color(143f,0f,254f,1f);
