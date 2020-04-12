@@ -11,7 +11,7 @@ public class CraftingButton : MonoBehaviour
     [SerializeField] private Text craftingRecipe;
     [SerializeField] private Image iconImage;
     [SerializeField] private int itemID;
-
+    [SerializeField] private CraftingInfo _info;
 
 
 
@@ -36,9 +36,9 @@ public class CraftingButton : MonoBehaviour
         
 
     }
-    public void CraftItem() {
-        
-        InventoryScript.MyInstance.AddItem(_item);
+    public void DisplayInfo() {
+        _info.updateItem(_item);
+        //InventoryScript.MyInstance.AddItem(_item);
     }
 
 
