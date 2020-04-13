@@ -13,6 +13,12 @@ public class Tile : MonoBehaviour
     public enum TileType { Grass, Dirt, Sand, Clay, Rock, Stone, Water, Lava }
     public TileType type;
 
+    public bool isBreakable = true;
+
+    public void setUnbrekable()
+    {
+        isBreakable = false;
+    }
 
     public void setTreasure(Treasure t)
     {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a883cfeda4ba04d76b4ad9078461eec5, type: 3}
   m_Name: GoldPickAxe
   m_EditorClassIdentifier: 
+  description: Rare pickaxe made of gold
   icon: {fileID: -1391482363332799619, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 0
   title: Gold Pickaxe

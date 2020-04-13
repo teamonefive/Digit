@@ -356,6 +356,15 @@ public class TileBasedMover : MonoBehaviour
                 //Digging is not possible but swimming is
                 validDig = false;
             }
+
+            if (!moveTile.GetComponent<Tile>().isBreakable)
+            {
+                validDig = false;
+                moving = false;
+                canMove = true;
+                return;
+            }
+
             else if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) == null && world.getTile(targetPos + new Vector3(1f, 0f, 0f)) == null)
             {
                 if (world.getTile(targetPos + new Vector3(0f, -1f, 0f)) == null)
