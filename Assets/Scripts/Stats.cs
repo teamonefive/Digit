@@ -38,7 +38,7 @@ public class Stats : MonoBehaviour
     public float speedMultiplier = 1f;
 
     // FROM FATIGUE
-    public float vFatigue = 100f;
+    public float vFatigue = 200f;
 
     // LEADERBOARD STATS
     public int totalIron = 0;

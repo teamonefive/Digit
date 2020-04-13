@@ -8,10 +8,11 @@ public class Experience : MonoBehaviour
 {
     public TileBasedMover tile;
     public Slider levelUpBar;
+
+    public Slider enduranceBar;
     public Text currLevel;
     public Text strengthMod;
     public Text agilityMod;
-    public Text enduranceMod;
     public Text perceptionMod;
     public Text luckMod;
     public GameObject ui;
@@ -46,12 +47,13 @@ public class Experience : MonoBehaviour
         myGoldDisplay.text = "Gold: " + MyGold.ToString();
         levelUpBar.value = stat.vCurrExp;
         levelUpBar.maxValue = stat.vExpLeft;
-        currLevel.text = "Level : 1";
-        strengthMod.text = "Strength Modifier : 0";
-        agilityMod.text = "Agility Modifier : 0";
-        enduranceMod.text = "Endurance Modifier : 0";
-        perceptionMod.text = "Perception Modifier : 0";
-        luckMod.text = "Luck Modifier : 0";
+        enduranceBar.value = 0;
+        enduranceBar.maxValue = stat.vFatigue;
+        currLevel.text = "1";
+        strengthMod.text = "Strength: 0";
+        agilityMod.text = "Agility: 0";
+        perceptionMod.text = "Perception: 0";
+        luckMod.text = "Luck: 0";
         Button butn = menuButton.GetComponent<Button>();
         butn.onClick.AddListener(TaskOnClick);
     }
@@ -66,6 +68,7 @@ public class Experience : MonoBehaviour
             levelUpBar.value = stat.vCurrExp;
         }
         tile.isDestroyed = false; // reset the bool here NOT in TileBasedMover
+        enduranceBar.value = enduranceBar.maxValue - stat.vFatigue;
 
         if(Input.GetKeyDown(KeyCode.B))
         {
@@ -86,13 +89,12 @@ public class Experience : MonoBehaviour
         stat.vCurrExp -= stat.vExpLeft;
         levelUpBar.value = stat.vCurrExp;
         stat.vLevel++;
-        currLevel.text = "Level : " + stat.vLevel.ToString();
+        currLevel.text = stat.vLevel.ToString();
         float t = Mathf.Pow(stat.vExpMod, stat.vLevel);
         stat.vExpLeft = (int)Mathf.Floor(stat.vExpBase * t);
         levelUpBar.maxValue = stat.vExpLeft;
         strengthUp();
         agilityUp();
-        enduranceUp();
         perceptionUp();
         luckUp();
         if(trig4 == true)
@@ -104,30 +106,25 @@ public class Experience : MonoBehaviour
     void strengthUp()
     {
         stat.vStrength++;
-        strengthMod.text = "Strength Modifer : " + stat.vStrength.ToString();
+        strengthMod.text = "Strength: " + stat.vStrength.ToString();
         stat.strengthMultiplier *= 0.95f;
     }
     void agilityUp()
     {
         stat.vAgility++;
-        agilityMod.text = "Agility Modifier : " + stat.vAgility.ToString();
+        agilityMod.text = "Agility: " + stat.vAgility.ToString();
         stat.climbingDifficulty *= 0.95f;
         //tile.moveSpeed *= 1.5f;
-    }
-    void enduranceUp()
-    {
-        stat.vEndurance++;
-        enduranceMod.text = "Endurance Modifier : " + stat.vEndurance.ToString();
     }
     void perceptionUp()
     {
         stat.vPerception++;
-        perceptionMod.text = "Perception Modifier : " + stat.vPerception.ToString();
+        perceptionMod.text = "Perception: " + stat.vPerception.ToString();
     }
     void luckUp()
     {
         stat.vLuck++;
-        luckMod.text = "Luck Modifier : " + stat.vLuck.ToString();
+        luckMod.text = "Luck: " + stat.vLuck.ToString();
     }
     void TaskOnClick() 
     {
