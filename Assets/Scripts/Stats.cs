@@ -56,6 +56,8 @@ public class Stats : MonoBehaviour
     public int totalFatigues = 0;
 
     public int totalPlaytime = 0;
+    public int maxDepth = 49;
+    public int currentDepth = 49;
 
     public void statDump()
     {

@@ -588,6 +588,13 @@ public class TileBasedMover : MonoBehaviour
                 stat.climbingDifficultyMultiplier = 1f;
                 stat.totalMoves++;
 
+                Vector2 tilePos = world.tilePos(targetPos);
+                stat.currentDepth = (int)tilePos.y;
+                if (stat.currentDepth > stat.maxDepth)
+                {
+                    stat.maxDepth = stat.currentDepth;
+                }
+
                 if (!isFalling)
                 {
                     animator.SetFloat("speed", 0f);
