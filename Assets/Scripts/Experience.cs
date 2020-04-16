@@ -33,12 +33,16 @@ public class Experience : MonoBehaviour
     public Button endM;
     public Button perM;
     public Button luckM;
+    public Button confirmation;
+    public GameObject confir;
     private int statPoints = 0;
     private int strUp = 0;
     private int agUp = 0;
     private int endUp = 0;
     private int perUp = 0;
     private int lucUp = 0;
+    private bool press = false;
+    private bool isLvling = false;
     public int MyGold { get; set; }
 
     private bool isOpen = true;
@@ -96,6 +100,9 @@ public class Experience : MonoBehaviour
         perm.onClick.AddListener(perceptionDown);
         Button lucm = luckM.GetComponent<Button>();
         lucm.onClick.AddListener(luckDown);
+
+        Button conf = confirmation.GetComponent<Button>();
+        conf.onClick.AddListener(confirm);
     }
 
     // Update is called once per frame
@@ -104,6 +111,12 @@ public class Experience : MonoBehaviour
         if (statPoints > 0)
         {
             StartCoroutine(showMinusStats());
+        }
+        if(isLvling == true && statPoints != stat.vLevel)
+        {
+            StopCoroutine("con");
+            isLvling = false;
+            StartCoroutine(allocatingStats());
         }
         if (tile.isDestroyed == true) // bool is set in TileBasedMover after a block is destroyed, line 360
         {
@@ -157,7 +170,6 @@ public class Experience : MonoBehaviour
         float t = Mathf.Pow(stat.vExpMod, stat.vLevel);
         stat.vExpLeft = (int)Mathf.Floor(stat.vExpBase * t);
         levelUpBar.maxValue = stat.vExpLeft;
-        plusPanel.SetActive(true);
         Dwarf.GetComponent<TileBasedMover>().enabled = false;
         StartCoroutine(allocatingStats());
         
@@ -269,17 +281,16 @@ public class Experience : MonoBehaviour
             clickable.MyStackText.color = new Color(0, 0, 0, 0);
         }
     }
+    void confirm()
+    {
+        press = true;
+    }
     IEnumerator allocatingStats()
     {
+        confir.SetActive(false);
+        plusPanel.SetActive(true);
         yield return new WaitUntil(() => statPoints == stat.vLevel);
-        plusPanel.SetActive(false);
-        Dwarf.GetComponent<TileBasedMover>().enabled = true;
-        statPoints = 0;
-        strUp = 0;
-        agUp = 0;
-        endUp = 0;
-        perUp = 0;
-        lucUp = 0;
+        StartCoroutine("con");
     }
     IEnumerator showMinusStats()
     {
@@ -316,5 +327,22 @@ public class Experience : MonoBehaviour
         luckM.GetComponent<Image>().enabled = true;
         yield return new WaitUntil(() => lucUp == 0);
         luckM.GetComponent<Image>().enabled = false;
+    }
+    IEnumerator con()
+    {
+        isLvling = true;
+        confir.SetActive(true);
+        plusPanel.SetActive(false);
+        yield return new WaitUntil(() => press);
+        confir.SetActive(false);
+        Dwarf.GetComponent<TileBasedMover>().enabled = true;
+        statPoints = 0;
+        strUp = 0;
+        agUp = 0;
+        endUp = 0;
+        perUp = 0;
+        lucUp = 0;
+        press = false;
+        isLvling = false;
     }
 }
