@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/MapGen.unity
-    guid: f70f355bc4522cf4ebd2f426a4ea2cd9
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5827aef2b1ac01942804b0c85aa13c98
-  - enabled: 1
-    path: Assets/Scenes/CraftingMenu.unity
-    guid: 4db66ed0703cf104985a7c814424267b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

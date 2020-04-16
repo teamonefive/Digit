@@ -827,6 +827,12 @@ TextureImporter:
   - first:
       213: 1209267049664523724
     second: tile_water
+  - first:
+      213: -9115938624207856695
+    second: sprite_sheet_0
+  - first:
+      213: 2660799199254034786
+    second: anvil
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -6712,7 +6718,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6733,7 +6739,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6741,6 +6747,48 @@ TextureImporter:
       bones: []
       spriteID: b538f506a850ca344a18c440832618ee
       internalID: 1209267049664523724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 534
+        width: 1
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66ef0085959e3e4e9551ec80b82443b
+      internalID: -9115938624207856695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anvil
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 534
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d781ee978b99bd47987cdd6c68eec18
+      internalID: 2660799199254034786
       vertices: []
       indices: 
       edges: []

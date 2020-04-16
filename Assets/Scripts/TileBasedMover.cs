@@ -457,6 +457,8 @@ public class TileBasedMover : MonoBehaviour
 
             if (validDig)
             {
+                //animator.SetBool("isDigging", true);
+                animator.Play("dwarf_dig");
                 if (world.getTile(targetPos) != null)
                 {
                     stat.tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<Tile>().difficulty * stat.strengthMultiplier;
@@ -542,6 +544,7 @@ public class TileBasedMover : MonoBehaviour
                 world.expandLiquid(world.tilePos(new Vector2(targetPos.x, targetPos.y + 1f)));
                 world.expandLiquid(world.tilePos(new Vector2(targetPos.x - 1f, targetPos.y)));
                 world.expandLiquid(world.tilePos(new Vector2(targetPos.x + 1f, targetPos.y)));
+                //animator.SetBool("isDigging", false);
             }
             
 
@@ -572,7 +575,14 @@ public class TileBasedMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        stat.moveCooldown--;
+        if (stat.moveCooldown < 0) 
+        {
+            stat.moveCooldown = 0;
+        }
+        else
+        {
+            stat.moveCooldown--;
+        }
 
         if (canMove)
         {
