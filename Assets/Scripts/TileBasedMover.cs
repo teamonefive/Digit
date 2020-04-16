@@ -32,7 +32,7 @@ public class TileBasedMover : MonoBehaviour
     {
         //playerInventory = this.GetComponent<Inventory>();
         fatigue = this.GetComponent<Fatigue>();
-        oldPos = new Vector3(-53.5f, -1f, 0f);
+        oldPos = new Vector3(-53.5f, -1.16f, 0f);
         targetPos = oldPos;
     }
 
