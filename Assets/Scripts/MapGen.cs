@@ -897,7 +897,7 @@ public class MapGen : MonoBehaviour
 
     public void generateStartingTiles()
     {
-        dwarf.transform.position = new Vector3(-53.5f, -1.16f, 0f);
+        dwarf.transform.position = new Vector3(-53.5f, -1f, 0f);
         int xPos = (int)(dwarf.transform.position.x + 70.5);
         int yPos = (int)(dwarf.transform.position.y * -1) + 48;
 
