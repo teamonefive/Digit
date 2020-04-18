@@ -57,6 +57,10 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             if (InventoryScript.MyInstance.AddItem(item))
             {
                 BuyItem();
+                if (Object.FindObjectOfType<Vendor>().items[0] == vendorItem)
+                {
+                    ((Bag)item).Use();
+                }
             }
             else
             {

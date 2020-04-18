@@ -5,7 +5,7 @@ using UnityEngine;
 public class Vendor : MonoBehaviour
 {
     [SerializeField]
-    private VendorItem[] items;
+    public VendorItem[] items;
 
     [SerializeField]
     public VendorWindow vendorWindow;

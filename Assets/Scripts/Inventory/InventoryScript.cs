@@ -77,23 +77,7 @@ public class InventoryScript : MonoBehaviour
 
     private void Update()
     {
-       if(Input.GetKeyDown(KeyCode.J))
-        {
-            Bag bag = (Bag)Instantiate(items[0]);
-            bag.Initialize(16);
-            bag.Use();
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Bag bag = (Bag)Instantiate(items[0]);
-            bag.Initialize(16);
-            AddItem(bag);
-        }
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            GemDiamond gem = (GemDiamond)Instantiate(items[1]);
-            AddItem(gem);
-        }
+
     }
 
     public void AddBag(Bag bag)
