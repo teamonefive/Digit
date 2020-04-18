@@ -9,10 +9,10 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
     private ObservableStack<Item1> items = new ObservableStack<Item1>();
 
     [SerializeField]
-    private Image icon;
+    protected Image icon;
 
     [SerializeField]
-    private Text stackSize;
+    protected Text stackSize;
 
     public BagScript MyBag { get; set; }
 
