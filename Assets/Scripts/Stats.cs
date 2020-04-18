@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
+    public GameObject leaderboard;
+    public Button leadboardButton;
+    private bool open = false;
+
     // FROM EXPERIENCE
     //current level
     public int vLevel = 1;
@@ -74,7 +79,8 @@ public class Stats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Button leadButt = leadboardButton.GetComponent<Button>();
+        leadButt.onClick.AddListener(openClose);
     }
 
     private float period = 0f;
@@ -91,5 +97,19 @@ public class Stats : MonoBehaviour
 
         period += Time.deltaTime;
         
+    }
+
+    void openClose()
+    {
+        if (open == false)
+        {
+            leaderboard.SetActive(true);
+            open = true;
+        }
+        else
+        {
+            leaderboard.SetActive(false);
+            open = false;
+        }
     }
 }
