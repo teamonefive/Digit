@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TileBasedMover : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class TileBasedMover : MonoBehaviour
     public Stats stat;
     private Fatigue fatigue;
     public GameObject debris;
+    public GameObject depthValue;
     //Inventory playerInventory;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
@@ -600,6 +602,11 @@ public class TileBasedMover : MonoBehaviour
 
                 Vector2 tilePos = world.tilePos(targetPos);
                 stat.currentDepth = (int)tilePos.y;
+
+                string txt = "";
+                txt += (stat.currentDepth - 49);
+                depthValue.GetComponent<Text>().text = txt;
+
                 if (stat.currentDepth > stat.maxDepth)
                 {
                     stat.maxDepth = stat.currentDepth;
@@ -653,8 +660,6 @@ public class TileBasedMover : MonoBehaviour
 
                     moving = false;
                     canMove = true;
-
-                    stat.statDump();
                     
                 }
                 else

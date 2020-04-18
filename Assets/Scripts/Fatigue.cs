@@ -46,7 +46,9 @@ public class Fatigue : MonoBehaviour
             transitionAnim.SetBool("TransitionFatigue", true);
             //new WaitForSeconds(1f);
 
-            stat.vFatigue = 100f * (stat.vEndurance * 1.15f + 1f);
+            
+            stat.vFatigue = stat.maxFatigue;
+            
             stat.totalFatigues++;
 
             Invoke("flipTheBool", 1.3f);

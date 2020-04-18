@@ -70,8 +70,8 @@ public class Experience : MonoBehaviour
         myGoldDisplay.text = "Gold: " + MyGold.ToString();
         levelUpBar.value = stat.vCurrExp;
         levelUpBar.maxValue = stat.vExpLeft;
-        enduranceBar.value = 0;
-        enduranceBar.maxValue = stat.vFatigue;
+        enduranceBar.value = stat.vFatigue;
+        enduranceBar.maxValue = stat.maxFatigue;
         currLevel.text = "1";
         strengthMod.text = "Strength: 0";
         agilityMod.text = "Agility: 0";
@@ -125,7 +125,7 @@ public class Experience : MonoBehaviour
             levelUpBar.value = stat.vCurrExp;
         }
         tile.isDestroyed = false; // reset the bool here NOT in TileBasedMover
-        enduranceBar.value = enduranceBar.maxValue - stat.vFatigue;
+        enduranceBar.value = stat.vFatigue;
 
         if (strUp > 0)
         {
@@ -336,6 +336,9 @@ public class Experience : MonoBehaviour
         yield return new WaitUntil(() => press);
         confir.SetActive(false);
         Dwarf.GetComponent<TileBasedMover>().enabled = true;
+        stat.maxFatigue = 100f * (stat.vEndurance * 1.15f + 1f);
+        stat.vFatigue = stat.maxFatigue;
+        enduranceBar.maxValue = stat.maxFatigue;
         statPoints = 0;
         strUp = 0;
         agUp = 0;
