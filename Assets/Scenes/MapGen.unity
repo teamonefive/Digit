@@ -6335,6 +6335,7 @@ MonoBehaviour:
   stat: {fileID: 893040695}
   debris: {fileID: 484294664459502887, guid: e2f6ee4ad74fd66479f8f5cce35c672a, type: 3}
   depthValue: {fileID: 29792590}
+  pickaxeSlot: {fileID: 1227972785}
   canMove: 1
   moving: 0
   m_FacingRight: 1
@@ -6354,6 +6355,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9a29157bcfdd7f4db012a8990e06ca1, type: 2}
   - {fileID: 11400000, guid: 5fb9a5ba93971c8438d0832a01f5a5db, type: 2}
   - {fileID: 11400000, guid: d479917bf956b8647948950c85ae0ebe, type: 2}
+  - {fileID: 11400000, guid: f481cb8cd988d43f8a1096a071f86d49, type: 2}
+  - {fileID: 11400000, guid: 2359043392432428b93e3b8d2e770ad1, type: 2}
+  - {fileID: 11400000, guid: 107a67e5ac5f340729948996dba5eb73, type: 2}
+  - {fileID: 11400000, guid: 8f9647bf7429c4e15b36532a8f8d3896, type: 2}
 --- !u!114 &807594917
 MonoBehaviour:
   m_ObjectHideFlags: 0

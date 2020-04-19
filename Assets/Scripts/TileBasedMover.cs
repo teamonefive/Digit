@@ -12,6 +12,7 @@ public class TileBasedMover : MonoBehaviour
     private Fatigue fatigue;
     public GameObject debris;
     public GameObject depthValue;
+    public GameObject pickaxeSlot;
     //Inventory playerInventory;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
@@ -646,7 +647,7 @@ public class TileBasedMover : MonoBehaviour
                             stat.totalDeaths++;
 
                             fatigue.checkFatigue();
-                            
+
                             world.generateStartingTiles();
                             lampy.snapToOrigin();
 
@@ -660,7 +661,7 @@ public class TileBasedMover : MonoBehaviour
 
                     moving = false;
                     canMove = true;
-                    
+
                 }
                 else
                 {
@@ -675,11 +676,35 @@ public class TileBasedMover : MonoBehaviour
                         stat.fallSpeedMultiplier += 2f;
                     }
                 }
-                
+
 
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * stat.moveSpeed * stat.fallSpeedMultiplier / stat.tileDifficultyMultiplier / stat.climbingDifficultyMultiplier);
+            float pickaxeMultiplier = 1f;
+            SlotScript slot = pickaxeSlot.GetComponent<SlotScript>();
+            if (!slot.IsEmpty)
+            {
+                Item1 item = slot.MyItem;
+                if (item.MyTitle == "Iron Pickaxe")
+                {
+                    pickaxeMultiplier = 1.1f;
+                }
+                else if (item.MyTitle == "Silver Pickaxe")
+                {
+                    pickaxeMultiplier = 1.2f;
+                }
+                else if (item.MyTitle == "Gold Pickaxe")
+                {
+                    pickaxeMultiplier = 1.35f;
+                }
+                else if (item.MyTitle == "Mithril Pickaxe")
+                {
+                    pickaxeMultiplier = 1.5f;
+                }
+
+            }
+
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * stat.moveSpeed * pickaxeMultiplier * stat.fallSpeedMultiplier / stat.tileDifficultyMultiplier / stat.climbingDifficultyMultiplier);
             if (transform.position.x >= oldPos.x + 1)
             {
                 world.renderRight(transform.position);
