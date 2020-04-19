@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b23f0d7e4a936343bfd9044c1df5107, type: 3}
   m_Name: GemRuby
   m_EditorClassIdentifier: 
+  description: 
   icon: {fileID: 5125136344655083008, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 16
   title: Ruby Gem
   quality: 1
-  price: 20
+  price: 30
+  recipe: 
+  craftingQuantity: 0
+  craftingComponent: {fileID: 0}

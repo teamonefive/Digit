@@ -112,7 +112,7 @@ public class Experience : MonoBehaviour
         {
             StartCoroutine(showMinusStats());
         }
-        if(isLvling == true && statPoints != stat.vLevel)
+        if(isLvling == true && statPoints != 3)
         {
             StopCoroutine("con");
             isLvling = false;
@@ -221,7 +221,7 @@ public class Experience : MonoBehaviour
     {
         stat.vStrength--;
         strengthMod.text = "Strength: " + stat.vStrength.ToString();
-        stat.strengthMultiplier *= 0.95f;
+        stat.strengthMultiplier /= 0.95f;
         statPoints--;
         strUp--;
     }
@@ -229,7 +229,7 @@ public class Experience : MonoBehaviour
     {
         stat.vAgility--;
         agilityMod.text = "Agility: " + stat.vAgility.ToString();
-        stat.climbingDifficulty *= 0.95f;
+        stat.climbingDifficulty /= 0.95f;
         statPoints--;
         agUp--;
         //tile.moveSpeed *= 1.5f;
@@ -289,7 +289,7 @@ public class Experience : MonoBehaviour
     {
         confir.SetActive(false);
         plusPanel.SetActive(true);
-        yield return new WaitUntil(() => statPoints == stat.vLevel);
+        yield return new WaitUntil(() => statPoints == 3);
         StartCoroutine("con");
     }
     IEnumerator showMinusStats()
@@ -336,7 +336,7 @@ public class Experience : MonoBehaviour
         yield return new WaitUntil(() => press);
         confir.SetActive(false);
         Dwarf.GetComponent<TileBasedMover>().enabled = true;
-        stat.maxFatigue = 100f * (stat.vEndurance * 1.15f + 1f);
+        stat.maxFatigue = 100f + (stat.vEndurance * 25f);
         stat.vFatigue = stat.maxFatigue;
         enduranceBar.maxValue = stat.maxFatigue;
         statPoints = 0;

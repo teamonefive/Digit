@@ -17,6 +17,9 @@ MonoBehaviour:
   stackSize: 0
   title: Bag
   quality: 0
-  price: 5
+  price: 150
+  recipe: 
+  craftingQuantity: 0
+  craftingComponent: {fileID: 0}
   bagPrefab: {fileID: 1507242599292501078, guid: ec431545231f74714bff016cafab0ea2,
     type: 3}

@@ -5167,7 +5167,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 900904587}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6689,7 +6689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - item: {fileID: 11400000, guid: caf815a4c2a414b50b46d612b52af7f7, type: 2}
-    quantity: 5
+    quantity: 3
     unlimited: 0
   - item: {fileID: 11400000, guid: dd8fd95911d89d1488282c0be3662502, type: 2}
     quantity: 0
