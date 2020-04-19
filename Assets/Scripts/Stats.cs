@@ -68,6 +68,10 @@ public class Stats : MonoBehaviour
 
     private bool depthTrig = true;
     public int itemsCrafted = 0;
+    public int itemsBought = 0;
+    public int itemsSold = 0;
+    public int itemsBroken = 0;
+
     public void statDump()
     {
         Debug.Log("Total Iron: " + totalIron);

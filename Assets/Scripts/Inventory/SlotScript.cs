@@ -194,6 +194,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
                 Experience.MyInstance.MyGold += (int)(MyItem.MyPrice * 0.8f);
                 Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
                 RemoveItem();
+                Object.FindObjectOfType<Stats>().itemsSold++;
             }
         } 
     }
