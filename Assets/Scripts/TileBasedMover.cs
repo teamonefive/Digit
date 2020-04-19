@@ -14,6 +14,7 @@ public class TileBasedMover : MonoBehaviour
     public GameObject depthValue;
     public GameObject pickaxeSlot;
     public AudioSource digSound;
+    public AudioSource moveSound;
     //Inventory playerInventory;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
@@ -122,6 +123,7 @@ public class TileBasedMover : MonoBehaviour
         Vector2 touchLoc = touchLocation();
         float horizontal = touchLoc.x;
         float vertical = touchLoc.y;
+        moveSound.Play();
         if (horizontal == 0 && vertical == 0) return;
 
         moving = true;
