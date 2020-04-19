@@ -33,6 +33,10 @@ public class TileBasedMover : MonoBehaviour
     [SerializeField]
     private Item1[] items;
 
+    private bool pickaxeUsed = false;
+
+    public Slider durabilityBar;
+
     private void Awake()
     {
         //playerInventory = this.GetComponent<Inventory>();
@@ -543,6 +547,7 @@ public class TileBasedMover : MonoBehaviour
                 world.activeTiles[world.tilePos(targetPos)] = null;
                 isDestroyed = true;
                 isDestroyedBlock = true;
+                pickaxeUsed = true;
 
                 stat.totalDigs++;
 
@@ -581,6 +586,11 @@ public class TileBasedMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SlotScript slot = pickaxeSlot.GetComponent<SlotScript>();
+        Item1 item = slot.MyItem;
+        durabilityBar.maxValue = item.myMaxDurability;
+        durabilityBar.value = item.myDurability;
+
         if (stat.moveCooldown < 0) 
         {
             stat.moveCooldown = 0;
@@ -684,28 +694,70 @@ public class TileBasedMover : MonoBehaviour
             }
 
             float pickaxeMultiplier = 1f;
-            SlotScript slot = pickaxeSlot.GetComponent<SlotScript>();
             if (!slot.IsEmpty)
             {
-                Item1 item = slot.MyItem;
+                
+
                 if (item.MyTitle == "Iron Pickaxe")
                 {
                     pickaxeMultiplier = 1.1f;
+
+                    if (pickaxeUsed)
+                    {
+                        item.myDurability = item.myDurability - 1;
+
+                        if (item.myDurability <= 0)
+                        {
+                            slot.Clear();
+                        }
+                    }
+
                 }
                 else if (item.MyTitle == "Silver Pickaxe")
                 {
                     pickaxeMultiplier = 1.2f;
+
+                    if (pickaxeUsed)
+                    {
+                        item.myDurability = item.myDurability - 1;
+
+                        if (item.myDurability <= 0)
+                        {
+                            slot.Clear();
+                        }
+                    }
                 }
                 else if (item.MyTitle == "Gold Pickaxe")
                 {
                     pickaxeMultiplier = 1.35f;
+
+                    if (pickaxeUsed)
+                    {
+                        item.myDurability = item.myDurability - 1;
+
+                        if (item.myDurability <= 0)
+                        {
+                            slot.Clear();
+                        }
+                    }
                 }
                 else if (item.MyTitle == "Mithril Pickaxe")
                 {
                     pickaxeMultiplier = 1.5f;
+
+                    if (pickaxeUsed)
+                    {
+                        item.myDurability = item.myDurability - 1;
+
+                        if (item.myDurability <= 0)
+                        {
+                            slot.Clear();
+                        }
+                    }
                 }
 
             }
+            pickaxeUsed = false;
 
             transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * stat.moveSpeed * pickaxeMultiplier * stat.fallSpeedMultiplier / stat.tileDifficultyMultiplier / stat.climbingDifficultyMultiplier);
             if (transform.position.x >= oldPos.x + 1)

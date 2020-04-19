@@ -389,7 +389,12 @@ public class MapGen : MonoBehaviour
         int j = (int)createPos.y;
 
         int thousandPerlin = (int)(perlin * 1000);
-        int d50 = thousandPerlin % (int)(50f - (stat.vLuck/3));
+        int luckhelper = (int)(50f - (stat.vLuck / 3));
+        if (luckhelper < 10)
+        {
+            luckhelper = 10;
+        }
+        int d50 = thousandPerlin % luckhelper;
 
         if (createPos.y < 100)
         {

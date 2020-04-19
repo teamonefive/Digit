@@ -21,3 +21,5 @@ MonoBehaviour:
   recipe: 3 iron ore
   craftingQuantity: 3
   craftingComponent: {fileID: 11400000, guid: dd8fd95911d89d1488282c0be3662502, type: 2}
+  durability: 200
+  maxDurability: 200

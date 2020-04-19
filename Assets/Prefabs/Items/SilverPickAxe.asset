@@ -21,3 +21,5 @@ MonoBehaviour:
   recipe: 10 silver ore
   craftingQuantity: 10
   craftingComponent: {fileID: 11400000, guid: 4d167e8f749c2bf4c999df3628844015, type: 2}
+  durability: 250
+  maxDurability: 250

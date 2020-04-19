@@ -43,7 +43,38 @@ public abstract class Item1 : ScriptableObject, IMoveable
     private int craftingQuantity;
     [SerializeField]
     private Item1 craftingComponent;
+
+    [SerializeField]
+    private int durability;
+
+    [SerializeField]
+    private int maxDurability;
+
     private SlotScript slot;
+
+    public int myDurability
+    {
+        get
+        {
+            return durability;
+        }
+        set
+        {
+            durability = value;
+        }
+    }
+
+    public int myMaxDurability
+    {
+        get
+        {
+            return maxDurability;
+        }
+        set
+        {
+            maxDurability = value;
+        }
+    }
 
     public int MyCraftingComponentQuantity {
         get {
