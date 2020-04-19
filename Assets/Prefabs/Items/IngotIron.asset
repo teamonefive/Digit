@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a757789c5ad8b24e87140f44df4617b, type: 3}
+  m_Name: IngotIron
+  m_EditorClassIdentifier: 
+  description: An ingot made of pure iron
+  icon: {fileID: 981381356169526027, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  stackSize: 16
+  title: Iron Ingot
+  quality: 0
+  price: 20
+  recipe: 3 iron ore
+  craftingQuantity: 3
+  craftingComponent: {fileID: 11400000, guid: dd8fd95911d89d1488282c0be3662502, type: 2}
+  durability: 0
+  maxDurability: 0

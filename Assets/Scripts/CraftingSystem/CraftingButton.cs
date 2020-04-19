@@ -19,7 +19,19 @@ public class CraftingButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(_item.MyTitle == "Iron Pickaxe" ) {
+        if (_item.MyTitle == "Iron Ingot") {
+            IngotIron ironIngot = (IngotIron)Instantiate(_item);
+        }
+        else if (_item.MyTitle == "Silver Ingot") {
+            IngotSilver silverIngot = (IngotSilver)Instantiate(_item);
+        }
+        else if (_item.MyTitle == "Gold Ingot") {
+            IngotGold goldIngot = (IngotGold)Instantiate(_item);
+        }
+        else if (_item.MyTitle == "Mithril Ingot") {
+            IngotMithril mithrilIngot = (IngotMithril)Instantiate(_item);
+        }
+        else if (_item.MyTitle == "Iron Pickaxe" ) {
             IronPickAxe ironPickaxe = ( IronPickAxe )Instantiate(_item);
         }
         else if(_item.MyTitle == "Silver Pickaxe" ) {

@@ -17,9 +17,9 @@ MonoBehaviour:
   stackSize: 0
   title: Iron Pickaxe
   quality: 0
-  price: 15
-  recipe: 3 iron ore
-  craftingQuantity: 3
-  craftingComponent: {fileID: 11400000, guid: dd8fd95911d89d1488282c0be3662502, type: 2}
+  price: 40
+  recipe: 2 iron ingot
+  craftingQuantity: 2
+  craftingComponent: {fileID: 11400000, guid: f25b2a8eb7fcd4c41b1ad62e83d7371e, type: 2}
   durability: 200
   maxDurability: 200
