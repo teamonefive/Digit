@@ -11178,9 +11178,9 @@ RectTransform:
   m_Father: {fileID: 462865909}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 318, y: 268}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -54, y: -15}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169924436
@@ -13705,6 +13705,8 @@ MonoBehaviour:
     - 'Along the way, we can find useful materials laying around.  Let''s find one
       now! '
     - Oh look, there is something over here! Dig it out!
+    - When you dig up an item, it'll show up in your bag!
+    - Check out the bag by clicking the bag icon in the lower left.
   visitTheShop:
     name: Lampy
     sentences:
@@ -13730,6 +13732,7 @@ MonoBehaviour:
     - 'If you need to rest, get to the shop on the surface!  '
     - 'You will use more energy if you dig so walk and climb back up before you conk
       out! '
+    - That blue bar in the upper left shows your fatigue, don't let that fill up!
   lvlUp:
     name: Lampy
     sentences:
@@ -13737,7 +13740,9 @@ MonoBehaviour:
     - With great power comes great... benefits!
     - You can do things faster, dig longer, be the light in the darkness...
     - There are rare materials that will require all the luck you can muster to find...
-      so keep growing!
+    - That yellow bar in the upper level shows your level of growth.
+    - You can see you how you are growing if click on the icon of your face to the
+      upper left.
     - '*You get 3 stats per level, click confirm when finished allocating stats*'
   crafting:
     name: Lampy
@@ -13749,7 +13754,16 @@ MonoBehaviour:
     - '... and an Axe!'
     - You can make your pickaxe here, and perhaps some other items, if you have the
       material!
+    - Nothing lasts forever and items will break overtime.  So take some extra with
+      you!
     - '*Click the C to the left to craft*'
+  statboard:
+    name: Lampy
+    sentences:
+    - This is quite a descent! Its your all-time record... so far...
+    - You've got a long way to go but if you'd like to see how you are doing I can
+      show you!
+    - Click the stat board icon in the upper right to view your records!
   tile: {fileID: 807594915}
   Dwarf: {fileID: 807594911}
 --- !u!114 &1509482504
