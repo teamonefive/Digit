@@ -10670,8 +10670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8463399108080766320, guid: b8fbf916268459b45ae9d0ced758e49a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b5ad123a0b6fce458745ea67d4d5e54, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10703,6 +10702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 503568915}
   stackSize: {fileID: 1683095976}
+  startWithPickaxe: 1
 --- !u!1 &1237302196
 GameObject:
   m_ObjectHideFlags: 0
@@ -19080,7 +19080,7 @@ PrefabInstance:
         type: 3}
       propertyPath: items.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: d479917bf956b8647948950c85ae0ebe,
+      objectReference: {fileID: 11400000, guid: f481cb8cd988d43f8a1096a071f86d49,
         type: 2}
     - target: {fileID: 2026221083735283073, guid: 43deb1ecd89d6490d9c37de9ca690d40,
         type: 3}

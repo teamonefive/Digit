@@ -16,6 +16,8 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
 
     public BagScript MyBag { get; set; }
 
+    public bool startWithPickaxe = false;
+
     public bool IsEmpty
     {
         get
@@ -91,6 +93,12 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         items.OnPop += new UpdateStackEvent(UpdateSlot);
         items.OnPush += new UpdateStackEvent(UpdateSlot);
         items.OnClear += new UpdateStackEvent(UpdateSlot);
+
+        if (startWithPickaxe)
+        {
+            Item1 startingPickaxe = Instantiate(InventoryScript.MyInstance.items[1]);
+            AddItem(startingPickaxe);
+        }
     }
 
 

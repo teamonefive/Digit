@@ -29,7 +29,7 @@ public class InventoryScript : MonoBehaviour
 
     //DEBUGGING
     [SerializeField]
-    private Item1[] items;
+    public Item1[] items;
 
     public bool CanAddBag
     {
