@@ -15,19 +15,19 @@ public class CraftingInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CraftingButton.interactable = false;
-        myItem = null;
+
     }
 
     // Update is called once per frame
     void Update() { 
-    
-        if(myItem == null){
+        if(myItem == null ) {
             CraftingButton.interactable = false;
         }
         else {
             CraftingButton.interactable = InventoryScript.MyInstance.IsCraftable(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity) ? true : false;
         }
+        
+      
 
     }
     public void updateItem(Item1 item) {
