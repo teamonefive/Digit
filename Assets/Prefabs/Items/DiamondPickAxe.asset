@@ -20,4 +20,4 @@ MonoBehaviour:
   price: 300
   recipe: 25 diamond gems
   craftingQuantity: 25
-  craftingComponent: {fileID: 0}
+  craftingComponent: {fileID: 11400000, guid: d479917bf956b8647948950c85ae0ebe, type: 2}
