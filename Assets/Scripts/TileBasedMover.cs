@@ -13,6 +13,7 @@ public class TileBasedMover : MonoBehaviour
     public GameObject debris;
     public GameObject depthValue;
     public GameObject pickaxeSlot;
+    public AudioSource digSound;
     //Inventory playerInventory;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
@@ -353,7 +354,7 @@ public class TileBasedMover : MonoBehaviour
         {
             //Digging attempted
             bool validDig = true;
-
+            digSound.Play();
             if (moveTile.GetComponent<Tile>().type == Tile.TileType.Water)
             {
                 //Digging is not possible but swimming is
