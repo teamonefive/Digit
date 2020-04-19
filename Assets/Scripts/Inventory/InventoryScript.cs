@@ -169,7 +169,7 @@ public class InventoryScript : MonoBehaviour
                 if(slots.MyItems.Count == 0 ) {
                     return false;
                 }
-                else if( slots.MyItems.Peek().MyTitle == itemName.MyTitle && slots.MyItems.Count == quantity ) {
+                else if( slots.MyItems.Peek().MyTitle == itemName.MyTitle && slots.MyItems.Count >= quantity ) {
                     return true;
                 }
             }
@@ -179,7 +179,7 @@ public class InventoryScript : MonoBehaviour
     public bool Craft(Item1 itemName, int quantity) {
         foreach ( Bag bag in bags ) {
             foreach ( SlotScript slots in bag.MyBagScript.MySlots ) {
-                if ( slots.MyItems.Peek().MyTitle == itemName.MyTitle && slots.MyItems.Count == quantity ) {
+                if ( slots.MyItems.Peek().MyTitle == itemName.MyTitle && slots.MyItems.Count >= quantity ) {
                     Debug.Log("Item and count found");
                     Debug.Log("Removing Item");
                     for(int i = 0; i < quantity; i++ ) {

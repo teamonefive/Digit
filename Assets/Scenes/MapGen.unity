@@ -5203,7 +5203,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 900904587}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9999998
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19953,6 +19953,16 @@ PrefabInstance:
         type: 3}
       propertyPath: maxFatigue
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120461975871833408, guid: 11fd9a656851dd6448987318f3dc309e,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120461975871833408, guid: 11fd9a656851dd6448987318f3dc309e,
+        type: 3}
+      propertyPath: vEndurance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1120461975871833423, guid: 11fd9a656851dd6448987318f3dc309e,
         type: 3}
