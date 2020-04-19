@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue passedOut;
     public Dialogue lvlUp;
     public Dialogue crafting;
+    public Dialogue statboard;
     public TileBasedMover tile;
     public GameObject Dwarf;
     private bool firstTime = true;
@@ -68,5 +69,9 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerCraftingDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(crafting);
+    }
+    public void TriggerStatsDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(statboard);
     }
 }

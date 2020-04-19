@@ -66,6 +66,8 @@ public class Stats : MonoBehaviour
     public int maxDepth = 49;
     public int currentDepth = 49;
 
+    private bool depthTrig = true;
+
     public void statDump()
     {
         Debug.Log("Total Iron: " + totalIron);
@@ -97,6 +99,12 @@ public class Stats : MonoBehaviour
         }
 
         period += Time.deltaTime;
+
+        if (maxDepth == 99 && depthTrig == true)
+        {
+            FindObjectOfType<DialogueTrigger>().TriggerStatsDialogue();
+            depthTrig = false;
+        }
         
     }
 
