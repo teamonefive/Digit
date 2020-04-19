@@ -10,6 +10,7 @@ public class HideButton : MonoBehaviour
     public TileBasedMover dwarf;
     public GameObject button;
     public GameObject buttonWindow;
+    private bool craftTrig = true;
     void Start()
     {
         
@@ -21,6 +22,11 @@ public class HideButton : MonoBehaviour
         if (dwarf.oldPos == revealPos || dwarf.oldPos == revealPos2)
         {
             button.SetActive(true);
+            if(craftTrig == true)
+            {
+                FindObjectOfType<DialogueTrigger>().TriggerCraftingDialogue();
+                craftTrig = false;
+            }
         }
         else
         {
