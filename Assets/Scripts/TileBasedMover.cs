@@ -588,8 +588,16 @@ public class TileBasedMover : MonoBehaviour
     {
         SlotScript slot = pickaxeSlot.GetComponent<SlotScript>();
         Item1 item = slot.MyItem;
-        durabilityBar.maxValue = item.myMaxDurability;
-        durabilityBar.value = item.myDurability;
+        if (item != null)
+        {
+            durabilityBar.maxValue = item.myMaxDurability;
+            durabilityBar.value = item.myDurability;
+        }
+        else
+        {
+            durabilityBar.value = 0;
+        }
+        
 
         if (stat.moveCooldown < 0) 
         {
