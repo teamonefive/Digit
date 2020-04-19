@@ -287,7 +287,7 @@ public class Experience : MonoBehaviour
     }
     IEnumerator allocatingStats()
     {
-        confir.SetActive(false);
+        confir.GetComponent<Image>().enabled = false;
         plusPanel.SetActive(true);
         yield return new WaitUntil(() => statPoints == stat.vLevel);
         StartCoroutine("con");
@@ -331,10 +331,10 @@ public class Experience : MonoBehaviour
     IEnumerator con()
     {
         isLvling = true;
-        confir.SetActive(true);
+        confir.GetComponent<Image>().enabled = true;
         plusPanel.SetActive(false);
         yield return new WaitUntil(() => press);
-        confir.SetActive(false);
+        confir.GetComponent<Image>().enabled = false;
         Dwarf.GetComponent<TileBasedMover>().enabled = true;
         stat.maxFatigue = 100f * (stat.vEndurance * 1.15f + 1f);
         stat.vFatigue = stat.maxFatigue;
