@@ -5203,7 +5203,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 900904587}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13943,6 +13943,7 @@ MonoBehaviour:
       sure they'll make a deal!
     - We can exchange our goods for gold, then our gold for their items!
     - We'll need items to go further into the world...  Anyway, what are ye buyin'?
+    - '*Click the V to the left to shop*'
   passedOut:
     name: Lampy
     sentences:
@@ -13954,8 +13955,9 @@ MonoBehaviour:
     - I don't think it's healthy to pass out like you did... you should avoid doing
       that.
     - You may lose track of things... even yourself.
-    - 'If you need to rest, get to the surface!  '
-    - 'You won''t have to worry about using energy unless you dig so climb! '
+    - 'If you need to rest, get to the shop on the surface!  '
+    - 'You will use more energy if you dig so walk and climb back up before you conk
+      out! '
   lvlUp:
     name: Lampy
     sentences:
@@ -13964,6 +13966,18 @@ MonoBehaviour:
     - You can do things faster, dig longer, be the light in the darkness...
     - There are rare materials that will require all the luck you can muster to find...
       so keep growing!
+    - '*You get 3 stats per level, click confirm when finished allocating stats*'
+  crafting:
+    name: Lampy
+    sentences:
+    - 'You know what every dwarf needs?
+
+
+      A gruff beard!'
+    - '... and an Axe!'
+    - You can make your pickaxe here, and perhaps some other items, if you have the
+      material!
+    - '*Click the C to the left to craft*'
   tile: {fileID: 807594915}
   Dwarf: {fileID: 807594911}
 --- !u!114 &1509482504
