@@ -4949,7 +4949,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 900904587}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6905,6 +6905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stat: {fileID: 893040695}
   transitionAnim: {fileID: 445357088}
+  dwarf: {fileID: 807594914}
   tile: {fileID: 807594915}
   trig3: 1
 --- !u!82 &807594920

@@ -9,6 +9,7 @@ public class Fatigue : MonoBehaviour
     //public string scene;
     public Stats stat;
     public Animator transitionAnim;
+    public Animator dwarf;
     public TileBasedMover tile;
     public bool trig3 = true;
 

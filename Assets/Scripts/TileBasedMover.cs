@@ -44,6 +44,7 @@ public class TileBasedMover : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     private void Awake()
     {
         //playerInventory = this.GetComponent<Inventory>();
@@ -153,7 +154,7 @@ public class TileBasedMover : MonoBehaviour
 
         GameObject moveTile = world.getTile(targetPos);
 
-        if (moveTile == null)
+        if (!moveTile)
         {
             //Dwarf is moving into empty space
 
@@ -181,23 +182,11 @@ public class TileBasedMover : MonoBehaviour
                 else if (world.getTile(targetPos + new Vector3(-1f, 0f, 0f)) != null)
                 {
                     //There is a block to the left of the target position, climbing on the left is possible
-                    /*
-                    if (m_FacingRight)
-                    {
-                        Flip();
-                    }
-                    */
                     stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                 }
                 else if (world.getTile(targetPos + new Vector3(1f, 0f, 0f)) != null)
                 {
                     //There is a block to the right of the target position, climbing on the right is possible
-                    /*
-                    if (!m_FacingRight)
-                    {
-                        Flip();
-                    }
-                    */
                     stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                 }
                 else
@@ -226,12 +215,6 @@ public class TileBasedMover : MonoBehaviour
                         else if (isGround(transform.position + new Vector3(-1f, 0f, 0f)))
                         {
                             //There is a block to the left of the current position, climb up and over to the left
-                            /*
-                            if (m_FacingRight)
-                            {
-                                Flip();
-                            }
-                            */
                             oldPos = targetPos;
                             world.renderUp(oldPos);
                             targetPos += new Vector3(-1f, 0f, 0f);
@@ -240,12 +223,6 @@ public class TileBasedMover : MonoBehaviour
                         else if (isGround(transform.position + new Vector3(1f, 0f, 0f)))
                         {
                             //There is a block to the right of the current position, climb up and over to the right
-                            /*
-                            if (!m_FacingRight)
-                            {
-                                Flip();
-                            }
-                            */
                             oldPos = targetPos;
                             world.renderUp(oldPos);
                             targetPos += new Vector3(1f, 0f, 0f);
@@ -267,13 +244,6 @@ public class TileBasedMover : MonoBehaviour
                     }
                     else if (horizontal < 0)
                     {
-                        /*
-                        if (m_FacingRight)
-                        {
-                            Flip();
-                        }
-                        */
-
                         if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
                         {
                             //There is a block below the current position, climb down and to the left
@@ -306,13 +276,6 @@ public class TileBasedMover : MonoBehaviour
                     }
                     else if (horizontal > 0)
                     {
-                        /*
-                        if (!m_FacingRight)
-                        {
-                            Flip();
-                        }
-                        */
-
                         if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
                         {
                             //There is a block below the current position, climb down and to the right
