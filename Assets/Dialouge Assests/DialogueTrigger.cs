@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour {
+public class DialogueTrigger : MonoBehaviour
+{
 
-	public Dialogue dialogue;
+    public Dialogue dialogue;
     public Dialogue digDialogue;
     public Dialogue collectFirstItem;
     public Dialogue visitTheShop;
     public Dialogue passedOut;
     public Dialogue lvlUp;
+    public Dialogue crafting;
     public TileBasedMover tile;
     public GameObject Dwarf;
     private bool firstTime = true;
@@ -19,21 +21,21 @@ public class DialogueTrigger : MonoBehaviour {
         Dwarf.GetComponent<TileBasedMover>().enabled = false;
     }
     void Update()
-    {   
+    {
         if (Input.GetAxisRaw("Horizontal") != 0f && firstTime == true)
         {
             Dwarf.GetComponent<TileBasedMover>().enabled = true;
             //tile.targetPos += new Vector3(-1, 0, 0f);
         }
-        
+
         if (tile.moving == true && firstTime == true)
         {
             TriggerStartDialogue();
             firstTime = false;
         }
     }
-    public void TriggerStartDialogue ()
-	{
+    public void TriggerStartDialogue()
+    {
         Dwarf.GetComponent<TileBasedMover>().enabled = false;
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
@@ -62,5 +64,9 @@ public class DialogueTrigger : MonoBehaviour {
     public void TriggerLvlUpDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(lvlUp);
+    }
+    public void TriggerCraftingDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(crafting);
     }
 }
