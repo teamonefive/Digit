@@ -36,8 +36,26 @@ public abstract class Item1 : ScriptableObject, IMoveable
     [SerializeField]
     private int price;
 
+    [SerializeField]
+    private string recipe;
+
+    [SerializeField]
+    private int craftingQuantity;
+    [SerializeField]
+    private Item1 craftingComponent;
     private SlotScript slot;
 
+    public int MyCraftingComponentQuantity {
+        get {
+            return craftingQuantity;
+        }
+    }
+
+    public Item1 MyCraftingComponent {
+        get {
+            return craftingComponent;
+        }
+    }
     public Sprite MyIcon
     {
         get
@@ -86,6 +104,12 @@ public abstract class Item1 : ScriptableObject, IMoveable
     public string MyDescription {
         get {
             return description;
+        }
+    }
+
+    public string MyRecipe {
+        get {
+            return recipe;
         }
     }
 

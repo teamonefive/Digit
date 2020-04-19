@@ -10,16 +10,27 @@ public class CraftingInfo : MonoBehaviour
     [SerializeField] private Text ItemDescription;
     [SerializeField] private Image iconImage;
     [SerializeField] private int itemID;
+    [SerializeField] private Button CraftingButton;
     // Start is called before the first frame update
     void Start()
     {
-        
+        CraftingButton.interactable = false;
+        myItem = null;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() { 
+    
+        if(myItem == null){
+            CraftingButton.interactable = false;
+        }
+
+        else if( InventoryScript.MyInstance.IsCraftable(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity) ) {
+            CraftingButton.interactable = true;
+        }
+        else {
+            CraftingButton.interactable = false;
+        }
     }
     public void updateItem(Item1 item) {
         myItem = item;
@@ -41,7 +52,10 @@ public class CraftingInfo : MonoBehaviour
     }
 
     public void craftItem() {
-        InventoryScript.MyInstance.AddItem(myItem);
+        if (InventoryScript.MyInstance.IsCraftable(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity)) {
+            InventoryScript.MyInstance.Craft(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity);
+            InventoryScript.MyInstance.AddItem(myItem);
+        } 
     }
 
     public void closePanel() {

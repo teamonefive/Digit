@@ -18,3 +18,6 @@ MonoBehaviour:
   title: Silver Pickaxe
   quality: 1
   price: 50
+  recipe: 10 silver ore
+  craftingQuantity: 25
+  craftingComponent: {fileID: 0}

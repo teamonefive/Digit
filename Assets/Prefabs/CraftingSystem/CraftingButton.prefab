@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 34.39, y: -15.23}
-  m_SizeDelta: {x: -106.22, y: -42.37}
+  m_AnchoredPosition: {x: 34.39, y: -7.5224953}
+  m_SizeDelta: {x: -120.1, y: -57.785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &459041156609913898
 CanvasRenderer:
@@ -64,13 +64,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 53bd2da7b9ef39c4d9448fad5700e900, type: 3}
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.60784316, b: 0.3764706, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -310,6 +310,8 @@ MonoBehaviour:
   craftingRecipe: {fileID: 2172429052347970131}
   iconImage: {fileID: 5766109966126147187}
   itemID: 0
+  _info: {fileID: 0}
+  infoPanel: {fileID: 0}
 --- !u!1 &7902774302475928136
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +376,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 53bd2da7b9ef39c4d9448fad5700e900, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0

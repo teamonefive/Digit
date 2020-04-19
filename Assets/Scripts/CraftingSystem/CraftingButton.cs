@@ -33,6 +33,7 @@ public class CraftingButton : MonoBehaviour
         }
         nameLabel.text = _item.MyTitle;
         iconImage.sprite = _item.MyIcon;
+        craftingRecipe.text = _item.MyRecipe;
         
 
     }

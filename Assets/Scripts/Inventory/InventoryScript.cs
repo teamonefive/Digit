@@ -127,6 +127,7 @@ public class InventoryScript : MonoBehaviour
         return false;
     }
 
+    
     private bool PlaceInStack(Item1 item)
     {
         foreach (Bag bag in bags)
@@ -161,4 +162,36 @@ public class InventoryScript : MonoBehaviour
             itemCountChangedEvent.Invoke(item);
         }
     }
+
+    public bool IsCraftable(Item1 itemName, int quantity) {
+        foreach(Bag bag in bags ) {
+            foreach(SlotScript slots in bag.MyBagScript.MySlots ) {
+                if(slots.MyItems.Count == 0 ) {
+                    return false;
+                }
+                else if( slots.MyItems.Peek().MyTitle == itemName.MyTitle && slots.MyItems.Count == quantity ) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public bool Craft(Item1 itemName, int quantity) {
+        foreach ( Bag bag in bags ) {
+            foreach ( SlotScript slots in bag.MyBagScript.MySlots ) {
+                if ( slots.MyItems.Peek().MyTitle == itemName.MyTitle && slots.MyItems.Count == quantity ) {
+                    Debug.Log("Item and count found");
+                    Debug.Log("Removing Item");
+                    for(int i = 0; i < quantity; i++ ) {
+                        slots.MyItems.Pop();
+                    }
+                    return true;
+                }
+            }
+        }
+        Debug.Log("Item not found");
+        return false;
+    }
 }
+
+

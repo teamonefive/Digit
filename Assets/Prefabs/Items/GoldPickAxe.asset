@@ -18,3 +18,6 @@ MonoBehaviour:
   title: Gold Pickaxe
   quality: 2
   price: 100
+  recipe: 25 gold ore
+  craftingQuantity: 25
+  craftingComponent: {fileID: 0}
