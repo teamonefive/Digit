@@ -16,9 +16,6 @@ public class TileBasedMover : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip digSound;
     public AudioClip moveSound;
-    bool play;
-    bool stop;
-    //Inventory playerInventory;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
     public bool isFalling = false;
@@ -43,12 +40,13 @@ public class TileBasedMover : MonoBehaviour
     void Start() 
     {
         audioSource = GetComponent<AudioSource>();
+        fatigue = GetComponent<Fatigue>();
     }
 
     private void Awake()
     {
         //playerInventory = this.GetComponent<Inventory>();
-        fatigue = this.GetComponent<Fatigue>();
+        //fatigue = this.GetComponent<Fatigue>();
         oldPos = new Vector3(-53.5f, -1.16f, 0f);
         targetPos = oldPos;
     }

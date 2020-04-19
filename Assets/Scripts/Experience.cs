@@ -21,8 +21,6 @@ public class Experience : MonoBehaviour
     public GameObject plusPanel;
     public GameObject minusPanel;
     public GameObject Dwarf;
-    public GameObject playerButton;
-    public Button playerBtn;
     public Button strP;
     public Button agP;
     public Button endP;
@@ -77,8 +75,6 @@ public class Experience : MonoBehaviour
         agilityMod.text = "Agility: 0";
         perceptionMod.text = "Perception: 0";
         luckMod.text = "Luck: 0";
-        Button playerBtn = playerButton.GetComponent<Button>();
-        playerBtn.onClick.AddListener(TaskOnClick);
         Button strp = strP.GetComponent<Button>();
         strp.onClick.AddListener(strengthUp);
         Button agp = agP.GetComponent<Button>();
@@ -254,13 +250,6 @@ public class Experience : MonoBehaviour
         luckMod.text = "Luck: " + stat.vLuck.ToString();
         statPoints--;
         lucUp--;
-    }
-    void TaskOnClick() 
-    {
-        isOpen = !isOpen;
-        //ui.SetActive(isOpen);
-        
-        print("Player button clicked.");
     }
     public void UpdateStackSize(IClickable clickable)
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Fatigue : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class Fatigue : MonoBehaviour
 
     public void checkFatigue()
     {
+
         if (stat.vFatigue < 1f)
         {
             GetComponent<TileBasedMover>().enabled = false;
@@ -58,9 +60,13 @@ public class Fatigue : MonoBehaviour
     }
     IEnumerator wait()
     {
-        print(Time.time);
+        //print(Time.time);
+        dwarf.SetBool("isFatigued", true);
+        //print("Set fatigued bool.");
         yield return new WaitForSeconds(5);
-        print(Time.time);
+        //print(Time.time);
+        dwarf.SetBool("isFatigued", false);
+        //print("Set fatigued bool.");
         GetComponent<TileBasedMover>().enabled = true;
         if(trig3 == true)
         {
