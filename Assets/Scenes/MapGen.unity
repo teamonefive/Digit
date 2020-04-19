@@ -7885,6 +7885,7 @@ MonoBehaviour:
   totalPlaytime: 0
   maxDepth: 49
   currentDepth: 49
+  itemsCrafted: 0
 --- !u!4 &893040696
 Transform:
   m_ObjectHideFlags: 0
@@ -12600,13 +12601,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 1371969333}
+  _stats: {fileID: 893040695}
   myItem: {fileID: 0}
   ItemName: {fileID: 2020835317}
   ItemDescription: {fileID: 1895515011}
   iconImage: {fileID: 1384215413}
   itemID: 0
   CraftingButton: {fileID: 1510763090}
-  ItemsCrafted: 0
 --- !u!1 &1379410749
 GameObject:
   m_ObjectHideFlags: 0
