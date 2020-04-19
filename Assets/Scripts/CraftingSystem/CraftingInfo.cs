@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class CraftingInfo : MonoBehaviour
 {
     public GameObject _view;
+    public Stats _stats;
     public Item1 myItem;
     [SerializeField] private Text ItemName;
     [SerializeField] private Text ItemDescription;
@@ -57,6 +58,7 @@ public class CraftingInfo : MonoBehaviour
             InventoryScript.MyInstance.Craft(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity);
             InventoryScript.MyInstance.AddItem(myItem);
             ItemsCrafted++;
+            _stats.itemsCrafted++;
             
         } 
     }
@@ -65,7 +67,7 @@ public class CraftingInfo : MonoBehaviour
         _view.SetActive(false);
     }
 
-    public int getItemsCrafted() {
-        return ItemsCrafted;
+    public void sendItemsCrafted() {
+        _stats.updateCraftingInfo(ItemsCrafted);
     }
 }
