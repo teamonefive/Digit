@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bcb496cdc0281418d9e8645d5c553a, type: 3}
   m_Name: GemTopaz
   m_EditorClassIdentifier: 
+  description: 
   icon: {fileID: -8389941333968801756, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 16
   title: Topaz Gem
   quality: 0
-  price: 5
+  price: 10
+  recipe: 
+  craftingQuantity: 0
+  craftingComponent: {fileID: 0}

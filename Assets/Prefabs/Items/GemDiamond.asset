@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9b473aaea6ebd47b2edaca80093c80, type: 3}
   m_Name: GemDiamond
   m_EditorClassIdentifier: 
+  description: 
   icon: {fileID: -2191473507971885888, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   stackSize: 16
   title: Diamond Gem
   quality: 2
-  price: 50
+  price: 75
+  recipe: 
+  craftingQuantity: 0
+  craftingComponent: {fileID: 0}

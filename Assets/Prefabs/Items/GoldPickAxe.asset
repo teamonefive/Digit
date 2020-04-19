@@ -17,7 +17,7 @@ MonoBehaviour:
   stackSize: 0
   title: Gold Pickaxe
   quality: 2
-  price: 100
+  price: 500
   recipe: 25 gold ore
   craftingQuantity: 25
   craftingComponent: {fileID: 11400000, guid: ee9b1bc110d8c1a4f82a5eeea251ae85, type: 2}
