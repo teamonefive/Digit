@@ -11,6 +11,7 @@ public class CraftingInfo : MonoBehaviour
     [SerializeField] private Image iconImage;
     [SerializeField] private int itemID;
     [SerializeField] private Button CraftingButton;
+    public int ItemsCrafted = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,10 +56,16 @@ public class CraftingInfo : MonoBehaviour
         if (InventoryScript.MyInstance.IsCraftable(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity)) {
             InventoryScript.MyInstance.Craft(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity);
             InventoryScript.MyInstance.AddItem(myItem);
+            ItemsCrafted++;
+            
         } 
     }
 
     public void closePanel() {
         _view.SetActive(false);
+    }
+
+    public int getItemsCrafted() {
+        return ItemsCrafted;
     }
 }

@@ -4949,7 +4949,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 900904587}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9999998
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12606,6 +12606,7 @@ MonoBehaviour:
   iconImage: {fileID: 1384215413}
   itemID: 0
   CraftingButton: {fileID: 1510763090}
+  ItemsCrafted: 0
 --- !u!1 &1379410749
 GameObject:
   m_ObjectHideFlags: 0

@@ -67,7 +67,6 @@ public class Stats : MonoBehaviour
     public int currentDepth = 49;
 
     private bool depthTrig = true;
-
     public void statDump()
     {
         Debug.Log("Total Iron: " + totalIron);
