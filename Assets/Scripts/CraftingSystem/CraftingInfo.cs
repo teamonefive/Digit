@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class CraftingInfo : MonoBehaviour
 {
     public GameObject _view;
+    public Stats _stats;
     public Item1 myItem;
     [SerializeField] private Text ItemName;
     [SerializeField] private Text ItemDescription;
@@ -14,23 +15,20 @@ public class CraftingInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CraftingButton.interactable = false;
-        myItem = null;
+
     }
 
     // Update is called once per frame
     void Update() { 
-    
-        if(myItem == null){
+        if(myItem == null ) {
             CraftingButton.interactable = false;
-        }
-
-        else if( InventoryScript.MyInstance.IsCraftable(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity) ) {
-            CraftingButton.interactable = true;
         }
         else {
-            CraftingButton.interactable = false;
+            CraftingButton.interactable = InventoryScript.MyInstance.IsCraftable(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity) ? true : false;
         }
+        
+      
+
     }
     public void updateItem(Item1 item) {
         myItem = item;
@@ -55,10 +53,13 @@ public class CraftingInfo : MonoBehaviour
         if (InventoryScript.MyInstance.IsCraftable(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity)) {
             InventoryScript.MyInstance.Craft(myItem.MyCraftingComponent, myItem.MyCraftingComponentQuantity);
             InventoryScript.MyInstance.AddItem(myItem);
+            _stats.itemsCrafted++;
+            
         } 
     }
 
     public void closePanel() {
         _view.SetActive(false);
     }
+
 }

@@ -691,6 +691,7 @@ public class TileBasedMover : MonoBehaviour
                         if (item.myDurability <= 0)
                         {
                             slot.Clear();
+                            stat.itemsBroken++;
                         }
                     }
 
@@ -706,6 +707,7 @@ public class TileBasedMover : MonoBehaviour
                         if (item.myDurability <= 0)
                         {
                             slot.Clear();
+                            stat.itemsBroken++;
                         }
                     }
                 }
@@ -720,6 +722,7 @@ public class TileBasedMover : MonoBehaviour
                         if (item.myDurability <= 0)
                         {
                             slot.Clear();
+                            stat.itemsBroken++;
                         }
                     }
                 }
@@ -734,6 +737,7 @@ public class TileBasedMover : MonoBehaviour
                         if (item.myDurability <= 0)
                         {
                             slot.Clear();
+                            stat.itemsBroken++;
                         }
                     }
                 }

@@ -191,9 +191,19 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         {
             if(VendorWindow.MyInstance.vwindow.activeSelf)
             {
+                int sellPrice = (int)(MyItem.MyPrice * 0.8f);
+                if (MyItem.myMaxDurability > 0)
+                {
+                    sellPrice *= (MyItem.myDurability / MyItem.myMaxDurability);
+                }
+                if (sellPrice < 0)
+                {
+                    sellPrice = 0;
+                }
                 Experience.MyInstance.MyGold += (int)(MyItem.MyPrice * 0.8f);
                 Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
                 RemoveItem();
+                Object.FindObjectOfType<Stats>().itemsSold++;
             }
         } 
     }

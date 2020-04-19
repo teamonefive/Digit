@@ -67,6 +67,10 @@ public class Stats : MonoBehaviour
     public int currentDepth = 49;
 
     private bool depthTrig = true;
+    public int itemsCrafted = 0;
+    public int itemsBought = 0;
+    public int itemsSold = 0;
+    public int itemsBroken = 0;
 
     public void statDump()
     {

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b269501d8e7e02548af79a45ef8e2b50, type: 3}
+  m_Name: IngotGold
+  m_EditorClassIdentifier: 
+  description: An ingot made of pure gold
+  icon: {fileID: -3957400379634226347, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  stackSize: 16
+  title: Gold Ingot
+  quality: 2
+  price: 115
+  recipe: 5 gold ore
+  craftingQuantity: 5
+  craftingComponent: {fileID: 11400000, guid: ee9b1bc110d8c1a4f82a5eeea251ae85, type: 2}
+  durability: 0
+  maxDurability: 0

@@ -17,9 +17,9 @@ MonoBehaviour:
   stackSize: 0
   title: Mithril Pickaxe
   quality: 3
-  price: 1250
-  recipe: 25 mithril ore
-  craftingQuantity: 25
-  craftingComponent: {fileID: 11400000, guid: 1861accd6297d9d4a975ade92ed74bdf, type: 2}
+  price: 1350
+  recipe: 5 mithril ingot
+  craftingQuantity: 5
+  craftingComponent: {fileID: 11400000, guid: c10371a993321114f898092e221a4406, type: 2}
   durability: 400
   maxDurability: 400
