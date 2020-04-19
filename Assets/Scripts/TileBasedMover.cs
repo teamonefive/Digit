@@ -13,8 +13,11 @@ public class TileBasedMover : MonoBehaviour
     public GameObject debris;
     public GameObject depthValue;
     public GameObject pickaxeSlot;
-    public AudioSource digSound;
-    public AudioSource moveSound;
+    public AudioSource audioSource;
+    public AudioClip digSound;
+    public AudioClip moveSound;
+    bool play;
+    bool stop;
     //Inventory playerInventory;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
@@ -37,6 +40,10 @@ public class TileBasedMover : MonoBehaviour
 
     public Slider durabilityBar;
 
+    void Start() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Awake()
     {
         //playerInventory = this.GetComponent<Inventory>();
@@ -127,7 +134,6 @@ public class TileBasedMover : MonoBehaviour
         Vector2 touchLoc = touchLocation();
         float horizontal = touchLoc.x;
         float vertical = touchLoc.y;
-        moveSound.Play();
         if (horizontal == 0 && vertical == 0) return;
 
         moving = true;
@@ -360,7 +366,10 @@ public class TileBasedMover : MonoBehaviour
         {
             //Digging attempted
             bool validDig = true;
-            digSound.Play();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(digSound, 1.0f);
+            }
             if (moveTile.GetComponent<Tile>().type == Tile.TileType.Water)
             {
                 //Digging is not possible but swimming is
@@ -616,6 +625,10 @@ public class TileBasedMover : MonoBehaviour
         }
         if (moving)
         {
+            if (!audioSource.isPlaying) 
+            {
+                audioSource.PlayOneShot(moveSound, 1.0f);
+            }
             if (transform.position == targetPos)
             {
                 stat.tileDifficultyMultiplier = 1f;
