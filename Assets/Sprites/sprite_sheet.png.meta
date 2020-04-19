@@ -833,6 +833,15 @@ TextureImporter:
   - first:
       213: 2660799199254034786
     second: anvil
+  - first:
+      213: -2133818355244124785
+    second: confirm_button
+  - first:
+      213: 1269433694551730696
+    second: stat_board_label
+  - first:
+      213: 6156734019213548470
+    second: crafting_label
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -6760,7 +6769,7 @@ TextureImporter:
         width: 1
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6781,7 +6790,7 @@ TextureImporter:
         width: 13
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6789,6 +6798,69 @@ TextureImporter:
       bones: []
       spriteID: 5d781ee978b99bd47987cdd6c68eec18
       internalID: 2660799199254034786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confirm_button
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 157
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9a1d4f7407ffb43aaff9ec9fb174a2
+      internalID: -2133818355244124785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stat_board_label
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 141
+        width: 55
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b39ac1402dafc4a9a2e9f414155542
+      internalID: 1269433694551730696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crafting_label
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 124
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd13efa386719f4cb6ab6d018e108ad
+      internalID: 6156734019213548470
       vertices: []
       indices: 
       edges: []
