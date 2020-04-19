@@ -9,11 +9,18 @@ public class StatsDisplayScript : MonoBehaviour
 
     public Text iron;
     public Text diamond;
+    public Text silver;
+    public Text gold;
+    public Text topaz;
+    public Text sapphire;
+    public Text ruby;
+    public Text mithril;
     public Text moves;
     public Text digs;
     public Text deaths;
     public Text fatigues;
     public Text playTime;
+    public Text maxDepth;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +32,18 @@ public class StatsDisplayScript : MonoBehaviour
     void Update()
     {
         iron.text = "Total Iron: " + stat.totalIron;
+        silver.text = "Total Silver: " + stat.totalSilver;
+        gold.text = "Total Gold: " + stat.totalGold;
+        mithril.text = "Total Mithril: " + stat.totalMithril;
+        topaz.text = "Total Topaz: " + stat.totalTopaz;
+        sapphire.text = "Total Sapphire: " + stat.totalSapphire;
+        ruby.text = "Total Ruby: " + stat.totalRuby;
         diamond.text = "Total Diamond: " + stat.totalDiamond;
         moves.text = "Total Moves: " + stat.totalMoves;
         digs.text = "Total Digs: " + stat.totalDigs;
         deaths.text = "Total Deaths: " + stat.totalDeaths;
         fatigues.text = "Total Fatigues: " + stat.totalFatigues;
         playTime.text = "Total Playtime: " + stat.totalPlaytime;
+        maxDepth.text = "Max Depth Reached: " + (stat.maxDepth - 49);
     }
 }
