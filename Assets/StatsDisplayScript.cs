@@ -21,6 +21,10 @@ public class StatsDisplayScript : MonoBehaviour
     public Text fatigues;
     public Text playTime;
     public Text maxDepth;
+    public Text crafted;
+    public Text bought;
+    public Text sold;
+    public Text broken;
 
     // Start is called before the first frame update
     void Start()
@@ -45,5 +49,9 @@ public class StatsDisplayScript : MonoBehaviour
         fatigues.text = "Total Fatigues: " + stat.totalFatigues;
         playTime.text = "Total Playtime: " + stat.totalPlaytime;
         maxDepth.text = "Max Depth Reached: " + (stat.maxDepth - 49);
-    }
+        crafted.text = "Total Items Crafted: " + stat.itemsCrafted;
+        bought.text = "Total Items Purchased: " + stat.itemsBought;
+        sold.text = "Total Items Sold: " + stat.itemsSold;
+        broken.text = "Total Equipment Broken: " + stat.itemsBroken;
+}
 }
