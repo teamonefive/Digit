@@ -569,14 +569,8 @@ public class TileBasedMover : MonoBehaviour
         }
         
 
-        if (stat.moveCooldown < 0) 
-        {
-            stat.moveCooldown = 0;
-        }
-        else
-        {
-            stat.moveCooldown--;
-        }
+        stat.moveCooldown--;
+
 
         if (canMove)
         {
