@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-
+    public GameObject dialogueCanvas;
     public Dialogue dialogue;
     public Dialogue digDialogue;
     public Dialogue collectFirstItem;
@@ -23,7 +23,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0f && firstTime == true)
+        if ((tile.dir != new Vector2 (1f, 0f) || tile.dir != new Vector2(-1f, 0f)) && firstTime == true)
         {
             Dwarf.GetComponent<TileBasedMover>().enabled = true;
             //tile.targetPos += new Vector3(-1, 0, 0f);

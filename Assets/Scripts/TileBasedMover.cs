@@ -16,6 +16,10 @@ public class TileBasedMover : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip digSound;
     public AudioClip moveSound;
+    public Button moveUp;
+    public Button moveDown;
+    public Button moveRight;
+    public Button moveLeft;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
     public bool isFalling = false;
@@ -23,6 +27,8 @@ public class TileBasedMover : MonoBehaviour
     public bool isDestroyedBlock = false;
     public bool isDigging = false;
     public bool isFatigued = false;
+
+    public Vector2 dir = new Vector2(0f, 0f);
 
 
     private Vector2 touchOrigin = -Vector2.one;
@@ -41,6 +47,16 @@ public class TileBasedMover : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         fatigue = GetComponent<Fatigue>();
+
+        Button up = moveUp.GetComponent<Button>();
+        up.onClick.AddListener(goUp);
+        Button down = moveDown.GetComponent<Button>();
+        down.onClick.AddListener(goDown);
+        Button right = moveRight.GetComponent<Button>();
+        right.onClick.AddListener(goRight);
+        Button left = moveLeft.GetComponent<Button>();
+        left.onClick.AddListener(goLeft);
+
     }
 
     private void Awake()
@@ -49,6 +65,32 @@ public class TileBasedMover : MonoBehaviour
         //fatigue = this.GetComponent<Fatigue>();
         oldPos = new Vector3(-53.5f, -1.16f, 0f);
         targetPos = oldPos;
+    }
+
+    void goUp()
+    {
+        print("UP");
+        dir = new Vector2(0f, 1f);
+        return;
+    }
+
+    void goDown()
+    {
+        print("DOWN");
+        dir = new Vector2(0f, -1f);
+        return;
+    }
+    void goRight()
+    {
+        print("RIGHT");
+        dir = new Vector2(1f, 0f);
+        return;
+    }
+    void goLeft()
+    {
+        print("LEFT");
+        dir = new Vector2(-1f, 0f);
+        return;
     }
 
     bool isGround(Vector2 pos)
@@ -77,7 +119,8 @@ public class TileBasedMover : MonoBehaviour
     */
     public Vector2 touchLocation()
     {
-        Vector2 touchLoc = new Vector2(0f, 0f);
+        //Vector2 touchLoc = new Vector2(0f, 0f);
+        Vector2 touchLoc = dir;
 
         #if UNITY_STANDALONE || UNITY_WEBPLAYER
 
@@ -130,7 +173,7 @@ public class TileBasedMover : MonoBehaviour
     {
         if (stat.moveCooldown >= 0f) return;
 
-        Vector2 touchLoc = touchLocation();
+        Vector2 touchLoc = dir; //touchLocation();
         float horizontal = touchLoc.x;
         float vertical = touchLoc.y;
         if (horizontal == 0 && vertical == 0) return;
@@ -539,6 +582,7 @@ public class TileBasedMover : MonoBehaviour
         animator.SetFloat("speed", stat.moveSpeed);
 
         stat.moveCooldown = stat.setMoveCooldown;
+        dir = new Vector2(0f, 0f);
     }
     private void Flip()
     {
