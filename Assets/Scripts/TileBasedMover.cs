@@ -164,8 +164,8 @@ public class TileBasedMover : MonoBehaviour
                 touchLoc.y = y > 0 ? 1 : -1;
         }
 
-        #endif //End of mobile platform dependendent compilation section started above with #elif
-
+#endif //End of mobile platform dependendent compilation section started above with #elif
+        print(touchLoc);
         return touchLoc;
     }
 
