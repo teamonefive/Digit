@@ -22,7 +22,7 @@ public class HideButton : MonoBehaviour
         if (dwarf.oldPos == revealPos || dwarf.oldPos == revealPos2)
         {
             button.SetActive(true);
-            if(craftTrig == true)
+            if(craftTrig == true && (dwarf.oldPos == new Vector3(-49.5f, -1f, 0f) || dwarf.oldPos == new Vector3(-48.5f, -1f, 0f)))
             {
                 FindObjectOfType<DialogueTrigger>().TriggerCraftingDialogue();
                 craftTrig = false;
