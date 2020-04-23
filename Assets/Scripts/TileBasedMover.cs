@@ -48,6 +48,10 @@ public class TileBasedMover : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         fatigue = GetComponent<Fatigue>();
 
+        #if UNITY_STANDALONE || UNITY_WEBPLAYER
+        return;
+        #endif
+
         Button up = moveUp.GetComponent<Button>();
         up.onClick.AddListener(goUp);
         Button down = moveDown.GetComponent<Button>();
@@ -632,6 +636,7 @@ public class TileBasedMover : MonoBehaviour
                         }
                         if ((currentTile.GetComponent<Tile>().type == Tile.TileType.Lava || currentTile.GetComponent<Tile>().type == Tile.TileType.Water) && stat.vFatigue < 1f)
                         {
+                            animator.SetBool("TransitionFatigue", true);
                             world.UnrenderAllTiles();
                             Vector3 dwarfPos = new Vector3(-53.5f, -1f, 0f);
                             Vector3 lampPos = new Vector3(-53.1f, -0.55f, 0f);

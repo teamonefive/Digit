@@ -15673,6 +15673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dwarf: {fileID: 807594911}
+  lampyLight: {fileID: 467325539}
   stat: {fileID: 893040695}
 --- !u!1 &1581094836
 GameObject:
