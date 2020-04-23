@@ -5397,7 +5397,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 900904587}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9999998
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5493,7 +5493,7 @@ MonoBehaviour:
   - {fileID: 4154809608734028856, guid: 2774ab602bc647d47b8cb33d2062f4ab, type: 3}
   dwarf: {fileID: 807594911}
   stat: {fileID: 893040695}
-  renderDistance: 8
+  renderDistance: 9
   minWidth: 0
   minHeight: 0
   width: 32
@@ -17646,7 +17646,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1503245523}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.71755517
+  m_Size: 0.7175553
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -332,10 +332,6 @@ public class TileBasedMover : MonoBehaviour
         {
             //Digging attempted
             bool validDig = true;
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(digSound, 1.0f);
-            }
             if (moveTile.GetComponent<Tile>().type == Tile.TileType.Water)
             {
                 //Digging is not possible but swimming is
@@ -444,6 +440,7 @@ public class TileBasedMover : MonoBehaviour
             {
                 //animator.SetBool("isDigging", true);
                 animator.Play("dwarf_dig");
+                audioSource.PlayOneShot(digSound, 1.0f);
                 if (world.getTile(targetPos) != null)
                 {
                     stat.tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<Tile>().difficulty * stat.strengthMultiplier;
