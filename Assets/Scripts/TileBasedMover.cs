@@ -127,45 +127,7 @@ public class TileBasedMover : MonoBehaviour
         touchLoc.x = Input.GetAxisRaw("Horizontal");
         touchLoc.y = Input.GetAxisRaw("Vertical");
 
-        #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-
-        if (Input.touchCount == 0) return touchLoc;
-
-        Touch myTouch = Input.touches[0];
-
-        //Check if the phase of that touch equals Began
-        if (myTouch.phase == TouchPhase.Began)
-        {
-            //If so, set touchOrigin to the position of that touch
-            touchOrigin = myTouch.position;
-        }
-
-        //If the touch phase is not Began, and instead is equal to Ended and the x of touchOrigin is greater or equal to zero:
-        else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
-        {
-            //Set touchEnd to equal the position of this touch
-            Vector2 touchEnd = myTouch.position;
-
-            //Calculate the difference between the beginning and end of the touch on the x axis.
-            float x = touchOrigin.x - Screen.width / 2;
-
-            //Calculate the difference between the beginning and end of the touch on the y axis.
-            float y = touchOrigin.y - Screen.height / 2;
-
-            //Set touchOrigin.x to -1 so that our else if statement will evaluate false and not repeat immediately.
-            touchOrigin.x = -1;
-
-            //Check if the difference along the x axis is greater than the difference along the y axis.
-            if (Mathf.Abs(x) > Mathf.Abs(y))
-                //If x is greater than zero, set horizontal to 1, otherwise set it to -1
-                touchLoc.x = x > 0 ? 1 : -1;
-            else
-                //If y is greater than zero, set horizontal to 1, otherwise set it to -1
-                touchLoc.y = y > 0 ? 1 : -1;
-        }
-
-#endif //End of mobile platform dependendent compilation section started above with #elif
-        print(touchLoc);
+        #endif 
         return touchLoc;
     }
 
@@ -173,7 +135,7 @@ public class TileBasedMover : MonoBehaviour
     {
         if (stat.moveCooldown >= 0f) return;
 
-        Vector2 touchLoc = dir; //touchLocation();
+        Vector2 touchLoc = touchLocation();
         float horizontal = touchLoc.x;
         float vertical = touchLoc.y;
         if (horizontal == 0 && vertical == 0) return;
