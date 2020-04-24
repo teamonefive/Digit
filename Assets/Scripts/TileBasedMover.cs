@@ -251,15 +251,8 @@ public class TileBasedMover : MonoBehaviour
                     }
                     else if (horizontal < 0)
                     {
-                        if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
-                        {
-                            //There is a block below the current position, climb down and to the left
-                            oldPos = targetPos;
-                            world.renderLeft(oldPos);
-                            targetPos += new Vector3(0f, -1f, 0f);
-                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
-                        }
-                        else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
+                        
+                        if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                         {
                             //There is a block above the target position, climb along the ceiling
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
@@ -270,6 +263,14 @@ public class TileBasedMover : MonoBehaviour
                             oldPos = targetPos;
                             world.renderLeft(oldPos);
                             targetPos += new Vector3(0f, 1f, 0f);
+                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
+                        }
+                        else if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
+                        {
+                            //There is a block below the current position, climb down and to the left
+                            oldPos = targetPos;
+                            world.renderLeft(oldPos);
+                            targetPos += new Vector3(0f, -1f, 0f);
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                         }
                         else
@@ -283,15 +284,8 @@ public class TileBasedMover : MonoBehaviour
                     }
                     else if (horizontal > 0)
                     {
-                        if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
-                        {
-                            //There is a block below the current position, climb down and to the right
-                            oldPos = targetPos;
-                            world.renderRight(oldPos);
-                            targetPos += new Vector3(0f, -1f, 0f);
-                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
-                        }
-                        else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
+                        
+                        if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                         {
                             //There is a block above the target position, climb along the ceiling
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
@@ -302,6 +296,14 @@ public class TileBasedMover : MonoBehaviour
                             oldPos = targetPos;
                             world.renderRight(oldPos);
                             targetPos += new Vector3(0f, 1f, 0f);
+                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
+                        }
+                        else if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
+                        {
+                            //There is a block below the current position, climb down and to the right
+                            oldPos = targetPos;
+                            world.renderRight(oldPos);
+                            targetPos += new Vector3(0f, -1f, 0f);
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                         }
                         else
