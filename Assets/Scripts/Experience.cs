@@ -41,6 +41,7 @@ public class Experience : MonoBehaviour
     private int lucUp = 0;
     private bool press = false;
     private bool isLvling = false;
+
     public int MyGold { get; set; }
 
     private bool isOpen = true;

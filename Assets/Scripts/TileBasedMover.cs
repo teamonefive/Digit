@@ -440,6 +440,24 @@ public class TileBasedMover : MonoBehaviour
                 stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
             }
 
+            SlotScript slot = pickaxeSlot.GetComponent<SlotScript>();
+            Item1 item = slot.MyItem;
+
+            if (item == null)
+            {
+                validDig = false;
+                moving = false;
+                canMove = true;
+                return;
+            }
+            else if (item.MyTitle != "Wood Pickaxe" && item.MyTitle != "Iron Pickaxe" && item.MyTitle != "Silver Pickaxe" && item.MyTitle != "Gold Pickaxe" && item.MyTitle != "Mithril Pickaxe")
+            {
+                validDig = false;
+                moving = false;
+                canMove = true;
+                return;
+            }
+
             if (validDig)
             {
                 //animator.SetBool("isDigging", true);
@@ -639,6 +657,8 @@ public class TileBasedMover : MonoBehaviour
                             animator.SetBool("TransitionFatigue", true);
                             world.UnrenderAllTiles();
                             Vector3 dwarfPos = new Vector3(-53.5f, -1f, 0f);
+                            oldPos = dwarfPos;
+                            targetPos = dwarfPos;
                             Vector3 lampPos = new Vector3(-53.1f, -0.55f, 0f);
 
                             stat.totalDeaths++;
@@ -680,9 +700,24 @@ public class TileBasedMover : MonoBehaviour
             float pickaxeMultiplier = 1f;
             if (!slot.IsEmpty)
             {
-                
 
-                if (item.MyTitle == "Iron Pickaxe")
+                if (item.MyTitle == "Wood Pickaxe")
+                {
+                    pickaxeMultiplier = 1f;
+
+                    if (pickaxeUsed)
+                    {
+                        item.myDurability = item.myDurability - 1;
+
+                        if (item.myDurability <= 0)
+                        {
+                            slot.Clear();
+                            stat.itemsBroken++;
+                        }
+                    }
+
+                }
+                else if (item.MyTitle == "Iron Pickaxe")
                 {
                     pickaxeMultiplier = 1.1f;
 
@@ -777,6 +812,24 @@ public class TileBasedMover : MonoBehaviour
     IEnumerator wait()
     {
         yield return new WaitForSeconds(6);
+    }
+
+    public void teleportToSpawn()
+    {
+        targetPos = oldPos;
+        transform.position = oldPos;
+        animator.SetFloat("speed", 0f);
+        world.UnrenderAllTiles();
+        Vector3 dwarfPos = new Vector3(-53.5f, -1f, 0f);
+        oldPos = dwarfPos;
+        targetPos = dwarfPos;
+
+        world.generateStartingTiles();
+        lampy.snapToOrigin();
+
+        moving = false;
+        canMove = true;
+        return;
     }
 }
 

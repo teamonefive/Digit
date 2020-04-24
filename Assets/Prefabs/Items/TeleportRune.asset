@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab390a63eb4f32443956c4c16d185b78, type: 3}
+  m_Name: TeleportRune
+  m_EditorClassIdentifier: 
+  description: A magical rune that teleports you back to the surface
+  icon: {fileID: -2514358741253365177, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  stackSize: 0
+  title: Rune of Teleportation
+  quality: 3
+  price: 250
+  recipe: 3 diamond gems
+  craftingQuantity: 3
+  craftingComponent: {fileID: 11400000, guid: d479917bf956b8647948950c85ae0ebe, type: 2}
+  durability: 0
+  maxDurability: 0
