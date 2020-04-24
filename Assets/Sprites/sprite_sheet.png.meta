@@ -860,6 +860,15 @@ TextureImporter:
   - first:
       213: 4651972917264552996
     second: bag_item
+  - first:
+      213: 3049863269351548431
+    second: pickaxe_wood
+  - first:
+      213: -2514358741253365177
+    second: teleport_rune
+  - first:
+      213: 2599875869573600630
+    second: rations_box
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -6997,7 +7006,7 @@ TextureImporter:
         width: 18
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7005,6 +7014,69 @@ TextureImporter:
       bones: []
       spriteID: 374b75e7f42cb5b47b255178b6de375a
       internalID: 4651972917264552996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_wood
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 78
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099d10c4f55bf8f498b61b155e27f791
+      internalID: 3049863269351548431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_rune
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 79
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce5f5810ab7fa845ac2c7b31730e0d3
+      internalID: -2514358741253365177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rations_box
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 79
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6ee08819c81e44dbf199ba036cc844
+      internalID: 2599875869573600630
       vertices: []
       indices: 
       edges: []

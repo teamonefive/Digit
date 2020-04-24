@@ -189,7 +189,26 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
     {
         if(!IsEmpty)
         {
-            if(VendorWindow.MyInstance.vwindow.activeSelf)
+            if (VendorWindow.MyInstance == null)
+            {
+                if (MyItem.MyTitle == "Box of Rations")
+                {
+                    Stats stat = Object.FindObjectOfType<Stats>();
+                    stat.vFatigue += 100f;
+                    if (stat.vFatigue > stat.maxFatigue)
+                    {
+                        stat.vFatigue = stat.maxFatigue;
+                    }
+                    RemoveItem();
+                }
+                else if (MyItem.MyTitle == "Rune of Teleportation")
+                {
+                    TileBasedMover moveScript = Object.FindObjectOfType<TileBasedMover>();
+                    moveScript.teleportToSpawn();
+                    RemoveItem();
+                }
+            }
+            else if(VendorWindow.MyInstance.vwindow.activeSelf)
             {
                 int sellPrice = (int)(MyItem.MyPrice * 0.8f);
                 if (MyItem.myMaxDurability > 0)
@@ -204,6 +223,25 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
                 Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
                 RemoveItem();
                 Object.FindObjectOfType<Stats>().itemsSold++;
+            }
+            else
+            {
+                if (MyItem.MyTitle == "Box of Rations")
+                {
+                    Stats stat = Object.FindObjectOfType<Stats>();
+                    stat.vFatigue += 100f;
+                    if (stat.vFatigue > stat.maxFatigue)
+                    {
+                        stat.vFatigue = stat.maxFatigue;
+                    }
+                    RemoveItem();
+                }
+                else if (MyItem.MyTitle == "Rune of Teleportation")
+                {
+                    TileBasedMover moveScript = Object.FindObjectOfType<TileBasedMover>();
+                    moveScript.teleportToSpawn();
+                    RemoveItem();
+                }
             }
         } 
     }

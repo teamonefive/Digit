@@ -48,6 +48,10 @@ public class TileBasedMover : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         fatigue = GetComponent<Fatigue>();
 
+        #if UNITY_STANDALONE || UNITY_WEBPLAYER
+        return;
+        #endif
+
         Button up = moveUp.GetComponent<Button>();
         up.onClick.AddListener(goUp);
         Button down = moveDown.GetComponent<Button>();
@@ -127,45 +131,7 @@ public class TileBasedMover : MonoBehaviour
         touchLoc.x = Input.GetAxisRaw("Horizontal");
         touchLoc.y = Input.GetAxisRaw("Vertical");
 
-        #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-
-        if (Input.touchCount == 0) return touchLoc;
-
-        Touch myTouch = Input.touches[0];
-
-        //Check if the phase of that touch equals Began
-        if (myTouch.phase == TouchPhase.Began)
-        {
-            //If so, set touchOrigin to the position of that touch
-            touchOrigin = myTouch.position;
-        }
-
-        //If the touch phase is not Began, and instead is equal to Ended and the x of touchOrigin is greater or equal to zero:
-        else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
-        {
-            //Set touchEnd to equal the position of this touch
-            Vector2 touchEnd = myTouch.position;
-
-            //Calculate the difference between the beginning and end of the touch on the x axis.
-            float x = touchOrigin.x - Screen.width / 2;
-
-            //Calculate the difference between the beginning and end of the touch on the y axis.
-            float y = touchOrigin.y - Screen.height / 2;
-
-            //Set touchOrigin.x to -1 so that our else if statement will evaluate false and not repeat immediately.
-            touchOrigin.x = -1;
-
-            //Check if the difference along the x axis is greater than the difference along the y axis.
-            if (Mathf.Abs(x) > Mathf.Abs(y))
-                //If x is greater than zero, set horizontal to 1, otherwise set it to -1
-                touchLoc.x = x > 0 ? 1 : -1;
-            else
-                //If y is greater than zero, set horizontal to 1, otherwise set it to -1
-                touchLoc.y = y > 0 ? 1 : -1;
-        }
-
-#endif //End of mobile platform dependendent compilation section started above with #elif
-        print(touchLoc);
+        #endif 
         return touchLoc;
     }
 
@@ -173,7 +139,7 @@ public class TileBasedMover : MonoBehaviour
     {
         if (stat.moveCooldown >= 0f) return;
 
-        Vector2 touchLoc = dir; //touchLocation();
+        Vector2 touchLoc = touchLocation();
         float horizontal = touchLoc.x;
         float vertical = touchLoc.y;
         if (horizontal == 0 && vertical == 0) return;
@@ -285,15 +251,8 @@ public class TileBasedMover : MonoBehaviour
                     }
                     else if (horizontal < 0)
                     {
-                        if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
-                        {
-                            //There is a block below the current position, climb down and to the left
-                            oldPos = targetPos;
-                            world.renderLeft(oldPos);
-                            targetPos += new Vector3(0f, -1f, 0f);
-                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
-                        }
-                        else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
+                        
+                        if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                         {
                             //There is a block above the target position, climb along the ceiling
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
@@ -304,6 +263,14 @@ public class TileBasedMover : MonoBehaviour
                             oldPos = targetPos;
                             world.renderLeft(oldPos);
                             targetPos += new Vector3(0f, 1f, 0f);
+                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
+                        }
+                        else if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
+                        {
+                            //There is a block below the current position, climb down and to the left
+                            oldPos = targetPos;
+                            world.renderLeft(oldPos);
+                            targetPos += new Vector3(0f, -1f, 0f);
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                         }
                         else
@@ -317,15 +284,8 @@ public class TileBasedMover : MonoBehaviour
                     }
                     else if (horizontal > 0)
                     {
-                        if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
-                        {
-                            //There is a block below the current position, climb down and to the right
-                            oldPos = targetPos;
-                            world.renderRight(oldPos);
-                            targetPos += new Vector3(0f, -1f, 0f);
-                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
-                        }
-                        else if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
+                        
+                        if (world.getTile(targetPos + new Vector3(0f, 1f, 0f)) != null)
                         {
                             //There is a block above the target position, climb along the ceiling
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
@@ -336,6 +296,14 @@ public class TileBasedMover : MonoBehaviour
                             oldPos = targetPos;
                             world.renderRight(oldPos);
                             targetPos += new Vector3(0f, 1f, 0f);
+                            stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
+                        }
+                        else if (world.getTile(transform.position + new Vector3(0f, -1f, 0f)) != null)
+                        {
+                            //There is a block below the current position, climb down and to the right
+                            oldPos = targetPos;
+                            world.renderRight(oldPos);
+                            targetPos += new Vector3(0f, -1f, 0f);
                             stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
                         }
                         else
@@ -370,10 +338,6 @@ public class TileBasedMover : MonoBehaviour
         {
             //Digging attempted
             bool validDig = true;
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(digSound, 1.0f);
-            }
             if (moveTile.GetComponent<Tile>().type == Tile.TileType.Water)
             {
                 //Digging is not possible but swimming is
@@ -478,10 +442,35 @@ public class TileBasedMover : MonoBehaviour
                 stat.climbingDifficultyMultiplier = stat.climbingDifficulty;
             }
 
+            SlotScript slot = pickaxeSlot.GetComponent<SlotScript>();
+            Item1 item = slot.MyItem;
+
+            if (item == null)
+            {
+                validDig = false;
+                if (moveTile.GetComponent<Tile>().type != Tile.TileType.Water)
+                {
+                    moving = false;
+                    canMove = true;
+                    return;
+                }
+            }
+            else if (item.MyTitle != "Wood Pickaxe" && item.MyTitle != "Iron Pickaxe" && item.MyTitle != "Silver Pickaxe" && item.MyTitle != "Gold Pickaxe" && item.MyTitle != "Mithril Pickaxe")
+            {
+                validDig = false;
+                if (moveTile.GetComponent<Tile>().type != Tile.TileType.Water)
+                {
+                    moving = false;
+                    canMove = true;
+                    return;
+                }
+            }
+
             if (validDig)
             {
                 //animator.SetBool("isDigging", true);
                 animator.Play("dwarf_dig");
+                audioSource.PlayOneShot(digSound, 1.0f);
                 if (world.getTile(targetPos) != null)
                 {
                     stat.tileDifficultyMultiplier = world.getTile(targetPos).GetComponent<Tile>().difficulty * stat.strengthMultiplier;
@@ -673,8 +662,11 @@ public class TileBasedMover : MonoBehaviour
                         }
                         if ((currentTile.GetComponent<Tile>().type == Tile.TileType.Lava || currentTile.GetComponent<Tile>().type == Tile.TileType.Water) && stat.vFatigue < 1f)
                         {
+                            animator.SetBool("TransitionFatigue", true);
                             world.UnrenderAllTiles();
                             Vector3 dwarfPos = new Vector3(-53.5f, -1f, 0f);
+                            oldPos = dwarfPos;
+                            targetPos = dwarfPos;
                             Vector3 lampPos = new Vector3(-53.1f, -0.55f, 0f);
 
                             stat.totalDeaths++;
@@ -716,9 +708,24 @@ public class TileBasedMover : MonoBehaviour
             float pickaxeMultiplier = 1f;
             if (!slot.IsEmpty)
             {
-                
 
-                if (item.MyTitle == "Iron Pickaxe")
+                if (item.MyTitle == "Wood Pickaxe")
+                {
+                    pickaxeMultiplier = 1f;
+
+                    if (pickaxeUsed)
+                    {
+                        item.myDurability = item.myDurability - 1;
+
+                        if (item.myDurability <= 0)
+                        {
+                            slot.Clear();
+                            stat.itemsBroken++;
+                        }
+                    }
+
+                }
+                else if (item.MyTitle == "Iron Pickaxe")
                 {
                     pickaxeMultiplier = 1.1f;
 
@@ -813,6 +820,24 @@ public class TileBasedMover : MonoBehaviour
     IEnumerator wait()
     {
         yield return new WaitForSeconds(6);
+    }
+
+    public void teleportToSpawn()
+    {
+        targetPos = oldPos;
+        transform.position = oldPos;
+        animator.SetFloat("speed", 0f);
+        world.UnrenderAllTiles();
+        Vector3 dwarfPos = new Vector3(-53.5f, -1f, 0f);
+        oldPos = dwarfPos;
+        targetPos = dwarfPos;
+
+        world.generateStartingTiles();
+        lampy.snapToOrigin();
+
+        moving = false;
+        canMove = true;
+        return;
     }
 }
 

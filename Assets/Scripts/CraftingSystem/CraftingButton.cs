@@ -43,6 +43,10 @@ public class CraftingButton : MonoBehaviour
         else if(_item.MyTitle == "Mithril Pickaxe" ) {
             DiamondPickAxe diamondPickaxe = ( DiamondPickAxe )Instantiate(_item);
         }
+        else if (_item.MyTitle == "Rune of Teleportation")
+        {
+            Teleporter teleporter = (Teleporter)Instantiate(_item);
+        }
         nameLabel.text = _item.MyTitle;
         iconImage.sprite = _item.MyIcon;
         craftingRecipe.text = _item.MyRecipe;

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd1cad3dc12d24dbc7affa8cfde7ea, type: 3}
+  m_Name: WoodPickAxe
+  m_EditorClassIdentifier: 
+  description: Common pickaxe made of wood
+  icon: {fileID: 3049863269351548431, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
+  stackSize: 0
+  title: Wood Pickaxe
+  quality: 0
+  price: 1
+  recipe: 
+  craftingQuantity: 0
+  craftingComponent: {fileID: 0}
+  durability: 50
+  maxDurability: 50
