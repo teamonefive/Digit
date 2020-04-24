@@ -446,16 +446,22 @@ public class TileBasedMover : MonoBehaviour
             if (item == null)
             {
                 validDig = false;
-                moving = false;
-                canMove = true;
-                return;
+                if (moveTile.GetComponent<Tile>().type != Tile.TileType.Water)
+                {
+                    moving = false;
+                    canMove = true;
+                    return;
+                }
             }
             else if (item.MyTitle != "Wood Pickaxe" && item.MyTitle != "Iron Pickaxe" && item.MyTitle != "Silver Pickaxe" && item.MyTitle != "Gold Pickaxe" && item.MyTitle != "Mithril Pickaxe")
             {
                 validDig = false;
-                moving = false;
-                canMove = true;
-                return;
+                if (moveTile.GetComponent<Tile>().type != Tile.TileType.Water)
+                {
+                    moving = false;
+                    canMove = true;
+                    return;
+                }
             }
 
             if (validDig)
