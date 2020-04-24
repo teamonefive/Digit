@@ -5493,7 +5493,7 @@ MonoBehaviour:
   - {fileID: 4154809608734028856, guid: 2774ab602bc647d47b8cb33d2062f4ab, type: 3}
   dwarf: {fileID: 807594911}
   stat: {fileID: 893040695}
-  renderDistance: 8
+  renderDistance: 9
   minWidth: 0
   minHeight: 0
   width: 32
