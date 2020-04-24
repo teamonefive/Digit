@@ -1,37 +1,34 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Fatigue : MonoBehaviour
 {
-
-    //public string scene;
     public Stats stat;
     public Animator transitionAnim;
     public Animator dwarf;
-    public TileBasedMover tile;
+    public TileBasedMover tileBasedMover;
     public bool trig3 = true;
+    private Image image;
 
-
-    // Start is called before the first frame update
     void Start()
     {
+        tileBasedMover = tileBasedMover.GetComponent<TileBasedMover>();
+        image = GetComponent<Image>();
         transitionAnim.enabled = true;
         transitionAnim.SetBool("TransitionFatigue", false);
     }
-    //void onMovement()
-    //{
-    //    vFatigue -= Time.deltaTime;
-    //    vFatigue = Mathf.Clamp(vFatigue, 0, 100);
-    //}
 
     void flipTheBool()
     {
         transitionAnim.SetBool("TransitionFatigue", false);
     }
 
+    void Update()
+    {
+        checkFatigue();
+    }
 
     public void updateFatigue(float fatigueDecrement)
     {
@@ -41,33 +38,36 @@ public class Fatigue : MonoBehaviour
 
     public void checkFatigue()
     {
-
         if (stat.vFatigue < 1f)
         {
-            GetComponent<TileBasedMover>().enabled = false;
-            // transitionAnim.SetBool("End", false);
-            transitionAnim.SetBool("TransitionFatigue", true);
-            //new WaitForSeconds(1f);
+            tileBasedMover.enabled = false;
 
-            
+            image.enabled = true;
+
+            transitionAnim.SetBool("TransitionFatigue", true);
+
             stat.vFatigue = stat.maxFatigue;
             
             stat.totalFatigues++;
 
             Invoke("flipTheBool", 1.3f);
+
             StartCoroutine(wait());
         }
     }
+
     IEnumerator wait()
     {
-        //print(Time.time);
         dwarf.SetBool("isFatigued", true);
-        //print("Set fatigued bool.");
+
         yield return new WaitForSeconds(5);
-        //print(Time.time);
+
         dwarf.SetBool("isFatigued", false);
-        //print("Set fatigued bool.");
-        GetComponent<TileBasedMover>().enabled = true;
+
+        image.enabled = false;
+
+        tileBasedMover.enabled = true;
+
         if(trig3 == true)
         {
             trig3 = false;

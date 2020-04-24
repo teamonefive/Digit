@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Experience : MonoBehaviour
 {
     public TileBasedMover tile;
-    public Slider levelUpBar;
 
-    public Slider enduranceBar;
-    public Text currLevel;
+    //public Slider levelUpBar;
+    //public Slider enduranceBar;
+    //public Text currLevel;
     public Text strengthMod;
     public Text agilityMod;
     public Text enduranceMod;
@@ -67,11 +67,11 @@ public class Experience : MonoBehaviour
     {
         MyGold = 100;
         myGoldDisplay.text = "Gold: " + MyGold.ToString();
-        levelUpBar.value = stat.vCurrExp;
-        levelUpBar.maxValue = stat.vExpLeft;
-        enduranceBar.value = stat.vFatigue;
-        enduranceBar.maxValue = stat.maxFatigue;
-        currLevel.text = "1";
+        //levelUpBar.value = stat.vCurrExp;
+        //levelUpBar.maxValue = stat.vExpLeft;
+        //enduranceBar.value = stat.vFatigue;
+        //enduranceBar.maxValue = stat.maxFatigue;
+        //currLevel.text = "1";
         strengthMod.text = "Strength: 0";
         agilityMod.text = "Agility: 0";
         perceptionMod.text = "Perception: 0";
@@ -119,10 +119,10 @@ public class Experience : MonoBehaviour
         {
             GainExp(1);
            // print("XP Gained"); // prints to the console for debugging
-            levelUpBar.value = stat.vCurrExp;
+            //levelUpBar.value = stat.vCurrExp;
         }
         tile.isDestroyed = false; // reset the bool here NOT in TileBasedMover
-        enduranceBar.value = stat.vFatigue;
+        //enduranceBar.value = stat.vFatigue;
 
         if (strUp > 0)
         {
@@ -161,12 +161,12 @@ public class Experience : MonoBehaviour
     void LvlUp()
     {
         stat.vCurrExp -= stat.vExpLeft;
-        levelUpBar.value = stat.vCurrExp;
+        //levelUpBar.value = stat.vCurrExp;
         stat.vLevel++;
-        currLevel.text = stat.vLevel.ToString();
+        //currLevel.text = stat.vLevel.ToString();
         float t = Mathf.Pow(stat.vExpMod, stat.vLevel);
         stat.vExpLeft = (int)Mathf.Floor(stat.vExpBase * t);
-        levelUpBar.maxValue = stat.vExpLeft;
+        //levelUpBar.maxValue = stat.vExpLeft;
         Dwarf.GetComponent<TileBasedMover>().enabled = false;
         StartCoroutine(allocatingStats());
         
@@ -329,7 +329,7 @@ public class Experience : MonoBehaviour
         Dwarf.GetComponent<TileBasedMover>().enabled = true;
         stat.maxFatigue = 100f + (stat.vEndurance * 25f);
         stat.vFatigue = stat.maxFatigue;
-        enduranceBar.maxValue = stat.maxFatigue;
+        //enduranceBar.maxValue = stat.maxFatigue;
         statPoints = 0;
         strUp = 0;
         agUp = 0;

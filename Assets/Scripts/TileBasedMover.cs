@@ -9,9 +9,8 @@ public class TileBasedMover : MonoBehaviour
     public FollowDwarf lampy;
     public MapGen world;
     public Stats stat;
-    private Fatigue fatigue;
     public GameObject debris;
-    public GameObject depthValue;
+    //public GameObject depthValue;
     public GameObject pickaxeSlot;
     public AudioSource audioSource;
     public AudioClip digSound;
@@ -46,7 +45,7 @@ public class TileBasedMover : MonoBehaviour
     void Start() 
     {
         audioSource = GetComponent<AudioSource>();
-        fatigue = GetComponent<Fatigue>();
+        //fatigue = GetComponent<Fatigue>();
 
         #if UNITY_STANDALONE || UNITY_WEBPLAYER
         return;
@@ -65,8 +64,6 @@ public class TileBasedMover : MonoBehaviour
 
     private void Awake()
     {
-        //playerInventory = this.GetComponent<Inventory>();
-        //fatigue = this.GetComponent<Fatigue>();
         oldPos = new Vector3(-53.5f, -1.16f, 0f);
         targetPos = oldPos;
     }
@@ -628,7 +625,7 @@ public class TileBasedMover : MonoBehaviour
 
                 string txt = "";
                 txt += (stat.currentDepth - 49);
-                depthValue.GetComponent<Text>().text = txt;
+                //depthValue.GetComponent<Text>().text = txt;
 
                 if (stat.currentDepth > stat.maxDepth)
                 {
@@ -644,12 +641,12 @@ public class TileBasedMover : MonoBehaviour
                     //update fatigue
                     if (isDestroyedBlock)
                     {
-                        fatigue.updateFatigue(10f);
+                        stat.vFatigue -= 10f;
                         isDestroyedBlock = false;
                     }
                     else
                     {
-                        fatigue.updateFatigue(2.5f);
+                        stat.vFatigue -= 2.5f;
                     }
 
                     //check for death
@@ -671,8 +668,6 @@ public class TileBasedMover : MonoBehaviour
 
                             stat.totalDeaths++;
 
-                            fatigue.checkFatigue();
-
                             world.generateStartingTiles();
                             lampy.snapToOrigin();
 
@@ -681,8 +676,6 @@ public class TileBasedMover : MonoBehaviour
                             return;
                         }
                     }
-
-                    fatigue.checkFatigue();
 
                     moving = false;
                     canMove = true;
