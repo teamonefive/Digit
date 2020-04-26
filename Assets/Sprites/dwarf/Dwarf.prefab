@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4291826555260082918}
   - component: {fileID: 4291826555260082919}
-  - component: {fileID: 4291826555260082916}
   - component: {fileID: 4291826555260082917}
   m_Layer: 0
   m_Name: Dwarf
@@ -83,18 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4291826555260082916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4291826555260082904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8b78033a097034e91521e359ef90dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &4291826555260082917
 Animator:
   serializedVersion: 3

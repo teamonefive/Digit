@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class FadeOut : MonoBehaviour
 {
-
-    // Start is called before the first frame update
     void Start()
     {
-        DestroyObjectDelayed();
+        // Self destruct in T-Minus d
+        DestroyObjectDelayed(1.0f);
     }
 
-    // Update is called once per frame
-    void Update()
+    void DestroyObjectDelayed(float d)
     {
-    }
-
-    void DestroyObjectDelayed()
-    {
-        Destroy(gameObject, 2.0f);
+        Destroy(gameObject, d);
     }
 }

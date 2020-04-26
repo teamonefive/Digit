@@ -38,6 +38,8 @@ public class TileBasedMover : MonoBehaviour
     [SerializeField]
     private Item1[] items;
 
+    public Sprite broken;
+
     private bool pickaxeUsed = false;
 
     public Slider durabilityBar;
@@ -541,8 +543,13 @@ public class TileBasedMover : MonoBehaviour
 
                 }
 
-                Destroy(moveTile);
+                //Destroy(moveTile);
+                
+                moveTile.GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.7f, 0.7f, 1f);
+                moveTile.GetComponent<SpriteRenderer>().sprite = broken;
+                moveTile.GetComponent<BoxCollider2D>().enabled = false;
                 Instantiate(debris, targetPos, Quaternion.identity);
+
                 world.activeTiles[world.tilePos(targetPos)] = null;
                 isDestroyed = true;
                 isDestroyedBlock = true;

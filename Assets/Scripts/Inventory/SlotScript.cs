@@ -7,12 +7,13 @@ using UnityEngine.EventSystems;
 public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
 {
     private ObservableStack<Item1> items = new ObservableStack<Item1>();
-
     [SerializeField]
     protected Image icon;
 
     [SerializeField]
     protected Text stackSize;
+
+    private Gold gold;
 
     public BagScript MyBag { get; set; }
 
@@ -94,14 +95,14 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         items.OnPush += new UpdateStackEvent(UpdateSlot);
         items.OnClear += new UpdateStackEvent(UpdateSlot);
 
+        gold = GameObject.Find("Gold").GetComponent<Gold>();
+
         if (startWithPickaxe)
         {
             Item1 startingPickaxe = Instantiate(InventoryScript.MyInstance.items[1]);
             AddItem(startingPickaxe);
         }
     }
-
-
 
     public bool AddItem(Item1 item)
     {
@@ -219,8 +220,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
                 {
                     sellPrice = 0;
                 }
-                Experience.MyInstance.MyGold += (int)(MyItem.MyPrice * 0.8f);
-                Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
+                gold.addGold((int)(MyItem.MyPrice * 0.8f));
                 RemoveItem();
                 Object.FindObjectOfType<Stats>().itemsSold++;
             }

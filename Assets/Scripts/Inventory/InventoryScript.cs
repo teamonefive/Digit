@@ -6,7 +6,6 @@ public delegate void ItemCountChanged(Item1 item);
 public class InventoryScript : MonoBehaviour
 {
     private static InventoryScript instance;
-
     public static InventoryScript MyInstance
     {
         get
@@ -73,11 +72,6 @@ public class InventoryScript : MonoBehaviour
         Bag bag = (Bag)Instantiate(items[0]);
         bag.Initialize(16);
         bag.Use();
-    }
-
-    private void Update()
-    {
-
     }
 
     public void AddBag(Bag bag)

@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PickaxeSlot : SlotScript, IPointerClickHandler, IClickable
 {
+    private Gold gold;
+
     [SerializeField]
     private Item1 pickaxe;
 
@@ -72,7 +74,7 @@ public class PickaxeSlot : SlotScript, IPointerClickHandler, IClickable
 
     private void Awake()
     {
-
+        gold = GameObject.Find("Gold").GetComponent<Gold>();
     }
 
 
@@ -129,8 +131,7 @@ public class PickaxeSlot : SlotScript, IPointerClickHandler, IClickable
         {
             if (VendorWindow.MyInstance.vwindow.activeSelf)
             {
-                Experience.MyInstance.MyGold += (int)(MyItem.MyPrice * 0.8f);
-                Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
+                gold.addGold((int)(MyItem.MyPrice * 0.8f));
                 RemoveItem();
             }
         }

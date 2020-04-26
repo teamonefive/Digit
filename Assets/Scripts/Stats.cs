@@ -40,7 +40,6 @@ public class Stats : MonoBehaviour
     public float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f, strengthMultiplier = 1f;
 
     // FROM FOLLOW DWARF
-
     public float speedMultiplier = 1f;
 
     // FROM FATIGUE

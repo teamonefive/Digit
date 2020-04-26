@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    public Gold gold;
     [SerializeField]
     private Image icon;
 
@@ -19,6 +20,7 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private Text quantity;
 
     private VendorItem vendorItem;
+
 
     public void AddItem(VendorItem vendorItem)
     {
@@ -51,7 +53,7 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(Experience.MyInstance.MyGold>= vendorItem.MyItem.MyPrice)
+        if(gold.getGold() >= vendorItem.MyItem.MyPrice)
         {
             Item1 item = Instantiate(vendorItem.MyItem);
             if (InventoryScript.MyInstance.AddItem(item))
@@ -81,15 +83,13 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     private void BuyItem()
     {
-        Experience.MyInstance.MyGold -= vendorItem.MyItem.MyPrice;
-        Experience.MyInstance.myGoldDisplay.text = "Gold: " + Experience.MyInstance.MyGold.ToString();
+        gold.removeGold(vendorItem.MyItem.MyPrice);
         Object.FindObjectOfType<Stats>().itemsBought++;
         if (!vendorItem.Unlimited)
         {
             vendorItem.MyQuantity--;
             quantity.text = vendorItem.MyQuantity.ToString();
             
-
             if (vendorItem.MyQuantity == 0)
             {
                 gameObject.SetActive(false);
