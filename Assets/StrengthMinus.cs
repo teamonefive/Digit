@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class StrengthMinus : MonoBehaviour
 {
-    private Image image;
+    private Button button;
 
     void Start()
     {
-        image = GetComponent<Image>();
-        image.enabled = false;
+        button = GetComponent<Button>();
+        button.interactable = false;
     }
 
     void Update()
@@ -16,11 +16,11 @@ public class StrengthMinus : MonoBehaviour
         // If we leveled and a point was put in our stat, show minus button.
         if (Experience.MyInstance.isLvling && Experience.MyInstance.strUp > 0)
         {
-            image.enabled = true;
+            button.interactable = true;
         } 
         else
         {
-            image.enabled = false;
+            button.interactable = false;
         }
     }
 

@@ -38,7 +38,7 @@ public class TileBasedMover : MonoBehaviour
     [SerializeField]
     private Item1[] items;
 
-    public Sprite broken;
+    public GameObject broken;
 
     private bool pickaxeUsed = false;
 
@@ -543,11 +543,10 @@ public class TileBasedMover : MonoBehaviour
 
                 }
 
-                //Destroy(moveTile);
-                
-                moveTile.GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.7f, 0.7f, 1f);
-                moveTile.GetComponent<SpriteRenderer>().sprite = broken;
-                moveTile.GetComponent<BoxCollider2D>().enabled = false;
+                Destroy(moveTile);
+                //TODO:Jon Broken tiles need to be part of the tile prefabs as a background.
+                //         Instead of destroy we need a function to toggle off front tile.
+                Instantiate(broken, targetPos, Quaternion.identity);
                 Instantiate(debris, targetPos, Quaternion.identity);
 
                 world.activeTiles[world.tilePos(targetPos)] = null;

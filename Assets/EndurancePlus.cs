@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class EndurancePlus : MonoBehaviour
 {
-    private Image image;
+    private Button image;
 
     // Start is called before the first frame update
     void Start()
     {
-        image = GetComponent<Image>();
-        image.enabled = false;
+        image = GetComponent<Button>();
+        image.interactable = false;
     }
 
     // Update is called once per frame
@@ -18,11 +18,11 @@ public class EndurancePlus : MonoBehaviour
         // If we leveled, and not all points have been allocated. Show the button.
         if (Experience.MyInstance.isLvling && Experience.MyInstance.statPoints < 3)
         {
-            image.enabled = true;
+            image.interactable = true;
         }
         else
         {
-            image.enabled = false;
+            image.interactable = false;
         }
     }
 

@@ -212,3 +212,4 @@ MonoBehaviour:
   Water: {fileID: 1209267049664523724, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   Lava: {fileID: -1297047801903605439, guid: b8fbf916268459b45ae9d0ced758e49a, type: 3}
   type: 3
+  isBreakable: 1

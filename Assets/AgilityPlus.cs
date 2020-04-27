@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class AgilityPlus : MonoBehaviour
 {
-    private Image image;
+    private Button button;
 
     void Start()
     {
-        image = GetComponent<Image>();
-        image.enabled = false;
+        button = GetComponent<Button>();
+        button.interactable = false;
     }
 
     void Update()
@@ -16,11 +16,11 @@ public class AgilityPlus : MonoBehaviour
         // If we leveled, and not all points have been allocated. Show the button.
         if (Experience.MyInstance.isLvling && Experience.MyInstance.statPoints < 3)
         {
-            image.enabled = true;
+            button.interactable = true;
         }
         else
         {
-            image.enabled = false;
+            button.interactable = false;
         }
     }
 

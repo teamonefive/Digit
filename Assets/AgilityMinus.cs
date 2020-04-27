@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class AgilityMinus : MonoBehaviour
 {
-    private Image image;
+    private Button button;
 
     void Start()
     {
-        image = GetComponent<Image>();
-        image.enabled = false;
+        button = GetComponent<Button>();
+        button.interactable = false;
     }
 
     void Update()
@@ -16,11 +16,11 @@ public class AgilityMinus : MonoBehaviour
         // If we leveled and a point was put in our stat, show minus button.
         if (Experience.MyInstance.isLvling && Experience.MyInstance.agUp > 0)
         {
-            image.enabled = true;
+            button.interactable = true;
         }
         else
         {
-            image.enabled = false;
+            button.interactable = false;
         }
     }
 

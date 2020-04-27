@@ -324,6 +324,8 @@ public class MapGen : MonoBehaviour
     //4 = Clay
     //5 = Rock
     //6 = Stone
+    //7 = Water
+    //8 = Lava
     //returns the generated tile
     public GameObject generateTile(Vector2 createPos, Vector2 mapPos)
     {

@@ -875,6 +875,9 @@ TextureImporter:
   - first:
       213: 1165901878110367219
     second: broken_wall_rock
+  - first:
+      213: -4836147598715515957
+    second: ui_close
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -7104,6 +7107,27 @@ TextureImporter:
       bones: []
       spriteID: e39b18b492a96584784d61d3b0183e30
       internalID: -815297432383951135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_close
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 164
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c8ed0948040824b89ee09b2e6ec2a9
+      internalID: -4836147598715515957
       vertices: []
       indices: 
       edges: []

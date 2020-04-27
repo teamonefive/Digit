@@ -2,10 +2,11 @@
 
 public class PanelOpener : MonoBehaviour
 {
-    public GameObject Panel;
+    //public GameObject Panel;
     public GameObject Panel_Inventory;
     public GameObject Panel_Bagbar;
 
+    /*
     public void OpenPanel()
     {
         if(Panel != null)
@@ -14,6 +15,7 @@ public class PanelOpener : MonoBehaviour
             Panel.SetActive(!isActive);
         }
     }
+    */
 
     public void OpenPanel1()
     {

@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class LuckMinus : MonoBehaviour
 {
-    private Image image;
+    private Button button;
 
     void Start()
     {
-        image = GetComponent<Image>();
-        image.enabled = false;
+        button = GetComponent<Button>();
+        button.interactable = false;
     }
 
     void Update()
@@ -16,11 +16,11 @@ public class LuckMinus : MonoBehaviour
         // If we leveled and a point was put in our stat, show minus button.
         if (Experience.MyInstance.isLvling && Experience.MyInstance.lucUp > 0)
         {
-            image.enabled = true;
+            button.interactable = true;
         }
         else
         {
-            image.enabled = false;
+            button.interactable = false;
         }
     }
 
