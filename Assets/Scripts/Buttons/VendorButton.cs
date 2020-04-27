@@ -25,6 +25,16 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void AddItem(VendorItem vendorItem)
     {
         this.vendorItem = vendorItem;
+
+        if (Object.FindObjectOfType<Vendor>().items[0] == vendorItem)
+        {
+            vendorItem.MyQuantity = 4 - GameObject.FindObjectOfType<Stats>().totalBags;
+            if (vendorItem.MyQuantity == 0)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+
         if (vendorItem.MyQuantity > 0 || (vendorItem.MyQuantity == 0 && vendorItem.Unlimited))
         {
             icon.sprite = vendorItem.MyItem.MyIcon;
@@ -62,6 +72,7 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                 if (Object.FindObjectOfType<Vendor>().items[0] == vendorItem)
                 {
                     ((Bag)item).Use();
+                    GameObject.FindObjectOfType<Stats>().totalBags++;
                 }
             }
             else

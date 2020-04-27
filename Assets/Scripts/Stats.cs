@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class Stats : MonoBehaviour
 {
     public GameObject leaderboard;
@@ -65,11 +66,12 @@ public class Stats : MonoBehaviour
     public int maxDepth = 49;
     public int currentDepth = 49;
 
-    private bool depthTrig = true;
+    public bool depthTrig = true;
     public int itemsCrafted = 0;
     public int itemsBought = 0;
     public int itemsSold = 0;
     public int itemsBroken = 0;
+    public int totalBags = 1;
 
     public void statDump()
     {

@@ -878,6 +878,12 @@ TextureImporter:
   - first:
       213: -4836147598715515957
     second: ui_close
+  - first:
+      213: 176339113054557262
+    second: save_button
+  - first:
+      213: -9059257942717919153
+    second: load_button
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -7120,7 +7126,7 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7128,6 +7134,48 @@ TextureImporter:
       bones: []
       spriteID: 96c8ed0948040824b89ee09b2e6ec2a9
       internalID: -4836147598715515957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: save_button
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 141
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcb1fed73f18934b9e70aef80ede8d8
+      internalID: 176339113054557262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: load_button
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 124
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8172cb2f9ce41b4fb794de7972affd6
+      internalID: -9059257942717919153
       vertices: []
       indices: 
       edges: []

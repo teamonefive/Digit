@@ -99,11 +99,27 @@ public class Experience : MonoBehaviour
         Dwarf.GetComponent<TileBasedMover>().enabled = true;
         isLvling = false;
         statPoints = 0;
+
+        for (int i = 0; i < strUp; i++)
+        {
+            stat.strengthMultiplier *= 0.95f;
+        }
+        for (int i = 0; i < agUp; i++)
+        {
+            stat.climbingDifficulty *= 0.95f;
+        }
+        for (int i = 0; i < endUp; i++)
+        {
+            stat.maxFatigue += 25f;
+        }
+        stat.vFatigue = stat.maxFatigue;
+
         stat.vStrength += strUp;
         stat.vAgility += agUp;
         stat.vEndurance += endUp;
         stat.vPerception += perUp;
         stat.vLuck += lucUp;
+
         strUp = 0;
         agUp = 0;
         endUp = 0;

@@ -546,10 +546,12 @@ public class TileBasedMover : MonoBehaviour
                 Destroy(moveTile);
                 //TODO:Jon Broken tiles need to be part of the tile prefabs as a background.
                 //         Instead of destroy we need a function to toggle off front tile.
-                Instantiate(broken, targetPos, Quaternion.identity);
+                GameObject brokenTexture = Instantiate(broken, targetPos, Quaternion.identity);
                 Instantiate(debris, targetPos, Quaternion.identity);
 
                 world.activeTiles[world.tilePos(targetPos)] = null;
+                world.brokenTiles.Add(world.tilePos(targetPos), brokenTexture);
+
                 isDestroyed = true;
                 isDestroyedBlock = true;
                 pickaxeUsed = true;
@@ -701,7 +703,7 @@ public class TileBasedMover : MonoBehaviour
                     }
                 }
 
-
+                world.saveManager.createSave();
             }
 
             float pickaxeMultiplier = 1f;

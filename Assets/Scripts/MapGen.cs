@@ -10,17 +10,19 @@ public class MapGen : MonoBehaviour
     public GameObject[] earth;
     public GameObject[] subEarth;
     public GameObject[] bottom;
+    public GameObject broken;
 
-    private Dictionary<int, int> mountainHeights;
+    public Dictionary<int, int> mountainHeights;
 
     //Holds the list of all tiles that have been destroyed by the player
     public Dictionary<Vector2, bool> destroyedTiles;
 
     //Holds the GameObjects for tiles that are being rendered
     public Dictionary<Vector2, GameObject> activeTiles;
+    public Dictionary<Vector2, GameObject> brokenTiles;
 
-    private Dictionary<Vector2, bool> isWaterNotLava;
-    private Dictionary<Vector2, bool> generatedStone;
+    public Dictionary<Vector2, bool> isWaterNotLava;
+    public Dictionary<Vector2, bool> generatedStone;
 
     public GameObject dwarf;
 
@@ -32,10 +34,12 @@ public class MapGen : MonoBehaviour
     public int minHeight;
     public int width;
     public int height;
-    private int seed;
+    public int seed;
     public float biomeSize;
     public float scale;
     public bool guaranteeFlatSection;
+
+    public Save saveManager;
 
     public GameObject getTile(Vector3 pos)
     {
@@ -349,6 +353,8 @@ public class MapGen : MonoBehaviour
         }
         if (destroyedTiles.ContainsKey(createPos))
         {
+            GameObject brokenTexture = Instantiate(broken, mapPos, Quaternion.identity);
+            brokenTiles.Add(createPos, brokenTexture);
             return null;
         }
 
@@ -650,7 +656,9 @@ public class MapGen : MonoBehaviour
         {
             if (perlin < 0.3f)
             {
-                //NULL
+                //NULL (Cave)
+                GameObject brokenTexture = Instantiate(broken, mapPos, Quaternion.identity);
+                brokenTiles.Add(createPos, brokenTexture);
                 return null;
             }
             else if (perlin < 0.55f)
@@ -785,6 +793,13 @@ public class MapGen : MonoBehaviour
             activeTiles.Remove(deletePos);
             Destroy(deleteTile);
 
+            if (brokenTiles.ContainsKey(deletePos))
+            {
+                GameObject deleteBroken = brokenTiles[deletePos];
+                brokenTiles.Remove(deletePos);
+                Destroy(deleteBroken);
+            }
+
             //Instantiate new tiles within render distance
             Vector2 createPos = new Vector2(newXPos, j);
             Vector2 mapPos = new Vector2(transform.position.x + newXPos, transform.position.y - j);
@@ -814,6 +829,13 @@ public class MapGen : MonoBehaviour
 
             activeTiles.Remove(deletePos);
             Destroy(deleteTile);
+
+            if (brokenTiles.ContainsKey(deletePos))
+            {
+                GameObject deleteBroken = brokenTiles[deletePos];
+                brokenTiles.Remove(deletePos);
+                Destroy(deleteBroken);
+            }
 
             //Instantiate new tiles within render distance
             Vector2 createPos = new Vector2(newXPos, j);
@@ -845,6 +867,13 @@ public class MapGen : MonoBehaviour
             activeTiles.Remove(deletePos);
             Destroy(deleteTile);
 
+            if (brokenTiles.ContainsKey(deletePos))
+            {
+                GameObject deleteBroken = brokenTiles[deletePos];
+                brokenTiles.Remove(deletePos);
+                Destroy(deleteBroken);
+            }
+
             //Instantiate new tiles within render distance
             Vector2 createPos = new Vector2(i, newYPos);
             Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - newYPos);
@@ -875,10 +904,16 @@ public class MapGen : MonoBehaviour
             activeTiles.Remove(deletePos);
             Destroy(deleteTile);
 
+            if (brokenTiles.ContainsKey(deletePos))
+            {
+                GameObject deleteBroken = brokenTiles[deletePos];
+                brokenTiles.Remove(deletePos);
+                Destroy(deleteBroken);
+            }
+
             //Instantiate new tiles within render distance
             Vector2 createPos = new Vector2(i, newYPos);
             Vector2 mapPos = new Vector2(transform.position.x + i, transform.position.y - newYPos);
-
 
             GameObject tile = generateTile(createPos, mapPos);
 
@@ -898,13 +933,22 @@ public class MapGen : MonoBehaviour
                 Vector2 tilePos = new Vector2(i, j);
                 Destroy(activeTiles[tilePos]);
                 activeTiles.Remove(tilePos);
+
+                if (brokenTiles.ContainsKey(tilePos))
+                {
+                    Destroy(brokenTiles[tilePos]);
+                    brokenTiles.Remove(tilePos);
+                }
             }
         }
     }
 
-    public void generateStartingTiles()
+    public void generateStartingTiles(bool snapDwarfToOrigin = true)
     {
-        dwarf.transform.position = new Vector3(-53.5f, -1f, 0f);
+        if (snapDwarfToOrigin)
+        {
+            dwarf.transform.position = new Vector3(-53.5f, -1f, 0f);
+        }
         int xPos = (int)(dwarf.transform.position.x + 70.5);
         int yPos = (int)(dwarf.transform.position.y * -1) + 48;
 
@@ -931,6 +975,7 @@ public class MapGen : MonoBehaviour
         mountainHeights = new Dictionary<int, int>();
         destroyedTiles = new Dictionary<Vector2, bool>();
         activeTiles = new Dictionary<Vector2, GameObject>();
+        brokenTiles = new Dictionary<Vector2, GameObject>();
         isWaterNotLava = new Dictionary<Vector2, bool>();
         generatedStone = new Dictionary<Vector2, bool>();
 
@@ -944,9 +989,18 @@ public class MapGen : MonoBehaviour
             }
         }
 
+        
+
         //Render Initial Tiles
         generateStartingTiles();
 
+        StartCoroutine(waitForScene());
+    }
+
+    IEnumerator waitForScene()
+    {
+        yield return new WaitForSeconds(0.01f);
+        saveManager.loadSave();
     }
 
     public void Update()
