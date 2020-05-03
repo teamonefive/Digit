@@ -5,7 +5,8 @@ using UnityEngine;
 public class TutorialCollisionsDigging : MonoBehaviour
 {
     // Start is called before the first frame update
-    public bool trig1 = true;
+    public Stats stat;
+    
     void Start()
     {
         
@@ -18,9 +19,9 @@ public class TutorialCollisionsDigging : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D Player)
     {
-        if (Player.gameObject.tag == "Player" && trig1 == true)
+        if (Player.gameObject.tag == "Player" && stat.firstBlockDigTrig == true)
         {
-            trig1 = false;
+            stat.firstBlockDigTrig = false;
             //Dwarf.GetComponent<TileBasedMover>().enabled = false;
             FindObjectOfType<DialogueTrigger>().TriggerStartItemDialogue();
         }

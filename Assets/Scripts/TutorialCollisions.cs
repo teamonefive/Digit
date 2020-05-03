@@ -6,7 +6,7 @@ public class TutorialCollisions : MonoBehaviour
 {
     public GameObject Dwarf;
     public TileBasedMover tile;
-    public bool trig = true;
+    public Stats stat;
     //public Collider2D Player;
     // Start is called before the first frame update
     void Start()
@@ -28,10 +28,10 @@ public class TutorialCollisions : MonoBehaviour
     void OnTriggerEnter2D(Collider2D Player)
     {
        // moveRight = true;
-        if (Player.gameObject.tag == "Player" && trig == true)
+        if (Player.gameObject.tag == "Player" && stat.mineEntranceTrig == true)
         {
             //Dwarf.GetComponent<TileBasedMover>().enabled = false;
-            trig = false;
+            stat.mineEntranceTrig = false;
             FindObjectOfType<DialogueTrigger>().TriggerStartDigDialogue();
         }
     }

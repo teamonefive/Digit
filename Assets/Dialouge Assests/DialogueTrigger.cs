@@ -15,7 +15,8 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue statboard;
     public TileBasedMover tile;
     public GameObject Dwarf;
-    private bool firstTime = true;
+    public Stats stat;
+  
     void Awake()
     {
         //tile.oldPos = new Vector3(0, 0, 0);
@@ -23,16 +24,16 @@ public class DialogueTrigger : MonoBehaviour
     }
     void Update()
     {
-        if ((tile.dir != new Vector2 (1f, 0f) || tile.dir != new Vector2(-1f, 0f)) && firstTime == true)
+        if ((tile.dir != new Vector2 (1f, 0f) || tile.dir != new Vector2(-1f, 0f)) && stat.firstPlayTrig == true)
         {
             Dwarf.GetComponent<TileBasedMover>().enabled = true;
             //tile.targetPos += new Vector3(-1, 0, 0f);
         }
 
-        if (tile.moving == true && firstTime == true)
+        if (tile.moving == true && stat.firstPlayTrig == true)
         {
             TriggerStartDialogue();
-            firstTime = false;
+            stat.firstPlayTrig = false;
         }
     }
     public void TriggerStartDialogue()
