@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -18564,7 +18564,7 @@ MonoBehaviour:
   dialogueText: {fileID: 556526703}
   Dwarf: {fileID: 807594911}
   Mine: {fileID: 879920738}
-  stat: {fileID: 0}
+  stat: {fileID: 893040695}
   animator: {fileID: 1012384623}
 --- !u!4 &1649255884
 Transform:
