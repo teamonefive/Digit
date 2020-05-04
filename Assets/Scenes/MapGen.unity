@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4317,6 +4317,7 @@ MonoBehaviour:
   dwarf: {fileID: 807594915}
   button: {fileID: 769582006}
   buttonWindow: {fileID: 542301940}
+  stat: {fileID: 893040695}
 --- !u!114 &462865914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4334,6 +4335,7 @@ MonoBehaviour:
   dwarf: {fileID: 807594915}
   button: {fileID: 1701714689}
   buttonWindow: {fileID: 1581094836}
+  stat: {fileID: 893040695}
 --- !u!95 &462865915
 Animator:
   serializedVersion: 3
@@ -4369,7 +4371,6 @@ MonoBehaviour:
   transitionAnim: {fileID: 462865915}
   dwarf: {fileID: 807594914}
   tileBasedMover: {fileID: 807594915}
-  trig3: 1
 --- !u!114 &462865917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9363,7 +9364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dwarf: {fileID: 807594911}
   tile: {fileID: 807594915}
-  trig: 1
+  stat: {fileID: 893040695}
 --- !u!114 &887659058 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5766109966126147187, guid: c41e06260f2d8c849b3795c9c2f3f980,
@@ -9451,6 +9452,15 @@ MonoBehaviour:
   itemsSold: 0
   itemsBroken: 0
   totalBags: 1
+  levelUpTrig: 1
+  craftTrig: 1
+  shopTrig: 1
+  fatigueTrig: 1
+  firstPlayTrig: 1
+  firstBlockDigTrig: 1
+  mineEntranceTrig: 1
+  firstTime: 1
+  mineTime: 1
 --- !u!4 &893040696
 Transform:
   m_ObjectHideFlags: 0
@@ -17133,6 +17143,7 @@ MonoBehaviour:
     - Click the stat board icon in the upper right to view your records!
   tile: {fileID: 807594915}
   Dwarf: {fileID: 807594911}
+  stat: {fileID: 893040695}
 --- !u!114 &1509482504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18143,7 +18154,6 @@ GameObject:
   - component: {fileID: 1587224190}
   - component: {fileID: 1587224189}
   - component: {fileID: 1587224188}
-  - component: {fileID: 1587224187}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Untagged
@@ -18151,19 +18161,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1587224187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587224186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0124d6e9b58488d4ba736ca8d7a42181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trig2: 1
 --- !u!50 &1587224188
 Rigidbody2D:
   serializedVersion: 4
@@ -18567,6 +18564,7 @@ MonoBehaviour:
   dialogueText: {fileID: 556526703}
   Dwarf: {fileID: 807594911}
   Mine: {fileID: 879920738}
+  stat: {fileID: 0}
   animator: {fileID: 1012384623}
 --- !u!4 &1649255884
 Transform:
@@ -23634,7 +23632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996c42bf4d91f0944bb575b9b1e2f20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trig1: 1
+  stat: {fileID: 893040695}
 --- !u!1 &2052310354
 GameObject:
   m_ObjectHideFlags: 0

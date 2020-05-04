@@ -9,8 +9,7 @@ public class DialogueManager : MonoBehaviour {
 	public Text dialogueText;
     public GameObject Dwarf;
     public TutorialCollisions Mine;
-    bool firstTime = true;
-    bool mineTime = true;
+    public Stats stat;
    // public Collider2D MineEntrance;
 
 	public Animator animator;
@@ -64,16 +63,16 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
-        if(firstTime == true)
+        if(stat.firstTime == true)
         {
             Dwarf.GetComponent<TileBasedMover>().enabled = true;
             // Mine.MineEntrance();
-            firstTime = false;
+            stat.firstTime = false;
         }
-        else if(mineTime == true)
+        else if(stat.mineTime == true)
         {
 
-            mineTime = false;
+            stat.mineTime = false;
         }
 
     }

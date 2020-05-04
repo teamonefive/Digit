@@ -9,7 +9,6 @@ public class Fatigue : MonoBehaviour
     public Animator transitionAnim;
     public Animator dwarf;
     public TileBasedMover tileBasedMover;
-    public bool trig3 = true;
     private Image image;
 
     void Start()
@@ -68,9 +67,9 @@ public class Fatigue : MonoBehaviour
 
         tileBasedMover.enabled = true;
 
-        if(trig3 == true)
+        if(stat.fatigueTrig == true)
         {
-            trig3 = false;
+            stat.fatigueTrig = false;
             FindObjectOfType<DialogueTrigger>().TriggerFatigueDialogue();
         }
     }

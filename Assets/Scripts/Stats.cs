@@ -8,7 +8,7 @@ public class Stats : MonoBehaviour
 {
     public GameObject leaderboard;
     public Button leadboardButton;
-    private bool open = false;
+    
 
     // FROM EXPERIENCE
     //current level
@@ -72,6 +72,23 @@ public class Stats : MonoBehaviour
     public int itemsSold = 0;
     public int itemsBroken = 0;
     public int totalBags = 1;
+
+    // Dialogue Triggers
+    public bool levelUpTrig = true; // In Expereince, levelUp function. Level up dialogue.
+    private bool open = false; // open and close for the stats in the UI, private since its only in this script
+    public bool craftTrig = true; // In HideButton, for the crafting at the anvil dialogue
+    public bool shopTrig = true; // In HideButton, for the shop dialogue
+    public bool fatigueTrig = true; // In Fatigue, wait function. Fatigue dialogue.
+    public bool firstPlayTrig = true; // In DialogueTrigger, update. This is the first set of dialogue the player sees when they start the game.
+    public bool firstBlockDigTrig = true; // In TutorialCollisionsDigging, using this for the first block the player digs out.
+    public bool mineEntranceTrig = true; // In TutorialCollisions, using this to trigger the dialogue when they hit the mine.
+    
+
+    //These two might be able to be cut, I used these when I was getting things to work but I found better ways to do triggers
+
+    public bool firstTime = true; // In DialgoueManager, was using this to make sure the start dialogue only triggered once.  Probably redundent now.
+    public bool mineTime = true; // In DialogueManager, was using this for the mine entrance and now seems redundent.
+
 
     public void statDump()
     {

@@ -23,8 +23,6 @@ public class Experience : MonoBehaviour
 
     private static Experience instance;
 
-    private bool trig4 = true;
-
     public static Experience MyInstance
     {
         get
@@ -67,9 +65,9 @@ public class Experience : MonoBehaviour
         Dwarf.GetComponent<TileBasedMover>().enabled = false;
         isLvling = true;
         
-        if (trig4 == true)
+        if (stat.levelUpTrig == true)
         {
-            trig4 = false;
+            stat.levelUpTrig = false;
             FindObjectOfType<DialogueTrigger>().TriggerLvlUpDialogue();
         }
     }
