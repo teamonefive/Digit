@@ -75,7 +75,6 @@ public class Stats : MonoBehaviour
 
     // Dialogue Triggers
     public bool levelUpTrig = true; // In Expereince, levelUp function. Level up dialogue.
-    private bool open = false; // open and close for the stats in the UI, private since its only in this script
     public bool craftTrig = true; // In HideButton, for the crafting at the anvil dialogue
     public bool shopTrig = true; // In HideButton, for the shop dialogue
     public bool fatigueTrig = true; // In Fatigue, wait function. Fatigue dialogue.
@@ -89,6 +88,7 @@ public class Stats : MonoBehaviour
     public bool firstTime = true; // In DialgoueManager, was using this to make sure the start dialogue only triggered once.  Probably redundent now.
     public bool mineTime = true; // In DialogueManager, was using this for the mine entrance and now seems redundent.
 
+    private bool open = false; // open and close for the stats in the UI, private since its only in this script
 
     public void statDump()
     {
