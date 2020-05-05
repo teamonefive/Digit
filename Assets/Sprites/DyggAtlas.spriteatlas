@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DyggSprites
+  m_Name: DyggAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -15,12 +15,24 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 1
+      filterMode: 0
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
       padding: 4
@@ -34,15 +46,9 @@ SpriteAtlas:
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
-<<<<<<< HEAD
-      Hash: cdcbc51fa02a8b406d76520a6eaaee1d
-||||||| merged common ancestors
-      Hash: 6250c6896a7848578845e0b97f1b9b1d
-=======
-      Hash: 04dfa3ca459897478bda79bd8cfa49b5
->>>>>>> 38be5a92a0e124e978672b3fb1d37e8628cc849d
+      Hash: 00000000000000000000000000000000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites: []
   m_PackedSpriteNamesToIndex: []
-  m_Tag: DyggSprites
+  m_Tag: DyggAtlas
   m_IsVariant: 0
