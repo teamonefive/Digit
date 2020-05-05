@@ -19,6 +19,8 @@ public class TileBasedMover : MonoBehaviour
     public Button moveDown;
     public Button moveRight;
     public Button moveLeft;
+    public Button moveRight1;
+    public Button moveLeft1;
 
     public bool canMove = true, moving = false, m_FacingRight = true;
     public bool isFalling = false;
@@ -61,6 +63,10 @@ public class TileBasedMover : MonoBehaviour
         right.onClick.AddListener(goRight);
         Button left = moveLeft.GetComponent<Button>();
         left.onClick.AddListener(goLeft);
+        Button right1 = moveRight1.GetComponent<Button>();
+        right1.onClick.AddListener(goRight);
+        Button left1 = moveLeft1.GetComponent<Button>();
+        left1.onClick.AddListener(goLeft);
 
     }
 
