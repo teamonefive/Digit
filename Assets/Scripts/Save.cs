@@ -108,6 +108,14 @@ public class Save : MonoBehaviour
             stat.itemsSold = save.itemsSold;
             stat.itemsBroken = save.itemsBroken;
             stat.depthTrig = save.depthTrig;
+            stat.levelUpTrig = save.levelUpTrig;
+            stat.craftTrig = save.craftTrig;
+            stat.shopTrig = save.shopTrig;
+            stat.fatigueTrig = save.fatigueTrig;
+            stat.firstPlayTrig = save.firstPlayTrig;
+            stat.firstBlockDigTrig = save.firstBlockDigTrig;
+            stat.mineEntranceTrig = save.mineEntranceTrig;
+
 
             gold.gold = save.gold;
             stat.totalBags = save.bags;
@@ -257,6 +265,13 @@ public class SaveData
     public float strengthMultiplier, climbingDifficulty, vFatigue, maxFatigue;
     public int totalIron, totalSilver, totalGold, totalMithril, totalTopaz, totalSapphire, totalRuby, totalDiamond, totalDeaths, totalDigs, totalMoves, totalFatigues, totalPlaytime, maxDepth, currentDepth, itemsCrafted, itemsBought, itemsSold, itemsBroken;
     public bool depthTrig;
+    public bool levelUpTrig;
+    public bool craftTrig;
+    public bool shopTrig;
+    public bool fatigueTrig;
+    public bool firstPlayTrig;
+    public bool firstBlockDigTrig;
+    public bool mineEntranceTrig;
     public int gold, bags;
     public itemElement pickaxe;
     public List<itemElement> items;
@@ -278,7 +293,7 @@ public class SaveData
 
         int i = 0;
         destroyedTiles = new mapElement[save.world.destroyedTiles.Count];
-        foreach(KeyValuePair<Vector2, bool> elem in save.world.destroyedTiles)
+        foreach (KeyValuePair<Vector2, bool> elem in save.world.destroyedTiles)
         {
             destroyedTiles[i++] = new mapElement(elem.Key.x, elem.Key.y, elem.Value);
         }
@@ -330,6 +345,13 @@ public class SaveData
         itemsSold = save.stat.itemsSold;
         itemsBroken = save.stat.itemsBroken;
         depthTrig = save.stat.depthTrig;
+        levelUpTrig = save.stat.levelUpTrig;
+        craftTrig = save.stat.craftTrig;
+        shopTrig = save.stat.shopTrig;
+        fatigueTrig = save.stat.fatigueTrig;
+        firstPlayTrig = save.stat.firstPlayTrig;
+        firstBlockDigTrig = save.stat.firstBlockDigTrig;
+        mineEntranceTrig = save.stat.mineEntranceTrig;
 
         gold = save.gold.gold;
         bags = save.stat.totalBags;
@@ -345,7 +367,7 @@ public class SaveData
         items = new List<itemElement>();
 
         SlotScript[] slots = GameObject.FindObjectsOfType<SlotScript>();
-        foreach(SlotScript slot in slots)
+        foreach (SlotScript slot in slots)
         {
             if (slot != save.pickaxeSlot)
             {
@@ -353,14 +375,14 @@ public class SaveData
                 {
                     itemElement elem = new itemElement(slot.MyItem.MyTitle, slot.MyItem.myDurability);
                     for (i = 0; i < slot.MyCount; i++)
-                    { 
-                        items.Add(elem); 
+                    {
+                        items.Add(elem);
                     }
                 }
             }
         }
 
-}
+    }
 }
 
 [System.Serializable]
@@ -376,7 +398,7 @@ public class mapElement
     }
 }
 
-[System.Serializable] 
+[System.Serializable]
 public class itemElement
 {
     public string title;
