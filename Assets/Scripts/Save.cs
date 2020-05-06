@@ -15,6 +15,8 @@ public class Save : MonoBehaviour
     public SlotScript pickaxeSlot;
     public Item1[] allItems;
 
+    
+
     private void Awake()
     {
         world = GameObject.FindObjectOfType<MapGen>();
