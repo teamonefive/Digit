@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine;
 
 public class PlayerIcon : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public Sprite[] playerIcons;
     public Stats stats;
     public Button confirm;
@@ -13,6 +11,7 @@ public class PlayerIcon : MonoBehaviour
     private Button player;
     private int level;
     private bool active;
+
     void Start()
     {
         active = false;
@@ -29,6 +28,7 @@ public class PlayerIcon : MonoBehaviour
         level = stats.vLevel;
         ShowStats();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -40,9 +40,10 @@ public class PlayerIcon : MonoBehaviour
         active = !active;
         statPanel.SetActive(active);
     }
+
     public void checkIcon()
     {
-        if (level < stats.vLevel)
+        if (Experience.MyInstance.isLvling)
         {
             player.image.sprite = playerIcons[2];
             statPanel.SetActive(true);
