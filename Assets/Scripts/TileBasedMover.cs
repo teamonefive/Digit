@@ -50,9 +50,9 @@ public class TileBasedMover : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         //fatigue = GetComponent<Fatigue>();
 
-        #if UNITY_STANDALONE || UNITY_WEBPLAYER
-        return;
-        #endif
+    #if UNITY_STANDALONE || UNITY_WEBPLAYER
+            return;
+    #endif
 
         Button up = moveUp.GetComponent<Button>();
         up.onClick.AddListener(goUp);
@@ -144,10 +144,9 @@ public class TileBasedMover : MonoBehaviour
     void Move()
     {
         
-        Vector2 touchLoc = touchLocation();
         if (stat.moveCooldown >= 0f) return;
 
-
+        Vector2 touchLoc = touchLocation();
         float horizontal = touchLoc.x;
         float vertical = touchLoc.y;
         if (horizontal == 0 && vertical == 0) return;

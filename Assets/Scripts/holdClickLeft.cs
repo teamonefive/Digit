@@ -10,6 +10,7 @@ public class holdClickLeft : MonoBehaviour
     public TileBasedMover tile;
     public UnityEvent OnButtonHeldL;
     public Stats stat;
+    float timer = 0f;
 
     public void SetPressedL(bool valueL)
     {
@@ -23,11 +24,14 @@ public class holdClickLeft : MonoBehaviour
     // OnButtonHeld event.
     void Update()
     {
-        if (stat.pressedL)
+        timer += Time.deltaTime;
+        if (stat.pressedL && timer > 0.2f)
         {
             print("PRESSED");
             OnButtonHeldL.Invoke();
         }
+        if (stat.pressedD == false)
+            timer = 0f;
 
     }
 }

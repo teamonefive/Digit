@@ -11,6 +11,9 @@ public class holdClickDown : MonoBehaviour
     public UnityEvent OnButtonHeldD;
     public Stats stat;
 
+    float timer = 0f;
+
+
     public void SetPressedD(bool valueD)
     {
         stat.pressedD = valueD;
@@ -23,11 +26,14 @@ public class holdClickDown : MonoBehaviour
     // OnButtonHeld event.
     void Update()
     {
-        if (stat.pressedD)
+        timer += Time.deltaTime;
+        if (stat.pressedD && timer > 0.5f)
         {
             print("PRESSED");
             OnButtonHeldD.Invoke();
         }
+        if (stat.pressedD == false)
+            timer = 0f;
 
     }
 }
