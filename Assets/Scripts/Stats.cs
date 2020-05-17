@@ -39,7 +39,10 @@ public class Stats : MonoBehaviour
     public float setMoveCooldown = 1f;
     public float moveCooldown = 0f;
     public float tileDifficultyMultiplier = 1f, climbingDifficultyMultiplier = 1f, strengthMultiplier = 1f;
-
+    public float width;
+    public float height;
+    public Touch touch;
+    
     // FROM FOLLOW DWARF
     public float speedMultiplier = 1f;
 
@@ -89,6 +92,12 @@ public class Stats : MonoBehaviour
     public bool mineTime = true; // In DialogueManager, was using this for the mine entrance and now seems redundent.
 
     private bool open = false; // open and close for the stats in the UI, private since its only in this script
+
+
+    public bool pressedD = false;
+    public bool pressedU = false;
+    public bool pressedR = false;
+    public bool pressedL = false;
 
     public void statDump()
     {
