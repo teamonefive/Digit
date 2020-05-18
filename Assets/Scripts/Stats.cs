@@ -99,6 +99,8 @@ public class Stats : MonoBehaviour
     public bool pressedR = false;
     public bool pressedL = false;
 
+    public bool pressedSlot = false;
+
     public void statDump()
     {
         Debug.Log("Total Iron: " + totalIron);

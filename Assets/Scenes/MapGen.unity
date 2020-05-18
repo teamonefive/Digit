@@ -9657,7 +9657,7 @@ GameObject:
   - component: {fileID: 893040695}
   m_Layer: 0
   m_Name: Stats
-  m_TagString: Untagged
+  m_TagString: Stats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9734,6 +9734,7 @@ MonoBehaviour:
   pressedU: 0
   pressedR: 0
   pressedL: 0
+  pressedSlot: 0
 --- !u!4 &893040696
 Transform:
   m_ObjectHideFlags: 0
@@ -14323,6 +14324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 503568915}
   stackSize: {fileID: 1683095976}
+  stat: {fileID: 0}
   startWithPickaxe: 1
 --- !u!1 &1237302196
 GameObject:
@@ -15007,7 +15009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5da059d209046658b642ca23cf308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 40, y: 0, z: 0}
+  offset: {x: 40, y: 0}
 --- !u!1 &1301164177
 GameObject:
   m_ObjectHideFlags: 0
@@ -25488,6 +25490,11 @@ PrefabInstance:
     - target: {fileID: 1120461975871833409, guid: 11fd9a656851dd6448987318f3dc309e,
         type: 3}
       propertyPath: m_Name
+      value: Stats
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120461975871833409, guid: 11fd9a656851dd6448987318f3dc309e,
+        type: 3}
+      propertyPath: m_TagString
       value: Stats
       objectReference: {fileID: 0}
     - target: {fileID: 1120461975871833408, guid: 11fd9a656851dd6448987318f3dc309e,

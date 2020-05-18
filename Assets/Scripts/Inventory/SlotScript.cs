@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -14,6 +15,42 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
     protected Text stackSize;
 
     private Gold gold;
+    public Stats stat;
+    bool used = false;
+
+
+    Stopwatch stopwatch;
+
+
+    void triggers()
+    {
+        // ....
+        EventTrigger eventTrigger1 = this.gameObject.AddComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        EventTrigger.Entry exit = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerDown;
+        entry.callback.AddListener((data) => { OnPointerDownDelegate((PointerEventData)data); });
+        eventTrigger1.triggers.Add(entry);
+        exit.eventID = EventTriggerType.PointerUp;
+        exit.callback.AddListener((data) => { OnPointerUpDelegate((PointerEventData)data); });
+        eventTrigger1.triggers.Add(exit);
+    }
+
+    public void OnPointerDownDelegate(PointerEventData data)
+    {
+        stopwatch.Start();
+    }
+    public void OnPointerUpDelegate(PointerEventData data)
+    {
+        stopwatch.Stop();
+        if(stopwatch.ElapsedMilliseconds > 3000)
+        {
+            UseItem();
+            used = true;
+        }
+        stopwatch.Reset();
+    }
+
 
     public BagScript MyBag { get; set; }
 
@@ -95,6 +132,8 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
         items.OnPush += new UpdateStackEvent(UpdateSlot);
         items.OnClear += new UpdateStackEvent(UpdateSlot);
 
+        stat = GameObject.Find("Stats").GetComponent<Stats>();
+
         gold = GameObject.Find("Gold").GetComponent<Gold>();
 
         if (startWithPickaxe)
@@ -102,6 +141,9 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
             Item1 startingPickaxe = Instantiate(InventoryScript.MyInstance.items[1]);
             AddItem(startingPickaxe);
         }
+
+        triggers();
+        stopwatch = new Stopwatch();
     }
 
     public bool AddItem(Item1 item)
@@ -151,7 +193,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Left && used == false)
         {
             if(InventoryScript.MyInstance.Fromslot==null && !IsEmpty) //dont have something to move
             {
@@ -173,17 +215,23 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
             }
             else if(InventoryScript.MyInstance.Fromslot!=null) // have something to move
             {
-                if(PutItemBack() || MergeItems(InventoryScript.MyInstance.Fromslot) ||SwapItems(InventoryScript.MyInstance.Fromslot)||AddItems(InventoryScript.MyInstance.Fromslot.items))
+                if(PutItemBack() || MergeItems(InventoryScript.MyInstance.Fromslot) | SwapItems(InventoryScript.MyInstance.Fromslot)||AddItems(InventoryScript.MyInstance.Fromslot.items))
                 {
                     HandScript.MyInstance.Drop();
                     InventoryScript.MyInstance.Fromslot = null;
                 }
             }
         }
-        if (eventData.button == PointerEventData.InputButton.Right)
-        {
-            UseItem();
-        }
+        used = false;
+        //if (eventData.button == PointerEventData.InputButton.Right)
+        //{
+        //    UseItem();
+        //}
+    }
+
+    public void SetPressedSlot(bool valueSlot)
+    {
+        stat.pressedSlot = valueSlot;
     }
 
     public void UseItem()
