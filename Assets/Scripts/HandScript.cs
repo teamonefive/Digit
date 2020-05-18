@@ -26,7 +26,7 @@ public class HandScript : MonoBehaviour
     private Image icon;
 
     [SerializeField]
-    private Vector3 offset;
+    private Vector2 offset;
 
 
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class HandScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        icon.transform.position = Input.mousePosition+offset;
+        icon.transform.position = (Vector2)Input.mousePosition+offset;
 
         DeleteItem();
     }
@@ -66,7 +66,7 @@ public class HandScript : MonoBehaviour
 
     private void DeleteItem()
     {
-        if(Input.GetMouseButton(0) && ! EventSystem.current.IsPointerOverGameObject() && MyInstance.MyMoveable!= null)
+        if(Input.GetMouseButtonDown(0) && ! EventSystem.current.IsPointerOverGameObject() && MyInstance.MyMoveable!= null)
         {
             if (MyMoveable is Item1 && InventoryScript.MyInstance.Fromslot != null)
             {
