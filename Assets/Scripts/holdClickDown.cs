@@ -27,7 +27,7 @@ public class holdClickDown : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (stat.pressedD && timer > 0.5f)
+        if (stat.pressedD && timer > 0.2f)
         {
             print("PRESSED");
             OnButtonHeldD.Invoke();

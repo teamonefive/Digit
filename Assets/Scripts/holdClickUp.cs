@@ -30,7 +30,7 @@ public class holdClickUp : MonoBehaviour
             print("PRESSED");
             OnButtonHeldU.Invoke();
         }
-        if (stat.pressedD == false)
+        if (stat.pressedU == false)
             timer = 0f;
     }
 }

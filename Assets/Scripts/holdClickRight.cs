@@ -30,7 +30,7 @@ public class holdClickRight : MonoBehaviour
             print("PRESSED");
             OnButtonHeldR.Invoke();
         }
-        if (stat.pressedD == false)
+        if (stat.pressedR == false)
             timer = 0f;
     }
 }
