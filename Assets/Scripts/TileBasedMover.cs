@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TileBasedMover : MonoBehaviour
 {
@@ -28,9 +29,7 @@ public class TileBasedMover : MonoBehaviour
     public bool isDestroyedBlock = false;
     public bool isDigging = false;
     public bool isFatigued = false;
-
     public Vector2 dir = new Vector2(0f, 0f);
-
 
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -51,9 +50,9 @@ public class TileBasedMover : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         //fatigue = GetComponent<Fatigue>();
 
-        #if UNITY_STANDALONE || UNITY_WEBPLAYER
-        return;
-        #endif
+    #if UNITY_STANDALONE || UNITY_WEBPLAYER
+            return;
+    #endif
 
         Button up = moveUp.GetComponent<Button>();
         up.onClick.AddListener(goUp);
@@ -74,28 +73,30 @@ public class TileBasedMover : MonoBehaviour
     {
         oldPos = new Vector3(-53.5f, -1.16f, 0f);
         targetPos = oldPos;
+        stat.width = Screen.width / 2.0f;
+        stat.height = Screen.height / 2.0f;
     }
 
-    void goUp()
+    public void goUp()
     {
         print("UP");
         dir = new Vector2(0f, 1f);
         return;
     }
 
-    void goDown()
+    public void goDown()
     {
         print("DOWN");
         dir = new Vector2(0f, -1f);
         return;
     }
-    void goRight()
+    public void goRight()
     {
         print("RIGHT");
         dir = new Vector2(1f, 0f);
         return;
     }
-    void goLeft()
+    public void goLeft()
     {
         print("LEFT");
         dir = new Vector2(-1f, 0f);
@@ -142,6 +143,7 @@ public class TileBasedMover : MonoBehaviour
 
     void Move()
     {
+        
         if (stat.moveCooldown >= 0f) return;
 
         Vector2 touchLoc = touchLocation();
@@ -584,6 +586,7 @@ public class TileBasedMover : MonoBehaviour
         stat.moveCooldown = stat.setMoveCooldown;
         dir = new Vector2(0f, 0f);
     }
+    
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
@@ -600,6 +603,23 @@ public class TileBasedMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (Input.touchCount > 0)
+        //{
+        //    stat.touch = Input.GetTouch(0);
+        //    print("Touch Position : " + stat.touch.position);
+        //    if (stat.touch.phase == TouchPhase.Began)
+        //    {
+        //        oldPos = stat.touch.position;
+        //    }
+
+            //if (stat.touch.phase == TouchPhase.Ended)
+            //{
+            //    dir = new Vector2(0f, 0f);
+            //}
+        //}
+
+
+
         SlotScript slot = pickaxeSlot.GetComponent<SlotScript>();
         Item1 item = slot.MyItem;
         if (item != null)
