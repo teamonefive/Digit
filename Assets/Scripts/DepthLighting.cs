@@ -7,13 +7,13 @@ public class DepthLighting : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject dwarf;
-    private Light2D lightScript;
-    public Light2D lampyLight;
+    private UnityEngine.Experimental.Rendering.Universal.Light2D lightScript;
+    public UnityEngine.Experimental.Rendering.Universal.Light2D lampyLight;
     public Stats stat;
 
     void Start()
     {
-        lightScript = GetComponent<Light2D>();
+        lightScript = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
     }
 
     // Update is called once per frame
