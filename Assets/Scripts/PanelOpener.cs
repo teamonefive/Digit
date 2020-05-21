@@ -22,12 +22,13 @@ public class PanelOpener : MonoBehaviour
         InventoryScript inventory = InventoryScript.MyInstance;
         if (inventory.transform.position.z == 0)
         {
+            inventory.GetComponent<CanvasGroup>().blocksRaycasts = false;
             inventory.transform.position = new Vector3(inventory.transform.position.x, inventory.transform.position.y, 1500f);
         }
         else
         {
+            inventory.GetComponent<CanvasGroup>().blocksRaycasts = true;
             inventory.transform.position = new Vector3(inventory.transform.position.x, inventory.transform.position.y, 0f);
-
         }
     }
 

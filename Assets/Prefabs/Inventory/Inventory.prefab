@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2026221083735283078}
   - component: {fileID: 2026221083735283073}
   - component: {fileID: 8801824404333354447}
+  - component: {fileID: 9005418822811716518}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -82,3 +83,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65acf033e47ab43ca88b462081ee160a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bagButtons: []
+  items: []
+--- !u!225 &9005418822811716518
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026221083735283076}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
