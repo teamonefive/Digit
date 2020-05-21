@@ -84,7 +84,8 @@ public class Stats : MonoBehaviour
     public bool firstPlayTrig = true; // In DialogueTrigger, update. This is the first set of dialogue the player sees when they start the game.
     public bool firstBlockDigTrig = true; // In TutorialCollisionsDigging, using this for the first block the player digs out.
     public bool mineEntranceTrig = true; // In TutorialCollisions, using this to trigger the dialogue when they hit the mine.
-    
+
+    public bool restTrig = true; // In HideButtonRest, rest prompt
 
     //These two might be able to be cut, I used these when I was getting things to work but I found better ways to do triggers
 
