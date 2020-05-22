@@ -17802,6 +17802,8 @@ MonoBehaviour:
     - We can exchange our goods for gold, then our gold for their items!
     - We'll need items to go further into the world...  Anyway, what are ye buyin'?
     - '*Click the V to the left to shop*'
+    - '*To sell items or use consumables, with the vendor window open, press and
+      hold on the item in your iventory for 3 seconds.*'
   passedOut:
     name: Lampy
     sentences:
@@ -20779,7 +20781,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1503245524}
   m_HandleRect: {fileID: 1503245523}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0.9999998
   m_Size: 0.63646287
   m_NumberOfSteps: 0
   m_OnValueChanged:
