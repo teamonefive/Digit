@@ -13,6 +13,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue lvlUp;
     public Dialogue crafting;
     public Dialogue statboard;
+    public Dialogue rest;
     public TileBasedMover tile;
     public GameObject Dwarf;
     public Stats stat;
@@ -74,5 +75,9 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerStatsDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(statboard);
+    }
+    public void TriggerRestDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(rest);
     }
 }
